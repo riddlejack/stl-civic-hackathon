@@ -1,0 +1,410 @@
+{
+ "meta": {
+  "contract": "brief/1",
+  "mock": true,
+  "built_at": "mock",
+  "sources": [],
+  "notes": [
+   "Mock data: shaped like the contract, numbers are not real."
+  ]
+ },
+ "asof": "2026-10-13 00:00",
+ "week": {
+  "this_from": "2026-10-06",
+  "this_to": "2026-10-13",
+  "last_from": "2026-09-29",
+  "last_to": "2026-10-06"
+ },
+ "meeting_source": {
+  "text": "mock",
+  "label": "reported",
+  "url": "#",
+  "date": "mock"
+ },
+ "compliance": {
+  "rows": [
+   {
+    "service": "Mock service 0",
+    "promise_days": 5,
+    "n_this": 40,
+    "kept_this": 0.5,
+    "done_this": 0.2,
+    "n_last": 40,
+    "kept_last": 0.7,
+    "change_pts": -20.0
+   },
+   {
+    "service": "Mock service 1",
+    "promise_days": 5,
+    "n_this": 40,
+    "kept_this": 0.5,
+    "done_this": 0.2,
+    "n_last": 40,
+    "kept_last": 0.7,
+    "change_pts": -20.0
+   },
+   {
+    "service": "Mock service 2",
+    "promise_days": 5,
+    "n_this": 40,
+    "kept_this": 0.5,
+    "done_this": 0.2,
+    "n_last": 40,
+    "kept_last": 0.7,
+    "change_pts": -20.0
+   }
+  ],
+  "definition": "mock",
+  "figure_id": null
+ },
+ "pothole_weekly": {
+  "series": [
+   {
+    "week": "2026-04-01",
+    "n": 50,
+    "within_goal": 0.9,
+    "median_days": 4
+   },
+   {
+    "week": "2026-05-01",
+    "n": 50,
+    "within_goal": 0.8,
+    "median_days": 4
+   },
+   {
+    "week": "2026-06-01",
+    "n": 50,
+    "within_goal": 0.7,
+    "median_days": 4
+   },
+   {
+    "week": "2026-07-01",
+    "n": 50,
+    "within_goal": 0.6,
+    "median_days": 4
+   },
+   {
+    "week": "2026-08-01",
+    "n": 50,
+    "within_goal": 0.5,
+    "median_days": 4
+   },
+   {
+    "week": "2026-09-01",
+    "n": 50,
+    "within_goal": 0.4,
+    "median_days": 4
+   }
+  ],
+  "first_week_below_half": "2026-08-01",
+  "goal_days": 8,
+  "figure_id": null,
+  "definition": "mock"
+ },
+ "first_step": {
+  "wards": [
+   {
+    "ward": "01",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 10
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 1
+    }
+   },
+   {
+    "ward": "02",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 11
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 2
+    }
+   },
+   {
+    "ward": "03",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 12
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 3
+    }
+   },
+   {
+    "ward": "04",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 13
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 4
+    }
+   },
+   {
+    "ward": "05",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 14
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 5
+    }
+   },
+   {
+    "ward": "06",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 15
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 6
+    }
+   },
+   {
+    "ward": "07",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 16
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 7
+    }
+   },
+   {
+    "ward": "08",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 17
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 8
+    }
+   },
+   {
+    "ward": "09",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 18
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 9
+    }
+   },
+   {
+    "ward": "10",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 19
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 10
+    }
+   },
+   {
+    "ward": "11",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 20
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 11
+    }
+   },
+   {
+    "ward": "12",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 21
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 12
+    }
+   },
+   {
+    "ward": "13",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 22
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 13
+    }
+   },
+   {
+    "ward": "14",
+    "towing_tag": {
+     "n": 50,
+     "median_days": 23
+    },
+    "cavein_referral": {
+     "n": 20,
+     "median_days": 14
+    }
+   }
+  ],
+  "definition": "mock",
+  "figure_id": null,
+  "n3_figures": []
+ },
+ "lists": [
+  {
+   "key": "a",
+   "title": "Mock list a",
+   "scope": "mock",
+   "owner": "mock",
+   "rows": [
+    {
+     "block": "2800 block of Example St",
+     "ward": "10",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "2300 block of Placeholder Blvd",
+     "ward": "04",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "5500 block of Test Dr",
+     "ward": "13",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "2700 block of Mock Pl",
+     "ward": "13",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "3700 block of Dummy Ct",
+     "ward": "14",
+     "requests": 2,
+     "lots": 1
+    }
+   ],
+   "columns": [
+    "block",
+    "ward",
+    "lots",
+    "requests"
+   ],
+   "summary": "mock",
+   "figure_id": null,
+   "csv": "#"
+  },
+  {
+   "key": "b",
+   "title": "Mock list b",
+   "scope": "mock",
+   "owner": "mock",
+   "rows": [
+    {
+     "block": "400 block of Example St",
+     "ward": "03",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "4200 block of Test Dr",
+     "ward": "14",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "3900 block of Sample Av",
+     "ward": "09",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "1600 block of Placeholder Blvd",
+     "ward": "03",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "1700 block of Sample Av",
+     "ward": "10",
+     "requests": 2,
+     "lots": 1
+    }
+   ],
+   "columns": [
+    "block",
+    "ward",
+    "lots",
+    "requests"
+   ],
+   "summary": "mock",
+   "figure_id": null,
+   "csv": "#"
+  },
+  {
+   "key": "c",
+   "title": "Mock list c",
+   "scope": "mock",
+   "owner": "mock",
+   "rows": [
+    {
+     "block": "2300 block of Placeholder Blvd",
+     "ward": "05",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "3700 block of Sample Av",
+     "ward": "03",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "500 block of Sample Av",
+     "ward": "10",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "5200 block of Test Dr",
+     "ward": "08",
+     "requests": 2,
+     "lots": 1
+    },
+    {
+     "block": "400 block of Example St",
+     "ward": "02",
+     "requests": 2,
+     "lots": 1
+    }
+   ],
+   "columns": [
+    "block",
+    "ward",
+    "lots",
+    "requests"
+   ],
+   "summary": "mock",
+   "figure_id": null,
+   "csv": "#"
+  }
+ ],
+ "monday_total": 1000,
+ "monday_csv": "#"
+}

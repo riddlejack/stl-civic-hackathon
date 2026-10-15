@@ -123,8 +123,8 @@ function factValue(e, k, v) {
 
 function fixCol(e) {
   const f = e.fix;
-  const facts = h('dl', { class: 'rp-facts' }, ...f.facts.map(([k, v, tone]) =>
-    h('div', { class: `rp-fact ${tone || ''}` }, h('dt', { text: k }), h('dd', {}, factValue(e, k, v)))));
+  const facts = h('dl', { class: 'rp-facts' }, ...f.facts.map(([k, v, tone, illus]) =>
+    h('div', { class: `rp-fact ${tone || ''}` }, h('dt', {}, k, illus ? h('span', { class: 'st-tag rp-illus', text: 'Illustration' }) : null), h('dd', {}, factValue(e, k, v)))));
 
   const steps = h('ol', { class: 'rp-steps' }, ...f.timeline.map(([lab, txt, st]) =>
     h('li', { class: `rp-step ${st}` }, h('span', { class: 'rp-dot', 'aria-hidden': 'true' }), h('div', { class: 'rp-sl', text: lab }), h('div', { class: 'rp-st', text: nb(txt) }))));
@@ -175,7 +175,7 @@ function lookupView(r) {
     h('div', { class: 'rp-pills' }, pill(word === 'Open' ? 'promise' : 'handoff', word),
       r.closed_with_words ? h('span', { class: 'rp-words', text: `“${String(r.closed_with_words).toLowerCase()}”` }) : null),
     h('dl', { class: 'rp-facts' }, ...rows.map(([k, v]) => h('div', { class: 'rp-fact' }, h('dt', { text: k }), h('dd', { text: v })))),
-    h('p', { class: 'rp-src', text: 'With the fix, this request would stay open until the crew’s job is done and show that job and its due date; with no job linked, it would stay open and be flagged. Block level only; the number you typed is not stored or shown.' }));
+    h('p', { class: 'rp-src', text: 'With the fix, this request would stay open, linked to the crew’s work order and its due date, and close when the work is recorded. Block level only; the number you typed is not stored or shown.' }));
   return c;
 }
 
@@ -188,7 +188,7 @@ function about() {
       h('p', {}, 'The left side copies the field labels and wording of the city’s ', h('a', { href: P.status_url, text: 'status page' }),
         ', as read on 1,440 pages on 14 October 2026: “Closed” and its closing words, or, for refuse, bulky items and weeds “on schedule to be cut”, the line asking residents to contact the Citizens’ Service Bureau instead. It is a replica inside this prototype, not the City’s site: the request number is withheld and the address is cut to the block.')),
     h('div', {}, h('h3', { text: 'With the fix' }),
-      h('p', { text: 'The right side is an illustration on the request’s own dates. The request stays open until the crew’s job is done, shows that job and its due date, is flagged when the date passes, and takes in repeat reports instead of opening new requests. Where no crew job exists, as for the lot, it stays open and is flagged to the division.' }),
+      h('p', { text: 'The right side is an illustration on the request’s own dates, with the fix in place: at the hand-off the request is linked to the crew’s work order, shows that order and its due date, goes on the department’s weekly past-due list when the date passes, takes in repeat reports instead of opening new requests, and closes when the work is recorded.' }),
       h('p', { text: 'Most of this exists already: Forestry attaches its removal orders to tree requests, and Cityworks, which the City runs, can close a linked request when its work order closes. The lot’s request closed in ' },
         fnum('n5_lot1_minutes_to_close_jul02', { text: '13 minutes' }), '; its cuts billed in 2026: ', fnum('n5_lot1_cuts_billed_2026'), '.')),
     h('div', {}, h('h3', { text: 'The examples' }),

@@ -1,0 +1,280 @@
+{
+ "meta": {
+  "contract": "register/1",
+  "mock": true,
+  "built_at": "mock",
+  "sources": [],
+  "notes": [
+   "Mock data: shaped like the contract, numbers are not real."
+  ]
+ },
+ "columns": [
+  {
+   "key": "intake",
+   "label": "Request recorded",
+   "help": ""
+  },
+  {
+   "key": "promise",
+   "label": "Promise date",
+   "help": ""
+  },
+  {
+   "key": "says_done",
+   "label": "Closing words say done",
+   "help": ""
+  },
+  {
+   "key": "record",
+   "label": "Independent record of the work",
+   "help": ""
+  },
+  {
+   "key": "joined",
+   "label": "Joined here",
+   "help": ""
+  }
+ ],
+ "rows": [
+  {
+   "id": "mock0",
+   "service": "Mock service 1",
+   "cells": {
+    "intake": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "promise": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "record": {
+     "state": "no",
+     "text": "mock"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "mock"
+    }
+   },
+   "filed": 1000,
+   "share_closed_done": 0.3,
+   "record_source": "mock",
+   "what_it_would_take": "mock"
+  },
+  {
+   "id": "mock1",
+   "service": "Mock service 2",
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "promise": {
+     "state": "no",
+     "text": "mock"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "mock"
+    },
+    "record": {
+     "state": "no",
+     "text": "mock"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "mock"
+    }
+   },
+   "filed": 1000,
+   "share_closed_done": 0.3,
+   "record_source": "mock",
+   "what_it_would_take": "mock"
+  },
+  {
+   "id": "mock2",
+   "service": "Mock service 3",
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "promise": {
+     "state": "no",
+     "text": "mock"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "mock"
+    },
+    "record": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "joined": {
+     "state": "partial",
+     "text": "mock"
+    }
+   },
+   "filed": 1000,
+   "share_closed_done": 0.3,
+   "record_source": "mock",
+   "what_it_would_take": "mock"
+  },
+  {
+   "id": "mock3",
+   "service": "Mock service 4",
+   "cells": {
+    "intake": {
+     "state": "no",
+     "text": "mock"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "record": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "mock"
+    }
+   },
+   "filed": 1000,
+   "share_closed_done": 0.3,
+   "record_source": "mock",
+   "what_it_would_take": "mock"
+  },
+  {
+   "id": "mock4",
+   "service": "Mock service 5",
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "promise": {
+     "state": "no",
+     "text": "mock"
+    },
+    "says_done": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "record": {
+     "state": "no",
+     "text": "mock"
+    },
+    "joined": {
+     "state": "no",
+     "text": "mock"
+    }
+   },
+   "filed": 1000,
+   "share_closed_done": 0.3,
+   "record_source": "mock",
+   "what_it_would_take": "mock"
+  },
+  {
+   "id": "mock5",
+   "service": "Mock service 6",
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "says_done": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "record": {
+     "state": "yes",
+     "text": "mock"
+    },
+    "joined": {
+     "state": "no",
+     "text": "mock"
+    }
+   },
+   "filed": 1000,
+   "share_closed_done": 0.3,
+   "record_source": "mock",
+   "what_it_would_take": "mock"
+  },
+  {
+   "id": "mock6",
+   "service": "Mock service 7",
+   "cells": {
+    "intake": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "promise": {
+     "state": "no",
+     "text": "mock"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "mock"
+    },
+    "record": {
+     "state": "no",
+     "text": "mock"
+    },
+    "joined": {
+     "state": "no",
+     "text": "mock"
+    }
+   },
+   "filed": 1000,
+   "share_closed_done": 0.3,
+   "record_source": "mock",
+   "what_it_would_take": "mock"
+  },
+  {
+   "id": "mock7",
+   "service": "Mock service 8",
+   "cells": {
+    "intake": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "promise": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "mock"
+    },
+    "record": {
+     "state": "no",
+     "text": "mock"
+    },
+    "joined": {
+     "state": "partial",
+     "text": "mock"
+    }
+   },
+   "filed": 1000,
+   "share_closed_done": 0.3,
+   "record_source": "mock",
+   "what_it_would_take": "mock"
+  }
+ ]
+}

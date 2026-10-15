@@ -117,3 +117,4 @@
   .rp-step:last-child::before { display: none; }
   .rp-reports li { grid-template-columns: 1fr; gap: 0; }
 }
+.rp-illus { margin-left: 8px; font-size: 10.5px; padding: 1px 6px; vertical-align: 0.1em; }
