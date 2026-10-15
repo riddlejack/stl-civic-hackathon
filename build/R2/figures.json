@@ -1,0 +1,876 @@
+{
+ "meta": {
+  "agent": "R2",
+  "written": "see file time",
+  "labels": "observed / derived / estimate"
+ },
+ "figures": [
+  {
+   "id": "r2_rereport14_handoff_vs_done",
+   "value": {
+    "handoff_pct": 6.66,
+    "done_same_types_pct": 4.07,
+    "diff_pts": 2.6,
+    "diff_ci95_pts": [
+     1.83,
+     3.36
+    ],
+    "mh_risk_ratio": 1.59,
+    "mh_rr_ci95": [
+     1.48,
+     1.71
+    ],
+    "types": 61,
+    "handoff_closures": 34848,
+    "done_closures": 54359,
+    "types_first_class_higher": 50
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Re-reported within 14 days of closure (another request at the same normalised address (N1 addr_norm) with the same PROBLEMCODE, any channel, filed after the closure and within the window; one row per REQUESTID): after a hand-off closure (handed_off or converted) vs after a \"done\" closure of the same types.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. Hand-off 6.66% vs done 4.07% across 61 types.",
+   "note": "Headline as briefed. Most of the gap falls while the job is still waiting: see r2_rereport_filing_window."
+  },
+  {
+   "id": "r2_rereport7_handoff_vs_done",
+   "value": {
+    "handoff_pct": 4.61,
+    "done_same_types_pct": 2.57,
+    "diff_pts": 2.05,
+    "diff_ci95_pts": [
+     1.42,
+     2.67
+    ],
+    "mh_risk_ratio": 1.8,
+    "mh_rr_ci95": [
+     1.65,
+     1.96
+    ],
+    "types": 62,
+    "handoff_closures": 35657,
+    "done_closures": 54944,
+    "types_first_class_higher": 45
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, within 7 days of closure.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport30_handoff_vs_done",
+   "value": {
+    "handoff_pct": 9.62,
+    "done_same_types_pct": 7.04,
+    "diff_pts": 2.58,
+    "diff_ci95_pts": [
+     1.51,
+     3.65
+    ],
+    "mh_risk_ratio": 1.38,
+    "mh_rr_ci95": [
+     1.3,
+     1.46
+    ],
+    "types": 61,
+    "handoff_closures": 34220,
+    "done_closures": 53017,
+    "types_first_class_higher": 49
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, within 30 days of closure.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_crude_by_class",
+   "value": [
+    {
+     "class": "blank",
+     "n14": 6791,
+     "pct14": 14.67,
+     "n30": 6583,
+     "pct30": 19.16
+    },
+    {
+     "class": "done",
+     "n14": 64163,
+     "pct14": 3.13,
+     "n30": 62536,
+     "pct30": 4.88
+    },
+    {
+     "class": "handoff",
+     "n14": 60480,
+     "pct14": 5.92,
+     "n30": 58922,
+     "pct30": 8.92
+    },
+    {
+     "class": "info_other",
+     "n14": 5110,
+     "pct14": 5.4,
+     "n30": 4930,
+     "pct30": 6.92
+    },
+    {
+     "class": "no_action",
+     "n14": 35072,
+     "pct14": 3.28,
+     "n30": 34047,
+     "pct30": 5.06
+    }
+   ],
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Re-reported within 14 and 30 days of closure, all types pooled, by closing class (no standardisation; confounded by type mix).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Pooled over every type, no weighting.",
+   "note": "Do not compare these classes directly; use the standardised figures."
+  },
+  {
+   "id": "r2_rereport14_first_report",
+   "value": {
+    "handoff_pct": 4.04,
+    "done_same_types_pct": 1.85,
+    "diff_pts": 2.19,
+    "diff_ci95_pts": [
+     1.84,
+     2.54
+    ],
+    "mh_risk_ratio": 1.99,
+    "mh_rr_ci95": [
+     1.77,
+     2.25
+    ],
+    "types": 58,
+    "handoff_closures": 22803,
+    "done_closures": 42799,
+    "types_first_class_higher": 44
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, only closures at addresses with no request of the same type in the 365 days before filing (chronic-site control).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. Chronic addresses removed.",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_resident",
+   "value": {
+    "handoff_pct": 5.48,
+    "done_same_types_pct": 3.45,
+    "diff_pts": 2.02,
+    "diff_ci95_pts": [
+     1.37,
+     2.68
+    ],
+    "mh_risk_ratio": 1.48,
+    "mh_rr_ci95": [
+     1.37,
+     1.6
+    ],
+    "types": 61,
+    "handoff_closures": 34848,
+    "done_closures": 54359,
+    "types_first_class_higher": 47
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, counting only later requests from resident channels (web, phone, e-mail, chat, Twitter, letter).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_guard24h",
+   "value": {
+    "handoff_pct": 6.21,
+    "done_same_types_pct": 3.8,
+    "diff_pts": 2.42,
+    "diff_ci95_pts": [
+     1.75,
+     3.08
+    ],
+    "mh_risk_ratio": 1.49,
+    "mh_rr_ci95": [
+     1.38,
+     1.61
+    ],
+    "types": 61,
+    "handoff_closures": 34848,
+    "done_closures": 54359,
+    "types_first_class_higher": 49
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, ignoring later requests filed within 24 hours of the original filing (parallel reports of the same event).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport30_after_promise",
+   "value": {
+    "handoff_pct": 8.32,
+    "done_same_types_pct": 6.47,
+    "diff_pts": 1.85,
+    "diff_ci95_pts": [
+     0.85,
+     2.84
+    ],
+    "mh_risk_ratio": 1.22,
+    "mh_rr_ci95": [
+     1.15,
+     1.3
+    ],
+    "types": 61,
+    "handoff_closures": 34033,
+    "done_closures": 52805,
+    "types_first_class_higher": 44
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Re-reported within 30 days after the later of closure and the city's promise date (PRJCOMPLETEDATE): \"still reported after the city's own deadline\".",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport_filing_window",
+   "value": {
+    "all_types": {
+     "handoff_pct": 6.1,
+     "done_same_types_pct": 6.04,
+     "diff_pts": 0.06,
+     "diff_ci95_pts": [
+      -0.53,
+      0.65
+     ],
+     "mh_risk_ratio": 0.94,
+     "mh_rr_ci95": [
+      0.87,
+      1.01
+     ],
+     "types": 54,
+     "handoff_closures": 24394,
+     "done_closures": 38526,
+     "types_first_class_higher": 44
+    },
+    "excluding_recurring_and_chronic": {
+     "handoff_pct": 7.18,
+     "done_same_types_pct": 4.01,
+     "diff_pts": 3.17,
+     "diff_ci95_pts": [
+      1.02,
+      5.31
+     ],
+     "mh_risk_ratio": 1.44,
+     "mh_rr_ci95": [
+      1.1,
+      1.87
+     ],
+     "types": 11,
+     "handoff_closures": 3483,
+     "done_closures": 13276,
+     "types_first_class_higher": 8
+    }
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Same calendar window for every class: closures made within 14 days of filing, re-reported 15 to 44 days after the ORIGINAL filing.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. Hand-offs close earlier than done closures, so a window anchored at closure covers more of the wait; this anchors at filing instead.",
+   "note": "Cuts against the headline: pooled over all types the gap vanishes (refuse, the largest hand-off type, reverses); for non-recurring services it remains."
+  },
+  {
+   "id": "r2_rereport_filing_window_selected_types",
+   "value": {
+    "Refuse not collected": {
+     "handoff_pct": 9.2,
+     "done_pct": 13.4,
+     "handoff_n": 6189,
+     "done_n": 5973
+    },
+    "Vehicle Towing": {
+     "handoff_pct": 10.8,
+     "done_pct": 5.5,
+     "handoff_n": 1581,
+     "done_n": 110
+    },
+    "Cave-Ins": {
+     "handoff_pct": 3.9,
+     "done_pct": 1.9,
+     "handoff_n": 792,
+     "done_n": 214
+    },
+    "Signal Bulb Out": {
+     "handoff_pct": 12.2,
+     "done_pct": 1.9,
+     "handoff_n": 139,
+     "done_n": 215
+    }
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport_filing_window, per type (hand-off vs done, same type): closed within 14 days of filing, re-reported 15-44 days after filing.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Per type, no weighting (build/R2/rereport_filing_window_by_type.csv).",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_nonrecurring",
+   "value": {
+    "handoff_pct": 5.26,
+    "done_same_types_pct": 2.09,
+    "diff_pts": 3.18,
+    "diff_ci95_pts": [
+     2.38,
+     3.98
+    ],
+    "mh_risk_ratio": 2.16,
+    "mh_rr_ci95": [
+     1.74,
+     2.68
+    ],
+    "types": 12,
+    "handoff_closures": 7106,
+    "done_closures": 20224,
+    "types_first_class_higher": 9
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, excluding recurring services (Refuse Division codes, street cleaning, weeds) and chronic sites (dumping, debris).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_durable",
+   "value": {
+    "handoff_pct": 3.28,
+    "done_same_types_pct": 2.09,
+    "diff_pts": 1.19,
+    "diff_ci95_pts": [
+     0.37,
+     2.01
+    ],
+    "mh_risk_ratio": 1.84,
+    "mh_rr_ci95": [
+     1.47,
+     2.3
+    ],
+    "types": 10,
+    "handoff_closures": 3352,
+    "done_closures": 19441,
+    "types_first_class_higher": 8
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, durable-fix types only (potholes, cave-ins, lights, city trees, signs; COMMON correction 4).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_spatial50m",
+   "value": {
+    "handoff_pct": 12.53,
+    "done_same_types_pct": 7.28,
+    "mh_rr": 1.78,
+    "types": 60,
+    "handoff_closures": 34721
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, counting a later request of the same PROBLEMCODE within 50 m of the closed request's point instead of the same address.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/07_rereport_spatial.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the point within 50 m and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": "Catches reports a neighbour files for the same spot (and some independent neighbouring problems); both rates roughly double, the ratio holds."
+  },
+  {
+   "id": "r2_rereport7_recurring",
+   "value": {
+    "handoff_pct": 6.06,
+    "done_same_types_pct": 3.4,
+    "diff_pts": 2.65,
+    "diff_ci95_pts": [
+     2.16,
+     3.15
+    ],
+    "mh_risk_ratio": 1.57,
+    "mh_rr_ci95": [
+     1.4,
+     1.75
+    ],
+    "types": 18,
+    "handoff_closures": 14100,
+    "done_closures": 21853,
+    "types_first_class_higher": 13
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Recurring services only (Refuse Division codes, street cleaning, weeds), within 7 days of closure (inside one collection cycle).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_noaction_vs_done",
+   "value": {
+    "handoff_pct": 3.24,
+    "done_same_types_pct": 2.07,
+    "diff_pts": 1.17,
+    "diff_ci95_pts": [
+     0.72,
+     1.62
+    ],
+    "mh_risk_ratio": 1.34,
+    "mh_rr_ci95": [
+     1.2,
+     1.51
+    ],
+    "types": 62,
+    "handoff_closures": 24364,
+    "done_closures": 54852,
+    "types_first_class_higher": 39
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Re-reported within 14 days: after a \"no action\" closure (gone on arrival, no violation, not city's, declined) vs a \"done\" closure of the same types.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the no-action count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. ",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_by_kind",
+   "value": {
+    "crew_work": {
+     "handoff_pct": 6.37,
+     "done_same_types_pct": 4.04,
+     "diff_pts": 2.33,
+     "diff_ci95_pts": [
+      1.75,
+      2.9
+     ],
+     "mh_risk_ratio": 1.46,
+     "mh_rr_ci95": [
+      1.35,
+      1.58
+     ],
+     "types": 45,
+     "handoff_closures": 28025,
+     "done_closures": 47089,
+     "types_first_class_higher": 32
+    },
+    "owner_enforcement": {
+     "handoff_pct": 7.0,
+     "done_same_types_pct": 3.9,
+     "diff_pts": 3.11,
+     "diff_ci95_pts": [
+      0.11,
+      6.1
+     ],
+     "mh_risk_ratio": 2.76,
+     "mh_rr_ci95": [
+      1.85,
+      4.11
+     ],
+     "types": 11,
+     "handoff_closures": 4513,
+     "done_closures": 3399,
+     "types_first_class_higher": 10
+    },
+    "referral_elsewhere": {
+     "handoff_pct": 10.92,
+     "done_same_types_pct": 5.24,
+     "diff_pts": 5.69,
+     "diff_ci95_pts": [
+      4.04,
+      7.34
+     ],
+     "mh_risk_ratio": 2.26,
+     "mh_rr_ci95": [
+      1.87,
+      2.74
+     ],
+     "types": 18,
+     "handoff_closures": 1932,
+     "done_closures": 13262,
+     "types_first_class_higher": 14
+    }
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, by kind of hand-off (R1's phrase-level composition: crew work, owner enforcement, referral elsewhere).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. Kinds from build/R1/handoff_composition.csv (61,845 of 61,845 hand-offs matched).",
+   "note": ""
+  },
+  {
+   "id": "r2_rereport14_by_ward_group",
+   "value": {
+    "1-5": {
+     "std_rate_a_pct": 7.61,
+     "std_rate_b_pct": 4.57,
+     "mh_rr": 1.53,
+     "types": 34,
+     "n_a": 12382
+    },
+    "6-9": {
+     "std_rate_a_pct": 8.2,
+     "std_rate_b_pct": 3.42,
+     "mh_rr": 2.53,
+     "types": 32,
+     "n_a": 6814
+    },
+    "10-14": {
+     "std_rate_a_pct": 4.97,
+     "std_rate_b_pct": 3.16,
+     "mh_rr": 1.28,
+     "types": 38,
+     "n_a": 8649
+    }
+   },
+   "unit": "percent of closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "As r2_rereport14_handoff_vs_done, within each ward group (std_rate_a = hand-off, std_rate_b = done, same types and ward group).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. Ward from N1 (file ward, polygon fill).",
+   "note": ""
+  },
+  {
+   "id": "r2_median_days_to_close_by_class",
+   "value": {
+    "info_other": 2.04,
+    "blank": 0.0,
+    "no_action": 6.09,
+    "handoff": 1.81,
+    "done": 5.11
+   },
+   "unit": "days",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Median days from filing to closure, by closing class, all closures filed 1 Jan 2025 to 13 Oct 2026.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (one row per REQUESTID), DATETIMECLOSED minus DATETIMEINIT, by N2 closing class.",
+   "note": "Why a window anchored at closure favours finding re-reports after hand-offs."
+  },
+  {
+   "id": "r2_rereport14_type_verdicts",
+   "value": {
+    "hand-off higher": 18,
+    "too few to compare": 36,
+    "no clear difference": 40,
+    "hand-off lower": 3
+   },
+   "unit": "request types",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Per type, hand-off vs done 14-day re-report rate: higher / lower if the 95% interval of the difference excludes 0; too few if either class has < 30 complete-window closures.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Normal-approximation interval per type (build/R2/rereport_type_compare.csv).",
+   "note": ""
+  },
+  {
+   "id": "r2_later_reports_after_handoff",
+   "value": {
+    "later_reports_within14": 3737,
+    "later_reports_within30": 5570,
+    "resident_later_reports_within14": 2942,
+    "resident_later_reports_within30": 4441
+   },
+   "unit": "requests",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Later requests (same address and type) filed within 14 / 30 days after a hand-off closure; each later request counted once, attributed to the most recent earlier closure.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Counts of distinct later requests, closures filed 1 Jan 2025 to 13 Oct 2026 (windows of the latest closures still open, so slightly low).",
+   "note": ""
+  },
+  {
+   "id": "r2_excess_reports_after_handoff",
+   "value": {
+    "within14": 906,
+    "within30": 883,
+    "per_year_within14": 510.0,
+    "resident_within14": 704,
+    "resident_per_year_within14": 390.0
+   },
+   "unit": "requests",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Later reports after hand-off closures beyond what the \"done\" rate of the same types predicts (hand-off closures x standardised difference), compared types only.",
+   "label": "derived",
+   "source_sql_or_script": "scripts/night/R2/01_rereport.py; scripts/night/R2/02_summary.py",
+   "derivation": "311 requests (city open data, csb.zip, cleaned copies, one row per REQUESTID) in N1's database, closing class from N2's final table; each closure checked for a later request at the same normalised address and problem code. Compared within each request type, then averaged with the same weights for both classes (the hand-off count per type: direct standardisation), over types with >= 300 closures and >= 30 complete-window closures in each class; Mantel-Haenszel risk ratio beside it. 34848 complete-window hand-off closures x 2.6 points; per year = x 12/21.4 months.",
+   "note": "Count of extra reports, not of undone jobs."
+  },
+  {
+   "id": "r2_proxy_check_r1_fates",
+   "value": [
+    {
+     "rec": "boardup",
+     "outcome": "done_by_promise",
+     "n": "493",
+     "pct_rr14": "10.1",
+     "pct_rr30": "15.4",
+     "pct_rr30_after_promise": "12.6"
+    },
+    {
+     "rec": "boardup",
+     "outcome": "done_late",
+     "n": "1776",
+     "pct_rr14": "6.0",
+     "pct_rr30": "11.8",
+     "pct_rr30_after_promise": "11.7"
+    },
+    {
+     "rec": "boardup",
+     "outcome": "no_record",
+     "n": "648",
+     "pct_rr14": "2.0",
+     "pct_rr30": "5.9",
+     "pct_rr30_after_promise": "7.6"
+    },
+    {
+     "rec": "weeds",
+     "outcome": "done_by_promise",
+     "n": "832",
+     "pct_rr14": "6.4",
+     "pct_rr30": "11.5",
+     "pct_rr30_after_promise": "6.1"
+    },
+    {
+     "rec": "weeds",
+     "outcome": "done_late",
+     "n": "2267",
+     "pct_rr14": "6.2",
+     "pct_rr30": "11.5",
+     "pct_rr30_after_promise": "7.5"
+    },
+    {
+     "rec": "weeds",
+     "outcome": "no_record",
+     "n": "1668",
+     "pct_rr14": "6.7",
+     "pct_rr30": "12.5",
+     "pct_rr30_after_promise": "9.4"
+    }
+   ],
+   "unit": "percent of hand-off closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Re-report rate (14 / 30 days after closure; 30 days after the promise date) by the fate R1 measured in the city's completion record (done by promise / done late / no record).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/03_proxy_check.py",
+   "derivation": "311 hand-off closures joined to R1's per-request fates (Forestry ledger for weeds; Building Division board-up layer for board-ups), then checked for later requests at the same address and type.",
+   "note": "Cuts against using re-reports as a completion measure: board-ups with no record are re-reported LESS (5.9% vs 15.4% within 30 days); weeds are flat (11.5%, 11.5%, 12.5%)."
+  },
+  {
+   "id": "r2_proxy_check_weeds_ledger",
+   "value": {
+    "cut billed after promise": {
+     "n": 283,
+     "pct_rr30": 13.4
+    },
+    "cut billed by promise": {
+     "n": 130,
+     "pct_rr30": 10.8
+    },
+    "no cut billed by 13 Oct": {
+     "n": 228,
+     "pct_rr30": 11.0
+    }
+   },
+   "unit": "percent of hand-off closures",
+   "period": "requests filed 1 Jan 2025 to 13 Oct 2026, closed; windows complete before the file as-of time (13 Oct 2026 00:33)",
+   "definition": "Weeds-Vacant Lot hand-off closures filed in 2026 (promise passed >= 30 days before 13 Oct), re-reported within 30 days of closure, by the first cut billed on the parcel in the Forestry ledger.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/03_proxy_check.py",
+   "derivation": "311 requests joined to the Forestry billing ledger by parcel (N1 request_ledger), then checked for later requests at the same address and type.",
+   "note": "Flat: re-reports do not track whether the cut happened."
+  },
+  {
+   "id": "r2_traced_crew_work_12m",
+   "value": 4808,
+   "unit": "requests a year",
+   "period": "12 months to 13 Oct 2026",
+   "definition": "Crew-work hand-off closures with a public completion record that R1 joins (weeds via the Forestry ledger, board-ups via the Building Division layer), filed in the 12 months to 13 Oct 2026.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/04_extrapolate.py",
+   "derivation": "311 hand-off closures joined to R1's composition (traceability = traceable).",
+   "note": ""
+  },
+  {
+   "id": "r2_untraced_crew_work_12m",
+   "value": 13489,
+   "unit": "requests a year",
+   "period": "12 months to 13 Oct 2026",
+   "definition": "Crew-work hand-off closures with no public completion record (R1: traceability none or partial), filed in the 12 months to 13 Oct 2026.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/04_extrapolate.py",
+   "derivation": "311 hand-off closures joined to R1's phrase-level composition (kind and traceability); tree planting excluded once traced by R2.",
+   "note": ""
+  },
+  {
+   "id": "r2_est_never_done_per_year",
+   "value": [
+    1700.0,
+    3530.0
+   ],
+   "unit": "jobs a year (low, high)",
+   "period": "12 months to 13 Oct 2026",
+   "definition": "ESTIMATE of crew-work hand-off jobs a year that may never be done: untraced crew-work volume by category x the range of \"no record\" shares R1 measured on traceable crew work, with routine route services bounded by their own excess re-report rate, snow excluded and unfunded jobs counted separately.",
+   "label": "estimate",
+   "source_sql_or_script": "scripts/night/R2/04_extrapolate.py",
+   "derivation": "R1's measured \"no record by 13 Oct\" shares (board-ups 18.4% to missed-cut complaints 37.0%; vacant-lot weeds 34.9%; vacant-building weeds 2025 30.8%) applied to the untraced volume by category (build/R2/extrapolation.csv).",
+   "note": "Weakest assumption: that vacant-property crews (mowing, board-ups) fail at the same rate as street, water, towing and traffic crews. Nothing observed supports or refutes it."
+  },
+  {
+   "id": "r2_est_never_done_2025_volume",
+   "value": {
+    "untraced_crew_work_requests_2025": 20984,
+    "estimate_never_done_jobs": [
+     2160.0,
+     4580.0
+    ]
+   },
+   "unit": "jobs (low, high)",
+   "period": "calendar 2025",
+   "definition": "As r2_est_never_done_per_year, applied to calendar-2025 volume instead of the last 12 months (2025 had the May tornado and the refuse staff shortage).",
+   "label": "estimate",
+   "source_sql_or_script": "scripts/night/R2/04_extrapolate.py",
+   "derivation": "Same rates and tiers; volume = crew-work hand-off closures filed in calendar 2025 with no public completion record.",
+   "note": ""
+  },
+  {
+   "id": "r2_est_never_done_mechanical",
+   "value": [
+    2410.0,
+    4850.0
+   ],
+   "unit": "jobs a year (low, high)",
+   "period": "12 months to 13 Oct 2026",
+   "definition": "As r2_est_never_done_per_year but applying the measured range to every untraced crew-work category without plausibility adjustment (snow and unfunded excluded).",
+   "label": "estimate",
+   "source_sql_or_script": "scripts/night/R2/04_extrapolate.py",
+   "derivation": "Same inputs, no category adjustment.",
+   "note": ""
+  },
+  {
+   "id": "r2_est_done_late_per_year",
+   "value": [
+    4120.0,
+    5980.0
+   ],
+   "unit": "jobs a year (low, high)",
+   "period": "12 months to 13 Oct 2026",
+   "definition": "ESTIMATE of untraced crew-work jobs a year done only after the promise date: full-range categories x R1's measured \"done late\" shares (44.5% to 64.6%).",
+   "label": "estimate",
+   "source_sql_or_script": "scripts/night/R2/04_extrapolate.py",
+   "derivation": "R1's measured late shares applied to the full-range categories only.",
+   "note": ""
+  },
+  {
+   "id": "r2_unfunded_per_year",
+   "value": 209,
+   "unit": "requests a year",
+   "period": "12 months to 13 Oct 2026",
+   "definition": "Crew-work hand-off closures whose words say the work is not funded (\"not funded by traffic division\", \"aldermanic funding support/approval needed\").",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/04_extrapolate.py",
+   "derivation": "311 closing texts, 12 months to 13 Oct 2026.",
+   "note": ""
+  },
+  {
+   "id": "r2_tree_planting_fate",
+   "value": {
+    "requests": 806,
+    "planted_address_or_25m_pct": 65.3,
+    "planted_same_address_pct": 55.1,
+    "planted_by_promise": 2,
+    "median_days_to_planting": 147.0,
+    "no_record_pct": 34.7,
+    "baseline_pct_address_or_25m": 4.8,
+    "baseline_pct_same_address": 2.0,
+    "done_closures_matched_pct": 70.0,
+    "done_closures_n": 20,
+    "fate_r1_style": {
+     "n": 806,
+     "done_by_promise": 2,
+     "done_late": 524,
+     "no_record": 280,
+     "median_days_late": 133.0,
+     "q1_days_late": 79.75,
+     "q3_days_late": 175.0,
+     "latest_promise": "2026-03-14",
+     "share_done_by_promise": 0.0025,
+     "share_done_late": 0.6501,
+     "share_no_record": 0.3474
+    },
+    "in_forestry_planting_queue": [
+     {
+      "fate": "no planting record",
+      "n": 280,
+      "in_planting_queue": 43
+     },
+     {
+      "fate": "planting matched",
+      "n": 526,
+      "in_planting_queue": 1
+     }
+    ],
+    "cancelled_pct_address_or_25m": 45.8,
+    "no_site_pct_address_or_25m": 8.6,
+    "tree_planting_handoffs_12m": 565
+   },
+   "unit": "requests / percent",
+   "period": "filed 1 Jun 2025 to 28 Feb 2026; plantings to 25 Sep 2026",
+   "definition": "Tree Planting requests closed \"approved for next available planting\", filed 1 Jun 2025 to 28 Feb 2026: a street-tree planting dated after filing at the same normalised address or within 25 m.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/06_tree_planting.py",
+   "derivation": "311 requests joined to the city's planting records on maps8 (PDA \"Planted last 365 days\", 27 Oct 2025 to 1 Sep 2026, and the CW_PRINT tree inventory's DATE_PLANTED) by N1's address normaliser and a 25 m radius; baseline = the same match for refuse, pothole and light requests filed in the same months.",
+   "note": "Planted by the 14-day promise: almost none (planting is seasonal). The record's recall is below 100%: only 70% of the 20 requests closed \"complete\" match, so \"no record\" overstates not-planted."
+  },
+  {
+   "id": "r2_tornado_debris_trace",
+   "value": {
+    "segments": 76,
+    "requests_16may_15jun_2025": 722,
+    "requests_near_cleared_segment": 35,
+    "fate_of_matched": {
+     "cleared_by_promise": 1,
+     "cleared_after_promise": 1,
+     "cleared_before_filing": 33
+    }
+   },
+   "unit": "requests",
+   "period": "16 May to 15 Jun 2025",
+   "definition": "Debris requests filed 16 May to 15 Jun 2025 within 30 m of a street segment the city's contractor recorded as cleared (23-28 May 2025).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/night/R2/08_tornado_debris.py",
+   "derivation": "311 debris requests (one row per REQUESTID, with coordinates) against the city's Debris_Clearing layer on ArcGIS Online (76 segments), point-to-line distance.",
+   "note": "Negative: the record covers arterial segments only; 35 of 722 requests lie near one and 33 of those were filed after the segment was cleared, so it cannot trace the hand-offs."
+  }
+ ]
+}

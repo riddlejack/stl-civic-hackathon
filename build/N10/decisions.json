@@ -1,0 +1,130 @@
+[
+ {
+  "id": "n10-risks-house-number",
+  "decision": "deliverable/risks.md item 11: replaced the parenthesis that quoted the two leaked two-number labels with '(two two-number labels kept a house number; fixed 01:06)', and changed 'Until N6 fixes it' (stale) to a pointer to N8 finding 14 and the strengthened scan.",
+  "why": "N8 re-check R1: the parenthesis put two real house numbers into a deliverable; the leak itself was fixed at 01:06, so the 'until N6 fixes it' clause was stale.",
+  "alternative_rejected": "Keep the quoted labels as evidence (repeats the leak); delete the item (loses the record that it happened).",
+  "where": "deliverable/risks.md weak point 11",
+  "logged": "2026-10-14 01:38 CDT"
+ },
+ {
+  "id": "n10-pothole-31-8",
+  "decision": "Pre-tornado median for finished residential potholes, wards 10-14, shown as 31.8 days (value 31.845), not 31.9, in video-script, README, risks, choices and negative-results (the last two via N9's seed_decisions, seed_derivations and merge_overrides) and research/chapters/N7-decisions.json. Only the 9 occurrences of '22.3 vs/against 31.9' were changed; no other 31.9 in those files.",
+  "why": "N8 re-check correction (ii): 31.845 rounds to 31.8; N3's fairness card already shows 31.8. Other 31.9 values in the repo (a weekly brief median, by_ward medians) are different figures.",
+  "alternative_rejected": "Global replace of 31.9 (would hit unrelated figures).",
+  "where": "deliverable/*.md; site decisions and negative results after rebuild",
+  "logged": "2026-10-14 01:39 CDT"
+ },
+ {
+  "id": "n10-exposed-data-hints",
+  "decision": "Removed the two remaining phrases that hinted at what the exposed city data contains: decision privacy-layers-not-downloaded no longer lists the kinds of personal content, and privacy-exposed-tables-unused's rejected alternative now reads 'link service failures to residents'.",
+  "why": "N8 re-check R4 and the disclosure rule (seed decision ethics-private-disclosure): no public text may describe what is exposed until Jack's note is sent and the city has acted.",
+  "alternative_rejected": "Keep the parentheticals (they point readers at the data's nature); delete the decisions (loses the record of the choice).",
+  "where": "scripts/night/N9/seed_decisions.py; build/out/decisions.json; site/data/decisions.json; deliverable/choices.md",
+  "logged": "2026-10-14 01:39 CDT"
+ },
+ {
+  "id": "n10-script-stale-notes",
+  "decision": "video-script.md: image note now says the site shows the NAIP 2024 frame only; the 'cut incomplete' context now quotes N5 with N8 agreeing within 2 (227 calls; 63 after a billed cut within 30 days; 40 with no cut billed all year, N8's join 42); the two '[until N6 fixes / check N6]' brackets are gone; shot 3 narration says 'This year, Forestry's ledger bills cuts ...' and 'no bill shows it'; the before-recording note records N8's re-check. risks.md weak point 1 updated the same way.",
+  "why": "N8 re-check R5 and correction (i): N8's earlier 61 counted lots with no cut before the call; both fixes the brackets waited for were confirmed on the rendered site; 'no record shows it' was contestable because the September call is itself a record, and the lot had cuts billed every year 2019-2024, so the ledger line needs 'this year'.",
+  "alternative_rejected": "Leave the stale notes (would send Jack to check fixed items and quote a wrong 61).",
+  "where": "deliverable/video-script.md shots 1, 3, 5, 6 and before-recording item 1; deliverable/risks.md weak point 1",
+  "logged": "2026-10-14 01:40 CDT"
+ },
+ {
+  "id": "n10-script-timing",
+  "decision": "Storyboard A: cut 'Greater Ville' from shot 1's narration (the receipt header shows it) and moved two shot boundaries by one second (shot 4 0:29-0:42, shot 5 0:42-1:08, shot 6 1:08-1:33, shot 7 1:33-1:51) so every shot's narration fits its slot at 150 words a minute counting spoken expansions ('seventeen hundred', 'three-one-one', 'S-Q-L'). Narration is 263 words by whitespace (limit 265), about 270 spoken, about 1:48, ending by 1:51.",
+  "why": "N8 re-check R8: shot 1 was 26 words (about 29 spoken, 11.6 s) in an 11 s slot; adding 'This year' to shot 3 made shot 3 37 words. Per-shot spoken estimates: 27, 7, 37, 31, 64, 60, 44 words against 11, 3, 15, 13, 26, 25, 18 s.",
+  "alternative_rejected": "Retime shot 1 to 0:00-0:12 and shot 2 to 0:12-0:15 (would push shot 3, now 37 words, into a 14 s slot); keep Greater Ville and drop words elsewhere.",
+  "where": "deliverable/video-script.md storyboard A",
+  "logged": "2026-10-14 01:40 CDT"
+ },
+ {
+  "id": "n10-towing-share-cited",
+  "decision": "risks.md weak point 4 and video-script shot 5's towing note now cite the newly registered n3_towing_tagged_by_promise_after for 32% vs 4%.",
+  "why": "The figure is registered (item 6), so the settled share can carry its id instead of an untagged number; it is still not spoken.",
+  "alternative_rejected": "Leave the share untagged.",
+  "where": "deliverable/risks.md; deliverable/video-script.md",
+  "logged": "2026-10-14 01:40 CDT"
+ },
+ {
+  "id": "n10-court-codes-sensitive",
+  "decision": "Added PROBLEMCODE ILIKE '%COURT%' to N1's sensitive-code filter (scripts/night/N1/measures.sql), so 'Misc-City Courts' requests leave the public Monday list and the brief like every other court, police and human-services code.",
+  "why": "N8 re-check R7: two 'Misc-City Courts' rows were on the public Monday list although the list says court codes are excluded; the code's usual group is 'Miscellaneous', so the group test missed it. Only one problem code in 2008-2026 matches '%COURT%' (4 requests).",
+  "alternative_rejected": "Exclude the one code by name (a renamed or new court code would slip through).",
+  "where": "scripts/night/N1/measures.sql sensitive_codes; build/out/monday_list.*; site/data/downloads/monday_list.csv",
+  "logged": "2026-10-14 01:40 CDT"
+ },
+ {
+  "id": "n10-slmpd-admission-restored",
+  "decision": "Restored the slmpd.org admission as negative result neg-slmpd-robots (scripts/night/N9/seed_negatives.py, group 'Things we dropped, and why'): 'An early research thread downloaded some files from slmpd.org although its robots file bars automated agents; none of them are used anywhere in this entry.' The methods page's robots line (site/js/methods.js) now says the weekly job fetches only where the city's robots files allow and repeats the admission. The bridge no longer holds slmpd download text back as a 'privacy rule' item, and it now warns if the robots line and the negative result disagree.",
+  "why": "N8 finding 13 and re-check R9: the admission had been deleted instead of reworded, and the methods page still claimed 'no scraping of pages the city has asked robots to avoid'. Checked 14 Oct 01:45: no script under scripts/night/ reads data/raw/slmpd/. It is not personal data, so the privacy hold misdescribed it.",
+  "alternative_rejected": "Keep the admission out of public text (the robots claim would stay untrue); delete data/raw/slmpd/ (Jack's call, not done).",
+  "where": "deliverable/negative-results.md; site/data/negative.json; site/js/methods.js; scripts/night/N6/bridge.py",
+  "logged": "2026-10-14 01:41 CDT"
+ },
+ {
+  "id": "n10-hero-ids-private",
+  "decision": "Moved the hero lots' parcel ids, ledger handles and exact addresses out of scripts/night/N5/04_heroes.py and 03_lot_validate.py, and the twelve validated parcel ids out of scripts/night/N5/run_all.sh, into build/N5/private/hero_ids.json (git-ignored by build/*/private/); both scripts load it. Verified: re-running 03 and 04 gives byte-identical lot_validation.json, logs and N5 figures.json, and heroes_private.json identical except its 'generated' time; re-running 06_publish on the 01:08 private file (same step-4 content plus images) gives a byte-identical build/N5/heroes.json.",
+  "why": "N8 re-check R3: the code itself carried exact locations, so publishing the scripts would publish them. Step 5 (imagery) was not re-run because it refetches from MSDIS over the network; its only change to the private file is the image lists, which were restored from the 01:08 copy.",
+  "alternative_rejected": "Keep ids in code with a warning; hash them (still a stable key to the parcel).",
+  "where": "scripts/night/N5/03_lot_validate.py, 04_heroes.py, run_all.sh; build/N5/private/hero_ids.json",
+  "logged": "2026-10-14 01:43 CDT"
+ },
+ {
+  "id": "n10-example-addresses",
+  "decision": "Replaced the real two-number address in the comment at scripts/night/N6/bridge.py block_label() with '1234 & 1236 EXAMPLE AV'. In scripts/night/N9/merge_overrides.py SANITIZE, replaced the rule that spelled out a real house-number address (and two rules on its bare house number) with general patterns: any 'NNNN ST LOUIS AV ST LOUIS MO 631NN' example becomes '<house number> ST LOUIS AV ST LOUIS MO <ZIP>', keeping the example's point (the street name contains the city's name).",
+  "why": "N8 re-check R3: both lines carried a real address in code. A '1234 EXAMPLE AV' replacement would have lost the St Louis Av point of N1's decision; the placeholder keeps it with no number for the privacy scan to trip on.",
+  "alternative_rejected": "Leave the real address in the sanitizer (it is the thing being hidden).",
+  "where": "scripts/night/N6/bridge.py; scripts/night/N9/merge_overrides.py; build/out/decisions.json and site/data/decisions.json after rebuild",
+  "logged": "2026-10-14 01:43 CDT"
+ },
+ {
+  "id": "n10-retired-figures",
+  "decision": "Retired three figures from public use and gave the registry a 'retired' flag: n3_towing_closed_by_promise_after (N3 registry, 38% vs 11%, any closing words), n6_brief_lra_no_cut_requests and n6_brief_tree_cancelled_open_order (N6 bridge, now always registered with retired true for the record). Registered n3_towing_tagged_by_promise_after = {wards_1_5 0.318, wards_10_14 0.037, n [1300, 271]} in scripts/night/N3/09_registry.py, re-derived from build/csb-clean. N1's merge (export.py), N6's bridge (site figures and the brief's fold-in) and N9's derivations now drop any figure with retired true; N1 writes build/out/retired_figures.json and the bridge adds its own retired figures there. N9's public 'retired' list gained three prose lines (no ids).",
+  "why": "N8 conflicts 1-3 and re-check R6: each retired figure was one 'How we know' click away from the public page. Re-derivation: one row per REQUESTID (best-channel row, as N3 00_load.py), resident if any row is a resident channel, filed on or after 2025-05-16, STATUS CLOSED, PUBLICRESOLUTION 'vehicle tagged for tow', DATETIMECLOSED <= PRJCOMPLETEDATE: 414 of 1,300 and 10 of 271 (by calendar date 32.3% vs 4.8%), matching N8.",
+  "alternative_rejected": "Delete the retired figures (loses the record); relabel N3's as 'closed with any words' and keep it public (invites the 'closed is not done' error the entry exposes).",
+  "where": "build/N3/figures.json; build/N6/figures.json; build/out/figures.json; build/out/retired_figures.json; build/out/derivations.json; site/data/figures.json; site/data/decisions.json (retired list)",
+  "logged": "2026-10-14 01:45 CDT"
+ },
+ {
+  "id": "n10-n9-skips-n10-log",
+  "decision": "N9's build skips build/N10/decisions.json when it merges agent decisions, as it already skips N9's own output.",
+  "why": "N10's file is a change log of verification fixes (roundings, stale notes, hygiene), not choices behind the entry; merging it would add about a dozen low-value entries to the public choices page and choices.md. The substantive N10 choices land through the seeds and overrides N9 already reads (negative result neg-slmpd-robots, the retired-figure list).",
+  "alternative_rejected": "Let N9 merge it as N10-* entries.",
+  "where": "scripts/night/N9/build.py load_agent_decisions",
+  "logged": "2026-10-14 01:45 CDT"
+ },
+ {
+  "id": "n10-block-label-range-suffix",
+  "decision": "N1's block labeller (scripts/night/N1/normalise.py block()) now drops a bare number that follows the house number, the short form of an address range: '1234-36 EXAMPLE AV' was labelled '1200 block of 36 EXAMPLE AV', which gives the exact house number back. Three tests added (28 pass).",
+  "why": "Found by the strengthened privacy scan (item 9), not by N8: 1,449 requests in build/stl.duckdb carried such labels, 13 of them on the public Monday list (site/data/downloads/monday_list.csv). A street name never starts with a bare number (ordinals such as 16TH carry letters).",
+  "alternative_rejected": "Leave it (exact house numbers on a public download); drop such rows from public lists (loses real open requests).",
+  "where": "build/stl.duckdb requests.block_label; build/out/monday_list.*; receipts; dumping blocks; brief lists",
+  "logged": "2026-10-14 01:49 CDT"
+ },
+ {
+  "id": "n10-privacy-scan-strict",
+  "decision": "Rewrote scripts/night/N6/privacy_scan.py. It now scans site/, deliverable/ and build/out/ by default (--paths for other scopes), and catches house numbers of any length (1-5 digits) in any case, addresses with no street type after a direction, two-number labels ('N & M'), ranges, and 'N block of' with N not a multiple of 100. A hundred number counts as a house number unless the text says 'block of'. The only exemption is house number 1234 with EXAMPLE in the same address. Each hit is checked against the city's own address lists (MSD service addresses plus 311 addresses, 256,601 pairs): real hits always fail the gate. Precision rules decide what counts as an address or a coordinate, never which addresses may pass: a street needs a word before its type; a route number (Interstate, I-, Hwy, Route, US, MO) is not a house number; a coordinate is a lat/lon or Web Mercator pair (a lone 38.6 days is not); a decimal fraction or an app id is not a parcel id. Address-shaped hits that match no city address and whose 'street' contains a function word or month go to a 'review' list that is printed but does not fail the gate.",
+  "why": "N8 re-check: the gate skipped house numbers under 10 and all lower-case addresses, scanned site/ only, had a '1234' allowlist and never matched the 'N & M' pattern that leaked. Run on the 01:26 snapshot, the new scan finds the two risks.md labels (both real addresses) and 13 'N00 block of NN STREET' rows (a range's second number kept) in each Monday list file, a leak N8 did not report. After the rebuild: 0 findings, 47 review hits, all prose ('Q2 2026 residential and alley', 'wards 6-14 for Street Department', '(31 Oct row)').",
+  "alternative_rejected": "Fail the gate on every address-shaped hit including prose (a gate that is always red gets ignored); keep the old allowlist of years and lower case (missed real addresses numbered 1900-2099 and lower-case text).",
+  "where": "scripts/night/N6/privacy_scan.py; build/N6/privacy-scan.json",
+  "logged": "2026-10-14 01:54 CDT"
+ },
+ {
+  "id": "n10-script-addresses",
+  "decision": "Replaced real house-number addresses in code comments and test fixtures: two in scripts/night/N1/build_db.py comments and one in privacy_check.py became EXAMPLE forms; three normalise.py fixtures whose invented numbers turned out to be real city addresses now use EXAMPLE or a street that does not exist (99TH). The new scanner's own docstring uses only '1234 ... Example' forms. normalise.py tests still pass (28).",
+  "why": "Repository sweep (item 3): after these edits scripts/ holds no real city address and no request, work-order or parcel id (scan over 95 files); no hero id or address appears outside build/*/private/ in scripts/, site/, deliverable/, build/out/, research/chapters/, prompts/ or context/. An earlier draft of the scanner docstring used house numbers on a hero lot's street; it was caught by the same sweep and replaced before any commit.",
+  "alternative_rejected": "Leave coincidental fixture addresses (a reader cannot tell invented from real).",
+  "where": "scripts/night/N1/build_db.py, privacy_check.py, normalise.py; scripts/night/N6/privacy_scan.py",
+  "logged": "2026-10-14 01:54 CDT"
+ },
+ {
+  "id": "n10-git-history-not-touched",
+  "decision": "Did not run git gc, reflog expire or any history rewrite, and made no commit.",
+  "why": "Orchestrator's instruction; history changes are destructive and Jack's call. Per the integration log the old baseline commit 36658cb (with parcel-level N5 files) was amended to ffac1d7 but stays in the reflog and object store until pruned. The clean-export route (a fresh repository with one commit from an allowlist) avoids the old objects entirely.",
+  "alternative_rejected": "Prune the reflog now.",
+  "where": "report to the orchestrator",
+  "logged": "2026-10-14 01:54 CDT"
+ }
+]

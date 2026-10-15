@@ -1,0 +1,107 @@
+[
+ {
+  "id": "N4-D01",
+  "decision": "Grade every request in the done scoreboard against its own PRJCOMPLETEDATE, the due date the city's 311 system stamps on it, not against CityStat's goals or a goal we chose.",
+  "why": "PRJCOMPLETEDATE is filled in on most requests for 103 of the 104 types with 300+ requests since 2025 (the exception is Public Nuisance Rpt, a logging-only service), and it is a fixed offset per type: for example 8 days for residential potholes on 99% of rows (build/N4/scoreboard.json). CityStat publishes goals for only nine 311 services, and three of them differ from the city's own due date: alley potholes 17 days vs 16, whole-block lights 24 hours vs 2 days, critical signs 48 hours vs 3 days.",
+  "alternative_rejected": "CityStat goals (they cover 9 types and disagree with the city's own due date on 3); goals we set ourselves (we have no authority to set them).",
+  "shows_up_in": "build/N4/scoreboard.json, figures n4_sb_*, n4_promise_vs_citystat_*"
+ },
+ {
+  "id": "N4-D02",
+  "decision": "Read the 311 file from the cleaned copies in build/csb-clean/ (invalid UTF-8 bytes dropped with iconv -c).",
+  "why": "The city's yearly CSVs contain invalid UTF-8 that stops strict readers (prompts/night-v2/COMMON.md, correction 5). The dropped bytes are in free-text fields, so dates, codes and statuses are unaffected.",
+  "alternative_rejected": "Replacing bad bytes on every read (gives the same result, but every script would have to repeat it).",
+  "shows_up_in": "scripts/night/N4/00_load.py and every N4 figure"
+ },
+ {
+  "id": "N4-D16",
+  "decision": "Count requests once per distinct REQUESTID, not once per row.",
+  "why": "The published file repeats a request once per caller. Rows are identical except CALLERTYPE: from 2024 onward, 349,031 rows hold 322,104 request numbers, and 24,020 numbers repeat up to 21 times (orchestrator's check, re-verified tonight; no repeated number differs in dates, status, code, address or closing words). Counting distinct closed request numbers by quarter filed reproduces CityStat's published counts within 0.2% for potholes (x3), debris (x3), whole-block lights and critical signs: identical in 66 of 72 settled metric-quarters and never off by more than 4 requests. Parks is within 2.1%. It also matches the ward map's 286,148 requests to 0.2% (285,582) and the towing chart to 1.2%.",
+  "alternative_rejected": "Every row (overcounts CityStat by 5-24% on closed requests and overweights requests with many callers). Dropping same-address same-day repeats, our first approximation, gave counts within about 4-8%, but it also merges genuinely separate requests. The first implementation of it also dropped multi-caller requests entirely, a bug found and fixed tonight.",
+  "shows_up_in": "definition C, scoreboard, ward map, towing, figures n4_repro_*, n4_q3_*, n4_sb_*"
+ },
+ {
+  "id": "N4-D03",
+  "decision": "Find CityStat's unpublished definitions by brute force: 1,440 combinations per metric of freeze date, de-duplication, denominator, on-time rule, channel and quarter basis, each scored against CityStat's nine settled quarters (2024 Q1-2026 Q1). Score 2026 Q2 separately.",
+  "why": "CityStat publishes shares and counts but no definitions (data/raw/citystat/*.html). Its pages call 2026 Q2 preliminary ('validated Q2 data available on August 1st'), so that quarter cannot be a fair target.",
+  "alternative_rejected": "Asking CityStat (no contact allowed tonight); guessing one definition and reporting the gap (would confuse a definition difference with a performance difference).",
+  "shows_up_in": "build/N4/definition_search.json, build/N4/citystat_comparison.csv"
+ },
+ {
+  "id": "N4-D04",
+  "decision": "The headline reproduction uses one shared definition C for every metric: one row per request number, closed requests only, quarter filed, on time = close date minus filed date <= goal. The best definition per metric (B) is reported beside it.",
+  "why": "With 1,440 combinations and nine data points per metric, a per-metric best can fit noise. C alone lands within 5 points of CityStat in 76 of 81 metric-quarters, matches the counts within 0.2% on 8 of 9 metrics, and has a mean gap of 0.5-2.7 points on 7 of 9 metrics (build/N4/citystat_fit.json).",
+  "alternative_rejected": "The per-metric best everywhere (also 76 of 81, but it brings overfit risk and gives the city several different rules to adopt).",
+  "shows_up_in": "figures n4_repro_*, report table"
+ },
+ {
+  "id": "N4-D05",
+  "decision": "Q3 2026 values use C wherever C reproduces CityStat (mean gap of 3 points or less and at least 7 of 9 quarters within 5). For whole-block lights and parks, where it does not, they use the best-fitting alternative: for lights, elapsed hours <= 24; for parks, closed and open requests with cancelled dropped, closed before the request's own due date.",
+  "why": "C misses whole-block lights by 6.2 points and parks by 3.2 points on average; the alternatives miss by 4.7 and 2.3 (build/N4/citystat_fit.json).",
+  "alternative_rejected": "C for all metrics (would misstate lights); the lowest-error definition for each metric (switches definitions on differences of a few hundredths of a point).",
+  "shows_up_in": "figures n4_q3_2026_*, n4_q2_2026_*_ours, build/N4/q3_2026.json"
+ },
+ {
+  "id": "N4-D06",
+  "decision": "Assign each request to the quarter it was filed, not the quarter it was closed.",
+  "why": "Quarter of closure fits CityStat worse on every metric: best mean gaps are 1.97-21.7 points, against 0.46-3.76 for quarter filed (build/N4/definition_search.json). The margin is small only for whole-block lights (3.82 vs 3.76).",
+  "alternative_rejected": "Quarter of closure.",
+  "shows_up_in": "all N4 quarterly figures"
+ },
+ {
+  "id": "N4-D08",
+  "decision": "Report each Q3 2026 share with a floor: the value it reaches if every request still open on 13 Oct 2026 closes late.",
+  "why": "A closed-only share can only fall as slow requests close. In past quarters, the share measured 12 days after the quarter ended overstated the final figure by up to 18.5 points for residential potholes and 27.1 points for alleys. Every Q3 request still open is already past goals of 12 days or less.",
+  "alternative_rejected": "Publishing the closed-only figure alone, which repeats the pattern behind CityStat's preliminary Q2.",
+  "shows_up_in": "figure notes n4_q3_2026_*, build/N4/q3_2026.json"
+ },
+ {
+  "id": "N4-D09",
+  "decision": "In the scoreboard, leave cancelled requests out of the denominator (show the cancelled share beside it), and grade only requests whose due date had passed by 13 Oct 2026.",
+  "why": "Many cancellations are duplicates, which are neither kept nor broken promises, and requests not yet due cannot be graded. The cancelled share is shown because for some types cancellation is the main outcome (Inspect City Tree 66%, Stump Removal 88%).",
+  "alternative_rejected": "Counting cancellations as broken promises (overstates failure); counting requests not yet due (understates it).",
+  "shows_up_in": "build/N4/scoreboard.json"
+ },
+ {
+  "id": "N4-D10",
+  "decision": "Take the 'done' class of closing words from N2's rule set rather than writing our own.",
+  "why": "This keeps one rule set across the project. N2's file (research/chapters/N2-closure-classes.csv, final) existed when the scoreboard ran, so no provisional rules were needed. It is joined on the raw PROBLEMCODE, trailing spaces included, and the trimmed PUBLICRESOLUTION, as N2 advises. Every closing text in the scoreboard types matched.",
+  "alternative_rejected": "A first-pass N4 rule set (it would disagree with N2's).",
+  "shows_up_in": "scoreboard done_kept_share; figure n4_sb_done_kept_all"
+ },
+ {
+  "id": "N4-D11",
+  "decision": "Never output SUBMITTO; use the request category (GROUP) instead.",
+  "why": "SUBMITTO is meant to name the department, but on at least one 2026 parks row it holds a person's name (observed tonight). This follows the no-personal-data rule (prompts/night-v2/COMMON.md).",
+  "alternative_rejected": "Showing the department field as published.",
+  "shows_up_in": "build/N4/scoreboard.json (category column)"
+ },
+ {
+  "id": "N4-D12",
+  "decision": "Compare years at the same age when testing CityStat's claim that response times improved sharply in 2026.",
+  "why": "CityStat sets 2026 requests, at most six months old, beside a 2024-2026 average that includes closures made years later. Counting only closures by 1 July of each year, the January-June averages are 10.6 days (2024), 10.4 (2025) and 9.2 (2026). Counting every closure to date, 2024 rises to 34.6.",
+  "alternative_rejected": "Repeating CityStat's comparison as published.",
+  "shows_up_in": "figures n4_h1_*, n4_ward09_h1_2026_*"
+ },
+ {
+  "id": "N4-D13",
+  "decision": "Give the ward map a within-type version: each ward's average as if it had the citywide mix of request types (ward-type cells with fewer than five closures use the citywide average).",
+  "why": "A ward with more slow request types looks slow even if each type is handled at the citywide pace. Adjusting does not narrow the Ward 1 vs Ward 10 gap (17.3 vs 32.2 days raw, 17.4 vs 32.2 adjusted), and north wards 11-14 get slower (Ward 13: 24.6 to 29.2), so type mix does not explain the gap.",
+  "alternative_rejected": "Raw averages only (CityStat's view).",
+  "shows_up_in": "figures n4_ward*_type_mix_adjusted_avg_days"
+ },
+ {
+  "id": "N4-D14",
+  "decision": "Publish no reproduced routing figure.",
+  "why": "The file has no routing timestamp, and no subset of it reproduces CityStat's routing request counts convincingly. The best of 260,610 channel-by-category subsets still misses by 4.5% on average and by 15% in 2026 Q2 (12,439 vs 10,853), and many near-ties exist (build/N4/routing_search.json).",
+  "alternative_rejected": "Publishing the best-fitting subset (likely a coincidence among thousands of candidates).",
+  "shows_up_in": "report, the question for CityStat, figure n4_routing_best_subset_mape"
+ },
+ {
+  "id": "N4-D15",
+  "decision": "For the parks metric, use each request's own PRJCOMPLETEDATE as its goal.",
+  "why": "CityStat says parks goals range from five to thirty days by type but does not list them. The city's due-date offsets for these parks types are 3 to 21 days (3, 7, 9, 10, 14, 16, 21). Graded against them, parks requests reproduce CityStat within 2.3 points on average, with 9 of 9 quarters within 5 and counts within 2%.",
+  "alternative_rejected": "One flat goal for all parks requests.",
+  "shows_up_in": "figures n4_repro_mae_parks_all, n4_q3_2026_parks_all"
+ }
+]

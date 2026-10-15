@@ -1,0 +1,42 @@
+stratum,family,stratum_label,target,population,drawn,pop_1-5,pop_6-9,pop_10-14,drawn_1-5,drawn_6-9,drawn_10-14
+H01,handoff,Vehicle Towing | vehicle tagged for tow,40,3062,40,1896,632,534,14,13,13
+H02,handoff,Refuse not collected | collection will be made next scheduled day,40,2922,40,1364,795,763,14,13,13
+H03,handoff,"Refuse not collected | due to employee shortage, the routes will be completed in order, as soon possible",40,2143,40,1082,743,318,14,13,13
+H04,handoff,"Weeds-Vacant Bldg | on schedule to be cut, call csb for details",40,2082,40,441,252,1389,14,13,13
+H05,handoff,Illegl Use-Opn Storg | issued notice of violation,40,1653,40,727,341,585,14,13,13
+H06,handoff,Debris-alley/street | matter will be investigated and appropriate action taken,40,1602,40,261,366,975,14,13,13
+H07,handoff,Vacnt Bldg Unsecured | referred to board up crew,40,1465,40,305,193,967,14,13,13
+H08,handoff,Bulky items missed | collection will be made next scheduled day,40,1431,40,308,199,924,14,13,13
+H09,handoff,"Weeds-Vacant Lot | on schedule to be cut, call csb for details",40,1410,40,167,162,1081,14,13,13
+H10,handoff,Tree Planting requst | approved for next available planting,40,1404,40,737,555,112,14,13,13
+H11,handoff,Ppty Maint Code-Ext | issued notice of violation,40,1343,40,604,353,386,14,13,13
+H12,handoff,Ppty Maint Code-Ext | building already under notice,40,1320,40,384,374,562,14,13,13
+H13,handoff,Illegl Use-Opn Storg | building already under notice,40,1173,40,447,186,540,14,13,13
+H14,handoff,"Bulky items missed | due to employee shortage, the routes will be completed in order, as soon possible",40,1154,40,679,308,167,14,13,13
+H15,handoff,Weeds-Vacant Bldg | added to rotation,40,1126,40,222,164,740,14,13,13
+H16,handoff,Refuse not collected | matter will be investigated and appropriate action taken,40,1090,40,716,270,104,14,13,13
+H17,handoff,WTR-COMING-UP | scheduled for repair by water department,40,893,40,403,200,290,14,13,13
+H18,handoff,Cave-Ins | referred to street maintenance for repair work to be scheduled,40,919,40,543,149,227,14,13,13
+H19,handoff,Debris-alley/street | bulk will be picked up in correct week,40,777,40,265,181,331,14,13,13
+H20,handoff,Bulky items missed | bulk will be picked up in correct week,40,733,40,368,201,164,14,13,13
+H_tree,handoff,Inspect City Tree | removal work order created,40,390,40,240,102,48,14,13,13
+D01,done,Containr damaged | (any done phrase),30,7498,30,3993,1573,1932,10,10,10
+D02,done,Refuse not collected | (any done phrase),30,6114,30,2773,1089,2252,10,10,10
+D03,done,Potholes - Residnl | (any done phrase),30,4332,30,1787,1168,1377,10,10,10
+D04,done,Snow/Ice - Residnl | (any done phrase),30,3666,30,1407,1039,1220,10,10,10
+D05,done,Whole Blk Lights Out | (any done phrase),30,3135,30,799,703,1633,10,10,10
+D06,done,Potholes - Major St | (any done phrase),30,3121,30,1231,741,1149,10,10,10
+D07,done,Single Light Out | (any done phrase),30,2603,30,624,707,1272,10,10,10
+D08,done,Sign needs attention | (any done phrase),30,2197,30,806,400,991,10,10,10
+D09,done,Debris-alley/street | (any done phrase),30,1868,30,376,314,1178,10,10,10
+D10,done,Light Damaged | (any done phrase),30,1471,30,274,286,911,10,10,10
+O01,open_past_promise,Inspect City Tree | (open past promise),30,1366,30,614,388,364,10,10,10
+O02,open_past_promise,Cave-Ins | (open past promise),30,1098,30,200,394,504,10,10,10
+O03,open_past_promise,Sidewalk Repair | (open past promise),30,1055,30,529,300,226,10,10,10
+O04,open_past_promise,Weeds-Occupied Ppty | (open past promise),30,888,30,457,183,248,10,10,10
+O05,open_past_promise,Bad Condition | (open past promise),30,526,30,75,148,303,10,10,10
+O06,open_past_promise,Sewer Lateral Defect | (open past promise),30,402,30,181,101,120,10,10,10
+O07,open_past_promise,TDebris-alley/street | (open past promise),30,364,30,19,20,325,10,10,10
+O08,open_past_promise,LRA Tree | (open past promise),30,362,30,6,6,350,6,6,18
+O09,open_past_promise,Ppty Maint Code-Ext | (open past promise),30,349,30,26,67,256,10,10,10
+O10,open_past_promise,City Tree Down | (open past promise),30,314,30,100,76,138,10,10,10

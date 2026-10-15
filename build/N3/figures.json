@@ -1,0 +1,318 @@
+[
+ {
+  "id": "n3_duplicate_request_rows",
+  "value": {
+   "rows": 349031,
+   "distinct_request_ids": 322104,
+   "ids_repeated": 24020
+  },
+  "unit": "rows / request ids",
+  "period": "2024-2026 yearly files",
+  "definition": "Rows in the public 311 yearly files vs distinct REQUESTID; ids appearing more than once",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/00_load.py",
+  "derivation": "Counted rows and distinct REQUESTIDs in the city's 2024, 2025 and 2026 CSB files. Repeated rows are identical except CALLERTYPE, so they look like one row per caller; we keep one row per request.",
+  "note": "Medians computed on rows weight multi-caller requests; dedupe before any count or median."
+ },
+ {
+  "id": "n3_citystat_ward1_reproduced",
+  "value": 17.32,
+  "unit": "mean days to close",
+  "period": "1 Jan 2024 - 30 Jun 2026",
+  "definition": "Mean DATETIMECLOSED-DATETIMEINIT over STATUS=CLOSED requests closed by 30 Jun 2026, all channels, ward 1",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/01_citystat_ward.py",
+  "derivation": "311 requests (csb.zip), one row per REQUESTID, all channels and types, filed in CityStat's window; mean days to close for requests closed by the window end. CityStat publishes 17.18 for ward 1 (tableau-extract.md).",
+  "note": "A July 2026 snapshot (closed by 10 Jul) gives 17.36; see decomposition."
+ },
+ {
+  "id": "n3_citystat_reproduction_error",
+  "value": 0.85,
+  "unit": "days (mean absolute error across 14 wards)",
+  "period": "1 Jan 2024 - 30 Jun 2026",
+  "definition": "How closely our definition reproduces CityStat's 14 ward averages",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/01_citystat_ward.py",
+  "derivation": "Compared our ward means (one row per REQUESTID, all channels, mean over closed requests) with CityStat's CSBRequestMap values extracted 13 Oct 2026. Ward request counts match within 1% once duplicate rows are removed (about 8% high without that).",
+  "note": "Our window total 285,582 distinct requests vs CityStat 286,148. Wards 10-12 are 2-3 days lower in ours."
+ },
+ {
+  "id": "n3_decomp_ward1_vs_10_gap",
+  "value": 15.7,
+  "unit": "mean days",
+  "period": "1 Jan 2024 - 30 Jun 2026, closed by 10 Jul 2026",
+  "definition": "CityStat's metric: ward 10 mean days to close minus ward 1",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/03_decompose.py",
+  "derivation": "311 requests (csb.zip), one row per REQUESTID, all channels, as CityStat counts them; ward 1 17.4 vs ward 10 33.1 days (CityStat shows 17.2 vs 35.1).",
+  "note": ""
+ },
+ {
+  "id": "n3_decomp_ward1_vs_10_type_mix",
+  "value": 0.43,
+  "unit": "mean days (share of gap in note)",
+  "period": "1 Jan 2024 - 30 Jun 2026, closed by 10 Jul 2026",
+  "definition": "Part of the ward 1 vs ward 10 gap due to mix of request types",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/03_decompose.py",
+  "derivation": "311 requests (csb.zip), one row per REQUESTID, all channels; closures classed by their closing words (N2's reviewed classes). Exact two-level split of the mean gap: type mix, then share of each closing class within type, then speed within the same type and class.",
+  "note": "3% of the 15.7-day gap."
+ },
+ {
+  "id": "n3_decomp_ward1_vs_10_closing_practice",
+  "value": 1.51,
+  "unit": "mean days (share of gap in note)",
+  "period": "1 Jan 2024 - 30 Jun 2026, closed by 10 Jul 2026",
+  "definition": "Part of the ward 1 vs ward 10 gap due to closing words used (class shares within type)",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/03_decompose.py",
+  "derivation": "311 requests (csb.zip), one row per REQUESTID, all channels; closures classed by their closing words (N2's reviewed classes). Exact two-level split of the mean gap: type mix, then share of each closing class within type, then speed within the same type and class.",
+  "note": "10% of the 15.7-day gap."
+ },
+ {
+  "id": "n3_decomp_ward1_vs_10_speed_done",
+  "value": 1.3,
+  "unit": "mean days (share of gap in note)",
+  "period": "1 Jan 2024 - 30 Jun 2026, closed by 10 Jul 2026",
+  "definition": "Part of the ward 1 vs ward 10 gap due to slower handling, closures recording work done",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/03_decompose.py",
+  "derivation": "311 requests (csb.zip), one row per REQUESTID, all channels; closures classed by their closing words (N2's reviewed classes). Exact two-level split of the mean gap: type mix, then share of each closing class within type, then speed within the same type and class.",
+  "note": "8% of the 15.7-day gap."
+ },
+ {
+  "id": "n3_decomp_ward1_vs_10_speed_other",
+  "value": 12.48,
+  "unit": "mean days (share of gap in note)",
+  "period": "1 Jan 2024 - 30 Jun 2026, closed by 10 Jul 2026",
+  "definition": "Part of the ward 1 vs ward 10 gap due to slower handling, hand-off / no-action / other closures",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/03_decompose.py",
+  "derivation": "311 requests (csb.zip), one row per REQUESTID, all channels; closures classed by their closing words (N2's reviewed classes). Exact two-level split of the mean gap: type mix, then share of each closing class within type, then speed within the same type and class.",
+  "note": "79% of the 15.7-day gap."
+ },
+ {
+  "id": "n3_decomp_ward1_vs_10_enforcement_variant",
+  "value": {
+   "type_mix": 0.43,
+   "closing_practice": 1.72,
+   "speed_done": 1.3,
+   "speed_enforcement": 3.34,
+   "speed_handoff": 2.54,
+   "speed_other": 6.39
+  },
+  "unit": "mean days",
+  "period": "1 Jan 2024 - 30 Jun 2026, closed by 10 Jul 2026",
+  "definition": "Same decomposition with enforcement notices (N2 rule handed_off:enforcement) as their own class",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/03_decompose.py",
+  "derivation": "As n3_decomp_ward1_vs_10_*, but notices of violation, 'already under notice' and summons are separated from other hand-offs; the split barely moves.",
+  "note": "Mix + closing words 2.2 of 15.7 days with the split, 1.9 without."
+ },
+ {
+  "id": "n3_decomp_w15_vs_w1014_type_mix",
+  "value": -3.16,
+  "unit": "mean days",
+  "period": "1 Jan 2024 - 30 Jun 2026, closed by 10 Jul 2026",
+  "definition": "Type-mix term, wards 1-5 vs 10-14 (negative = the north files a faster-closing mix)",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/03_decompose.py",
+  "derivation": "Same decomposition for wards 1-5 vs 10-14: the north's mix of request types would make it faster, not slower; its gap is all within-type.",
+  "note": "Gap 7.6 d = mix -3.2 + closing words 0.9 + speed (done) 1.7 + speed (other) 8.1."
+ },
+ {
+  "id": "n3_median_ward10_at_ward1_mix",
+  "value": 6.1,
+  "unit": "median days",
+  "period": "1 Jan 2024 - 30 Jun 2026, closed by 10 Jul 2026",
+  "definition": "Ward 10's median days to close if it had ward 1's mix of request types and closing words (reweighted)",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/04_reweight.py",
+  "derivation": "311 requests (csb.zip), one row per REQUESTID, all channels; ward 10's closures reweighted to ward 1's type-by-closing-class shares.",
+  "note": "Observed: ward 10 5.9, ward 1 2.8. Matching the mix does not shrink the gap."
+ },
+ {
+  "id": "n3_towing_tagged_median_after",
+  "value": {
+   "wards_1_5": 12.0,
+   "wards_10_14": 36.9,
+   "n": [
+    1300,
+    271
+   ],
+   "ci95_ratio": [
+    2.42,
+    3.89
+   ]
+  },
+  "unit": "median days",
+  "period": "16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Median days from filing to a closure reading \"vehicle tagged for tow\"",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/06_robust.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped), one row per REQUESTID; resident-filed requests only (web, phone, email, chat, Twitter, letter). Compared only closures with the same closing words, \"vehicle tagged for tow\", which needs a visit; the city's promise for every towing request is 5 days.",
+  "note": "Before the tornado: 16.0 vs 36.1 (n 578/266). All five north wards slower than every ward 1-5 after the tornado."
+ },
+ {
+  "id": "n3_towing_closed_by_promise_after",
+  "value": {
+   "wards_1_5": 0.379,
+   "wards_10_14": 0.112
+  },
+  "unit": "share of requests",
+  "period": "16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Share of towing requests closed (any words) by the city's own promise date; open and cancelled count as not",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/06_robust.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped), one row per REQUESTID; resident-filed requests only (web, phone, email, chat, Twitter, letter). Promise = PRJCOMPLETEDATE, set by the city on each request (5 days for towing); only requests whose promise date had passed by 13 Oct 2026.",
+  "note": "Retired for public use 14 Oct 2026 (N8 conflict 1): counts closures with any words, so 'vehicle gone upon inspection', 'no problem found' and blank closings count as kept promises. Use n3_towing_tagged_by_promise_after, the same population and closing words as the 12.0 vs 36.9-day medians.",
+  "retired": true
+ },
+ {
+  "id": "n3_towing_tagged_by_promise_after",
+  "value": {
+   "wards_1_5": 0.318,
+   "wards_10_14": 0.037,
+   "n": [
+    1300,
+    271
+   ]
+  },
+  "unit": "share of requests",
+  "period": "16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Share of towing requests closed \"vehicle tagged for tow\" whose closing time is at or before the city's own promise date (PRJCOMPLETEDATE, 5 days)",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/09_registry.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip 2025 and 2026 yearly CSVs, invalid bytes dropped: build/csb-clean), one row per REQUESTID, resident-filed if any of its rows has a resident CALLERTYPE (web, phone, email, chat, Twitter, letter); towing requests filed on or after 16 May 2025, STATUS CLOSED with PUBLICRESOLUTION 'vehicle tagged for tow' (the inspector's first visit, the same population as the 12.0 vs 36.9-day medians); share whose DATETIMECLOSED is at or before PRJCOMPLETEDATE; wards from the WARD column, 1-5 against 10-14.",
+  "note": "414 of 1,300 and 10 of 271 requests (the north figure rests on about 10 requests). By calendar date instead of timestamp: 32.3% vs 4.8%. Replaces N3's earlier share counting any closing words (38% vs 11%, now retired). N8 conflict 1 reproduced 31.8% vs 3.7%."
+ },
+ {
+  "id": "n3_towing_gone_median_after",
+  "value": {
+   "wards_1_5": 10.7,
+   "wards_10_14": 46.2
+  },
+  "unit": "median days",
+  "period": "16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Median days to a closure reading \"vehicle gone upon inspection\"",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/06_robust.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped), one row per REQUESTID; resident-filed requests only (web, phone, email, chat, Twitter, letter). Same closing words both sides; a long wait here means the inspection came after the car left.",
+  "note": ""
+ },
+ {
+  "id": "n3_cavein_referral_median_after",
+  "value": {
+   "wards_1_5": 0.8,
+   "wards_10_14": 41.7,
+   "n": [
+    361,
+    115
+   ]
+  },
+  "unit": "median days",
+  "period": "16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Median days to \"referred to street maintenance for repair work to be scheduled\", cave-ins",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/06_robust.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped), one row per REQUESTID; resident-filed requests only (web, phone, email, chat, Twitter, letter). Same closing words both sides. Per ward the line falls between ward 5 (under 1.2 days in every ward 1-5) and ward 6 (over 15 days in every ward 6-14), which points to a different intake process, not only slower crews.",
+  "note": "Inferred: in wards 1-5 the referral is made at intake; in 6-14 after an inspection wait. Repair dates for referred cave-ins are not in the file."
+ },
+ {
+  "id": "n3_cavein_done_median_after",
+  "value": {
+   "wards_1_5": 8.3,
+   "wards_10_14": 23.1,
+   "n": [
+    35,
+    114
+   ]
+  },
+  "unit": "median days",
+  "period": "16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Median days to a closure recording the work as done (\"work completed\"), cave-ins",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/06_robust.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped), one row per REQUESTID; resident-filed requests only (web, phone, email, chat, Twitter, letter). Only closures whose words record the repair; referrals excluded because in wards 1-5 they happen within a day whatever the repair date.",
+  "note": "South n is 35: too few for the robustness rule (n >= 100)."
+ },
+ {
+  "id": "n3_single_light_done_median",
+  "value": {
+   "after": [
+    15.6,
+    41.0
+   ],
+   "before": [
+    4.8,
+    6.4
+   ]
+  },
+  "unit": "median days [wards 1-5, wards 10-14]",
+  "period": "1 Jan 2024 - 15 May 2025 (filed); 16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Single light out, median days to \"work completed\"",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/06_robust.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped), one row per REQUESTID; resident-filed requests only (web, phone, email, chat, Twitter, letter). Only closures recording the repair. City promise 3 days.",
+  "note": "Not robust: the gap sits in two quarters (filed Oct 2025-Mar 2026: 20 vs 49 and 5 vs 31 days); other quarters are level."
+ },
+ {
+  "id": "n3_code_enforcement_nov_median",
+  "value": {
+   "after": [
+    3.3,
+    8.4
+   ],
+   "before": [
+    3.3,
+    8.0
+   ]
+  },
+  "unit": "median days [wards 1-5, wards 10-14]",
+  "period": "1 Jan 2024 - 15 May 2025 (filed); 16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Exterior property-maintenance complaints: median days to \"issued notice of violation\"",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/06_robust.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped), one row per REQUESTID; resident-filed requests only (web, phone, email, chat, Twitter, letter). Same closing words both sides; promise 14 days.",
+  "note": "Absolute gap about 5 days, inside the promise; slowness concentrated in wards 9-12 (11-22 days); ward 13 (4.7) is faster than ward 4 (8.8)."
+ },
+ {
+  "id": "n3_no_gap_done_types_after",
+  "value": {
+   "Whole Blk Lights Out": [
+    0.7,
+    0.7
+   ],
+   "Potholes - Residnl": [
+    6.9,
+    8.0
+   ],
+   "Refuse not collected": [
+    1.7,
+    1.8
+   ],
+   "Containr damaged": [
+    7.8,
+    8.2
+   ]
+  },
+  "unit": "median days [wards 1-5, wards 10-14]",
+  "period": "16 May 2025 - 13 Oct 2026 (filed)",
+  "definition": "Done-class median days for high-volume types with no material ward gap",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/06_robust.py",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped), one row per REQUESTID; resident-filed requests only (web, phone, email, chat, Twitter, letter). Only closures whose words record the work as done.",
+  "note": ""
+ },
+ {
+  "id": "n3_class_agreement_n2_vs_n3",
+  "value": 0.984,
+  "unit": "share of closures",
+  "period": "2024-2026 closures in N2 file",
+  "definition": "Share of closures where N3's independent first-pass rules give the same class as N2's reviewed classes",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N3/09_registry.py",
+  "derivation": "Two independent classifications of the city's closing words (N2's reviewed list; N3's rules), compared closure-weighted; enforcement notices counted as hand-offs as N2 does.",
+  "note": ""
+ }
+]

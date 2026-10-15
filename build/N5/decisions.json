@@ -1,0 +1,149 @@
+[
+ {
+  "id": "n5-block-level-all",
+  "decision": "Every hero case is shown at block level (house number rounded down to the hundred), including the city-owned land-bank (LRA) lots. Parcel-level detail and tight images live only in build/N5/private/.",
+  "why": "Jack's ruling, 13 Oct 2026 about 11:55 p.m., relayed by the coordinator and written into prompts/night-v2/COMMON.md ('blocks, not specific properties').",
+  "alternative_rejected": "Parcel-level display for LRA lots, which the original N5 brief allowed.",
+  "shows_up_in": "build/N5/heroes.json, build/N5/img/, research/chapters/N5-heroes.md"
+ },
+ {
+  "id": "n5-withhold-ids",
+  "decision": "Request ids, Cityworks work-order ids and parcel ids are left out of the public heroes.json; they are kept in build/N5/private/heroes_private.json. The publish script refuses to write if any 11-digit parcel id, 7-digit request id, work-order id, house-number address or e-mail survives.",
+  "why": "Each id is a direct key to the exact property in the city's own public files (311 csb.zip, Cityworks saved searches, LRA inventory), so printing it would undo block level.",
+  "alternative_rejected": "Showing request ids so viewers can check the receipt against the city's file. Jack may reverse this; the private file has the ids ready.",
+  "shows_up_in": "build/N5/heroes.json; scripts/night/N5/06_publish.py (leak check)"
+ },
+ {
+  "id": "n5-image-frame",
+  "decision": "Public aerial images frame the whole block, about 175 m across at 0.25 m per pixel, centred on the midpoint of the MSD address points on that hundred-block, with no marker. Tight frames with the parcel outline are private.",
+  "why": "COMMON.md: 'An aerial image may frame the block with no marker on the lot.' Centring on the lot would itself point at it.",
+  "alternative_rejected": "A 60 m tile centred on the lot (the original brief).",
+  "shows_up_in": "build/N5/img/*.png; build/N5/private/img/*.png"
+ },
+ {
+  "id": "n5-imagery-source",
+  "decision": "Use the University of Missouri MSDIS ImageServers (keyless). For anything public (site, video), use only the NAIP 2024 frames (USDA). The MSDIS 2022 city, 2024 statewide and 2025 tornado frames stay in build/N5/img/ with cleared_for_public=false and a licence note.",
+  "why": "https://imagery.msdis.missouri.edu/robots.txt redirects to /arcgis/robots.txt, which returns 404 (no rules published); no key or login; exportImage works. The services state a year in their names only, no acquisition date.",
+  "alternative_rejected": "Google or any keyed service (forbidden by the brief); Sentinel-2 (10 m pixels: a 40 by 120 ft lot is a handful of pixels). No 2026 imagery exists on the server, so the images show what the block is, not the 2026 grass.",
+  "shows_up_in": "build/N5/img/; heroes.json public_images (licence, cleared_for_public); data/raw/msdis-imagery/ (metadata, export log)"
+ },
+ {
+  "id": "n5-dedupe-requestid",
+  "decision": "One row per REQUESTID (preferring a resident-channel row) for every hero and every figure in N5.",
+  "why": "The yearly 311 files repeat a request once per caller: in 2025-26, 234,374 rows hold 216,532 distinct ids (16,042 ids repeated; mostly exact copies, some differing only in CALLERTYPE). Repeats would count as 'repeat requests' and shift medians: single light out 15.8 to 15.6 and 42.1 to 41.0 days; cave-in 'work completed' 9.6 to 8.3 and 25.1 to 23.1; cave-in 'referred' in wards 10-14 49.9 to 41.7. Coordinator's correction confirms the per-caller repetition.",
+  "alternative_rejected": "Keeping all rows, as the COMMON.md medians did.",
+  "shows_up_in": "build/N5/figures.json (n5_*_median_days, n5_dup_requestid_ids); all hero timelines"
+ },
+ {
+  "id": "n5-ledger-absence-wording",
+  "decision": "Say 'no cut billed in the Forestry ledger', never 'never cut' or 'never mowed'.",
+  "why": "The ledger is a billing record, not an operations log; dates are posted in weekly batches; lot-1 drew an 'unsatisfactory cut' complaint on 9 Sep 2026, which could mean someone saw a partial cut the ledger does not show.",
+  "alternative_rejected": "'The city never cut the lot.'",
+  "shows_up_in": "heroes.json stories and facts; figures.json notes"
+ },
+ {
+  "id": "n5-2025-not-evidence",
+  "decision": "Hero claims rest on the 2026 season; a missing 2025 cut is shown but not argued from.",
+  "why": "The 2025 ledger is thin: 8,780 parcels with a cut in 2025 against 17,295 in 2024 and 16,118 in 2026 (tornado year).",
+  "alternative_rejected": "'Two seasons without a cut.'",
+  "shows_up_in": "heroes.json lot timelines; figures.json n5_ledger_parcels_cut_*"
+ },
+ {
+  "id": "n5-lot1-choice",
+  "decision": "Lead lot: the land-bank lot on the 1700 block of N Taylor Av, Greater Ville, Ward 12.",
+  "why": "Two web requests (2 Jul and 28 Jul 2026) closed in 13 and 7 minutes as 'on schedule to be cut'; promise date 30 Sep passed; no cut billed in 2026 while 36 other parcels on the same city block (23 of them land-bank lots) were billed on 15 different days; two neighbouring land-bank lots reported at the same moments were billed (20 Jul and 29 Jul); the lot is on Forestry's maintenance list and was billed every year 2019-2024; no LRA offer or garden permit on it; Greater Ville matches the First Alert 4 account of 24 Jul 2026 (research/synthesis-notes.md R4). Sources: csb.zip 2026, forestry-service-records.csv, LRA_INVENTORY.csv, LRA_OFFERS.csv, LRA_GARDEN_PERMITS.csv, forestry-maintenance-properties.csv.",
+  "alternative_rejected": "The 1300 block of Arlington Av lot as lead (more requests, but see n5-lot3-caveat); the 8100 block of Church Rd lot (four requests, but almost no other cutting on its city block, so the 'crews were next door' contrast is missing).",
+  "shows_up_in": "heroes.json lot-1; build/N5/img/lot-1_*"
+ },
+ {
+  "id": "n5-lot3-caveat",
+  "decision": "The 1300 block of Arlington Av lot is ranked third and its story names the possible explanation.",
+  "why": "LRA_OFFERS.csv shows offers on the parcel marked ACCEPTED on 4 Nov 2025 and 29 Jan 2026 while the inventory still lists it 'Available'; a pending sale may have taken it off the mowing rotation. 311 said 'on schedule to be cut' five times regardless.",
+  "alternative_rejected": "Ranking it first on request count, or dropping it.",
+  "shows_up_in": "heroes.json lot-3"
+ },
+ {
+  "id": "n5-lots-rejected",
+  "decision": "Rejected lot candidates after validation (scripts/night/N5/03_lot_validate.py): a land-bank lot on the 700 block of Wilmington Av in Carondelet (not on Forestry's maintenance list and no cuts on its city block in 2026, so it may not be in the programme); a Walnut Park East lot (listed as 'Fenced & Locked or Paved Lot'); a Dutchtown lot (no 2026 cuts on its city block, last cut 2023); a Greater Ville lot on Dr Martin Luther King Dr (LRA offer accepted Sep 2024). A Lewis Place lot on Dr Martin Luther King Dr is a sound alternate (no 2026 cut; 15 other parcels on its city block billed in 2026) with fewer resident requests.",
+  "why": "Each rejected case has a plausible innocent explanation in the city's own files; heroes must survive the obvious objection.",
+  "alternative_rejected": "Ranking purely by days without a cut (build/N5/private/lot_candidates.csv).",
+  "shows_up_in": "build/N5/private/lot_validation.json"
+ },
+ {
+  "id": "n5-counterexample",
+  "decision": "Counter-example: the land-bank lot on the 4000 block of Ashland Av (Greater Ville): one request on 11 Sep 2026, closed in three minutes, cut billed 15 Sep.",
+  "why": "A clean single request with a cut within the week, in the same neighbourhood as lot-1. 38 of 331 comparable requests had a cut billed within 7 days; 106 by the request's own promise date.",
+  "alternative_rejected": "The 1500 block of N Taylor lot (cut the day after its 28 Jul request, but only after two earlier requests went 27 days uncut); it appears inside lot-1 instead.",
+  "shows_up_in": "heroes.json lot-counterexample"
+ },
+ {
+  "id": "n5-light-rule",
+  "decision": "Light pair = requests within half a day of each ward group's median (deduplicated), same intake channel, filed closest together in time.",
+  "why": "Representative rather than extreme, and same season (both December 2025, both web).",
+  "alternative_rejected": "The longest waits, or COMMON.md's medians with duplicate rows.",
+  "shows_up_in": "heroes.json light-1, light-2"
+ },
+ {
+  "id": "n5-cave-rule",
+  "decision": "Cave-in pair = a wards 1-5 request closed 'referred to street maintenance for repair work to be scheduled' within a day, and a wards 10-14 request closed 'work completed' within a day of that group's median; same pairing rule as the light.",
+  "why": "The brief asks for paperwork versus work. Note the reverse also holds: 'referred' closures in wards 10-14 themselves take a median 41.7 days.",
+  "alternative_rejected": "Picking a 'referred' case that was later re-filed (more dramatic, but cherry-picked).",
+  "shows_up_in": "heroes.json cave-1, cave-2"
+ },
+ {
+  "id": "n5-tree-two-cases",
+  "decision": "Two tree cases: tree-1, a request cancelled a minute after a removal work order's projected start (the brief's 'converted' pattern); tree-2, a request filed while a removal work order had already been open 575 days (the median), cancelled two hours later.",
+  "why": "Of 345 blank-cancelled inspection requests that match an open removal work order in the public sample, only 9 were cancelled within a day of the work order's start; 288 were filed while a removal order was already open, median 575 days. The common pattern is 'already on the backlog', not 'converted'.",
+  "alternative_rejected": "Only the 'converted' case; using the trim sample (no dates; its work orders date from 2019-2020).",
+  "shows_up_in": "heroes.json tree-1, tree-2; figures.json n5_tree_*"
+ },
+ {
+  "id": "n5-timezone",
+  "decision": "Cityworks dates (epoch milliseconds) are read as UTC and shown in Central; 311 times are taken as Central.",
+  "why": "Under this reading tree-1's 'investigation done' (11:44), work-order start (12:26) and cancellation (12:27) line up; other readings put the work order hours away.",
+  "alternative_rejected": "Using the raw UTC dates.",
+  "shows_up_in": "heroes.json tree-1, tree-2"
+ },
+ {
+  "id": "n5-ward-groups",
+  "decision": "Ward groups use the zero-padded WARD strings ('01' to '14') as COMMON.md does; a handful of unpadded values are left out.",
+  "why": "Five rows across these three request types since 16 May 2025 carry unpadded wards; consistency with the other threads matters more.",
+  "alternative_rejected": "Re-padding them (would move no median noticeably but break comparability).",
+  "shows_up_in": "figures.json n5_*_median_days"
+ },
+ {
+  "id": "n5-email-scrub",
+  "decision": "The publish step removes any e-mail address from public text and blocks the write if one survives.",
+  "why": "One 311 resolution text (a Disabled Parking request) contains a staff e-mail address (coordinator's correction, confirmed: 1 row). No hero case touches it.",
+  "alternative_rejected": "Relying on hero selection alone.",
+  "shows_up_in": "scripts/night/N5/06_publish.py"
+ },
+ {
+  "id": "n5-promise-date",
+  "decision": "Report each request's PRJCOMPLETEDATE as 'the city's own promise date', as given, even where it varies within a type.",
+  "why": "For 'Weeds-Vacant Lot' it is 14 days on some 2026 requests and 90 days on others (lot-1's two requests carry 90); we do not know the rule, so we show the date the city set.",
+  "alternative_rejected": "Substituting a uniform 14-day goal.",
+  "shows_up_in": "heroes.json timelines"
+ },
+ {
+  "id": "n5-ledger-distinct-dates",
+  "decision": "Ledger history on every lot counts distinct (SERVICEDATE, SERVICETYPE) cut dates, not rows; 2026 cut lists and city-block counts are distinct too.",
+  "why": "N8 finding 10: the ledger repeats many legacy rows (2019: 112,734 cut rows, 55,624 distinct). Lot-1 read '2019: 12, 2020: 10' by rows; it is 6 and 5 distinct dates.",
+  "alternative_rejected": "Counting ledger rows as cuts.",
+  "shows_up_in": "heroes.json lot timelines and facts.cuts_billed_2019_2024; scripts/night/N5/04_heroes.py, 03_lot_validate.py"
+ },
+ {
+  "id": "n5-cut-complaint-wording",
+  "decision": "'Cut incomplete' and 'missed on rotation' calls stay in the lot timelines as one explicit, neutral line each: who reported what (with the city's own plain-English type name), how 311 closed it, and what the ledger bills before and after. Lot-1's story names the 9 Sep call. A registry figure gives the base rate.",
+  "why": "N8 finding 1: a 'Vacant lot cut incomplete' call on lot-1 (9 Sep 2026) would read to a city viewer as 'someone cut it'. Re-derived context (n5_unsat_cut_calls_2026): of 227 parcel-matched such calls in 2026, 63 came within 30 days after a billed cut and 40 were on lots with no cut billed all year (N8, wider join: 229 / 67 / 61), so the call does not show a cut happened, but it must be shown, not scrolled past.",
+  "alternative_rejected": "Dropping the call from the receipt, or leaving it as a bare type code.",
+  "shows_up_in": "heroes.json lot-1 and lot-3; figures.json n5_unsat_cut_calls_2026*"
+ },
+ {
+  "id": "n5-imagery-licence",
+  "decision": "NAIP 2024 is the public image for every hero (ten block frames, *_block_naip2024.png); MSDIS 2022/2024/2025 frames are marked not cleared.",
+  "why": "Checked 14 Oct 2026. All four services' itemInfo have empty licenseInfo and accessInformation, and their service metadata XML holds only a title or purpose. Product metadata: 2024 statewide 6-inch (meta/2024_MO_Statewide_Ortho_Metadata.xml) 'should not be re-distributed' and needs the Missouri 911 Service Board's written consent; 2022 St. Louis City ortho (meta/statewide2022_stlcity.xml) 'should not be re-distributed', needs express consent (link to the 0.5 ft city service not established); 2025 tornado service: no terms found. NAIP 2024 metadata (meta/naip2024_mo510.xml, USDA FPAC-BC-GEO) carries only 'requires a general understanding of GIS'; NAIP is a USDA product, public domain (reported). NAIP at 0.3 m is legible at block scale: streets, houses, lots, tree crowns and even mowing patterns show.",
+  "alternative_rejected": "The sharper 3-inch 2025 post-tornado frame (shows storm debris on the N Taylor block) for the video: terms unknown.",
+  "shows_up_in": "build/N5/img/*_naip2024.png; heroes.json public_images"
+ }
+]

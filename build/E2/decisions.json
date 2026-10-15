@@ -1,0 +1,56 @@
+[
+ {
+  "id": "e2_d01",
+  "decision": "Treat help.cityworks.com (vendor help, pages dated 2023-2026) as the primary source for product behaviour; vendor blogs on trimble.com as observed-but-marketing; city-hosted copies of vendor help as corroboration only.",
+  "why": "The brief asks for primary sources; the help site is the vendor's own documentation and states the auto-close in three places for Cityworks 23 and Respond 5.1.",
+  "alternative_rejected": "Relying on user-forum posts or partner pages, which would be 'reported' at best."
+ },
+ {
+  "id": "e2_d02",
+  "decision": "Use the St. Louis query service's own description ('CW 23.10 (19.71.5)', saved copy from the gap thread) to establish the city's Cityworks release, instead of the '2025.01.29' string in the brief.",
+  "why": "It is the city's server naming its release; it makes the 'Cityworks 23 and newer' help pages applicable. The 2025.01.29 string could not be mapped to a release.",
+  "alternative_rejected": "Assuming year-based versioning from 2025.01.29 (the B3 agent's first inference), which is unsourced."
+ },
+ {
+  "id": "e2_d03",
+  "decision": "Use the Wayback Machine copy (22 Jun 2025) of the CSB 'Status Code Definitions' page, labelled observed (archived), because the live page is inactive.",
+  "why": "It is the city's own published definition of Closed (work finished by the department); the live URL returns 'Inactive Content' today, and the archive is the only readable copy. robots.txt permits the path (not the disallowed endpoint path, not a PDF).",
+  "alternative_rejected": "Dropping it because the live page is inactive; that would lose the city's own definition. Not claiming it is current policy."
+ },
+ {
+  "id": "e2_d04",
+  "decision": "Use DC DDOT's public Cityworks map service as the one data test of the auto-close in another Cityworks city, replicated independently on a different fiscal year (FY2018) after the B3 agent's FY2019/FY2016 samples.",
+  "why": "DC publishes both the request close date and the linked work order close date; it is the only public dataset found that lets the behaviour be checked. Two independent samples agree in direction.",
+  "alternative_rejected": "Citing only documentation; or reporting a single agent-computed share without a check."
+ },
+ {
+  "id": "e2_d05",
+  "decision": "Do not claim the request auto-close can be switched on or off, or how it behaves with several linked work orders.",
+  "why": "No vendor page describes a preference or the multi-work-order case.",
+  "alternative_rejected": "Saying 'turn on setting X' (no such setting found); the accurate framing is 'stop closing by hand and link the job'."
+ },
+ {
+  "id": "e2_d06",
+  "decision": "Split the 11 named cities across two research agents, status pages and Cityworks cities to a third, the geoportal to a fourth; the main thread did Cityworks documentation and spot-checked agent figures.",
+  "why": "Three hours available; parallel agents with a shared evidence brief; the main thread verifies the figures that matter.",
+  "alternative_rejected": "Serial research by one thread (would not finish by 6:30 p.m.)."
+ },
+ {
+  "id": "e2_d07",
+  "decision": "Redact request, work-order and case numbers from other cities' public pages (Austin, Boston, Chicago, Houston, Kansas City, SeeClickFix) and staff names from PDF metadata in build/E2/work/; keep unredacted copies in git-ignored build/E2/private/work-unredacted/.",
+  "why": "E-COMMON privacy rule: no request or work-order ids or names in build/*/ outside private/. The rule does not distinguish St. Louis from other cities.",
+  "alternative_rejected": "Keeping the full ticket URLs in public logs (better provenance, but breaks the rule); the report cites the host and says the numbers are in the private log."
+ },
+ {
+  "id": "e2_d08",
+  "decision": "Count a city as publishing 'done by promise' only if it publishes, per request type, a share of work finished by the promised date; a close-against-target share (New York MMR, Boston CityScore) is counted separately.",
+  "why": "The entry's thesis is that grading the close is not grading the job; counting close-based measures as done-based would blur exactly that distinction.",
+  "alternative_rejected": "Counting New York and Boston as precedents for done-by-promise."
+ },
+ {
+  "id": "e2_d09",
+  "decision": "Place the summary first and the admission directly after it, rather than at the end as the E2 brief's outline suggests.",
+  "why": "AGENTS.md says to open every report with the summary and E-COMMON says the admission goes at the top; putting both at the top satisfies both.",
+  "alternative_rejected": "Admission at the end (E2 outline), which conflicts with E-COMMON."
+ }
+]

@@ -1,0 +1,41 @@
+figure,value,unit,refers_to,label,source
+Requests filed in 2025,124077,requests,2025,observed,build/stl.duckdb requests (query 15 Oct 2026 00:00 CT); https://www.stlouis-mo.gov/data/upload/data-files/csb.zip
+2025 requests closed as hand-offs (class handed_off),36705,requests,2025 filings,observed,build/stl.duckdb closure_class (query 15 Oct 2026)
+2025 requests closed as done,38342,requests,2025 filings,observed,build/stl.duckdb closure_class (query 15 Oct 2026)
+2025 requests closed with no action,21137,requests,2025 filings,observed,build/stl.duckdb closure_class (query 15 Oct 2026)
+Repeat filings: same problem code and normalised address within prior 90 days,20697,requests,2025 filings,observed,build/stl.duckdb requests self-join (query 15 Oct 2026; Appendix A)
+Repeat filings as share of 2025 filings,16.7,percent,2025,observed,derived 20697/124077
+Repeat filings whose earlier request was closed as a hand-off,8145,requests,2025 filings,observed,build/stl.duckdb (query 15 Oct 2026)
+Repeat filings durable (non-recurring) types only,2534,requests,2025 filings,observed,build/stl.duckdb refiled.durable (query 15 Oct 2026)
+Repeat filings durable types via resident channels,1700,requests,2025 filings,observed,build/stl.duckdb (query 15 Oct 2026)
+Closings reading "call CSB for details",2565,requests,2025 filings,observed,build/stl.duckdb resolution (query 15 Oct 2026)
+Open past-promise Tier-1 items in six types (cave-ins; tornado debris; tree down; hanging limb; limb down; building collapse),2576,requests,open on 13 Oct 2026 filed since 1 Jan 2025,observed,build/stl.duckdb (query 15 Oct 2026); tiers per research/prioritisation-option.md
+Open past-promise Tier-1 items all types,2991,requests,13 Oct 2026,observed,research/prioritisation-option.md §3
+Open past-promise requests with a city work order pending (class b),1206,requests,13 Oct 2026,observed,research/open-queue-reality-check.md
+Of which Inspect City Tree,892,requests,13 Oct 2026,observed,research/open-queue-reality-check.md
+City-owned lots with cuts billed 2019-24 and none in 2025-26 (upper bound),795,parcels,13 Oct 2026,observed,research/north-taylor-mechanism.md §3
+"On schedule to be cut" answers to parcels with no cut billed in 2026,479 of 1724 (27.8%),requests,2026 to 13 Sep,observed,research/north-taylor-mechanism.md
+Resident hours on repeat filings (assumes 8 minutes each),2760,hours,2025,estimated,derived 20697 x 8 / 60
+Staff hours on hand closings (assumes 1-2 minutes each),600-1200,hours,2025,estimated,derived 36705 x 1-2 / 60
+311 rows in the city file,1502836,rows,2008-09-02 to 2026-10-13,observed,research/data-audit.md summary
+Forestry service-record rows,2252031,rows,to 13 Oct 2026,observed,research/data-audit.md summary
+Distinct Cityworks work orders extracted (authorised),29018,work orders,14 Oct 2026,observed,research/cityworks-gap-review.md
+Public status pages read,1440,pages,14 Oct 2026,observed,research/status-page-linkage.md
+Cities whose 311 practice was checked,11,cities,14 Oct 2026,observed,research/precedents-closed-loop.md B1
+City statements matched to findings,53,statements,14 Oct 2026,observed,research/chapters/R3-voices.md
+Sources inventoried / retrieved in the data audit,1271 / 482,sources,13-14 Oct 2026,observed,research/data-audit.md summary
+Research reports and chapters in research/,22 + 16,files,15 Oct 2026,observed,ls research/*.md research/chapters/*.md
+Rows across research facts CSVs (incl. headers),12054,rows,15 Oct 2026,observed,wc -l research/*-facts.csv research/chapters/*.csv
+Tree removals attaching a work order on the status page,40 of 40,requests,sample 2025-Aug 2026,observed,research/status-page-linkage.md
+Tree removals finished within the 14-day promise (median days late),1 of 40 (211),requests,sample,observed,research/status-page-linkage.md
+Sidewalk hand-offs with a later repair at the address (median days late),16 of 186 (179.5),requests,2025-26,observed,research/cityworks-gap-review.md
+Traceable hand-offs done by promise / no record,18.0 / 32.2,percent,2025-26 (n=3640),observed,research/chapters/R1-trace.md
+Board-ups by promise / late,17.0 / 64.6,percent,2025-26 (n=1528),observed,research/chapters/R1-trace.md
+CityStat debris on time / closings saying picked up,78.6 / 15.0,percent,Q2 2026,observed,research/closure-class-review.md
+Vehicle towing closed by due / closed as done by due,22.0 / 0.2,percent,N4 window,observed,research/chapters/N4-citystat.md line 129
+Cave-ins closed by due / closed as done by due,26.6 / 3.6,percent,N4 window,observed,research/chapters/N4-citystat.md line 127
+Approved tree plantings planted / by the 14-day promise (median days late),65.0 / 0.2 (133),percent,n=806,observed,research/chapters/R2-beyond.md via context/FRESH-EYES-ASSESSMENT.md
+City-owned lots mowed and cost,8412 lots; $1.31M,lots; USD,2026,observed,context/FRESH-EYES-ASSESSMENT.md §2
+Debris closings "matter will be investigated" and their on-time rate,114 of 572; 93.0,requests; percent,Q2 2026,observed,research/closure-class-review.md §2
+v5 film length / first product frame / ask,5:23 / 4:08 / 4:52,mm:ss,roughcut v3 (QA-v3 beat starts),observed,video/review/QA-v3.md
+Proposed v6 length / pitch complete,4:15 / 2:00,mm:ss,proposal,inferred,this file §(c)

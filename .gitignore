@@ -1,0 +1,11 @@
+# The pipeline reads the city's files from data/raw/ and writes row-level copies to build/.
+# Keep both out of git: they hold addresses and ids.
+data/raw/
+build/*/private/
+*.duckdb
+*.duckdb.wal
+*.parquet
+.venv/
+__pycache__/
+.DS_Store
+.env

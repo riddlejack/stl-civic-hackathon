@@ -1,0 +1,100 @@
+[
+  {
+    "id": "r3-robots-news-not-reopened",
+    "decision": "News pages on firstalert4.com, stlpr.org, stlmag.com and spectrumlocalnews.com were not re-opened. Their statements were checked against copies an earlier session saved on 13 Oct 2026 and are labelled 'observed (saved)'.",
+    "why": "Each host's robots.txt disallows ClaudeBot, Claude-Web and anthropic-ai (checked 14 Oct 2026, 12:28 p.m. Central). R-COMMON says 'Respect robots files'; the project memory note on robots limits says to stop where Claude agents are barred.",
+    "alternative_rejected": "Fetching the live pages with a generic user agent, or through the Wayback Machine, to satisfy 'open the URL' for news items.",
+    "shows_up_in": "research/chapters/R3-voices.md (labels, negative results)"
+  },
+  {
+    "id": "r3-ten-strongest-from-city-text",
+    "decision": "The ten strongest statements are drawn from sources that could be opened today, which are mostly the city's own pages, hearing videos and legislation. Robots-barred news quotes are listed separately as 'also strong'.",
+    "why": "The brief asks to confirm the ten strongest by opening them. The city's own words are also the strongest evidence that the problem is known inside government, and the brief allows quoting city text in full.",
+    "alternative_rejected": "Ranking news quotes (e.g. the CityStat manager's 'tracked on paper' remark) into the ten without being able to open them.",
+    "shows_up_in": "research/chapters/R3-voices.md, top-ten table"
+  },
+  {
+    "id": "r3-quote-limits",
+    "decision": "City text (pages, releases, executive orders, resolutions, hearing captions, other cities' audit reports, federal guidance) is quoted in full sentences. News, reviews, forum posts, journal articles and books are quoted in at most 15 words in total per source; the rest is paraphrased. Google reviews are paraphrase only because exact words were not captured.",
+    "why": "R3 brief and Jack's copyright rule: at most 15 words from any news article, review or book; official city text may be quoted.",
+    "alternative_rejected": "Longer news quotes for colour.",
+    "shows_up_in": "research/chapters/R3-voices.md, research/chapters/R3-analogues.md"
+  },
+  {
+    "id": "r3-no-private-names",
+    "decision": "Residents quoted in news stories are described, not named. Public officials are named with their role.",
+    "why": "COMMON.md: no personal data. Officials speak in a public capacity; residents do not.",
+    "alternative_rejected": "Naming residents as the stories do.",
+    "shows_up_in": "research/chapters/R3-voices.md, F9 table"
+  },
+  {
+    "id": "r3-captions-as-record",
+    "decision": "Hearing quotes are taken from the City's YouTube auto-captions saved on 13 Oct, with timestamps. The YouTube watch pages were opened today to confirm title, date and channel; the captions themselves were not re-fetched.",
+    "why": "YouTube's robots.txt disallows /timedtext_video (the caption endpoint), and the saved caption files are the same text. Auto-captions can mis-hear; quotes keep their disfluencies ('um', repeated words) rather than being tidied.",
+    "alternative_rejected": "Re-downloading captions; correcting captions by guesswork.",
+    "shows_up_in": "research/chapters/R3-voices.md, items 3 and 7 and the F4, F6 and F7 tables"
+  },
+  {
+    "id": "r3-pdfs-landing-pages",
+    "decision": "For city PDFs (EO 96, Resolution 142), the HTML landing page was opened today to confirm title, date and sponsor, and the quoted words come from the saved PDF text.",
+    "why": "www.stlouis-mo.gov/robots.txt disallows *.pdf.",
+    "alternative_rejected": "Fetching the PDFs again.",
+    "shows_up_in": "research/chapters/R3-voices.md, items 8 and 9"
+  },
+  {
+    "id": "r3-transition-report-recommendation-not-commitment",
+    "decision": "The transition committee's words are presented as recommendations to the mayor, not as city commitments.",
+    "why": "The report calls itself guidance; the earlier mayor's-office report labels them 'recommendations to her, not her commitments' (research/mayors-office-voice.md).",
+    "alternative_rejected": "Presenting 'Audit previously closed requests' as a city promise.",
+    "shows_up_in": "research/chapters/R3-voices.md, item 2"
+  },
+  {
+    "id": "r3-exclude-out-of-area-row",
+    "decision": "An earlier log row quoting an 'abandoned-vehicle operations chief' from azfamily.com (Phoenix) was excluded.",
+    "why": "The station and story are in Arizona, not St. Louis.",
+    "alternative_rejected": "Using it as a St. Louis towing statement.",
+    "shows_up_in": "research/chapters/R3-voices.md, negative results"
+  },
+  {
+    "id": "r3-archive-copies-not-headline",
+    "decision": "Figures that a research agent could read only in an Internet Archive copy of a publisher whose robots.txt bars non-Google agents (NFPA's 'Vacant Building Fires', 2018) are labelled 'reported (archive copy)' and not used as headline figures. The U.S. Fire Administration's report, which can be fetched directly, carries the fire figures instead.",
+    "why": "nfpa.org/robots.txt disallows /-/media/ and /en/ for all agents except Google's (checked 14 Oct 2026, 12:45 p.m.). The same rule kept the robots-barred news pages out of R3-voices; consistency matters more than one figure.",
+    "alternative_rejected": "Treating the archive copy as an ordinary primary read.",
+    "shows_up_in": "research/chapters/R3-analogues.md (fires), build/R3/figures.json"
+  },
+  {
+    "id": "r3-transfer-as-forgone-benefit",
+    "decision": "External effect sizes are presented as the benefit a done job delivers (and an undone job forgoes while undone), never as a St. Louis harm count.",
+    "why": "Every study compares a delivered treatment with none; none measures a missed, late or unverified scheduled job (agent A's negative result). St. Louis lots and buildings are partly maintained, and crime and fire baselines differ.",
+    "alternative_rejected": "Multiplying Philadelphia percentages by St. Louis counts to produce 'shootings caused by unmowed lots'.",
+    "shows_up_in": "research/chapters/R3-analogues.md, summary and 'Bounding' section"
+  },
+  {
+    "id": "r3-quote-big-philly-figure-with-qualifiers",
+    "decision": "The widely quoted -29.1% gun violence (Branas et al., PNAS 2018) is used only with its qualifiers (any treatment, neighbourhoods below the poverty line, compliance-adjusted); the citywide intention-to-treat figure (-2.7% gun assaults for greening) and the mowing-arm figure from the same trial (-9.2% shootings, Moyer 2019) are preferred.",
+    "why": "Agent A read the full text and tables: -29.1% is the paper's largest estimate, not its main one. synthesis-notes.md carried it unqualified.",
+    "alternative_rejected": "Quoting -29.1% as 'greening cut gun violence 29%'.",
+    "shows_up_in": "research/chapters/R3-analogues.md section 1; build/R3/figures.json"
+  },
+  {
+    "id": "r3-five-strongest-ranking",
+    "decision": "The five strongest analogue figures are ranked by design (randomised > quasi-experimental > national estimate or audit), closeness to the St. Louis hand-off job, and whether the figure was read in the primary source; one per job type: lots (Moyer 2019), buildings (South 2023), fires (USFA 2018), closure precedent (New Orleans OIG 2022), closing the loop (Buell 2021).",
+    "why": "The brief asks for the five strongest; spreading them across job types gives the entry one defensible figure per claim instead of five on lots.",
+    "alternative_rejected": "Ranking by effect size, which would put the −29.1% Philadelphia subgroup figure and the −39% observational building figure first.",
+    "shows_up_in": "research/chapters/R3-analogues.md, 'The five strongest analogue figures'"
+  },
+  {
+    "id": "r3-corrections-not-applied-upstream",
+    "decision": "Corrections to figures in research/synthesis-notes.md (Philadelphia −29.1% qualifiers; NYC pruning 22% dropped; NYC 2014 audit 20% is dollars; Chicago 75%/206,000 are 2009 consultant figures; San Diego 19% of 224) are listed in R3-analogues.md, not written into synthesis-notes.md.",
+    "why": "The R3 brief restricts writes to research/chapters/R3-*.md and build/R3/.",
+    "alternative_rejected": "Editing synthesis-notes.md directly.",
+    "shows_up_in": "research/chapters/R3-analogues.md, 'Negative results and open items'"
+  },
+  {
+    "id": "r3-archive-for-firewall-not-robots",
+    "decision": "Chicago OIG reports, blocked by igchicago.org's firewall (an IP block, not a robots.txt rule), were read in Internet Archive captures of the exact recorded URLs and labelled observed; the NFPA report, barred by robots.txt, stays 'reported'.",
+    "why": "A robots file states the publisher's wish about automated access; an IP firewall block on a public government report does not, and the archive capture is of the same official document.",
+    "alternative_rejected": "Treating both the same way.",
+    "shows_up_in": "research/chapters/R3-analogues.md, sections 2 and 7"
+  }
+]

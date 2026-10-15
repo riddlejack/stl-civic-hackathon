@@ -1,0 +1,100 @@
+[
+ {
+  "id": "R2-01",
+  "decision": "A re-report is another request with the same normalised address (N1's addr_norm, built by scripts/night/N1/normalise.py) and the same PROBLEMCODE, filed after the closure time and within the window; any status and any channel count.",
+  "why": "R2 brief item 1 defines it this way; N1's refiled_next uses the same keys, so the figures reconcile: over all classes, 6.96% of closures with a complete 30-day window came back (N1's n1_came_back_30_2025_26: 6.97%), and 11,976 of 175,801 closures with an address came back within 30 days (N1: 11,978 of 175,801). Spot checks of three types against N1's refiled_next table agree to the decimal.",
+  "alternative_rejected": "Spatial radius or same type family (e.g. a 'Missed Cut' after a 'Weeds-Vacant Lot'): would catch reports filed at a neighbouring address, but not built in the time available; exact matching undercounts for street locations (potholes, signals) whose addresses vary between callers.",
+  "where": "build/R2/rereport_by_type_class.csv, figures r2_rereport*"
+ },
+ {
+  "id": "R2-02",
+  "decision": "Count only windows that had fully elapsed by the file's as-of time (13 Oct 2026 00:33); requests filed 1 Jan 2025 onward, one row per REQUESTID.",
+  "why": "A closure on 10 Oct cannot yet show a 14-day re-report; including it would bias recent (and fast-closing) classes downward. COMMON correction 6 for one row per id.",
+  "alternative_rejected": "All closures with truncated windows.",
+  "where": "every r2_rereport figure"
+ },
+ {
+  "id": "R2-03",
+  "decision": "Compare closing classes within each request type and average with the hand-off mix as weights (direct standardisation), reporting a Mantel-Haenszel risk ratio beside it; types need >= 300 closures in 2025-26 and >= 30 complete-window closures in each class.",
+  "why": "The crude pooled comparison (hand-off 5.9% vs done 3.1% at 14 days) is confounded by type mix: hand-offs concentrate in refuse, weeds, towing and vacant buildings, whose base rates differ.",
+  "alternative_rejected": "Crude pooled rates (kept in r2_rereport14_crude_by_class for transparency, flagged not to be compared).",
+  "where": "scripts/night/R2/02_summary.py; r2_rereport14_handoff_vs_done"
+ },
+ {
+  "id": "R2-04",
+  "decision": "'Converted' (work order created) closures are pooled with 'handed_off' as the hand-off class.",
+  "why": "N2's headline (35.2% of closures record a hand-off or a work order) pools them; R1's composition does too (61,845).",
+  "alternative_rejected": "Separate class: 647 closures, too few to compare in most types.",
+  "where": "all hand-off figures"
+ },
+ {
+  "id": "R2-05",
+  "decision": "Hand-off kinds (crew work / owner enforcement / referral elsewhere) and traceability are taken from R1's phrase-level composition, build/R1/handoff_composition.csv; R2's own provisional mapping is only a fallback.",
+  "why": "One definition across round R; R1's file matched all 61,845 of 61,845 hand-off closures on (PROBLEMCODE, lower(trim(PUBLICRESOLUTION))). R2's own mapping agreed to within 20 requests per kind.",
+  "alternative_rejected": "R2's own mapping (kept in 01_rereport.py as fallback).",
+  "where": "r2_rereport14_by_kind; extrapolation categories"
+ },
+ {
+  "id": "R2-06",
+  "decision": "Add a filing-anchored check: closures made within 14 days of filing, re-reported 15-44 days after the ORIGINAL filing (the same calendar window for every class). Publish it even though it cuts against the headline.",
+  "why": "Hand-offs close a median 1.8 days after filing (N2), done closures later, so a window that starts at closure covers more of the wait for hand-offs. Pooled over all types the gap vanishes in this check (6.1% vs 6.0%); for non-recurring services it holds (7.2% vs 4.0%).",
+  "alternative_rejected": "Reporting only the closure-anchored windows the brief names.",
+  "where": "r2_rereport_filing_window"
+ },
+ {
+  "id": "R2-07",
+  "decision": "Confounds handled by named subsets: recurring = Refuse Division codes, street cleaning, weeds family (reported at 7 days, inside one collection cycle); chronic = dumping family; chronic-site control = closures at addresses with no same-type request in the 365 days before filing; parallel reports = later requests within 24 h of the original filing ignored.",
+  "why": "COMMON correction 4 (re-filing measures recurrence; refuse is weekly, dumping recurs at chronic sites) and the brief's list of confounds.",
+  "alternative_rejected": "A single pooled figure with no confound control.",
+  "where": "r2_rereport14_first_report, r2_rereport14_nonrecurring, r2_rereport7_recurring, r2_rereport14_guard24h"
+ },
+ {
+  "id": "R2-08",
+  "decision": "Test whether a re-report signals unfinished work where the city's own completion record exists (R1's per-request fates for weeds and board-ups), and do not use re-report rates to narrow the extrapolation, because they fail that test.",
+  "why": "Board-ups with no recorded board-up are re-reported less (5.9% within 30 days) than those boarded by the promise (15.4%); weeds are flat (11.5%, 11.5%, 12.5%). This repeats the earlier negative result (synthesis-notes: weeds re-filed at 21.2% with or without a cut).",
+  "alternative_rejected": "Treating excess re-reports as a measure of undone work.",
+  "where": "r2_proxy_check_r1_fates; build/R2/proxy_check_*.csv"
+ },
+ {
+  "id": "R2-09",
+  "decision": "The extrapolation's range of never-done shares is R1's measured 'no record by 13 Oct' share for traceable crew work: low board-ups 18.4%, high missed/unsatisfactory-cut complaints 37.0% (vacant-lot weeds 34.9%; vacant-building weeds 30.8% from R1's 2025 sensitivity row). R1's 2026 vacant-building figure (52.5%) is not used.",
+  "why": "The 2026 Grass Maint ledger may not bill contractor cuts on vacant-building lots (N1, N5 caveats), which would inflate 'no record'; R1 itself flags 2025 (Weed-Grass ledger complete) as the sensitivity.",
+  "alternative_rejected": "Using 52.5% as the high end (would raise the high estimate by about 40%).",
+  "where": "r2_est_never_done_per_year; build/R2/extrapolation.json"
+ },
+ {
+  "id": "R2-10",
+  "decision": "Extrapolate only crew-work hand-offs with no public completion record (R1 traceability none or partial), filed in the 12 months to 13 Oct 2026; owner-enforcement notices and referrals to other agencies are left out.",
+  "why": "R-COMMON asks for the three kinds to be kept apart; R1's traced rates are crew-work rates (mowing, board-ups), so they say nothing about whether an owner complies with a notice or an outside agency acts.",
+  "alternative_rejected": "Applying the rates to all 61,845 hand-offs.",
+  "where": "r2_untraced_crew_work_12m; r2_est_*"
+ },
+ {
+  "id": "R2-11",
+  "decision": "Categories get a plausibility tier: route services (refuse, recycling, yard waste, bulky) low 0 and high = their own excess re-report rate within 7 days; snow and ice excluded (self-resolving); jobs whose closing words say they are unfunded counted separately; tree planting removed once traced; every other category takes the full measured range.",
+  "why": "A weekly truck passes every address anyway, so 'never collected' is implausible at 18-37%; snow melts; 'not funded' is the city's own statement. The other categories are one-off crew jobs queued behind a backlog, the situation the traced services measure.",
+  "alternative_rejected": "Mechanical application to every category (kept as r2_est_never_done_mechanical).",
+  "where": "build/R2/extrapolation.csv"
+ },
+ {
+  "id": "R2-12",
+  "decision": "Data hunt kept to public, keyless sources: never the exposed internal Cityworks host; never the Cityworks 'qe' query-engine service on any host (its service.stlouis-mo.gov copy lists the same 87 internal layers as the server under private disclosure); no guessing or enumerating Cityworks saved-search ids, only ids referenced by public city items; robots.txt checked per host (maps6 returned HTTP 500 and was treated as full disallow).",
+  "why": "R-COMMON rules and context/disclosure-draft.md; respecting the city's robots files.",
+  "alternative_rejected": "Querying the internal saved searches (would likely have found completed work orders, but through an exposure the project has reported privately).",
+  "where": "build/R2/sources-found.md"
+ },
+ {
+  "id": "R2-13",
+  "decision": "Trace tree planting with the city's own planting layers on maps8 (PDA 'Planted last 365 days' and the CW_PRINT tree inventory's DATE_PLANTED), by normalised address and a 25 m radius, on the cohort filed 1 Jun 2025 to 28 Feb 2026, with a baseline of other requests' addresses.",
+  "why": "Both planting seasons that follow those filings (autumn 2025, spring 2026) fall inside the dated record (27 Oct 2025 to 25 Sep 2026); earlier filings could have been planted in spring 2025, which no public record dates. The baseline shows the match is not chance (4.8% of unrelated addresses).",
+  "alternative_rejected": "All 2025-26 requests pooled (would understate planting for early-2025 requests and count 2026 requests whose season has not come).",
+  "where": "r2_tree_planting_fate; build/R2/tree_planting_fate.*"
+ },
+ {
+  "id": "R2-14",
+  "decision": "No request ids, addresses or parcel ids in any R2 public file; per-closure tables with ids or addresses stay in build/R2/private/ (git-ignored); closing texts are published only for texts with >= 50 closures, after a scan for e-mail addresses and names.",
+  "why": "COMMON rules 10 and the no-personal-data rule; N2 found one resolution text holding a staff e-mail.",
+  "alternative_rejected": "Publishing every closing text.",
+  "where": "build/R2/rereport_by_type_text.csv"
+ }
+]

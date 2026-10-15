@@ -1,0 +1,42 @@
+stratum,group,service,closing_words,division,n,any_item,any_item_pct,any_item_ci,work_order,work_order_pct,post_filing_wo,done_by_promise,done_late,median_days_late,no_finish,not_yet_due,inspection_only,page_hides_words_pct,population
+H_tree,Tree removal (control),Inspect City Tree,removal work order created,Forestry Division,40,40,100%,91%–100%,40,100%,40,1,39,211,0,0,0,0%,390
+H15,Hand-off,Weeds-Vacant Bldg,added to rotation,Forestry Division,40,40,100%,91%–100%,0,0%,0,0,0,,0,0,40,0%,1126
+H10,Hand-off,Tree Planting requst,approved for next available planting,Forestry Division,40,39,98%,87%–100%,34,85%,34,2,24,121.0,8,0,5,0%,1404
+H18,Hand-off,Cave-Ins,referred to street maintenance for repair work to be scheduled,Street Department,40,16,40%,26%–55%,16,40%,16,4,12,9.0,0,0,0,0%,919
+H04,Hand-off,Weeds-Vacant Bldg,"on schedule to be cut, call csb for details",Forestry Division,40,4,10%,4%–23%,0,0%,0,0,0,,0,0,4,100%,2082
+H09,Hand-off,Weeds-Vacant Lot,"on schedule to be cut, call csb for details",Forestry Division,40,1,2%,0%–13%,0,0%,0,0,0,,0,0,1,100%,1410
+H01,Hand-off,Vehicle Towing,vehicle tagged for tow,Street Department,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,3062
+H02,Hand-off,Refuse not collected,collection will be made next scheduled day,Refuse Division,40,0,0%,0%–9%,0,0%,0,,,,,,,100%,2922
+H03,Hand-off,Refuse not collected,"due to employee shortage, the routes will be completed in order, as soon possible",Refuse Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,2143
+H05,Hand-off,Illegl Use-Opn Storg,issued notice of violation,Building Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,1653
+H06,Hand-off,Debris-alley/street,matter will be investigated and appropriate action taken,Street Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,1602
+H07,Hand-off,Vacnt Bldg Unsecured,referred to board up crew,Building Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,1465
+H08,Hand-off,Bulky items missed,collection will be made next scheduled day,Refuse Division,40,0,0%,0%–9%,0,0%,0,,,,,,,100%,1431
+H11,Hand-off,Ppty Maint Code-Ext,issued notice of violation,Building Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,1343
+H12,Hand-off,Ppty Maint Code-Ext,building already under notice,Building Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,1320
+H13,Hand-off,Illegl Use-Opn Storg,building already under notice,Building Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,1173
+H14,Hand-off,Bulky items missed,"due to employee shortage, the routes will be completed in order, as soon possible",Refuse Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,1154
+H16,Hand-off,Refuse not collected,matter will be investigated and appropriate action taken,Refuse Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,1090
+H17,Hand-off,WTR-COMING-UP,scheduled for repair by water department,Water Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,893
+H19,Hand-off,Debris-alley/street,bulk will be picked up in correct week,Street Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,777
+H20,Hand-off,Bulky items missed,bulk will be picked up in correct week,Refuse Division,40,0,0%,0%–9%,0,0%,0,,,,,,,0%,733
+D01,Done,Containr damaged,(any done phrase),Refuse Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,7498
+D02,Done,Refuse not collected,(any done phrase),Refuse Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,6114
+D03,Done,Potholes - Residnl,(any done phrase),Street Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,4332
+D04,Done,Snow/Ice - Residnl,(any done phrase),Street Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,3666
+D05,Done,Whole Blk Lights Out,(any done phrase),Traffic Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,3135
+D06,Done,Potholes - Major St,(any done phrase),Street Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,3121
+D07,Done,Single Light Out,(any done phrase),Traffic Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,2603
+D08,Done,Sign needs attention,(any done phrase),Traffic Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,2197
+D09,Done,Debris-alley/street,(any done phrase),Street Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,1868
+D10,Done,Light Damaged,(any done phrase),Traffic Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,1471
+O04,Open past promise,Weeds-Occupied Ppty,(open past promise),Forestry Division,30,28,93%,79%–98%,24,80%,24,0,1,36,22,1,4,0%,888
+O01,Open past promise,Inspect City Tree,(open past promise),Forestry Division,30,27,90%,74%–96%,27,90%,27,0,2,276.0,24,1,0,0%,1366
+O06,Open past promise,Sewer Lateral Defect,(open past promise),Street Department,30,14,47%,30%–64%,10,33%,10,0,0,,10,0,4,0%,402
+O03,Open past promise,Sidewalk Repair,(open past promise),Street Department,30,10,33%,19%–51%,6,20%,6,0,0,,6,0,4,0%,1055
+O02,Open past promise,Cave-Ins,(open past promise),Street Department,30,1,3%,1%–17%,0,0%,0,0,0,,0,0,1,0%,1098
+O05,Open past promise,Bad Condition,(open past promise),Street Department,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,526
+O07,Open past promise,TDebris-alley/street,(open past promise),"Tornado, Recovery",30,0,0%,0%–11%,0,0%,0,,,,,,,0%,364
+O08,Open past promise,LRA Tree,(open past promise),Land Reutilization Authority (LRA),30,0,0%,0%–11%,0,0%,0,,,,,,,0%,362
+O09,Open past promise,Ppty Maint Code-Ext,(open past promise),Building Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,349
+O10,Open past promise,City Tree Down,(open past promise),Forestry Division,30,0,0%,0%–11%,0,0%,0,,,,,,,0%,314

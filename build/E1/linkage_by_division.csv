@@ -1,0 +1,15 @@
+division_on_page,family,n,n_with_item,share_with_item,ci_low,ci_high
+Building Division,handoff,200,0,0.0,0,0.019
+Building Division,open_past_promise,30,0,0.0,0,0.114
+Forestry Division,handoff,200,124,0.62,0.551,0.684
+Forestry Division,open_past_promise,90,55,0.611,0.508,0.705
+Land Reutilization Authority (LRA),open_past_promise,30,0,0.0,0,0.114
+Refuse Division,done,60,0,0.0,0,0.06
+Refuse Division,handoff,240,0,0.0,0,0.016
+Street Department,handoff,80,16,0.2,0.127,0.3
+Street Department,open_past_promise,120,25,0.208,0.145,0.289
+Street Division,done,120,0,0.0,0,0.031
+Street Division,handoff,80,0,0.0,0,0.046
+"Tornado, Recovery",open_past_promise,30,0,0.0,0,0.114
+Traffic Division,done,120,0,0.0,0,0.031
+Water Division,handoff,40,0,0.0,0,0.088

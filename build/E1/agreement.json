@@ -1,0 +1,22 @@
+{
+ "due_by_vs_ts_promised": {
+  "agree": 1438,
+  "n": 1438,
+  "share": 1.0
+ },
+ "closed_status": {
+  "agree": 1436,
+  "n": 1440,
+  "share": 0.997
+ },
+ "resolution_text": {
+  "agree": 980,
+  "n": 1140,
+  "share": 0.86
+ },
+ "closed_date": {
+  "agree": 1139,
+  "n": 1139,
+  "share": 1.0
+ }
+}

@@ -1,0 +1,219 @@
+[
+ {
+  "id": "N1-01-encoding",
+  "decision": "Read the 311 CSVs from build/csb-clean/, where invalid UTF-8 bytes were dropped (iconv -c). If that folder is missing, build_db.py recreates it from csb.zip, decoding with errors='ignore' (the same effect).",
+  "why": "The city's yearly CSVs contain invalid UTF-8 (COMMON correction 5, observed 13 Oct). The dropped bytes are in free-text fields; no date, code or id field is affected (all 1,502,836 rows parse; 0 unparseable timestamps, observed by N1).",
+  "alternative_rejected": "errors='replace' (inserts U+FFFD into resolution text, which would then fail to match N2's class table); latin-1 decoding (silently mis-decodes).",
+  "shows_up_in": "requests table; every figure."
+ },
+ {
+  "id": "N1-02-one-row-per-request",
+  "decision": "One row per REQUESTID. The file has 1,502,836 rows for 1,454,222 request ids; duplicate rows differ only in CALLERTYPE (13,677 ids) and PUBLICRESOLUTION (148 ids). We keep every caller type in a list and the longest resolution text.",
+  "why": "Observed by N1 (scripts/night/N1/build_db.py log): duplicates share id, file, filing time, status and code. Counting rows counts callers, not requests. Earlier project figures counted rows (e.g. 190,856 closed 2025-26 rows = 175,801 requests). Orchestrator check, 13-14 Oct: 2024-26 has 349,031 rows for 322,104 ids (24,020 ids repeat, up to 21 times); closed 2025-26 = 175,876 requests (N1 gets the same).",
+  "alternative_rejected": "Counting file rows (what the research-phase scripts did).",
+  "shows_up_in": "Every count. Validation table in research/chapters/N1-pipeline.md shows both."
+ },
+ {
+  "id": "N1-03-channel-for-multi-caller",
+  "decision": "channel_group = resident if any caller row is WEB, PHONE, EMAIL, CHAT, TWITTER or LETTER; else staff if any is NSO; else indeterminate if any is INDETERMINATE; else other.",
+  "why": "A request with a resident caller was asked for by a resident even if staff also logged it. T-COMMON defines the channel groups; it does not say how to resolve an id with two caller types (13,677 ids, 0.9%).",
+  "alternative_rejected": "First row's caller type (row order in the city file is arbitrary).",
+  "shows_up_in": "promise, by_ward, ward like-for-like, scoreboard (resident-channel filters)."
+ },
+ {
+  "id": "N1-04-status-case",
+  "decision": "Status groups use upper(STATUS): CLOSED with a DATETIMECLOSED = closed; CANCEL = cancelled; anything else = open.",
+  "why": "The file has 'Closed' (4,098 rows) and 'Cancel' (2,381 rows) beside 'CLOSED' and 'CANCEL' (observed). T-COMMON: closed means STATUS CLOSED with DATETIMECLOSED.",
+  "alternative_rejected": "Case-sensitive match (would count 6,479 finished rows as open).",
+  "shows_up_in": "Every status split; Monday list."
+ },
+ {
+  "id": "N1-05-ward",
+  "decision": "Use the file's WARD (normalised to '01'..'14'); fill the 3,107 requests with a missing or malformed WARD from the ward polygons (maps8_BOUNDARIES_Wards) by point-in-polygon on SRX/SRY.",
+  "why": "WARD is already on the current 14-ward plan in every year, back to 2008 (observed: 1-14 for over 99% of rows each year). On a 20,000-request sample from 2025-26, file ward and polygon ward agree for 99.9% (19,986 of 19,997).",
+  "alternative_rejected": "Recomputing ward from coordinates for every row (slower, needs the polygons to be current, and disagrees with the city's own assignment in 0.1% of cases).",
+  "shows_up_in": "requests.ward, ward_source; every ward figure."
+ },
+ {
+  "id": "N1-06-address-normaliser",
+  "decision": "One normaliser (scripts/night/N1/normalise.py, with tests) for every address join. It follows T-COMMON with two changes: the 'ST LOUIS ... MO 631xx' suffix is stripped only at the end of the string, so St. Louis Avenue survives; and '&' is kept so intersections stay distinct.",
+  "why": "T-COMMON's regex turns an MSD address of the form '1234 ST LOUIS AV ST LOUIS MO 63115' into '1234' (pattern observed in the MSD file; example number invented). The same function is applied to 311, MSD, LRA, forestry-maintenance and Cityworks addresses. Test cases use invented house numbers on real street names.",
+  "alternative_rejected": "The T-COMMON regex as written; a geocoder (needs a key or a network service).",
+  "shows_up_in": "addr_lookup; request_parcel; refiled; request_wo; block labels."
+ },
+ {
+  "id": "N1-07-parcel-match",
+  "decision": "Request to parcel: (1) exact normalised address against MSD parcels, LRA inventory and the forestry-maintenance list; (2) house number inside an MSD parcel's recorded number range on the same street, same parity; (3) same number and street with the street type ignored, only when unique. Where an address maps to several parcels, prefer one that appears in the cut ledger, then LRA, then the lowest id.",
+  "why": "Knock-out test: weed requests 2025-26 match at 90.1% (Weeds-Vacant Lot, 2,387 of 2,649) and 93.3% (Weeds-Vacant Bldg, 4,840 of 5,187), above the 80% bar. Of ledger parcels cut in 2025-26, 99.7% are MSD parcel ids (17,831 of 17,890), so PID is the ledger's key.",
+  "alternative_rejected": "Nearest house number or nearest point (would raise the rate but could pin a 'no cut' finding on the wrong lot).",
+  "shows_up_in": "request_parcel.method; request_ledger; receipts' ledger lines."
+ },
+ {
+  "id": "N1-08-ledger-cuts",
+  "decision": "A cut is a forestry ledger row with SERVICETYPE 'Grass Maint' or 'Weed-Grass' and a SERVICEDATE on or after 1995. Windows are counted in days from the filing date, a cut posted on the filing day counts as after, and windows that end after the ledger's last date (12 Oct 2026) are left empty rather than counted as 'no cut'. A cut is one distinct (parcel, service date, service type): the ledger repeats rows, so the cuts table is deduplicated and keeps the row count beside each cut.",
+  "why": "T-COMMON: those two types are cuts; posting dates are batched (many Sundays), so dates are precise to the week. The ledger uses 1900-01-01 as a placeholder (observed). Reproduces the established vacant-lot figures: 36% / 63% / 25% vs 35% / 63% / 26%. N8 finding 10: most pre-2021 legacy rows appear twice; 2026 Grass Maint has 37,543 rows but 31,527 distinct parcel-days (observed by N1 after the fix).",
+  "alternative_rejected": "Treating an incomplete window as no cut (would overstate failure for requests filed in the last 60 days).",
+  "shows_up_in": "request_ledger, request_ledger_flags, mowing_gaps, weed receipts."
+ },
+ {
+  "id": "N1-09-grade-against-promise",
+  "decision": "Grade every request against the city's own per-request promise date (PRJCOMPLETEDATE), compared to the second. CityStat goals are kept as a separate column only for the six types whose goal is on CityStat's pages.",
+  "why": "PRJCOMPLETEDATE is populated on 97.9% of 2024-26 requests and is a fixed offset per type that matches the COMMON list exactly (light out 3, cave-in 3, towing 5, residential pothole 8, alley 16, dumping 10, debris 3, tree 14, weeds lot 14, weeds building 90; observed by N1). It is the city's promise, not our guess.",
+  "alternative_rejected": "Our reading of CityStat goals (denominators unpublished; Q2 potholes do not reproduce).",
+  "shows_up_in": "promise view; scoreboard; Monday list; receipts."
+ },
+ {
+  "id": "N1-10-survival-share",
+  "decision": "'Done by promise' is reported survival-style: among requests whose promise date has passed, the share closed with a done-class closure on or before it; open and cancelled requests count as not done. 'Closed by promise' is given both among all due requests and among closed ones.",
+  "why": "T-COMMON asks for open requests to count as not yet closed; a share among closed requests hides the open backlog.",
+  "alternative_rejected": "Share among closed requests only.",
+  "shows_up_in": "promise, by_ward_type, scoreboard.json."
+ },
+ {
+  "id": "N1-11-closure-classes",
+  "decision": "Class each closure from N2's final per-type table (research/chapters/N2-closure-classes.csv: PROBLEMCODE + text), then N2's SQL classifier for texts outside it (build/N2/closure_class.sql: per-type overrides, then its text table; unlisted text = info_other). N1's provisional regex runs only if N2's files are missing. Text is compared as lower(trim(collapsed spaces)), N2's own normalisation; codes are trimmed (no two codes collide when trimmed: 263 either way).",
+  "why": "N2 is the reviewable, AI-assisted classification; using it as a lookup keeps the product deterministic. Current build: 266,104 of 266,110 closed 2024+ requests classed by N2's per-type table; all years: 1,158,753 per-type, 123,049 text table, 45,564 unlisted text (pre-2024), 20,336 blank.",
+  "alternative_rejected": "Classifying at run time with a model (not allowed under ITSA policy 2026-001 and not reproducible).",
+  "shows_up_in": "closure_class.class_source; every done/hand-off figure."
+ },
+ {
+  "id": "N1-12-refiled",
+  "decision": "Re-filed = the next request with the same normalised address and problem code filed strictly after this one closed. 'The closure did not hold' uses durable types only (potholes, cave-ins, lights, city trees, signs) at 14 and 30 days; the all-types 30-day figure is called 'came back'. Windows not yet complete are flagged.",
+  "why": "COMMON correction 4: refuse and dumping recur by nature, so the broad figure measures recurrence, not false closure.",
+  "alternative_rejected": "One 30-day re-file rate across all types presented as false closure.",
+  "shows_up_in": "refiled_next, refiled view, register, dumping sites."
+ },
+ {
+  "id": "N1-13-tree-workorders",
+  "decision": "Tree requests are linked to Cityworks tree work orders at the same normalised address or within 30 m, using the saved samples only (1,500 of 2,522 removals, 1,500 of 6,276 trims, 1,500 completed plantings). Results are a lower bound and are worded 'appears in', never 'converted'.",
+  "why": "COMMON correction 3: closed 'work order created' requests match only 6.8% by address (N1), so recall is poor; the samples are not the full layers.",
+  "alternative_rejected": "Claiming cancelled requests were converted to work orders.",
+  "shows_up_in": "request_wo, request_wo_summary, tree receipts."
+ },
+ {
+  "id": "N1-14-block-level",
+  "decision": "Every public export and every receipt is block level: house number rounded down to the hundred ('3300 block of LEMP AV'); intersections kept as they are. No parcel-level output, LRA lots included. Exact addresses and parcel ids stay inside build/stl.duckdb (receipt_private view) and build/N1/private/. Intersections of two house numbers ('1234 & 1238 LEMP AV') are rounded on the first number, and further house-number runs are dropped; numbers of three or more digits never appear after 'block of'.",
+  "why": "Jack's ruling, 13 Oct about 11:55 p.m. (COMMON 'Rules that bind'): blocks, not specific properties. N8 finding 14 found two Monday-list rows that leaked house numbers through intersection labels; privacy_check.py now fails the run on any such label.",
+  "alternative_rejected": "Parcel-level LRA receipts (the earlier exception, withdrawn).",
+  "shows_up_in": "receipt_base.public_address; all build/out files."
+ },
+ {
+  "id": "N1-15-sensitive-codes",
+  "decision": "Codes about people rather than places are never shown below ward level: homeless calls, tent encampments, welfare checks, and requests in the Discrimination, Legal Claims and Courts groups or routed to Human Services, Civil Rights or the police (SLMPD). Requests routed to SLMPD are also dropped row by row from the Monday list.",
+  "why": "COMMON: no encampment or homeless-call points, ever. The same reasoning covers welfare checks and discrimination complaints. N8 finding 14: 28 'SLMPD Referral' rows reached the public Monday list; police matters are out of scope (README, BUILD-SPEC).",
+  "alternative_rejected": "Showing them at block level like other codes.",
+  "shows_up_in": "sensitive_codes table; excluded from Monday list, receipts, dumping sites."
+ },
+ {
+  "id": "N1-16-asof",
+  "decision": "The run date ('as of') is the latest filing time in the 311 file (13 Oct 2026 00:33), not the clock time of the run.",
+  "why": "Open-age and promise-passed figures must refer to the data's own date so a re-run on old files gives the same answer.",
+  "alternative_rejected": "Wall-clock now().",
+  "shows_up_in": "run_dates view; Monday list days past promise; survival shares."
+ },
+ {
+  "id": "N1-17-no-network-no-ai",
+  "decision": "The pipeline is Python plus DuckDB only, reads files on disk, needs no key and no network, and calls no model. Ward polygons use matplotlib's point-in-polygon instead of DuckDB's spatial extension (which downloads on first use).",
+  "why": "BUILD-SPEC acceptance test 1 (rebuild under 15 minutes, no key); COMMON: the product is deliberately AI-free under ITSA policy 2026-001. Observed build time: about 15 seconds on this laptop.",
+  "alternative_rejected": "DuckDB spatial extension; a geocoding API; an LLM in the loop.",
+  "shows_up_in": "scripts/night/N1/run_all.sh."
+ },
+ {
+  "id": "N1-18-atomic-build",
+  "decision": "Build into build/N1/stl.building.duckdb and swap it into build/stl.duckdb at the end.",
+  "why": "Five other sessions read build/stl.duckdb tonight; a half-built file would give them wrong answers.",
+  "alternative_rejected": "Writing build/stl.duckdb in place.",
+  "shows_up_in": "build_db.py."
+ },
+ {
+  "id": "N1-19-no-ids-in-public-files",
+  "decision": "No request, work-order or parcel ids in anything under build/out/. Sample receipts are numbered R001-R200; the key to request ids is build/N1/private/receipts_key.json. The Monday list is published without ids; the copy with ids (what a division would work from) is build/N1/private/monday_list_with_ids.csv. Hero receipts stay in build/N1/private/receipts_heroes.json.",
+  "why": "COMMON correction 10 (N5's call, adopted 14 Oct, Jack to confirm): each id leads straight to an exact address in the city's own 311 file, undoing block-level rounding. privacy_check.py now fails the run if an id field, or any seven-digit number that equals a request id, appears in an N1 export.",
+  "alternative_rejected": "Publishing request ids beside block-level addresses (makes the receipt search and the Monday list work out of the box, but points at exact properties).",
+  "shows_up_in": "build/out/receipts.json, monday_list.json/.csv."
+ },
+ {
+  "id": "N1-20-pooled-routing-and-free-text",
+  "decision": "Routing values (SUBMITTO) used fewer than 20 times are pooled as 'Other (pooled)'; resolution text used fewer than 5 times in the whole file is shown as '[uncommon free text withheld]'; e-mail addresses are removed from any text. The raw columns stay in the database.",
+  "why": "Observed: three SUBMITTO values are people's names (used 1 to 3 times each), and one canned resolution carries a staff e-mail (18 requests). Rare free text can name people. Orchestrator instruction, 14 Oct.",
+  "alternative_rejected": "Publishing SUBMITTO and resolution text verbatim; hand-listing the names (would miss next week's).",
+  "shows_up_in": "requests.division, requests.resolution_public; every export; privacy_check.py."
+ },
+ {
+  "id": "N1-21-sensitive-by-usual-group",
+  "decision": "A code is sensitive (never below ward level) by its name pattern or by its usual (modal) group and division, not by any single row's routing.",
+  "why": "First pass flagged whole codes such as Illegal dumpg report and Weeds-Vacant Bldg because a few of their requests were routed to Human Services (observed). 25 codes are sensitive now: homeless, encampment, welfare check, discrimination, property-damage claims, tickets, inmate complaints.",
+  "alternative_rejected": "Any row's group or division (over-excludes core services).",
+  "shows_up_in": "sensitive_codes table."
+ },
+ {
+  "id": "N1-22-mowing-gap-threshold",
+  "decision": "The mowing retrospective flags rotation lots whose longest gap between cuts (or from the last cut to 30 Sep) exceeds 90 days; the 42-day count is reported beside it.",
+  "why": "Observed: the median longest gap between consecutive cuts on 2026 rotation lots is 54 days, so the city's own cycle is about eight weeks; BUILD-SPEC's 42-day threshold flags 11,356 of 11,824 lots and says nothing. 90 days is about one and a half cycles, i.e. a missed rotation.",
+  "alternative_rejected": "42 days (flags 96% of lots).",
+  "shows_up_in": "mowing_gaps view; monday_list.json mowing_2026_retrospective; figure n1_mowing_gaps."
+ },
+ {
+  "id": "N1-23-ledger-2025-gap",
+  "decision": "Ledger-based measures are reported for 2026 filings (with 2023-24 by quarter for comparison); 2025 is shown but not totalled, and a 2025 receipt says the ledger is incomplete.",
+  "why": "Observed: the ledger holds 13,168 cut rows on 8,780 parcels in 2025 against 39,949-64,199 rows on 15,000-17,000 parcels in 2021-24 and 46,346 on 16,118 in 2026. 'No cut recorded' in 2025 is not evidence of no cut.",
+  "alternative_rejected": "Pooling 2025-26 (would overstate failure).",
+  "shows_up_in": "scoreboard.json ledger_check; figures n1_weeds_cut_by_promise, n1_ledger_coverage_by_year; receipts."
+ },
+ {
+  "id": "N1-24-weeds-graded-by-ledger",
+  "decision": "For vacant-lot and vacant-building weed codes, the scoreboard adds a ledger column: share of parcel-matched requests with a cut recorded between filing and the city's promised date.",
+  "why": "Their closures are almost all 'on schedule to be cut' or 'added to rotation' (hand-offs), so done-by-promise from the words alone is near zero and says nothing; the ledger is the city's own completion record.",
+  "alternative_rejected": "Grading weeds by closure words only.",
+  "shows_up_in": "weed_promise_ledger view; scoreboard.json ledger_check."
+ },
+ {
+  "id": "N1-25-missed-cut-codes",
+  "decision": "'Missed Cut - V Lot', 'Missed Cut - VBldg', 'Unsatisfy Cut - VLot' and 'Unsatisfy Cut -VBldg' are treated as weed codes and joined to the ledger.",
+  "why": "They are residents telling the city a rotation cut was missed or incomplete (city's own descriptions: 'Vacant lot missed on ward cutting rotation'); 12,234 requests since 2009 (observed). They surfaced inside N5's hero cases.",
+  "alternative_rejected": "Leaving them out of the weeds family.",
+  "shows_up_in": "type_family, weed_ledger_codes; ledger_check."
+ },
+ {
+  "id": "N1-26-validation-by-request",
+  "decision": "Validation compares our per-request figures with the research-phase figures and shows file-row counts beside them where those were rows.",
+  "why": "Most differences are the row/request difference (e.g. refile 6.8% of 175,801 requests vs 6.3% of 190,856 rows; weeds 4,532 requests vs 4,658 rows). One research figure did not reproduce at first because our own validation query averaged over missing values; fixed, it reproduces (36/63/25 vs 35/63/26).",
+  "alternative_rejected": "Matching row counts to agree with old numbers.",
+  "shows_up_in": "build/N1/validation.json; report validation table."
+ },
+ {
+  "id": "N1-27-site-contract-shapes",
+  "decision": "Exports follow site/DATA-CONTRACT.md: every file carries the meta envelope; figures.json is keyed by id; receipts.json is a list with 'line' and contract-shaped timelines; monday_list.json has by_ward, by_type, rows and mowing; dumping_blocks.json and mowing_2026.json and run.json as named there. The pipeline's own scoreboard is scoreboard_n1.json so the site keeps N4's scoreboard.json.",
+  "why": "N6's bridge takes build/out files first when they pass validation; matching the contract means no code change on the site. N4 owns the scoreboard definitions tonight (CityStat definition C).",
+  "alternative_rejected": "Writing build/out/scoreboard.json in N1's own shape (would either fail validation or displace N4's numbers).",
+  "shows_up_in": "build/out/*.json."
+ },
+ {
+  "id": "N1-28-tree-framing",
+  "decision": "Tree receipts, the register and the 'already open' columns of request_wo_summary use N5's rule: same normalised address, removal order started more than a day before the request (Cityworks dates converted from UTC to Central). Matches within 30 m are kept in separate columns and described as 'possibly a neighbouring tree'.",
+  "why": "COMMON correction 9 and N8 conflict 3: within 30 m reaches neighbours and the far side of the street. N1's view gives 289 blank-cancelled 2025-26 requests (median 575 days since the most recent order started); N5 registers 288 / 575; 30 m gives 496.",
+  "alternative_rejected": "'Cancelled because converted' framing.",
+  "shows_up_in": "request_wo_summary (feeds N6's brief list c); receipts; register_counts.json; figure n1_tree_blank_cancel_order_already_open."
+ },
+ {
+  "id": "N1-29-onschedule-only-figures",
+  "decision": "Register 'on schedule to be cut' alone as n1_weeds_lot_onschedule_only_no_cut_2026 and n1_weeds_bldg_onschedule_only_no_cut_2026 (share with no cut billed in 2026). Keep the pooled figures and say in their definitions that they pool 'on schedule to be cut' and 'added to rotation'.",
+  "why": "N8 finding 2: the narration said 'closed on schedule' while citing the pooled figure (24.8%); 'on schedule' alone is 21.4% for lots (156 of 729) and 32.2% for buildings.",
+  "alternative_rejected": "Relabelling the pooled figure only (the narration quotes the 'on schedule' words).",
+  "shows_up_in": "build/out/figures.json."
+ },
+ {
+  "id": "N1-30-lra-brief-rule",
+  "decision": "Add view lra_onschedule_no_cut with N5's rule (Weeds-Vacant Lot, 2026, resident-filed, closed within 3 days 'on schedule to be cut' or 'added to rotation', LRA parcel, no cut billed after filing) and register its counts as n1_lra_onschedule_no_cut, noting that public text uses N5's 94 on 75.",
+  "why": "N8 conflict 2: the brief's 103 on 82 dropped the resident filter. N1's view gives 96 requests on 76 lots; the remaining gap to N5 is N1's wider parcel join.",
+  "alternative_rejected": "A second, all-channel count beside N5's.",
+  "shows_up_in": "lra_onschedule_no_cut view (N6's bridge.py list a should read it); figures.json."
+ },
+ {
+  "id": "N1-31-cityworks-time-zone",
+  "decision": "Convert Cityworks epoch-millisecond dates from UTC to Central before comparing them with 311 times.",
+  "why": "311 times are Central (observed); Cityworks layers return UTC epochs. N5 converted; N1 had not, which moved boundary cases by up to six hours.",
+  "alternative_rejected": "Comparing UTC with Central.",
+  "shows_up_in": "wo_tree, cw_potholes, request_wo_summary."
+ }
+]

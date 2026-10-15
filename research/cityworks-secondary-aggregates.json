@@ -1,0 +1,230 @@
+[
+  {
+    "layer": 13,
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/13",
+    "rows": 0,
+    "complete": true,
+    "status_counts": {},
+    "date_ranges": {
+      "ActualFinishDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ActualStartDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "DateCancelled": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "DateWOClosed": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "InitiateDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ProjectedFinishDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ProjectedStartDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      }
+    },
+    "templates": {}
+  },
+  {
+    "layer": 14,
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/14",
+    "rows": 13,
+    "complete": true,
+    "status_counts": {
+      "IProcess": 13
+    },
+    "date_ranges": {
+      "ActualFinishDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ActualStartDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "DateCancelled": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "DateWOClosed": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "InitiateDate": {
+        "non_null": 13,
+        "min": "2026-09-16T12:30:43-05:00",
+        "max": "2026-09-30T10:50:24-05:00"
+      },
+      "ProjectedFinishDate": {
+        "non_null": 13,
+        "min": "2026-09-16T12:30:43-05:00",
+        "max": "2026-09-30T10:50:24-05:00"
+      },
+      "ProjectedStartDate": {
+        "non_null": 13,
+        "min": "2026-09-16T12:30:43-05:00",
+        "max": "2026-09-30T10:50:24-05:00"
+      }
+    },
+    "templates": {
+      "279": 13
+    }
+  },
+  {
+    "layer": 15,
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/15",
+    "rows": 0,
+    "complete": true,
+    "status_counts": {},
+    "date_ranges": {
+      "ActualFinishDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ActualStartDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "DateCancelled": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "DateWOClosed": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "InitiateDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ProjectedFinishDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ProjectedStartDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      }
+    },
+    "templates": {}
+  },
+  {
+    "layer": 16,
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/16",
+    "rows": 0,
+    "complete": true,
+    "status_counts": {},
+    "date_ranges": {
+      "ActualFinishDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ActualStartDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "DateCancelled": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "DateWOClosed": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "InitiateDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ProjectedFinishDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "ProjectedStartDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      }
+    },
+    "templates": {}
+  },
+  {
+    "layer": 79,
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/79",
+    "rows": 1011,
+    "complete": true,
+    "status_counts": {
+      "CLOSED": 1011
+    },
+    "date_ranges": {
+      "ActFinishDate": {
+        "non_null": 1011,
+        "min": "2022-10-11T11:05:38-05:00",
+        "max": "2026-09-05T21:59:07.067000-05:00"
+      },
+      "DateClosed": {
+        "non_null": 1011,
+        "min": "2023-01-12T10:20:01.903000-06:00",
+        "max": "2026-09-05T22:10:30.733000-05:00"
+      },
+      "InitiateDate": {
+        "non_null": 1011,
+        "min": "2022-02-22T14:29:06.977000-06:00",
+        "max": "2026-08-10T09:04:56.840000-05:00"
+      },
+      "InspDate": {
+        "non_null": 953,
+        "min": "2022-10-08T12:00:00-05:00",
+        "max": "2026-08-10T12:00:00-05:00"
+      },
+      "PrjFinishDate": {
+        "non_null": 0,
+        "min": null,
+        "max": null
+      },
+      "PrjStartDate": {
+        "non_null": 1011,
+        "min": "2022-02-22T14:29:06-06:00",
+        "max": "2026-08-10T09:04:56-05:00"
+      }
+    },
+    "templates": {
+      "89": 1011
+    }
+  }
+]

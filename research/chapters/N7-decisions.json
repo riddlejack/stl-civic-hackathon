@@ -1,0 +1,168 @@
+{
+  "owner": "N7",
+  "written": "2026-10-14 00:25 CDT; revised 01:20 CDT after N8",
+  "note": "N7 may write only under deliverable/ and research/chapters/N7-*, so its decision log lives here rather than in build/N7/. Same fields as build/<N>/decisions.json, for N9 to merge.",
+  "decisions": [
+    {
+      "id": "n7-recommend-storyboard-a",
+      "decision": "Recommend storyboard A (one lot's receipt, then the like-for-like ward finding, then the site's three users, then the ask) and give B (mowing throughout) and C (numbers first) as full alternatives.",
+      "why": "A is the only one that meets Mike's personal-story test in the first 30 seconds and Ben's adoption test, and it shows breadth. The ward finding survived N3's attempt to explain it away (research/chapters/N3-fairness.md). Jack approved the lead provisionally (build/INTEGRATION-LOG.md 23:50).",
+      "alternative_rejected": "B as the recommendation (clearest story, but one service and out of season); C (most complete argument, but abstract for 50 seconds and can read as an audit).",
+      "shows_up_in": "deliverable/video-script.md"
+    },
+    {
+      "id": "n7-first-step-not-paperwork",
+      "decision": "Replace the brief's default line 'the city's ward chart measures paperwork' with 'the gap is in the first step' and 'The north doesn't wait longer for crews. It waits longer for someone to look.'",
+      "why": "COMMON correction 2 withdraws the paperwork reading: type mix and closing words explain 12% of the ward 1 vs ward 10 gap (n3_decomp_*). The robust like-for-like gaps are first steps (n3_towing_tagged_median_after, n3_cavein_referral_median_after).",
+      "alternative_rejected": "The brief's default wording (prompts/night-v2/N7-story.md).",
+      "shows_up_in": "video-script A shot 5, C shot 5; README 'What we found'; progress report correction line"
+    },
+    {
+      "id": "n7-medians-only-for-towing",
+      "decision": "Use tow-tag medians (12.0 vs 36.9 days) and never the share of tow requests met within the 5-day promise.",
+      "why": "The promise share is disputed (N3 38% vs 11%; orchestrator 32% vs 4%; build/INTEGRATION-LOG.md 23:57). COMMON correction 2: lead with the medians until N8 settles it.",
+      "alternative_rejected": "Quoting N3's 38% vs 11%.",
+      "shows_up_in": "all storyboards; README; progress report"
+    },
+    {
+      "id": "n7-no-single-light-out",
+      "decision": "Leave single light out out of every storyboard and the README, including N5's light pair hero; say 'block-wide outages', not 'lights', when listing services with no gap.",
+      "why": "N3 found the single light out gap is a two-quarter episode and not robust (n3-single-light-not-robust; COMMON correction 2). Whole-block lights are level (0.7 vs 0.7).",
+      "alternative_rejected": "N5's light pair (15.5 vs 40.9 days) as a second hero.",
+      "shows_up_in": "video-script; README"
+    },
+    {
+      "id": "n7-one-in-five-on-schedule",
+      "decision": "Say 'for one in five vacant-lot requests closed \"on schedule\", the ledger bills no cut all year' (revised 1:10 a.m.; first draft said one in four).",
+      "why": "N8 finding 2: n1_weeds_lot_onschedule_ledger (0.2475 of 808) mixes in 'added to rotation' closures; for 'on schedule to be cut' alone the share is 21.4% (156 of 729), registered by N1 as n1_weeds_lot_onschedule_only_no_cut_2026. It is a share of requests, not lots.",
+      "alternative_rejected": "'One in four lots closed this way' (the brief's default) and 'one in four requests' (the mixed figure).",
+      "shows_up_in": "video-script A shot 4; README"
+    },
+    {
+      "id": "n7-no-cut-billed-wording",
+      "decision": "Every lot claim says 'no cut billed' or 'the ledger bills no cut', never 'never cut' or 'never mowed'; the receipt shot carries the caption 'A billing record: no charge is not proof that no one cut it.'",
+      "why": "The ledger is a billing record posted in weekly batches; lot-1 drew an 'unsatisfactory cut' complaint on 9 Sep 2026 (build/N5/heroes.json). N5 decision n5-ledger-absence-wording; coordinator's instruction.",
+      "alternative_rejected": "'The city never cut it.'",
+      "shows_up_in": "video-script A shots 3–4, B, C; README; progress report; risks.md weak point 2"
+    },
+    {
+      "id": "n7-q3-timing-framing",
+      "decision": "Frame Q3 2026 residential potholes (24.3%) as 'a weekly run would have flagged it in July', never as a collapse.",
+      "why": "COMMON correction 8. CityStat's own published shares were below 30% in several 2024 quarters (build/N4/citystat_comparison.csv), so Q3 is a low after a high Q2, not a first.",
+      "alternative_rejected": "N4's heading 'Potholes collapsed in Q3 2026'.",
+      "shows_up_in": "video-script A shot 6, C shot 3; README; risks.md weak point 6"
+    },
+    {
+      "id": "n7-three-users",
+      "decision": "Structure the site tour, README and progress report around one weekly job with three users: residents (public page and receipt), the cabinet's weekly data review and division managers (one-page Monday brief, a plain document), and the CityStat team (SQL, definitions, register).",
+      "why": "Jack asked who the end user is; orchestrator's decision at 00:04 (build/INTEGRATION-LOG.md). Mike's and Ben's tests both ask for a route to real use.",
+      "alternative_rejected": "A residents-only framing, or a CityStat clone.",
+      "shows_up_in": "video-script A shot 6, B shot 6, C shot 7; README 'Who it is for'; progress report"
+    },
+    {
+      "id": "n7-full-access-line",
+      "decision": "State that tonight's build is the same product at partial coverage (4 of 25 services joined on public files), and that read access to Cityworks work orders would add five services (city trees, tree planting, potholes, cave-ins, street lights), taking the register to about 9 of 25; the rest need other division records (revised 1:15 a.m.).",
+      "why": "N8 finding 6: the register's 'what it would take' column names Cityworks or division work orders for 5 of the 21 unjoined services; the first draft's 'most of them' contradicted it.",
+      "alternative_rejected": "'Cityworks access would cover most services.'",
+      "shows_up_in": "README; progress report; ask-to-ben.md"
+    },
+    {
+      "id": "n7-ai-line",
+      "decision": "Say in every storyboard: 'AI did our audit; the product has none, on purpose, because city policy bars unapproved AI tools.'",
+      "why": "This is a Civic AI Hackathon, so the video must say where the AI is (NIGHT-PLAN item 4). ITSA IT Policy #2026-001 prohibits AI tools ITSA has not approved (research/mayors-office-voice.md 5.5).",
+      "alternative_rejected": "Omitting AI, or presenting the product as AI-powered.",
+      "shows_up_in": "video-script all storyboards; README 'How AI was used'; risks.md objection 6"
+    },
+    {
+      "id": "n7-nothing-to-buy",
+      "decision": "Say 'No new staff, nothing to buy' instead of the brief's 'no new software'.",
+      "why": "The pipeline is new software, so 'no new software' invites an easy rebuttal. 'Nothing to buy' is true: free tools, existing licences, the enhancement route.",
+      "alternative_rejected": "'No new staff, no new software.'",
+      "shows_up_in": "video-script A shot 7"
+    },
+    {
+      "id": "n7-ask-one-quarter",
+      "decision": "Make the ask 'let the CityStat team run it weekly for a quarter' (B: 'from the first cut next spring').",
+      "why": "A concrete, reversible, low-cost ask that one office can approve; the COO's own framing is CityStat functions that 'continue to grow' (research/mayors-office-voice.md 5.1).",
+      "alternative_rejected": "'Adopt DoneStat', or a hosting request.",
+      "shows_up_in": "video-script; README"
+    },
+    {
+      "id": "n7-paraphrase-citystat-manager",
+      "decision": "In storyboard B, paraphrase the CityStat program manager ('the city said it was starting to track mowing lot by lot') rather than quote 'we don't have that tracked in a system'.",
+      "why": "The CityStat team is the intended operator; quoting its manager against the ledger pitches against the people who would adopt it. The COO tone guidance says to pitch this as what he is heading toward (context/HANDOFF-2.md section 4 item 5).",
+      "alternative_rejected": "The direct-quote juxtaposition.",
+      "shows_up_in": "video-script B shot 2"
+    },
+    {
+      "id": "n7-aerial-2024-tab",
+      "decision": "Recommend recording the lot-1 receipt with the 2024 aerial tab selected, not the site's default 2025 post-tornado frame.",
+      "why": "The 2025 frame shows storm debris, which could read as the lot's problem. No 2026 imagery exists, so every frame shows the block, not this year's grass (COMMON correction 9).",
+      "alternative_rejected": "The site default (2025, post-tornado).",
+      "shows_up_in": "video-script A shot 1"
+    },
+    {
+      "id": "n7-denominator-question-merged",
+      "decision": "In ask-to-ben.md, keep HANDOFF-2's four questions and treat 'the denominator question' as HANDOFF-2's own question 3, sharpened with N4's finding (closed requests only, so early readings run high). Add an optional fifth on the ward 5|6 intake line.",
+      "why": "HANDOFF-2 question 3 already is the denominator question; N4 has since inferred the answer, so the useful question is confirm-and-why. The ward line is the one fact that could change the fairness claim (research/chapters/N3-fairness.md section 3).",
+      "alternative_rejected": "Five separate questions with the denominator asked twice.",
+      "shows_up_in": "deliverable/ask-to-ben.md"
+    },
+    {
+      "id": "n7-keep-donestat",
+      "decision": "Recommend keeping the name DoneStat; call the resident feature 'the receipt'.",
+      "why": "No clash found in eight keyless web searches (deliverable/names.md). The name places it in the Stat family the CityStat team knows. 'Promise Kept' sounds like grading campaign promises.",
+      "alternative_rejected": "Promise Kept, Follow-Through, DoneCheck, City Receipt, Was It Done?",
+      "shows_up_in": "deliverable/names.md"
+    },
+    {
+      "id": "n7-thesis-often",
+      "decision": "The README's first line says 311 'often closes a request when the job is handed off, before the work is done', not that it always does.",
+      "why": "The hand-off share is 35.2% (n2_share_closed_handoff); 37.3% of closures say done.",
+      "alternative_rejected": "The absolute form 'closes requests when a job is handed off, not when it is done'.",
+      "shows_up_in": "README"
+    },
+    {
+      "id": "n7-spoken-rounding",
+      "decision": "Round large numbers when spoken ('about 176,000', 'over 37,000', 'nearly 4,000'); exact values on screen and in the figure brackets.",
+      "why": "Six-digit numbers take seven or eight spoken words each and break a 290-word limit.",
+      "alternative_rejected": "Reading exact values aloud.",
+      "shows_up_in": "video-script B and C"
+    },
+    {
+      "id": "n7-name-the-september-call",
+      "decision": "Name lot-1's 9 September 'cut incomplete' call in the narration ('A September call says the cut was incomplete; closed in a day. … This lot: none. If a crew came, no record shows it.') instead of scrolling past it.",
+      "why": "N8 finding 1: the call is shown on the site's receipt during shot 3; a city viewer would read it as 'someone cut it'. Naming it is honest and restates the thesis: the city's records cannot show whether the work was done. Only about three in ten such calls in 2026 followed a billed cut within 30 days (n5_unsat_cut_calls_2026_cut_30d_before; N8 67 of 229).",
+      "alternative_rejected": "N8's suggested line ('…even after a September call that the cut was incomplete') and the coordinator's ('In September a neighbour reports…'); the caller is not known to be a neighbour.",
+      "shows_up_in": "video-script A shot 3, B shot 2, C shot 6; README 'What we found'; risks.md weak point 1"
+    },
+    {
+      "id": "n7-since-the-tornado",
+      "decision": "Say 'since the tornado' wherever the script, README or progress report claims little or no ward gap where the work was done.",
+      "why": "N8 finding 7: before 16 May 2025, finished residential potholes ran 22.3 vs 31.8 days and major-street potholes 15.2 vs 21.4; n3_no_gap_done_types_after is for requests filed after the tornado.",
+      "alternative_rejected": "An unqualified 'no gap where the work is done'.",
+      "shows_up_in": "video-script A shot 5, C shot 5; README; progress report; risks.md weak point 2"
+    },
+    {
+      "id": "n7-narration-265",
+      "decision": "Cut storyboard A's narration from 285 to 264 words (coordinator's limit 265), about 1:46 at 150 words a minute.",
+      "why": "N8 finding 8: 285 words read as about 295 spoken words and filled the 1:56 budget with no pauses. Cuts: 'The city keeps a second record', 'And', the list of no-gap services (shown on screen), 'weekly' and 'the … team' in shot 6, 'on purpose' and 'let the CityStat team' in shot 7.",
+      "alternative_rejected": "Keeping 285 words and reading faster.",
+      "shows_up_in": "video-script A"
+    },
+    {
+      "id": "n7-drop-ledger-row-counts",
+      "decision": "Storyboard B speaks 'cuts billed on nearly 12,000 parcels', not '37,543 cuts'; mowing-gap lots are 'more than 90 days without a billed cut (counting to 30 September)'.",
+      "why": "N8 finding 10: the ledger repeats rows (2026: about 31,500 distinct parcel-days against 37,543 rows); finding 15d: the gap definition counts the run to 30 September and includes lots cut once.",
+      "alternative_rejected": "n1_ledger_2026.rows and 'between billed cuts'.",
+      "shows_up_in": "video-script B shots 2 and 4; README laundry list"
+    },
+    {
+      "id": "n7-disclosure-not-preannounced",
+      "decision": "The README's disclosure line reads '[JACK: update once sent] A private note about exposed data is being raised with the city through the organiser.' No deliverable describes what is exposed or how much.",
+      "why": "N8 finding 3 and the coordinator's instruction: the note is unsent, and describing the exposure publicly would point others at it.",
+      "alternative_rejected": "'We reported it privately' (not yet true).",
+      "shows_up_in": "README; risks.md weak point 9"
+    }
+  ]
+}

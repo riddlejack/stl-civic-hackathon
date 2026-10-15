@@ -1,0 +1,145 @@
+{
+  "source": "https://geoportal.stlouis-mo.gov/portal/home/item.html?id=50524b4b8be647d8aaad9d38b934bd5f",
+  "method": "Exact RequestId; Cityworks milliseconds interpreted as UTC and converted to America/Chicago; source status is administrative, not independently verified physical completion.",
+  "counts": [
+    {
+      "layer": 19,
+      "row_count": 663,
+      "unique_requests": 663,
+      "first_filing": "2014-04-22 17:44:53",
+      "last_filing": "2023-03-31 09:45:44",
+      "first_closure": "2022-10-05 15:05:52.057000",
+      "last_closure": "2026-09-04 21:59:23.937000"
+    },
+    {
+      "layer": 20,
+      "row_count": 217,
+      "unique_requests": 217,
+      "first_filing": "2014-01-17 15:33:02.273000",
+      "last_filing": "2023-01-11 08:25:29",
+      "first_closure": "2014-01-19 07:34:16.820000",
+      "last_closure": "2024-05-08 13:52:59.813000"
+    }
+  ],
+  "status": [
+    {
+      "layer": 19,
+      "status": "CLOSED",
+      "n": 649
+    },
+    {
+      "layer": 19,
+      "status": "Disptch",
+      "n": 12
+    },
+    {
+      "layer": 19,
+      "status": "Inspect",
+      "n": 1
+    },
+    {
+      "layer": 19,
+      "status": "Pending",
+      "n": 1
+    },
+    {
+      "layer": 20,
+      "status": "CLOSED",
+      "n": 215
+    },
+    {
+      "layer": 20,
+      "status": "Disptch",
+      "n": 1
+    },
+    {
+      "layer": 20,
+      "status": "Pending",
+      "n": 1
+    }
+  ],
+  "join": [
+    {
+      "layer": 19,
+      "source_rows": 663,
+      "matched_311": 663,
+      "filed_2025plus": 0,
+      "recent_handoffs": 0,
+      "closed_in_311": 649,
+      "closure_timestamp_matches": 649,
+      "median_days_since_filing": 2735.0,
+      "median_days_to_311_close": 2122.0
+    },
+    {
+      "layer": 20,
+      "source_rows": 217,
+      "matched_311": 217,
+      "filed_2025plus": 0,
+      "recent_handoffs": 0,
+      "closed_in_311": 215,
+      "closure_timestamp_matches": 215,
+      "median_days_since_filing": 3421.0,
+      "median_days_to_311_close": 2402.0
+    }
+  ],
+  "overlap": [
+    {
+      "requests_in_both_layers": 0
+    }
+  ],
+  "type": [
+    {
+      "layer": 19,
+      "problem_code": "Sidewalk Repair",
+      "n": 663
+    },
+    {
+      "layer": 20,
+      "problem_code": "Sidewalk Repair",
+      "n": 216
+    },
+    {
+      "layer": 20,
+      "problem_code": "Light(s) Out",
+      "n": 1
+    }
+  ],
+  "closure_classes": [
+    {
+      "layer": 19,
+      "closure_class": "done",
+      "n": 636
+    },
+    {
+      "layer": 19,
+      "closure_class": null,
+      "n": 14
+    },
+    {
+      "layer": 19,
+      "closure_class": "no_action",
+      "n": 10
+    },
+    {
+      "layer": 19,
+      "closure_class": "handed_off",
+      "n": 3
+    },
+    {
+      "layer": 20,
+      "closure_class": "done",
+      "n": 212
+    },
+    {
+      "layer": 20,
+      "closure_class": "no_action",
+      "n": 3
+    },
+    {
+      "layer": 20,
+      "closure_class": null,
+      "n": 2
+    }
+  ],
+  "date_semantics": "DateTimeClosed is the service-request closure date; these layers do not contain ActualFinishDate. Membership in the published completed layer is city-reported completion status, not a dated independent work order."
+}

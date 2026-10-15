@@ -1,0 +1,86 @@
+figure,unit,date,label,url,note
+27,saved-search layers,retrieved 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Forestry Work Order layers assessed
+2026-10-14T18:48:27.494073+00:00,UTC timestamp,retrieval run 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,first response in final layer runs
+2026-10-14T18:53:30.429096+00:00,UTC timestamp,retrieval run 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,last response in final layer runs
+34739,saved-search memberships,retrieved 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,sum before deduplication
+27267,unique work orders,retrieved 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,deduplicated by WorkOrderSid
+4573,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,appeared in more than one Forestry saved search
+0,conflicting work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,"overlapping records agree on status, dates, template, address, and coordinates"
+16778,work orders with status not CLOSED,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,saved-search union
+10489,work orders with status CLOSED,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,saved-search union
+10626,work orders,age at 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,status not CLOSED and initiated more than one year earlier
+15637,work orders,projected date before 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,"administrative projected finish, not proof unfinished"
+16776,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,status not CLOSED with projected finish present
+5961,work orders,2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Status CLOSED and ActualFinishDate in window
+5993,work orders,2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,all statuses with ActualFinishDate in window
+565,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,Status CLOSED but ActualFinishDate is null
+32,work orders,2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,status not CLOSED despite ActualFinishDate
+94,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,status not CLOSED despite ActualFinishDate present
+1750,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,ActualFinishDate precedes InitiateDate
+565,work orders,ActualFinishDate 2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,ActualFinishDate precedes InitiateDate
+1,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,ActualFinishDate has invalid year 4152
+4152,year,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,anomalous ActualFinishDate year
+5596,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,Forest Park closed search
+3555,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,rolling closed trim search
+2297,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99,Mr. Robot pruning closed search
+28,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108,ACSTL removal closed search
+5031,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,QE89 ActualFinishDate present
+2099,work orders,2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,QE89 ActualFinishDate in analysis window
+1601,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,QE89 ActualFinishDate precedes InitiateDate
+3555,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,QE98 ActualFinishDate present
+3553,work orders,2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,QE98 ActualFinishDate in analysis window
+127,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,QE98 ActualFinishDate precedes InitiateDate
+2297,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99,QE99 ActualFinishDate present
+1268,work orders,2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99,QE99 ActualFinishDate in analysis window
+0,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99,QE99 ActualFinishDate precedes InitiateDate
+28,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108,QE108 ActualFinishDate present
+28,work orders,2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108,QE108 ActualFinishDate in analysis window
+0,work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108,QE108 ActualFinishDate precedes InitiateDate
+27267,unique work orders,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,all Forestry work orders
+572,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,R1 converted tree work-order cohort
+1,day,analysis rule,inferred,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,work-order initiation tolerance on each request-lifecycle boundary
+30,EPSG:3857 projected metres,analysis rule,inferred,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,coordinate sensitivity threshold; not a ground-distance claim
+105,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,compatible lifecycle and address or 30m candidate
+88,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,compatible lifecycle and exact normalized-address candidate
+89,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,candidate work order has chronology-valid ActualFinishDate through 2026-10-13
+89,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,all chronology-valid finish candidates are trimming
+74,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,exact-address candidate has chronology-valid ActualFinishDate through 2026-10-13
+6,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,candidate finish by the request promise
+83,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,candidate finish after the request promise
+218.0,days,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,median candidate finish delay after promise
+6,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,exact-address candidate finish by request promise
+68,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,exact-address candidate finish after request promise
+268.5,days,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,exact-address median candidate finish delay after promise
+420,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted cohort inferred removal operation
+7,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted removal request with candidate work order
+0,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted removal request with chronology-valid finish candidate
+12,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted cohort inferred stump operation
+2,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted stump request with candidate work order
+0,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted stump request with chronology-valid finish candidate
+140,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted cohort inferred trim operation
+96,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted trim request with candidate work order
+89,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,converted trim request with chronology-valid finish candidate
+35,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,cancelled tree work-order-phrase cohort
+4,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,compatible lifecycle and address or projected-coordinate candidate
+2,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,exact-address chronology-valid finish candidate
+2,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,cancelled requests with non-closed candidate and no chronology-valid finish
+61.0,days,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,exact-address median candidate finish delay after promise
+87,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,contextual any-operation placebo matches
+29797,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,contextual placebo denominator
+5201,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,blank-cancelled Inspect City Tree cohort
+510,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,candidate already-open removal order
+369,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,exact normalized-address candidate
+141,311 requests,filed 2025-01-01 through 2026-10-12,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,only projected-coordinate candidate; no exact normalized-address candidate
+431,311 requests,projected date through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,candidate open order projected overdue
+294,311 requests,filed 2025; current-open snapshot 2026-10-14,observed,https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,2025 removal work order created subgroup
+3,311 requests,prior capped sample for 2025 requests,reported,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,prior R1 exact-address current-open candidates
+7,311 requests,prior capped sample for 2025 requests,reported,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,prior R1 address-or-30-projected-metre current-open candidates
+1500,work orders,prior capped sample for 2025 requests,reported,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,prior R1 open-order sample cap
+8,311 requests,filed 2025; current-open snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,extracted current-open saved-search union exact-address after-filing candidates
+10,311 requests,filed 2025; current-open snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,extracted current-open saved-search union address or 30 projected-metre after-filing candidates
+878,inspections,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/66,Private Tree Removal inspection rows
+321,inspections,2025-01-01 through 2026-10-13 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/66,"ActFinishDate is inspection finish, not removal"
+323,inspections,2025-01-01 through 2026-10-14 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/66,"ActFinishDate is inspection finish, not removal"
+2,inspections,2026-10-14 America/Chicago,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/66,snapshot-day ActFinishDate; excluded from October 13 cutoff
+2025-10-14,date,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,earliest calendar-valid ActualFinishDate in rolling trim layer
+2026-10-14,date,snapshot 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,latest calendar-valid ActualFinishDate in rolling trim layer

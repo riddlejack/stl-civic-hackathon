@@ -1,0 +1,128 @@
+[
+ {
+  "id": "R1-D01",
+  "decision": "Kind of hand-off (crew work / owner enforcement / referral elsewhere) is read from N2's final rule column, with four phrase overrides: \"vehicle not derelict, refer to treasurer for ticketing\" and \"sent to parking enforcement\" are owner enforcement; \"referred to proper department\" and \"building was occupied, will need police\" are referral elsewhere.",
+  "why": "R-COMMON asks for the three kinds throughout; N2's rules (build/N2/closure_class.sql) already separate enforcement and external agencies, and the four overrides are phrases whose rule label (internal_referral / external_agency) does not match who must act.",
+  "alternative_rejected": "Hand-classifying all 134 hand-off phrases afresh: slower and not reproducible from N2's reviewed table.",
+  "shows_up_in": "handoff_composition.csv; R1-trace.md Composition"
+ },
+ {
+  "id": "R1-D02",
+  "decision": "Referrals to another city crew (forestry, water division, street maintenance, refuse, parks) count as crew work, not referral elsewhere.",
+  "why": "R-COMMON defines crew work as \"the city will do it\"; referral elsewhere is MSD, Ameren or another agency outside the city.",
+  "alternative_rejected": "Counting every internal referral as referral elsewhere, which would move about 6,700 closures out of crew work.",
+  "shows_up_in": "handoff_composition.csv"
+ },
+ {
+  "id": "R1-D03",
+  "decision": "\"Vehicle tagged for tow\" is crew work (the tow), although the tag itself is a notice to the vehicle owner.",
+  "why": "R-COMMON lists tow among crew work. No public tow record exists either way, so the choice moves 3,072 closures between kinds but changes no traced figure.",
+  "alternative_rejected": "Owner enforcement.",
+  "shows_up_in": "handoff_composition.csv"
+ },
+ {
+  "id": "R1-D04",
+  "decision": "Weeds are graded on 2026 filings only. 2025 vacant-lot requests are excluded; 2025 vacant-building requests are shown only as a sensitivity row.",
+  "why": "The 2025 ledger is thin for Grass Maint (4,052 distinct cuts in 2025 vs 31,527 in 2026 and 38,850 in 2024; N1 reported the same), while Weed-Grass, the vacant-building cut, looks complete in 2025 (8,182 vs 8,369 in 2026).",
+  "alternative_rejected": "Pooling 2025 and 2026, which would count missing 2025 ledger entries as undone work.",
+  "shows_up_in": "fate_by_service.csv; headline"
+ },
+ {
+  "id": "R1-D05",
+  "decision": "\"Done\" means the first recorded work on or after the filing date, compared with the request's own PRJCOMPLETEDATE; strict comparison, with a +7-day sensitivity.",
+  "why": "The promise is the city's own (COMMON 1); ledger dates are weekly posting batches, so a cut can be posted up to a week after it happened.",
+  "alternative_rejected": "CityStat goals or our own guess at a reasonable time.",
+  "shows_up_in": "every fate figure; r1_traceable_done_by_promise_plus7_share"
+ },
+ {
+  "id": "R1-D06",
+  "decision": "\"No record\" is counted only where the promise passed on or before 13 Sep 2026; the headline denominator is restricted to those requests so that done by promise, late and no record add to 100%.",
+  "why": "R-COMMON: count \"never done\" only where the promise passed at least 30 days before 13 Oct 2026.",
+  "alternative_rejected": "Including requests whose promise is still recent, which would mix \"not yet\" with \"never\".",
+  "shows_up_in": "headline; fate_by_service.csv"
+ },
+ {
+  "id": "R1-D07",
+  "decision": "Board-ups are joined on the layer's ParcelID to N1's request parcel, or on the normalised address (N1 normaliser).",
+  "why": "The layer carries ParcelID; N2 joined on address only. Either key counts as a match.",
+  "alternative_rejected": "Address only (N2), which misses spelling variants.",
+  "shows_up_in": "fate_summary.json boardup rows"
+ },
+ {
+  "id": "R1-D08",
+  "decision": "DateBoardedUp is read as a UTC calendar date.",
+  "why": "The field holds midnight UTC (e.g. 1560384000000 = 2019-06-13T00:00Z); converting to Central would move every board-up back a day.",
+  "alternative_rejected": "Converting to Central time.",
+  "shows_up_in": "board-up fate"
+ },
+ {
+  "id": "R1-D09",
+  "decision": "Weeds baseline: each requested parcel-date is compared with the mean of its same-block rotation controls (ledger CITYBLOCK; cut at least once in 2026; no weed request in the 60 days to the date), request-weighted; plus a like-for-like variant (requested parcels also on the rotation) and an other-block, same-ward variant.",
+  "why": "The brief's design. Request weighting stops big blocks dominating. The like-for-like variant removes the fact that controls are on the rotation by construction. The other-block variant tests whether a request moves the whole block.",
+  "alternative_rejected": "Pooling control parcels, and comparing the parcel with itself on other dates (not done for time).",
+  "shows_up_in": "baseline_weeds.json"
+ },
+ {
+  "id": "R1-D10",
+  "decision": "Tree work orders are graded as partial. A converted request matched to an open order in Cityworks saved search 6955 counts as still open; an unmatched one is unknown.",
+  "why": "The sample holds only open (NEW) orders, so it can show \"still open\" but never \"done\". Its ids rise with start date (r = 0.997, newest 8 Jan 2026), so it looks complete for older orders (inferred).",
+  "alternative_rejected": "Treating unmatched requests as done.",
+  "shows_up_in": "fate_summary.json trees; R1-trace.md"
+ },
+ {
+  "id": "R1-D11",
+  "decision": "LRA demolition is kept out of the headline.",
+  "why": "Only one LRA demolition request was closed at a hand-off in 2025-26; the city keeps these open (190 open). The open ones are reported as \"open but already demolished\" instead.",
+  "alternative_rejected": "Grading open requests as hand-offs.",
+  "shows_up_in": "baseline_open.json"
+ },
+ {
+  "id": "R1-D12",
+  "decision": "CityStat restatement uses N4's definition C. \"Hand-offs not counted\" = on-time share x (1 - hand-off share of on-time closures); \"only done\" = on-time and done / all closed. The denominator stays CityStat's.",
+  "why": "Definition C reproduces CityStat (N4). Keeping the denominator shows the same requests the city counts, scored only by what their closing words say.",
+  "alternative_rejected": "Dropping hand-offs from the denominator too, which would hide them.",
+  "shows_up_in": "restated_citystat.csv; R1-trace.md restatement table"
+ },
+ {
+  "id": "R1-D13",
+  "decision": "Re-reports after done vs hand-off closures are cited from R2's file (build/R2/rereport_type_compare.csv), not recomputed.",
+  "why": "R1 brief: R2 does the full re-report table; coordinate via files, do not duplicate.",
+  "alternative_rejected": "A second, possibly inconsistent, computation.",
+  "shows_up_in": "figures r1_r2_*"
+ },
+ {
+  "id": "R1-D14",
+  "decision": "Request-level outcomes (with request ids) are written only to build/R1/private/; every other R1 output is aggregated by service, phrase, ward group or quarter.",
+  "why": "COMMON 10 and Jack's ruling: no ids and nothing below block level in public outputs.",
+  "alternative_rejected": "Exporting per-request receipts.",
+  "shows_up_in": "build/R1/private/fate_requests.parquet"
+ },
+ {
+  "id": "R1-D15",
+  "decision": "Kept-open requests are compared with closed-at-hand-off ones and the result is reported even though it cuts against the entry: open requests have far less recorded work.",
+  "why": "Brief: say plainly if the data cut against us. The confound (open = stalled at inspection or owner notice) is stated beside it.",
+  "alternative_rejected": "Omitting the comparison.",
+  "shows_up_in": "R1-trace.md baseline 2"
+ },
+ {
+  "id": "R1-D16",
+  "decision": "The headline keeps R-COMMON's rule (promise passed at least 30 days before 13 Oct) and is shown beside a stricter version (promise at least three months old: 16.2% done by promise, 61.0% late, 22.8% no record).",
+  "why": "No-record shares fall as promises age: board-ups 62% at 30-60 days to 14.8% at three months or more; weeds 49.5% to 36.5%. Part of \"no record\" at 30 days is very late work not yet done or recorded.",
+  "alternative_rejected": "Reporting only the 30-day version, which overstates \"never\" for board-ups.",
+  "shows_up_in": "R1-trace.md headline notes; figures r1_*_promise_age_*"
+ },
+ {
+  "id": "R1-D17",
+  "decision": "Board-up \"no record\" is reported as not evidence of lost work, because the board-up layer's recall on buildings 311 says the city secured is 80.6% (54 of 67; 95% CI 69.6-88.3%).",
+  "why": "A record that misses about one board-up in five cannot show that 18% of referrals were never boarded. Weed \"no record\" survives the same tests: it is 36.5% three months on; 91% of no-record vacant lots appear in the ledger in other years; and the ledger holds more cuts than CityStat publishes for the same weeks (T-COMMON: 7,545 vs 7,099 parcels).",
+  "alternative_rejected": "Treating every missing record as undone work.",
+  "shows_up_in": "R1-trace.md admission and headline; r1_range_never_done_low"
+ },
+ {
+  "id": "R1-D18",
+  "decision": "Give R2 a measured range rather than a single rate: never done 14.8% (board-ups, three months on, raw) to 36.5% (weeds, three months on); late 44.7% (weed lots) to 64.6% (board-ups).",
+  "why": "The two traced services differ in kind (rotation mowing vs a dispatched crew); the range brackets them, and the low end is flagged as indistinguishable from zero after record recall.",
+  "alternative_rejected": "The pooled 32.2%, which mixes a robust weeds figure with a board-up figure within record error.",
+  "shows_up_in": "figures r1_range_*"
+ }
+]

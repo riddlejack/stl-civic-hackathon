@@ -1,0 +1,86 @@
+[
+ {
+  "id": "e1_window",
+  "decision": "Sample requests filed 1 Jan 2025 to 31 Aug 2026",
+  "why": "Every promise date has passed; matches the brief",
+  "alternative_rejected": "Through 12 Oct 2026 (recent requests could still gain attachments)"
+ },
+ {
+  "id": "e1_strata",
+  "decision": "20 largest hand-off pairs from build/R1/handoff_composition.csv x40, 10 largest done codes x30, 10 largest open-past-promise codes x30, split evenly across ward groups 1-5, 6-9, 10-14",
+  "why": "As briefed; ward split stops one area's practice dominating a stratum",
+  "alternative_rejected": "Simple random sample (would be mostly refuse and towing)"
+ },
+ {
+  "id": "e1_tree_control",
+  "decision": "Add 'Inspect City Tree | removal work order created' as a named stratum H_tree (40)",
+  "why": "It is the positive control the thesis rests on and is not among the 20 largest hand-off pairs (390 requests in window)",
+  "alternative_rejected": "Rely on the orchestrator's two tree pages"
+ },
+ {
+  "id": "e1_seed",
+  "decision": "Order within each cell by md5('E1-status-page-2026-10-14' || request_id)",
+  "why": "Reproducible without depending on DuckDB thread scheduling",
+  "alternative_rejected": "setseed()/random(), not stable across threads"
+ },
+ {
+  "id": "e1_measure",
+  "decision": "Measure = hidden <span id=totalItem> counter > 0; call it 'any attached item'",
+  "why": "The counter covers inspections and work orders; the panel's rows come from a disallowed endpoint robots.txt disallows and we never call",
+  "alternative_rejected": "Calling dsp-related-items.cfc to separate work orders from inspections"
+ },
+ {
+  "id": "e1_robots_pause",
+  "decision": "Stopped fetching after 2 pages and asked the orchestrator",
+  "why": "robots.txt, under User-agent: *, says '#added 05/18/11 - Ben D - Do not crawl service request, board bills, etc.' then 'Disallow: check-service-request.cfm'. The rule lacks a leading slash, so RFC 9309 parsers (Python robotparser: can_fetch=True) match nothing, but the owner's intent is explicit",
+  "alternative_rejected": "Proceed on the technical reading without a ruling"
+ },
+ {
+  "id": "e1_option_b",
+  "decision": "Stage a 152-id subset of the drawn sample (8 strata, 18-20 each, ward-balanced) for a 3-minute run if Jack approves",
+  "why": "Smallest set that separates 0% from ~50% per service while minimising load on a page robots.txt asks bots to avoid",
+  "alternative_rejected": "Full 1,440 (25 min of automated reads against stated intent)"
+ },
+ {
+  "id": "e1_authorised_run",
+  "decision": "Ran the full 1,440 pages and the related-items endpoint after Jack's ruling (relayed about 3:23 p.m., 14 Oct 2026)",
+  "why": "Jack reports city staff authorised crawling the city's sites for this project at office hours that day; robots.txt concern stated in the report",
+  "alternative_rejected": "Option (b) 152 pages or (c) probe only"
+ },
+ {
+  "id": "e1_shared_clock",
+  "decision": "One file-locked clock shared by the page fetcher and the items reader: at most one request per 1.05 s to www.stlouis-mo.gov",
+  "why": "Two processes against one host must not double the rate",
+  "alternative_rejected": "Run items only after all pages (slower; same rate)"
+ },
+ {
+  "id": "e1_items_no_raw",
+  "decision": "Keep only allowlisted item fields on disk; log SHA-256 and size of each raw response instead of saving it",
+  "why": "The allowlist rule says filter before saving; a raw response could carry comments or names",
+  "alternative_rejected": "Save raw responses in the ignored folder"
+ },
+ {
+  "id": "e1_inspection_result",
+  "decision": "Keep an inspection's Result/Resolution only when it is a short upper-case code (e.g. APPROVED)",
+  "why": "It is a status-like code that says whether removal was approved; free text is dropped",
+  "alternative_rejected": "Drop it entirely (loses whether the inspection approved work)"
+ },
+ {
+  "id": "e1_grade_first_finish",
+  "decision": "Grade a linked request by the first finish among work orders created on or after its filing date; Cityworks ActualFinishDate where joined, else the page's 'Completed On or Before' date; 'no finish' only where the promise passed by 13 Sep 2026",
+  "why": "Mirrors R1's first-record-of-work rule and its 30-day never cutoff; excludes older work orders already open at the address",
+  "alternative_rejected": "Last finish across all attached orders (would grade stump removal, not the requested job)"
+ },
+ {
+  "id": "e1_test_call",
+  "decision": "One structure-test call to the items endpoint for a tree request at about 3:24 p.m.; response not saved; the request was read again by the run",
+  "why": "Needed the response format to write the allowlist parser",
+  "alternative_rejected": "Guess the format"
+ },
+ {
+  "id": "e1_probe_kept",
+  "decision": "Keep the 12-page probe (05_probe.py) as a separate, labelled appendix; the 10 orchestrator pages are not in the sample",
+  "why": "They were hand-picked; mixing them into the sample would bias shares",
+  "alternative_rejected": "Add them to the strata"
+ }
+]

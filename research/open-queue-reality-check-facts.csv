@@ -1,0 +1,80 @@
+figure,value,unit,date_refers_to,label,source
+Open past-promise requests filed since 2025-01-01 (base),14902,requests,2026-10-13,observed,build/stl.duckdb requests; https://www.stlouis-mo.gov/data/upload/data-files/csb.zip
+Base filed in 2025,5341,requests,2026-10-13,observed,build/E5/years.json
+Base filed in 2026,9561,requests,2026-10-13,observed,build/E5/years.json
+Median days past promise 2025 filings in base,438,days,2026-10-13,observed,build/E5/years.json
+Median days past promise 2026 filings in base,83,days,2026-10-13,observed,build/E5/years.json
+(a) Evidence work done after filing,388,requests,2026-10-13,observed,build/E5/summary.json
+(a) share of base,2.60,percent,2026-10-13,observed,build/E5/summary.json
+(a) excluding weed cuts more than 60 days after filing,261,requests,2026-10-13,observed,build/E5/years.json
+(a) via mowing ledger cut after filing,298,requests,2026-10-13,observed,build/E5/years.json; https://www.stlouis-mo.gov/data/upload/data-files/forestry-service-records.csv
+(a) via completed demolition after filing,42,requests,2026-10-13,observed,build/E5/years.json; https://maps8.stlouis-mo.gov/arcgis/rest/services/BUILDING_DIVISION/Demolitions/MapServer/0
+LRA Demo Submission in base with completed demolition after filing,37 of 175,requests,2026-10-13,observed,build/E5/private ledger (aggregate); https://maps8.stlouis-mo.gov/arcgis/rest/services/BUILDING_DIVISION/Demolitions/MapServer/0
+(a) via Forestry work order finished after filing,24,requests,2026-10-13,observed,build/E5/years.json; https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json
+Median days filing to Forestry finish in (a),184,days,2026-10-13,observed,build/E5/summary.json
+(a) via board-up after filing,17,requests,2026-10-13,observed,build/E5/years.json; https://maps8.stlouis-mo.gov/arcgis/rest/services/BUILDING_DIVISION/BldgDiv_Boardups/MapServer/0
+(a) via sidewalk work order finished after filing,5,requests,2026-10-13,observed,build/E5/years.json; https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78
+(a) via E1 status page finish,2,requests,2026-10-13,observed,build/E5/years.json; build/E1/private/linked_requests.csv
+Missed Cut - VBldg in base with cut after filing,146 of 212,requests,2026-10-13,observed,build/E5/years.json
+Median days filing to first cut among weed (a),53,days,2026-10-13,observed,build/E5/summary.json
+Weed (a) cuts within 60 days of filing,171 of 298,requests,2026-10-13,observed,build/E5/summary.json
+Missed Cut - VBldg 2025 filings still open,62.1,percent,2026-10-13,observed,build/E5/years.json
+Missed Cut - VBldg 2023 and 2024 filings still open,0,percent,2026-10-13,observed,build/E5/years.json
+Unsatisfy Cut -VBldg 2025 filings still open,70.0,percent,2026-10-13,observed,build/E5/years.json
+(b) Pending in city work records,1206,requests,2026-10-13,observed,build/E5/summary.json
+(b) share of base,8.09,percent,2026-10-13,observed,build/E5/summary.json
+(b) strict (status page board-up demolition or validated Inspect City Tree join),952,requests,2026-10-13,observed,build/E5/years.json
+(b) strict share of base,6.39,percent,2026-10-13,observed,build/E5/years.json
+(b) address-only tree work orders,254,requests,2026-10-13,observed,build/E5/years.json
+Inspect City Tree in base with open post-filing Forestry work order at address,892 of 1481,requests,2026-10-13,observed,build/E5/ledger_by_type.csv
+Inspect City Tree join confirmed by E1 status pages,15 of 15,requests,2026-10-14,observed,build/E5/private ledger (aggregate); build/E1/private/linked_requests.csv
+City Tree Down join matches confirmed by E1 status pages,0 of 7,requests,2026-10-14,observed,build/E5/private ledger (aggregate); build/E1/private/linked_requests.csv
+Estimated (b) if E1 sampled shares hold for whole type,2522,requests,2026-10-13,estimated,build/E5/extrapolate.json
+Estimated (a) if E1 sampled shares hold for whole type,496,requests,2026-10-13,estimated,build/E5/extrapolate.json
+Estimated pending Inspect City Tree (95% interval 928-1340),1185,requests,2026-10-13,estimated,build/E5/extrapolate.json
+Estimated pending Weeds-Occupied Ppty (95% interval 590-911),779,requests,2026-10-13,estimated,build/E5/extrapolate.json
+Estimated pending Sidewalk Repair (95% interval 107-419),225,requests,2026-10-13,estimated,build/E5/extrapolate.json
+Estimated pending Sewer Lateral Defect (95% interval 87-233),152,requests,2026-10-13,estimated,build/E5/extrapolate.json
+(c) Possibly superseded (later same code and address request closed),333,requests,2026-10-13,observed,build/E5/summary.json
+(c) share of base,2.23,percent,2026-10-13,observed,build/E5/summary.json
+Base requests with a later same-code same-address request,1467,requests,2026-10-13,observed,build/E5/summary.json
+Base requests whose later same-code same-address request is closed,393,requests,2026-10-13,observed,build/E5/summary.json
+Base requests with blank normalized address,73,requests,2026-10-13,observed,build/E5/years.json
+Extra open rows beyond one per code and non-blank address,496,requests,2026-10-13,observed,build/E5/years.json
+(d) Likely administrative leftover,409,requests,2026-10-13,inferred,build/E5/summary.json
+(d) share of base,2.74,percent,2026-10-13,inferred,build/E5/summary.json
+(d) Sirens Not Heard,220,requests,2026-10-13,inferred,build/E5/private ledger (aggregate)
+(d) NOWATER,109,requests,2026-10-13,inferred,build/E5/private ledger (aggregate)
+(d) Mosquito Spraying,80,requests,2026-10-13,inferred,build/E5/private ledger (aggregate)
+NOWATER closed within 7 days (2023-2026 filings range),94.3-99.7,percent of closed,2026-10-13,observed,build/E5/years.json
+NOWATER 2025 filings still open,17.5,percent,2026-10-13,observed,build/E5/years.json
+Sirens Not Heard 2025 filings still open,96.9,percent,2026-10-13,observed,build/E5/years.json
+Mosquito Spraying 2025 filings still open,98.6,percent,2026-10-13,observed,build/E5/years.json
+(e) No evidence either way,12566,requests,2026-10-13,observed,build/E5/summary.json
+(e) share of base,84.32,percent,2026-10-13,observed,build/E5/summary.json
+Worst case remaining if all (a)(c)(d) are clerical,13772,requests,2026-10-13,inferred,build/E5/summary.json
+Share open now 2019 filings,0.69,percent,2026-10-13,observed,build/E5/years.json
+Share open now 2020 filings,0.78,percent,2026-10-13,observed,build/E5/years.json
+Share open now 2021 filings,1.09,percent,2026-10-13,observed,build/E5/years.json
+Share open now 2022 filings,1.52,percent,2026-10-13,observed,build/E5/years.json
+Share open now 2023 filings,2.08,percent,2026-10-13,observed,build/E5/years.json
+Share open now 2024 filings,2.38,percent,2026-10-13,observed,build/E5/years.json
+Share open now 2025 filings,4.33,percent,2026-10-13,observed,build/E5/years.json
+Share open now 2026 filings,12.04,percent,2026-10-13,observed,build/E5/years.json
+Open past promise one year after filing 2019 cohort (rebuilt),3.95,percent,2020-10-13,observed,build/E5/years.json
+Open past promise one year after filing 2020 cohort (rebuilt),4.17,percent,2021-10-13,observed,build/E5/years.json
+Open past promise one year after filing 2021 cohort (rebuilt),4.07,percent,2022-10-13,observed,build/E5/years.json
+Open past promise one year after filing 2022 cohort (rebuilt),3.71,percent,2023-10-13,observed,build/E5/years.json
+Open past promise one year after filing 2023 cohort (rebuilt),3.84,percent,2024-10-13,observed,build/E5/years.json
+Open past promise one year after filing 2024 cohort (rebuilt),3.58,percent,2025-10-13,observed,build/E5/years.json
+Open past promise one year after filing 2025 cohort,4.30,percent,2026-10-13,observed,build/E5/years.json
+Jan-Jun filings open past promise on 13 Oct same year range 2019-2025,6.70-11.01,percent,2019-2025,observed,build/E5/late_closures.json
+Jan-Jun 2026 filings open past promise on 13 Oct 2026,8.02,percent,2026-10-13,observed,build/E5/late_closures.json
+Requests open at one year still open now 2024 cohort,66.1,percent,2026-10-13,observed,build/E5/years.json
+Requests open at one year still open now 2019 cohort,17.6,percent,2026-10-13,observed,build/E5/years.json
+Requests filed 2019-2024 closed more than 365 days after filing,18580,requests,2026-10-13,observed,build/E5/late_closures.json
+Share of those late closures on 22 days with 100+ late closures,18.8,percent,2019-2026,observed,build/E5/late_closures.json
+Sidewalk Repair 2023 filings still open,54.4,percent,2026-10-13,observed,build/E5/years.json
+Lead Insp 2023 filings still open,86.8,percent,2026-10-13,observed,build/E5/years.json
+Cave-Ins 2024 filings still open,0.6,percent,2026-10-13,observed,build/E5/years.json
+Comparable open requests also in Cityworks Active SRs,97.2,percent,2026-10-14,reported,research/cityworks-active-queues.md; https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18

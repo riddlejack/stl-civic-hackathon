@@ -1,0 +1,151 @@
+{
+ "decisions": [
+  {
+   "id": "e3-queue-definition",
+   "decision": "The queue is every request filed on or after 1 Jan 2025, still open, whose promised date (PRJCOMPLETEDATE) is before 2026-10-13 23:59 Central; days past promise are calendar days to 2026-10-13.",
+   "why": "It is the city's own date, set by its own system on every request, so the list ranks by a promise the city already made. 2025 onward keeps the list to work a division can still act on; older open requests remain in the Monday list CSV.",
+   "alternative_rejected": "All years (the Monday list, about 27,000 rows) or a rolling 365 days; the brief fixed 2025 onward.",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-queue-sensitive",
+   "decision": "Sensitive request types (329 requests) count in the headline totals and in division rows, but never on the map, the oldest-first list or the CSV.",
+   "why": "COMMON rule: sensitive codes never appear below ward level. A citywide or division count is above ward level.",
+   "alternative_rejected": "Dropping them from every total (would understate the queue by 2%) or showing them at block level (not allowed).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-queue-pool-rare-routing",
+   "decision": "Routing values (SUBMITTO) used fewer than 20 times among the queue's requests are pooled into 'Other (pooled)' everywhere: division table, figures, list, map filter and CSV (27 values, 155 requests). A value shaped like a personal name ('LAST, FIRST') is pooled whatever its count; 'Tornado, Recovery' was reviewed as an office and kept.",
+   "why": "SUBMITTO holds a few staff names; E4's public-export scan found 8 CSV rows routed to a person. N1 pools values used fewer than 20 times for the same reason.",
+   "alternative_rejected": "Publishing SUBMITTO as-is (exposes names) or dropping the rare rows (would change the totals).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-queue-division-labels",
+   "decision": "Divisions are the public file's SUBMITTO labels as published (for example 'STREET DEPT, 510'), the 12 largest shown and the rest grouped; values used fewer than 20 times are pooled first (see e3-queue-pool-rare-routing).",
+   "why": "The Cityworks review warns that routing labels include subdivisions and historical values and must not be relabelled as verified departments. Cityworks' own field is SubmitToName on the request; it was not extracted (it can name staff), so the dashboard groups by the public column that carries the same routing.",
+   "alternative_rejected": "Mapping labels to departments by hand (unverified) or grouping by request type (not how a division works its queue).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-queue-map-position",
+   "decision": "Each block dot sits at the mean SRX/SRY of every request ever filed on that block label (all years), converted from EPSG:3857 to lon/lat as in N1, then snapped to a 60 m grid. Labels appear on hover only.",
+   "why": "A block with a single queued request would otherwise be drawn on that house. The all-years mean is the block's centre in practice, and the snap keeps the dot at block level. Ward outlines come from the wards table in build/stl.duckdb; no tiles, no map library.",
+   "alternative_rejected": "Mean of the queued requests only (can expose one address) or ward-level choropleth only (loses the block-level view a crew uses).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-queue-map-colour",
+   "decision": "Dots are coloured by the oldest request on the block, in the histogram's buckets, and sized by the count of queued requests (area proportional).",
+   "why": "Oldest-first is how the list is ranked, so the map uses the same ranking.",
+   "alternative_rejected": "Colour by division (11 colours, unreadable at block scale).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-queue-corroboration",
+   "decision": "The page counts the queue from the public 311 file and shows the Cityworks active layer as one corroborating line, not as the source.",
+   "why": "The public file is what anyone can rebuild; the Cityworks rows were read once under the city's authorisation and are not published. Promise dates agree on 18,972 of 18,976 requests, so the two are the same queue seen twice.",
+   "alternative_rejected": "Building the dashboard on the Cityworks extract (unpublishable rows, 61 types only).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-queue-saved-search",
+   "decision": "The page prints the saved-search expression against QE layer 18 with its field names, and the equivalent SQL on the public file.",
+   "why": "In Cityworks a staff member's queue is a saved search, and the city already publishes maps from QE layers (the ARPA sidewalk map reads layers 19 and 20). A GIS analyst can rebuild the dashboard from these two lines.",
+   "alternative_rejected": "A mock-up of the Cityworks staff interface (we have not seen it; ruled out on 13 Oct).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-status-e1-sample",
+   "decision": "The status page's footer shows E1's stratified sample (build/E1/service_table.csv) when it exists: per service and closing words, pages sampled, pages with a work order attached, and, where work orders exist, how many finished by the promise. It replaced the 12-page probe once E1's sample landed.",
+   "why": "E1's sample overturned the probe for cave-ins: 16 of 40 referred cave-ins carry an attached work order. The page must show the measured rate, not the anecdote. Numbers come from e3_status_e1_* figures written from E1's table at build time.",
+   "alternative_rejected": "Keeping the probe line (0 of 6 hand-offs), which E1 superseded.",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-status-no-fetch",
+   "decision": "The status page is rebuilt from two copies already saved by the orchestrating thread; E3 fetched no status page.",
+   "why": "The city's robots.txt, read by E3 at 3:27 p.m. on 14 Oct (saved copy in data/raw/stlouis-mo.gov/E3/), disallows check-service-request.cfm for every user agent with the comment 'Do not crawl service request'. The rule lacks a leading slash, so parsers call it allowed, but the owner's intent is plain (E1 reached the same reading at 3:24 p.m.). The brief's condition, 'allowed by robots.txt', is not met.",
+   "alternative_rejected": "Fetching two fresh pages as briefed (one request each), or calling the related-items address that the City's robots.txt disallows.",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-status-own-page",
+   "decision": "The before/after is its own page, site/status.html, linked from the residents door.",
+   "why": "It is surface 2 of the demo and needs a full 1920x1080 screen of three panels side by side; inside index.html it would push the receipt and scoreboard down.",
+   "alternative_rejected": "A section of index.html.",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-status-after-is-illustration",
+   "decision": "The 'after' panel is labelled a proposal and its days-past-promise figure is labelled inferred, with the assumption stated.",
+   "why": "The sample cave-in was closed at the referral, so nothing on record says whether the repair was done. The panel shows what the page would show while a work order is open; it does not claim this repair is undone.",
+   "alternative_rejected": "Presenting the after panel as this request's actual state.",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-landing-lead",
+   "decision": "The landing leads with 'The city grades the hand-off, not the job.' and the CityStat alley-debris pair (78.6% as published; 15.0% done on time), with the hand-off share and the queue count as support. The closure mix bar is turned off.",
+   "why": "The brief fixed the headline and the pair; the pair is the strongest observed claim in the assessment (section 3). The mix bar repeated the 35% support figure and pushed the doors below the fold at 1920x1080.",
+   "alternative_rejected": "Keeping \"Closed is not done\" and the 35% hero (the 35% invites the forbidden reading \"35% of jobs are not done\").",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-pair-figure",
+   "decision": "The lead pair is one registered figure with a two-part value {published, done_only, rebuilt}, plus scalar e3_citystat_* figures for each measure.",
+   "why": "The page asks for one figure id per lead; the two numbers must travel together with one derivation.",
+   "alternative_rejected": "Two unrelated lead figures.",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-done-column-goal",
+   "decision": "The added CityStat column ('Done on time') uses CityStat's own goal and denominator, counting only closings whose words say done; for parks, R1's closed-only grading against each request's promise date.",
+   "why": "It changes one thing in CityStat's own test, so the gap is the closing words and nothing else. The city's promise date differs from the CityStat goal for some types (alley potholes 16 vs 17 days).",
+   "alternative_rejected": "Grading CityStat's measures against PRJCOMPLETEDATE (changes two things at once).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-q3-table-only",
+   "decision": "The July-September pothole callout is removed from the landing and the brief; Q3 2026 appears only as a column in the scoreboard table, and the quarter-by-quarter chart stops at the last published quarter.",
+   "why": "Brief instruction; the callout carried the old lead and competed with the thesis.",
+   "alternative_rejected": "Keeping the callout below the fold.",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-fairness-appendix",
+   "decision": "Fairness moved, unchanged, to the methods page as 'Appendix: A separate finding: first-step waits by ward' (site/js/fairness.js holds the same render code).",
+   "why": "It is a separate finding with no tested cause; the assessment bars any equity claim from the main story.",
+   "alternative_rejected": "Deleting it (it is evidence and was asked about) or rewriting it (brief: unchanged in content).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-nav-doors",
+   "decision": "Every page's nav carries three doors: For residents, The queue, For the CityStat team. The Monday brief left the nav and is linked from the methods page as 'The printable Monday brief'.",
+   "why": "Brief instruction; the three doors match the three surfaces.",
+   "alternative_rejected": "Keeping in-page anchors in the nav (seven items, the queue would not stand out).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-register-attached",
+   "decision": "The register gains a sixth column, 'Work orders attached (public status page)', read at build time from E1's build/E1/linkage_by_service.csv: yes at 80% or more of sampled pages, partly at 20-79%, no below 20% (the count is in the hover text); services E1 has not sampled read 'not yet tested'.",
+   "why": "E1's sample was still growing during this build, so the bridge reads whatever exists when it runs and never types a value.",
+   "alternative_rejected": "Copying E1 figures into the register by hand (would go stale).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-statuspage-reconstruction-style",
+   "decision": "The status page is drawn in a neutral navy frame labelled 'Reconstruction' or 'Proposed', with the City's field names and wording, the block instead of the address and the request number withheld; no City logo or branding.",
+   "why": "It must read as the City page to make the point, without impersonating it.",
+   "alternative_rejected": "A screenshot of the live page (shows the address and number).",
+   "owner": "E3"
+  },
+  {
+   "id": "e3-download-sizes",
+   "decision": "Download sizes in data/downloads.json are stored in KB, not bytes.",
+   "why": "The privacy scan flagged queue.csv's byte count because it equals a real request number (a false positive, but the gate is strict).",
+   "alternative_rejected": "Adding an allowlist to the scan (it has none on purpose).",
+   "owner": "E3"
+  }
+ ]
+}

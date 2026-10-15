@@ -1,0 +1,579 @@
+{
+  "retrieval": {
+    "first_utc": "2026-10-14T18:48:27.494073+00:00",
+    "last_utc": "2026-10-14T18:53:30.429096+00:00",
+    "layers": 27,
+    "all_complete": true
+  },
+  "union": {
+    "memberships": 34739,
+    "unique_workorders": 27267,
+    "duplicated_workorders": 4573,
+    "conflicts": {
+      "Status": 0,
+      "ActualFinishDate": 0,
+      "DateWOClosed": 0,
+      "InitiateDate": 0,
+      "ProjectedFinishDate": 0,
+      "WOTemplateId": 0,
+      "WOAddress": 0,
+      "WOXCoordinate": 0,
+      "WOYCoordinate": 0
+    },
+    "status_counts": {
+      "NEW": 16676,
+      "Disptch": 96,
+      "CLOSED": 10489,
+      "IProcess": 5,
+      "Dispatch": 1
+    },
+    "open_operations": {
+      "removal": 2874,
+      "stump": 7337,
+      "trim": 6567
+    },
+    "closed_operations": {
+      "removal": 1167,
+      "stump": 1127,
+      "trim": 6350,
+      "other": 1845
+    }
+  },
+  "date_quality": {
+    "valid_calendar_finishes": 10017,
+    "invalid_actual_finish_year": 1,
+    "finish_before_initiate": 1750,
+    "recent_finishes_through_oct13": 5993,
+    "recent_finish_before_initiate": 565
+  },
+  "open_status": {
+    "workorders": 16778,
+    "initiated_more_than_1_year_ago": 10626,
+    "initiated_more_than_2_years_ago": 6690,
+    "projected_finish_present": 16776,
+    "projected_finish_before_snapshot": 15637,
+    "actual_finish_present": 94,
+    "recent_actual_finish": 32
+  },
+  "target_by_operation": [
+    {
+      "closure_class": "cancelled",
+      "operation": "removal",
+      "requests": 6,
+      "candidate_matches": 1,
+      "exact_matches": 1,
+      "actual_finish_matches": 0,
+      "exact_actual_finish_matches": 0,
+      "nonclosed_without_finish": 1,
+      "finished_by_promise": 0,
+      "finished_late": 0,
+      "exact_finished_by_promise": 0,
+      "exact_finished_late": 0,
+      "median_days_file_to_finish": null,
+      "median_days_late": null,
+      "exact_median_days_late": null
+    },
+    {
+      "closure_class": "cancelled",
+      "operation": "stump",
+      "requests": 1,
+      "candidate_matches": 0,
+      "exact_matches": 0,
+      "actual_finish_matches": 0,
+      "exact_actual_finish_matches": 0,
+      "nonclosed_without_finish": 0,
+      "finished_by_promise": 0,
+      "finished_late": 0,
+      "exact_finished_by_promise": 0,
+      "exact_finished_late": 0,
+      "median_days_file_to_finish": null,
+      "median_days_late": null,
+      "exact_median_days_late": null
+    },
+    {
+      "closure_class": "cancelled",
+      "operation": "trim",
+      "requests": 28,
+      "candidate_matches": 3,
+      "exact_matches": 3,
+      "actual_finish_matches": 2,
+      "exact_actual_finish_matches": 2,
+      "nonclosed_without_finish": 1,
+      "finished_by_promise": 0,
+      "finished_late": 2,
+      "exact_finished_by_promise": 0,
+      "exact_finished_late": 2,
+      "median_days_file_to_finish": 75.0,
+      "median_days_late": 61.0,
+      "exact_median_days_late": 61.0
+    },
+    {
+      "closure_class": "converted",
+      "operation": "removal",
+      "requests": 420,
+      "candidate_matches": 7,
+      "exact_matches": 6,
+      "actual_finish_matches": 0,
+      "exact_actual_finish_matches": 0,
+      "nonclosed_without_finish": 7,
+      "finished_by_promise": 0,
+      "finished_late": 0,
+      "exact_finished_by_promise": 0,
+      "exact_finished_late": 0,
+      "median_days_file_to_finish": null,
+      "median_days_late": null,
+      "exact_median_days_late": null
+    },
+    {
+      "closure_class": "converted",
+      "operation": "stump",
+      "requests": 12,
+      "candidate_matches": 2,
+      "exact_matches": 2,
+      "actual_finish_matches": 0,
+      "exact_actual_finish_matches": 0,
+      "nonclosed_without_finish": 2,
+      "finished_by_promise": 0,
+      "finished_late": 0,
+      "exact_finished_by_promise": 0,
+      "exact_finished_late": 0,
+      "median_days_file_to_finish": null,
+      "median_days_late": null,
+      "exact_median_days_late": null
+    },
+    {
+      "closure_class": "converted",
+      "operation": "trim",
+      "requests": 140,
+      "candidate_matches": 96,
+      "exact_matches": 80,
+      "actual_finish_matches": 89,
+      "exact_actual_finish_matches": 74,
+      "nonclosed_without_finish": 7,
+      "finished_by_promise": 6,
+      "finished_late": 83,
+      "exact_finished_by_promise": 6,
+      "exact_finished_late": 68,
+      "median_days_file_to_finish": 224.0,
+      "median_days_late": 218.0,
+      "exact_median_days_late": 268.5
+    }
+  ],
+  "target_all": [
+    {
+      "closure_class": "cancelled",
+      "requests": 35,
+      "candidate_matches": 4,
+      "exact_matches": 4,
+      "actual_finish_matches": 2,
+      "exact_actual_finish_matches": 2,
+      "nonclosed_without_finish": 2,
+      "finished_by_promise": 0,
+      "finished_late": 2,
+      "exact_finished_by_promise": 0,
+      "exact_finished_late": 2,
+      "median_days_file_to_finish": 75.0,
+      "median_days_late": 61.0,
+      "exact_median_days_late": 61.0
+    },
+    {
+      "closure_class": "converted",
+      "requests": 572,
+      "candidate_matches": 105,
+      "exact_matches": 88,
+      "actual_finish_matches": 89,
+      "exact_actual_finish_matches": 74,
+      "nonclosed_without_finish": 16,
+      "finished_by_promise": 6,
+      "finished_late": 83,
+      "exact_finished_by_promise": 6,
+      "exact_finished_late": 68,
+      "median_days_file_to_finish": 224.0,
+      "median_days_late": 218.0,
+      "exact_median_days_late": 268.5
+    }
+  ],
+  "placebo": {
+    "requests": 29797,
+    "candidate_matches": 87
+  },
+  "blank_cancelled": {
+    "requests": 5201,
+    "candidate_matches": 510,
+    "exact_matches": 369,
+    "spatial_nonexact_candidate_matches": 155,
+    "only_spatial_matches": 141,
+    "projected_overdue_matches": 431,
+    "median_order_age_days": 398.0,
+    "median_projected_days_overdue": 650.0
+  },
+  "removal_2025_full_open_recheck": {
+    "requests": 294,
+    "candidate_open_any_date": 11,
+    "exact_open_any_date": 9,
+    "address_or_30m_open_any_date": 11,
+    "candidate_open_after_filing": 10,
+    "exact_open_after_filing": 8,
+    "address_or_30m_open_after_filing": 10
+  },
+  "private_tree_removal_inspections": {
+    "rows": 878,
+    "recent_finish": 321
+  },
+  "layer_profiles": {
+    "63": {
+      "name": "Tree Removal WOs",
+      "rows": 2523,
+      "status": {
+        "NEW": 2523
+      },
+      "actual_finish_present": 19,
+      "actual_finish_recent_through_oct13": 9,
+      "actual_finish_before_initiate": 1,
+      "valid_actual_finish_min": "2021-05-01",
+      "valid_actual_finish_max": "2026-09-24",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63"
+    },
+    "64": {
+      "name": "Trees to be removed",
+      "rows": 2523,
+      "status": {
+        "NEW": 2523
+      },
+      "actual_finish_present": 19,
+      "actual_finish_recent_through_oct13": 9,
+      "actual_finish_before_initiate": 1,
+      "valid_actual_finish_min": "2021-05-01",
+      "valid_actual_finish_max": "2026-09-24",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/64"
+    },
+    "75": {
+      "name": "Dispatch Stump WOs",
+      "rows": 44,
+      "status": {
+        "Disptch": 44
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/75"
+    },
+    "89": {
+      "name": "Closed WOs (FP)",
+      "rows": 5596,
+      "status": {
+        "CLOSED": 5596
+      },
+      "actual_finish_present": 5031,
+      "actual_finish_recent_through_oct13": 2099,
+      "actual_finish_before_initiate": 1601,
+      "valid_actual_finish_min": "2022-03-28",
+      "valid_actual_finish_max": "2026-10-14",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89"
+    },
+    "90": {
+      "name": "30-Day Removals - All City - New",
+      "rows": 316,
+      "status": {
+        "NEW": 316
+      },
+      "actual_finish_present": 2,
+      "actual_finish_recent_through_oct13": 1,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": "2021-05-19",
+      "valid_actual_finish_max": "2026-07-22",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/90"
+    },
+    "91": {
+      "name": "All City Tree Trim WO",
+      "rows": 6278,
+      "status": {
+        "NEW": 6278
+      },
+      "actual_finish_present": 48,
+      "actual_finish_recent_through_oct13": 1,
+      "actual_finish_before_initiate": 2,
+      "valid_actual_finish_min": "2019-11-22",
+      "valid_actual_finish_max": "2026-02-23",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/91"
+    },
+    "92": {
+      "name": "(FP) Tree Removal",
+      "rows": 345,
+      "status": {
+        "NEW": 345
+      },
+      "actual_finish_present": 2,
+      "actual_finish_recent_through_oct13": 2,
+      "actual_finish_before_initiate": 1,
+      "valid_actual_finish_min": "2026-01-14",
+      "valid_actual_finish_max": "2026-03-26",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/92"
+    },
+    "93": {
+      "name": "(FP) Tree Trimming",
+      "rows": 237,
+      "status": {
+        "NEW": 237
+      },
+      "actual_finish_present": 20,
+      "actual_finish_recent_through_oct13": 18,
+      "actual_finish_before_initiate": 18,
+      "valid_actual_finish_min": "2023-04-26",
+      "valid_actual_finish_max": "2026-06-05",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/93"
+    },
+    "94": {
+      "name": "(FP) All Stump Removal WOs",
+      "rows": 208,
+      "status": {
+        "NEW": 164,
+        "Disptch": 44
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/94"
+    },
+    "95": {
+      "name": "(FP) Dispatch Stump Removal WOs",
+      "rows": 44,
+      "status": {
+        "Disptch": 44
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/95"
+    },
+    "96": {
+      "name": "Stump Removal - New",
+      "rows": 7235,
+      "status": {
+        "NEW": 7235
+      },
+      "actual_finish_present": 4,
+      "actual_finish_recent_through_oct13": 2,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": "2021-05-03",
+      "valid_actual_finish_max": "2026-03-31",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/96"
+    },
+    "97": {
+      "name": "Stump Removal - Active Work",
+      "rows": 102,
+      "status": {
+        "IProcess": 5,
+        "Dispatch": 1,
+        "Disptch": 96
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/97"
+    },
+    "98": {
+      "name": "Tree Trim Within 1 Year",
+      "rows": 3555,
+      "status": {
+        "CLOSED": 3555
+      },
+      "actual_finish_present": 3555,
+      "actual_finish_recent_through_oct13": 3553,
+      "actual_finish_before_initiate": 127,
+      "valid_actual_finish_min": "2025-10-14",
+      "valid_actual_finish_max": "2026-10-14",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98"
+    },
+    "99": {
+      "name": "Mr. Robot Pruning",
+      "rows": 2297,
+      "status": {
+        "CLOSED": 2297
+      },
+      "actual_finish_present": 2297,
+      "actual_finish_recent_through_oct13": 1268,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": "2022-06-11",
+      "valid_actual_finish_max": "2026-10-06",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99"
+    },
+    "100": {
+      "name": "MTL (Open WOs)",
+      "rows": 107,
+      "status": {
+        "NEW": 107
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/100"
+    },
+    "101": {
+      "name": "Ward 3 Removal WOs",
+      "rows": 108,
+      "status": {
+        "NEW": 108
+      },
+      "actual_finish_present": 1,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": "2021-11-01",
+      "valid_actual_finish_max": "2021-11-01",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/101"
+    },
+    "102": {
+      "name": "(MTL) REMOVAL - Open - Urgent",
+      "rows": 31,
+      "status": {
+        "NEW": 31
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/102"
+    },
+    "103": {
+      "name": "(MTL) Tim - Open - Urgent",
+      "rows": 7,
+      "status": {
+        "NEW": 7
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/103"
+    },
+    "104": {
+      "name": "(MTL) Trim - Open",
+      "rows": 52,
+      "status": {
+        "NEW": 52
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/104"
+    },
+    "105": {
+      "name": "(MTL) REMOVAL - Open",
+      "rows": 55,
+      "status": {
+        "NEW": 55
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/105"
+    },
+    "107": {
+      "name": "(ACSTL) REMOVAL - Open",
+      "rows": 41,
+      "status": {
+        "NEW": 41
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/107"
+    },
+    "108": {
+      "name": "(ACSTL) REMOVAL - Closed",
+      "rows": 28,
+      "status": {
+        "CLOSED": 28
+      },
+      "actual_finish_present": 28,
+      "actual_finish_recent_through_oct13": 28,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": "2026-09-22",
+      "valid_actual_finish_max": "2026-10-07",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108"
+    },
+    "109": {
+      "name": "(City) Regular All City Removals",
+      "rows": 2549,
+      "status": {
+        "NEW": 2549
+      },
+      "actual_finish_present": 20,
+      "actual_finish_recent_through_oct13": 10,
+      "actual_finish_before_initiate": 2,
+      "valid_actual_finish_min": "2019-08-15",
+      "valid_actual_finish_max": "2026-09-24",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/109"
+    },
+    "124": {
+      "name": "(Neighborhood) Stump Removal Template",
+      "rows": 221,
+      "status": {
+        "NEW": 221
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/124"
+    },
+    "125": {
+      "name": "(FP) Tree Trimming - Clearance",
+      "rows": 71,
+      "status": {
+        "NEW": 71
+      },
+      "actual_finish_present": 19,
+      "actual_finish_recent_through_oct13": 18,
+      "actual_finish_before_initiate": 18,
+      "valid_actual_finish_min": "2023-04-26",
+      "valid_actual_finish_max": "2026-06-05",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/125"
+    },
+    "126": {
+      "name": "(FP) Tree Trimming - Hazard",
+      "rows": 78,
+      "status": {
+        "NEW": 78
+      },
+      "actual_finish_present": 1,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": "2023-07-17",
+      "valid_actual_finish_max": "2023-07-17",
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/126"
+    },
+    "127": {
+      "name": "(FP) Tree Trimming - Structural",
+      "rows": 88,
+      "status": {
+        "NEW": 88
+      },
+      "actual_finish_present": 0,
+      "actual_finish_recent_through_oct13": 0,
+      "actual_finish_before_initiate": 0,
+      "valid_actual_finish_min": null,
+      "valid_actual_finish_max": null,
+      "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/127"
+    }
+  }
+}

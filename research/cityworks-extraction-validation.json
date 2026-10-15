@@ -1,0 +1,13 @@
+{
+  "extracted_layers": 42,
+  "complete_layers": 42,
+  "work_order_layers": 32,
+  "work_order_memberships": 36490,
+  "unique_work_orders": 29018,
+  "overlapping_work_orders_with_status_date_conflicts": 0,
+  "unapproved_personal_field_occurrences": 0,
+  "all_workorders_actual_finish_valid": 11644,
+  "all_workorders_actual_finish_2025_26": 6626,
+  "analysis_finish_window": "2025-01-01 through 2026-10-13, America/Chicago calendar dates",
+  "note": "Dates beyond 2030 or before1900 excluded as invalid for this operational snapshot. Work-order overlaps deduped by WorkOrderSid; conflicts tracked. Sidewalk and forestry joins remain candidate links."
+}

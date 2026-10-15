@@ -1,0 +1,651 @@
+{
+ "meta": {
+  "contract": "statuspage/1",
+  "mock": false,
+  "state": "real",
+  "built_at": "2026-10-14 16:41",
+  "sources": [
+   {
+    "path": "build/E3/statuspage.json",
+    "mtime": "2026-10-14 16:41"
+   }
+  ],
+  "notes": []
+ },
+ "label": "Reconstruction of the City's public status page, block level; sample request",
+ "source": {
+  "page": "https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/check-service-request.cfm",
+  "robots": "https://www.stlouis-mo.gov/robots.txt",
+  "robots_read": "2026-10-14 15:27 Central",
+  "saved": "Saved copies taken on 14 Oct 2026 by the orchestrating thread's probe; not re-fetched (robots.txt disallows check-service-request.cfm)."
+ },
+ "asof": "2026-10-13",
+ "panels": [
+  {
+   "key": "before",
+   "tag": "Today",
+   "title": "A cave-in, referred",
+   "caption": "This page ends at the hand-off. The repair, if it was done, is not on it.",
+   "header": {
+    "type": "Street, alley or sidewalk cave-in or depression",
+    "block": "5200 block of Robert Av",
+    "ward": "02",
+    "submitted_on": "2026-07-27"
+   },
+   "overview": [
+    [
+     "Status",
+     "Closed",
+     "2026-07-27"
+    ],
+    [
+     "Dept Investigation Completed On",
+     null,
+     "2026-07-27"
+    ],
+    [
+     "Resolution",
+     "Referred to street maintenance for repair work to be scheduled",
+     null
+    ]
+   ],
+   "details_text": "This request has been investigated and the problem has been identified by the inspectors. This request has been forwarded to Street Maintenance for repair work to be scheduled and completed as soon as possible.",
+   "department": [
+    [
+     "Dept To Receive SR",
+     "Street Department",
+     null
+    ],
+    [
+     "Dept Response Due By",
+     null,
+     "2026-07-30"
+    ]
+   ],
+   "related": {
+    "shown": false,
+    "figure_id": "e3_status_cavein_related_items",
+    "text": null
+   },
+   "comments": [],
+   "on_this_page": [
+    "Actions Taken",
+    "Details"
+   ]
+  },
+  {
+   "key": "tree",
+   "tag": "Today",
+   "title": "A tree removal, same page",
+   "caption": "Forestry attaches its work orders, so the same page already follows the job past the hand-off.",
+   "header": {
+    "type": "Inspect city tree",
+    "block": "3600 block of Gasconade St",
+    "ward": "03",
+    "submitted_on": "2026-05-30"
+   },
+   "overview": [
+    [
+     "Status",
+     "Closed",
+     "2026-06-22"
+    ],
+    [
+     "Dept Investigation Completed On",
+     null,
+     "2026-06-02"
+    ],
+    [
+     "Resolution",
+     "Removal work order created",
+     null
+    ]
+   ],
+   "details_text": "This service request has been assigned to a field crew. Crews place the highest priority on removing trees that pose the greatest potential safety hazard.",
+   "department": [
+    [
+     "Dept To Receive SR",
+     "Forestry Division",
+     null
+    ],
+    [
+     "Dept Response Due By",
+     null,
+     "2026-06-13"
+    ]
+   ],
+   "related": {
+    "shown": true,
+    "figure_id": "e3_status_tree_related_items",
+    "text": "Inspections and work orders attached to this request."
+   },
+   "comments": [
+    {
+     "date": "2026-06-02",
+     "text": "Tree(s) scheduled for a thirty (30) day removal"
+    }
+   ],
+   "on_this_page": [
+    "Actions Taken",
+    "Details",
+    "Related Items"
+   ]
+  },
+  {
+   "key": "after",
+   "tag": "Proposed",
+   "title": "The cave-in, under the four rules",
+   "caption": "The same page doing for every service what it does for trees: the request stays open until the work is finished.",
+   "header": {
+    "type": "Street, alley or sidewalk cave-in or depression",
+    "block": "5200 block of Robert Av",
+    "ward": "02",
+    "submitted_on": "2026-07-27"
+   },
+   "overview": [
+    [
+     "Status",
+     "With Street Maintenance",
+     null
+    ],
+    [
+     "Since",
+     null,
+     "2026-07-27"
+    ],
+    [
+     "Promised by",
+     null,
+     "2026-07-30"
+    ],
+    [
+     "Days past the promise",
+     null,
+     null,
+     "e3_status_cavein_days_past_promise"
+    ]
+   ],
+   "details_text": "Inspected and referred to Street Maintenance. A repair work order is attached and open. The system closes this request when the work order closes.",
+   "department": [
+    [
+     "Dept To Receive SR",
+     "Street Department",
+     null
+    ],
+    [
+     "Dept Response Due By",
+     null,
+     "2026-07-30"
+    ],
+    [
+     "Done by the promised date",
+     "Not yet: work order open",
+     null
+    ]
+   ],
+   "related": {
+    "shown": true,
+    "proposed": true,
+    "text": "Inspections and work orders attached to this request.",
+    "items": [
+     {
+      "kind": "Inspection",
+      "status": "Completed",
+      "date": "2026-07-27"
+     },
+     {
+      "kind": "Work order: street repair",
+      "status": "Open",
+      "date": "2026-07-27",
+      "due": "2026-07-30"
+     }
+    ]
+   },
+   "comments": [],
+   "on_this_page": [
+    "Actions Taken",
+    "Details",
+    "Related Items"
+   ]
+  }
+ ],
+ "probe": [
+  "e3_status_probe_handoff_with_items",
+  "e3_status_probe_handoff_pages",
+  "e3_status_probe_tree_with_items",
+  "e3_status_probe_tree_pages"
+ ],
+ "sample": [
+  {
+   "stratum": "H_tree",
+   "group": "Tree removal (control)",
+   "service_code": "Inspect City Tree",
+   "closing_words": "removal work order created",
+   "division": "Forestry Division",
+   "pages": "e3_status_e1_h_tree_pages",
+   "work_order": "e3_status_e1_h_tree_work_order",
+   "any_item": "e3_status_e1_h_tree_any_item",
+   "done_by_promise": "e3_status_e1_h_tree_done_by_promise",
+   "done_late": "e3_status_e1_h_tree_done_late"
+  },
+  {
+   "stratum": "O01",
+   "group": "Open past promise",
+   "service_code": "Inspect City Tree",
+   "closing_words": "(open past promise)",
+   "division": "Forestry Division",
+   "pages": "e3_status_e1_o01_pages",
+   "work_order": "e3_status_e1_o01_work_order",
+   "any_item": "e3_status_e1_o01_any_item",
+   "done_by_promise": "e3_status_e1_o01_done_by_promise",
+   "done_late": "e3_status_e1_o01_done_late"
+  },
+  {
+   "stratum": "H10",
+   "group": "Hand-off",
+   "service_code": "Tree Planting requst",
+   "closing_words": "approved for next available planting",
+   "division": "Forestry Division",
+   "pages": "e3_status_e1_h10_pages",
+   "work_order": "e3_status_e1_h10_work_order",
+   "any_item": "e3_status_e1_h10_any_item",
+   "done_by_promise": "e3_status_e1_h10_done_by_promise",
+   "done_late": "e3_status_e1_h10_done_late"
+  },
+  {
+   "stratum": "O04",
+   "group": "Open past promise",
+   "service_code": "Weeds-Occupied Ppty",
+   "closing_words": "(open past promise)",
+   "division": "Forestry Division",
+   "pages": "e3_status_e1_o04_pages",
+   "work_order": "e3_status_e1_o04_work_order",
+   "any_item": "e3_status_e1_o04_any_item",
+   "done_by_promise": "e3_status_e1_o04_done_by_promise",
+   "done_late": "e3_status_e1_o04_done_late"
+  },
+  {
+   "stratum": "H18",
+   "group": "Hand-off",
+   "service_code": "Cave-Ins",
+   "closing_words": "referred to street maintenance for repair work to be scheduled",
+   "division": "Street Department",
+   "pages": "e3_status_e1_h18_pages",
+   "work_order": "e3_status_e1_h18_work_order",
+   "any_item": "e3_status_e1_h18_any_item",
+   "done_by_promise": "e3_status_e1_h18_done_by_promise",
+   "done_late": "e3_status_e1_h18_done_late"
+  },
+  {
+   "stratum": "O06",
+   "group": "Open past promise",
+   "service_code": "Sewer Lateral Defect",
+   "closing_words": "(open past promise)",
+   "division": "Street Department",
+   "pages": "e3_status_e1_o06_pages",
+   "work_order": "e3_status_e1_o06_work_order",
+   "any_item": "e3_status_e1_o06_any_item",
+   "done_by_promise": "e3_status_e1_o06_done_by_promise",
+   "done_late": "e3_status_e1_o06_done_late"
+  },
+  {
+   "stratum": "O03",
+   "group": "Open past promise",
+   "service_code": "Sidewalk Repair",
+   "closing_words": "(open past promise)",
+   "division": "Street Department",
+   "pages": "e3_status_e1_o03_pages",
+   "work_order": "e3_status_e1_o03_work_order",
+   "any_item": "e3_status_e1_o03_any_item",
+   "done_by_promise": "e3_status_e1_o03_done_by_promise",
+   "done_late": "e3_status_e1_o03_done_late"
+  },
+  {
+   "stratum": "D01",
+   "group": "Done",
+   "service_code": "Containr damaged",
+   "closing_words": "(any done phrase)",
+   "division": "Refuse Division",
+   "pages": "e3_status_e1_d01_pages",
+   "work_order": "e3_status_e1_d01_work_order",
+   "any_item": "e3_status_e1_d01_any_item"
+  },
+  {
+   "stratum": "D02",
+   "group": "Done",
+   "service_code": "Refuse not collected",
+   "closing_words": "(any done phrase)",
+   "division": "Refuse Division",
+   "pages": "e3_status_e1_d02_pages",
+   "work_order": "e3_status_e1_d02_work_order",
+   "any_item": "e3_status_e1_d02_any_item"
+  },
+  {
+   "stratum": "D03",
+   "group": "Done",
+   "service_code": "Potholes - Residnl",
+   "closing_words": "(any done phrase)",
+   "division": "Street Division",
+   "pages": "e3_status_e1_d03_pages",
+   "work_order": "e3_status_e1_d03_work_order",
+   "any_item": "e3_status_e1_d03_any_item"
+  },
+  {
+   "stratum": "D04",
+   "group": "Done",
+   "service_code": "Snow/Ice - Residnl",
+   "closing_words": "(any done phrase)",
+   "division": "Street Division",
+   "pages": "e3_status_e1_d04_pages",
+   "work_order": "e3_status_e1_d04_work_order",
+   "any_item": "e3_status_e1_d04_any_item"
+  },
+  {
+   "stratum": "D05",
+   "group": "Done",
+   "service_code": "Whole Blk Lights Out",
+   "closing_words": "(any done phrase)",
+   "division": "Traffic Division",
+   "pages": "e3_status_e1_d05_pages",
+   "work_order": "e3_status_e1_d05_work_order",
+   "any_item": "e3_status_e1_d05_any_item"
+  },
+  {
+   "stratum": "D06",
+   "group": "Done",
+   "service_code": "Potholes - Major St",
+   "closing_words": "(any done phrase)",
+   "division": "Street Division",
+   "pages": "e3_status_e1_d06_pages",
+   "work_order": "e3_status_e1_d06_work_order",
+   "any_item": "e3_status_e1_d06_any_item"
+  },
+  {
+   "stratum": "D07",
+   "group": "Done",
+   "service_code": "Single Light Out",
+   "closing_words": "(any done phrase)",
+   "division": "Traffic Division",
+   "pages": "e3_status_e1_d07_pages",
+   "work_order": "e3_status_e1_d07_work_order",
+   "any_item": "e3_status_e1_d07_any_item"
+  },
+  {
+   "stratum": "D08",
+   "group": "Done",
+   "service_code": "Sign needs attention",
+   "closing_words": "(any done phrase)",
+   "division": "Traffic Division",
+   "pages": "e3_status_e1_d08_pages",
+   "work_order": "e3_status_e1_d08_work_order",
+   "any_item": "e3_status_e1_d08_any_item"
+  },
+  {
+   "stratum": "D09",
+   "group": "Done",
+   "service_code": "Debris-alley/street",
+   "closing_words": "(any done phrase)",
+   "division": "Street Division",
+   "pages": "e3_status_e1_d09_pages",
+   "work_order": "e3_status_e1_d09_work_order",
+   "any_item": "e3_status_e1_d09_any_item"
+  },
+  {
+   "stratum": "D10",
+   "group": "Done",
+   "service_code": "Light Damaged",
+   "closing_words": "(any done phrase)",
+   "division": "Traffic Division",
+   "pages": "e3_status_e1_d10_pages",
+   "work_order": "e3_status_e1_d10_work_order",
+   "any_item": "e3_status_e1_d10_any_item"
+  },
+  {
+   "stratum": "H01",
+   "group": "Hand-off",
+   "service_code": "Vehicle Towing",
+   "closing_words": "vehicle tagged for tow",
+   "division": "Street Department",
+   "pages": "e3_status_e1_h01_pages",
+   "work_order": "e3_status_e1_h01_work_order",
+   "any_item": "e3_status_e1_h01_any_item"
+  },
+  {
+   "stratum": "H02",
+   "group": "Hand-off",
+   "service_code": "Refuse not collected",
+   "closing_words": "collection will be made next scheduled day",
+   "division": "Refuse Division",
+   "pages": "e3_status_e1_h02_pages",
+   "work_order": "e3_status_e1_h02_work_order",
+   "any_item": "e3_status_e1_h02_any_item"
+  },
+  {
+   "stratum": "H03",
+   "group": "Hand-off",
+   "service_code": "Refuse not collected",
+   "closing_words": "due to employee shortage, the routes will be completed in order, as soon possible",
+   "division": "Refuse Division",
+   "pages": "e3_status_e1_h03_pages",
+   "work_order": "e3_status_e1_h03_work_order",
+   "any_item": "e3_status_e1_h03_any_item"
+  },
+  {
+   "stratum": "H04",
+   "group": "Hand-off",
+   "service_code": "Weeds-Vacant Bldg",
+   "closing_words": "on schedule to be cut, call csb for details",
+   "division": "Forestry Division",
+   "pages": "e3_status_e1_h04_pages",
+   "work_order": "e3_status_e1_h04_work_order",
+   "any_item": "e3_status_e1_h04_any_item"
+  },
+  {
+   "stratum": "H05",
+   "group": "Hand-off",
+   "service_code": "Illegl Use-Opn Storg",
+   "closing_words": "issued notice of violation",
+   "division": "Building Division",
+   "pages": "e3_status_e1_h05_pages",
+   "work_order": "e3_status_e1_h05_work_order",
+   "any_item": "e3_status_e1_h05_any_item"
+  },
+  {
+   "stratum": "H06",
+   "group": "Hand-off",
+   "service_code": "Debris-alley/street",
+   "closing_words": "matter will be investigated and appropriate action taken",
+   "division": "Street Division",
+   "pages": "e3_status_e1_h06_pages",
+   "work_order": "e3_status_e1_h06_work_order",
+   "any_item": "e3_status_e1_h06_any_item"
+  },
+  {
+   "stratum": "H07",
+   "group": "Hand-off",
+   "service_code": "Vacnt Bldg Unsecured",
+   "closing_words": "referred to board up crew",
+   "division": "Building Division",
+   "pages": "e3_status_e1_h07_pages",
+   "work_order": "e3_status_e1_h07_work_order",
+   "any_item": "e3_status_e1_h07_any_item"
+  },
+  {
+   "stratum": "H08",
+   "group": "Hand-off",
+   "service_code": "Bulky items missed",
+   "closing_words": "collection will be made next scheduled day",
+   "division": "Refuse Division",
+   "pages": "e3_status_e1_h08_pages",
+   "work_order": "e3_status_e1_h08_work_order",
+   "any_item": "e3_status_e1_h08_any_item"
+  },
+  {
+   "stratum": "H09",
+   "group": "Hand-off",
+   "service_code": "Weeds-Vacant Lot",
+   "closing_words": "on schedule to be cut, call csb for details",
+   "division": "Forestry Division",
+   "pages": "e3_status_e1_h09_pages",
+   "work_order": "e3_status_e1_h09_work_order",
+   "any_item": "e3_status_e1_h09_any_item"
+  },
+  {
+   "stratum": "H11",
+   "group": "Hand-off",
+   "service_code": "Ppty Maint Code-Ext",
+   "closing_words": "issued notice of violation",
+   "division": "Building Division",
+   "pages": "e3_status_e1_h11_pages",
+   "work_order": "e3_status_e1_h11_work_order",
+   "any_item": "e3_status_e1_h11_any_item"
+  },
+  {
+   "stratum": "H12",
+   "group": "Hand-off",
+   "service_code": "Ppty Maint Code-Ext",
+   "closing_words": "building already under notice",
+   "division": "Building Division",
+   "pages": "e3_status_e1_h12_pages",
+   "work_order": "e3_status_e1_h12_work_order",
+   "any_item": "e3_status_e1_h12_any_item"
+  },
+  {
+   "stratum": "H13",
+   "group": "Hand-off",
+   "service_code": "Illegl Use-Opn Storg",
+   "closing_words": "building already under notice",
+   "division": "Building Division",
+   "pages": "e3_status_e1_h13_pages",
+   "work_order": "e3_status_e1_h13_work_order",
+   "any_item": "e3_status_e1_h13_any_item"
+  },
+  {
+   "stratum": "H14",
+   "group": "Hand-off",
+   "service_code": "Bulky items missed",
+   "closing_words": "due to employee shortage, the routes will be completed in order, as soon possible",
+   "division": "Refuse Division",
+   "pages": "e3_status_e1_h14_pages",
+   "work_order": "e3_status_e1_h14_work_order",
+   "any_item": "e3_status_e1_h14_any_item"
+  },
+  {
+   "stratum": "H15",
+   "group": "Hand-off",
+   "service_code": "Weeds-Vacant Bldg",
+   "closing_words": "added to rotation",
+   "division": "Forestry Division",
+   "pages": "e3_status_e1_h15_pages",
+   "work_order": "e3_status_e1_h15_work_order",
+   "any_item": "e3_status_e1_h15_any_item"
+  },
+  {
+   "stratum": "H16",
+   "group": "Hand-off",
+   "service_code": "Refuse not collected",
+   "closing_words": "matter will be investigated and appropriate action taken",
+   "division": "Refuse Division",
+   "pages": "e3_status_e1_h16_pages",
+   "work_order": "e3_status_e1_h16_work_order",
+   "any_item": "e3_status_e1_h16_any_item"
+  },
+  {
+   "stratum": "H17",
+   "group": "Hand-off",
+   "service_code": "WTR-COMING-UP",
+   "closing_words": "scheduled for repair by water department",
+   "division": "Water Division",
+   "pages": "e3_status_e1_h17_pages",
+   "work_order": "e3_status_e1_h17_work_order",
+   "any_item": "e3_status_e1_h17_any_item"
+  },
+  {
+   "stratum": "H19",
+   "group": "Hand-off",
+   "service_code": "Debris-alley/street",
+   "closing_words": "bulk will be picked up in correct week",
+   "division": "Street Division",
+   "pages": "e3_status_e1_h19_pages",
+   "work_order": "e3_status_e1_h19_work_order",
+   "any_item": "e3_status_e1_h19_any_item"
+  },
+  {
+   "stratum": "H20",
+   "group": "Hand-off",
+   "service_code": "Bulky items missed",
+   "closing_words": "bulk will be picked up in correct week",
+   "division": "Refuse Division",
+   "pages": "e3_status_e1_h20_pages",
+   "work_order": "e3_status_e1_h20_work_order",
+   "any_item": "e3_status_e1_h20_any_item"
+  },
+  {
+   "stratum": "O02",
+   "group": "Open past promise",
+   "service_code": "Cave-Ins",
+   "closing_words": "(open past promise)",
+   "division": "Street Department",
+   "pages": "e3_status_e1_o02_pages",
+   "work_order": "e3_status_e1_o02_work_order",
+   "any_item": "e3_status_e1_o02_any_item"
+  },
+  {
+   "stratum": "O05",
+   "group": "Open past promise",
+   "service_code": "Bad Condition",
+   "closing_words": "(open past promise)",
+   "division": "Street Department",
+   "pages": "e3_status_e1_o05_pages",
+   "work_order": "e3_status_e1_o05_work_order",
+   "any_item": "e3_status_e1_o05_any_item"
+  },
+  {
+   "stratum": "O07",
+   "group": "Open past promise",
+   "service_code": "TDebris-alley/street",
+   "closing_words": "(open past promise)",
+   "division": "Tornado, Recovery",
+   "pages": "e3_status_e1_o07_pages",
+   "work_order": "e3_status_e1_o07_work_order",
+   "any_item": "e3_status_e1_o07_any_item"
+  },
+  {
+   "stratum": "O08",
+   "group": "Open past promise",
+   "service_code": "LRA Tree",
+   "closing_words": "(open past promise)",
+   "division": "Land Reutilization Authority (LRA)",
+   "pages": "e3_status_e1_o08_pages",
+   "work_order": "e3_status_e1_o08_work_order",
+   "any_item": "e3_status_e1_o08_any_item"
+  },
+  {
+   "stratum": "O09",
+   "group": "Open past promise",
+   "service_code": "Ppty Maint Code-Ext",
+   "closing_words": "(open past promise)",
+   "division": "Building Division",
+   "pages": "e3_status_e1_o09_pages",
+   "work_order": "e3_status_e1_o09_work_order",
+   "any_item": "e3_status_e1_o09_any_item"
+  },
+  {
+   "stratum": "O10",
+   "group": "Open past promise",
+   "service_code": "City Tree Down",
+   "closing_words": "(open past promise)",
+   "division": "Forestry Division",
+   "pages": "e3_status_e1_o10_pages",
+   "work_order": "e3_status_e1_o10_work_order",
+   "any_item": "e3_status_e1_o10_any_item"
+  }
+ ],
+ "sample_source": "build/E1/service_table.csv (E1, stratified random sample of status pages, 14 Oct 2026)",
+ "rules": [
+  "Attach a work order at every hand-off.",
+  "Close the request on actual finish, not at hand-off (the city's own towing rule, for every service).",
+  "Carry the promise date to the job.",
+  "Work the overdue list oldest-first, seen weekly by the cabinet."
+ ]
+}

@@ -1,0 +1,93 @@
+[
+ {
+  "id": "n3-dedupe",
+  "decision": "Count one row per REQUESTID; give a request the resident channel if any of its rows has a resident CALLERTYPE.",
+  "why": "The public yearly files repeat REQUESTIDs (349,031 rows, 322,104 ids in 2024-2026); repeats differ only in CALLERTYPE. After dedupe our ward request counts match CityStat within 1%; before, they ran about 8% high.",
+  "alternative_rejected": "Counting rows (inflates counts and weights multi-caller requests in medians).",
+  "shows_up_in": "every N3 figure; flagged to N1"
+ },
+ {
+  "id": "n3-citystat-definition",
+  "decision": "Reproduce CityStat's ward chart as the mean (not median) days to close over STATUS=CLOSED requests, all channels and types, filed 1 Jan 2024-30 Jun 2026, ward as recorded in the file.",
+  "why": "Of seven definitions tried this one fits best (mean absolute error 0.85 days across 14 wards; closed counts within 1.1%); a closed-by-10-July snapshot fits the closed counts best.",
+  "alternative_rejected": "Resident-only (counts 29% low); counting cancellations as closures (closed counts 15% high); geocoding blank wards (not done; 2,561 blank-ward requests vs CityStat 726).",
+  "shows_up_in": "n3_citystat_*, decomposition chart"
+ },
+ {
+  "id": "n3-decomposition",
+  "decision": "Split the ward gap with an exact two-level Kitagawa decomposition of the mean: type mix, then closing-class shares within type, then speed within the same type and class. Check with median reweighting and with days capped at 90.",
+  "why": "CityStat's metric is a mean, which splits exactly with no residual and can be shown as arithmetic. The median and capped versions give the same answer (speed within type and class is 99-148% of the gap).",
+  "alternative_rejected": "Regression with ward dummies (harder to explain to an analyst; same conclusion expected).",
+  "shows_up_in": "N3-decomposition-ward1-vs-ward10.png, n3_decomp_*"
+ },
+ {
+  "id": "n3-closure-classes",
+  "decision": "Use N2's reviewed closure classes; N3's own rules only for texts N2 has not classed.",
+  "why": "Single source of truth for all chapters. N3 classified the same texts independently first; the two agree on 98.4% of closures.",
+  "alternative_rejected": "A separate N3 class list (would let chapters disagree).",
+  "shows_up_in": "all done-class and hand-off figures"
+ },
+ {
+  "id": "n3-enforcement-variant",
+  "decision": "Show the decomposition both with enforcement notices inside hand-offs (N2's class) and as their own class.",
+  "why": "N2 classes notices of violation as handed_off:enforcement (25,639 closures); a notice is an action, not a referral, so the reader should see it makes no difference: closing words 1.5 vs 1.7 days of 15.7.",
+  "alternative_rejected": "Silently merging (hides a contestable choice) or silently splitting (diverges from N2).",
+  "shows_up_in": "n3_decomp_ward1_vs_10_enforcement_variant; report section 1"
+ },
+ {
+  "id": "n3-like-for-like",
+  "decision": "Like for like = same request type AND same closing words: the done class, plus each type's three most common closing texts, compared separately.",
+  "why": "Some types almost never close as 'done' (towing after the tornado: 153 of 3,722 requests in wards 1-5, 43 of 2,284 in wards 10-14), so done-only comparisons would drop them; same-words comparisons keep the step constant.",
+  "alternative_rejected": "Done-class only (drops towing and enforcement); all closures (mixes a one-day referral with a weeks-long repair, the error in the original headline).",
+  "shows_up_in": "robust_comparisons.csv, towing and cave-in figures"
+ },
+ {
+  "id": "n3-promise-measure",
+  "decision": "Grade against the city's own promise date (PRJCOMPLETEDATE): done-class closure on or before it, denominator every request whose promise had passed by 13 Oct 2026; open, cancelled, handed-off and no-action count as not done.",
+  "why": "The promise is the city's own per-request commitment; counting open and cancelled requests avoids the closed-only bias that flatters slow areas.",
+  "alternative_rejected": "Closed-only medians as the sole measure; CityStat goal days (not per request).",
+  "shows_up_in": "done_by_promise and closed_by_promise columns"
+ },
+ {
+  "id": "n3-robust-rule",
+  "decision": "Call a ward comparison robust only if, in both periods (before and after 16 May 2025): n >= 100 each side, median ratio >= 1.5, bootstrap 95% lower bound > 1.2, and the promise measure also lower in wards 10-14.",
+  "why": "The brief asked for comparisons that survive the done-class and promise tests before and after the tornado; the thresholds are stated in advance in 06_robust.py.",
+  "alternative_rejected": "Significance alone (tiny differences pass with large n); after-tornado only.",
+  "shows_up_in": "robust_shortlist.json, report"
+ },
+ {
+  "id": "n3-reject-invt-stamp",
+  "decision": "Do not use DATEINVTDONE ('investigation done') as a like-for-like measure.",
+  "why": "For Street Department types it is stamped within about a day in every ward 1-5 and after 7-64 days in wards 6-14, while towing tags in wards 1-5 still take 6-15 days, so in wards 1-5 it marks a desk step, not the visit. Forestry's stamp has its own line between wards 7 and 8.",
+  "alternative_rejected": "Using the stamp as time to inspection (would show 25x gaps that are partly process).",
+  "shows_up_in": "right panel of N3-towing-by-ward.png; report"
+ },
+ {
+  "id": "n3-cavein-process-flag",
+  "decision": "Report the cave-in referral gap (0.8 vs 41.7 days) as a process difference, not as like-for-like speed of work.",
+  "why": "Per ward, referral time jumps from under 1.2 days (every ward 1-5) to over 15 days (every ward 6-14); the same 5|6 line appears in the towing and bad-condition investigation stamps, all Street Department types.",
+  "alternative_rejected": "Calling the south 'fast' (its repair dates are not recorded) or the gap 'mix only' (the same words take 50 times longer).",
+  "shows_up_in": "n3_cavein_* figures"
+ },
+ {
+  "id": "n3-single-light-not-robust",
+  "decision": "Do not lead with single light out.",
+  "why": "Its done-class gap (15.6 vs 41.0 days after the tornado) comes from two quarters filed Oct 2025-Mar 2026; before the tornado the gap is 4.8 vs 6.4 and other quarters are level.",
+  "alternative_rejected": "Using it as a headline candidate (as COMMON correction 2 suggested).",
+  "shows_up_in": "N3-single-light-by-quarter.png"
+ },
+ {
+  "id": "n3-towing-boundary-no-names",
+  "decision": "Fetch the maps8 VEHICLE_TOWING_ASSIGNMENTS polygons with outFields=OBJECTID only.",
+  "why": "The layer's only attribute is 'Inspector', a staff name; the rules bar staff fields.",
+  "alternative_rejected": "Downloading all fields and dropping later.",
+  "shows_up_in": "boundaries.json"
+ },
+ {
+  "id": "n3-periods-groups",
+  "decision": "Before = filed 1 Jan 2024-15 May 2025; after = filed 16 May 2025-13 Oct 2026; ward groups 1-5 vs 10-14, always with per-ward tables beside them.",
+  "why": "Tornado date and ward groups from T-COMMON; the 14-ward map applies from 2024 (2023 data mixes old wards 15-28).",
+  "alternative_rejected": "Including 2023 (old ward numbers).",
+  "shows_up_in": "all N3 tables"
+ }
+]

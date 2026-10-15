@@ -1,0 +1,61 @@
+figure,value,unit,date_refers_to,label,source
+Cityworks query-layer metadata files checked,51,layers,2026-10-14 (retrieval),observed,data/raw/cityworks-gap/authorized/layer_*_metadata.json (https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json)
+Layers advertising Priority/PriorityCode/PriorityDescription/Effort,50,layers,2026-10-14 (retrieval),observed,data/raw/cityworks-gap/authorized/layer_*_metadata.json
+Layers advertising a field named Severity/SLA/Escalation/Risk/Score,0,layers,2026-10-14 (retrieval),observed,data/raw/cityworks-gap/authorized/layer_*_metadata.json
+Distinct work orders extracted,29018,work orders,2026-10-14 (retrieval),observed,research/cityworks-gap-review.md; https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json
+Work orders with non-null PriorityCode,0,work orders,2026-10-14 (retrieval),observed,data/raw/cityworks-gap/authorized/layer_*_rows.json
+Work-order search memberships with PriorityCode checked,36490,rows,2026-10-14 (retrieval),observed,data/raw/cityworks-gap/authorized/layer_*_rows.json
+Rows in QE102 (MTL) REMOVAL - Open - Urgent,31,work orders,2026-10-14 (retrieval),observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/102
+Rows in QE103 (MTL) Trim - Open - Urgent,7,work orders,2026-10-14 (retrieval),observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/103
+Rows in QE68 Emergency Tree Service Requests,514,service requests,2026-10-14 (retrieval),observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68
+Rows in QE126 (FP) Tree Trimming - Hazard,78,work orders,2026-10-14 (retrieval),observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/126
+Rows in QE90 30-Day Removals - All City - New,316,work orders,2026-10-14 (retrieval),observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/90
+SR search-membership values checked for PrjCompleteDate,19821,rows,2026-10-14 (retrieval),observed,data/raw/cityworks-gap/authorized/layer_*_rows.json (SR layers)
+SR values with PrjCompleteDate filled,19804,rows,2026-10-14 (retrieval),observed,data/raw/cityworks-gap/authorized/layer_*_rows.json (SR layers)
+SR values with DateDispatchTo filled,13385,rows,2026-10-14 (retrieval),observed,data/raw/cityworks-gap/authorized/layer_*_rows.json (SR layers)
+St. Louis Cityworks version,23.10,version,2026-10-14,observed,research/precedents-closed-loop.md; https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json
+Cityworks 23 linked SR closes automatically when WO closes,yes,feature,2026-10-14 (read),reported,https://help.cityworks.com/AMS/OC/Content/AMS/OC/WorkOrder/CloseAWorkOrder.htm
+SR projected completion date computed from template Duration,yes,feature,2026-10-14 (read),reported,https://help.cityworks.com/Respond/4-3/Content/Online/AMS/15-8/ServiceRequest/ServiceRequestPanelFields.htm
+Cityworks Workload crew scheduling (map list and calendar),yes,feature,2026-10-14 (read),reported,https://help.cityworks.com/Workload/3-0/Content/CalendarView.htm
+Native escalation or ranking engine found in vendor docs,no,feature,2026-10-14 (search),reported,https://help.cityworks.com/Admin/3-2/Content/Email/AddorEditanEmailEvent.htm (negative search result)
+Open past-promise requests (E5 base),14902,requests,2026-10-13,observed,build/E5/summary.json (public 311 file via build/stl.duckdb)
+Open past-promise requests listed on site queue (E3),14573,requests,2026-10-13,observed,build/E3/queue_rows.json
+Base rows excluded from site list as sensitive types,320,requests,2026-10-13,observed,build/stl.duckdb sensitive_codes join on build/E5/private/ledger_rows.parquet
+Base rows routed to SLMPD (excluded from site list),9,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet joined to requests.division
+Distinct DESCRIPTION values in base,223,values,2026-10-13,observed,build/stl.duckdb requests.description
+Mean DESCRIPTION length in base,20.6,characters,2026-10-13,observed,build/stl.duckdb requests.description
+Median days past promise (base),152,days,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Base rows <=30 days past promise,2206,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Base rows 31-180 days past promise,5972,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Base rows >180 days past promise,6724,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Base rows >365 days past promise,4052,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Address+type groups with >=2 open past-promise filings,402,groups,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Rows in address+type groups with >=2 filings,956,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Address+type groups with >=3 filings,53,groups,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Largest address+type group (Inspect City Tree),51,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Base rows with >=1 later filing same address+type (n_later),1467,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+Division-blocks holding overdue items,10384,blocks,2026-10-13,observed,build/E5/private/ledger_rows.parquet joined to requests.block_label
+Division-blocks with >=2 overdue items,2560,blocks,2026-10-13,observed,build/E5/private/ledger_rows.parquet joined to requests.block_label
+Rows on division-blocks with >=2 overdue items,7005,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet joined to requests.block_label
+Division-blocks with >=3 overdue items,959,blocks,2026-10-13,observed,build/E5/private/ledger_rows.parquet joined to requests.block_label
+Base rows status Disptch,6678,requests,2026-10-13,observed,build/E5/private/ledger_rows.parquet
+E5 class a done after filing,388,requests,2026-10-13,observed,build/E5/summary.json
+E5 class b pending in records,1206,requests,2026-10-13,observed,build/E5/summary.json
+E5 class c possibly superseded,333,requests,2026-10-13,observed,build/E5/summary.json
+E5 class d admin leftover,409,requests,2026-10-13,observed,build/E5/summary.json
+E5 class e no evidence,12566,requests,2026-10-13,observed,build/E5/summary.json
+Simulated rows routed to close-out (a+c+d),1130,requests,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Simulated rows on ranked list (b+e),13772,requests,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Hazard Tier 1 rows in base (proposed mapping),2991,requests,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Hazard Tier 2 rows in base (proposed mapping),7423,requests,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Hazard Tier 3 rows in base (proposed mapping),4488,requests,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Tier 1 rows on ranked list,2778,requests,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Forestry: overlap of ranked top 25 with oldest-first top 25,0,rows,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Forestry: Tier 1 rows in oldest-first top 25,9,rows,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Street Dept 510: overlap of ranked top 25 with oldest-first top 25,0,rows,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Street Dept 510: Tier 1 rows in oldest-first top 25,1,rows,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Water Div: overlap of ranked top 25 with oldest-first top 25,18,rows,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Building Div: overlap of ranked top 25 with oldest-first top 25,2,rows,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Traffic 511: overlap of ranked top 25 with oldest-first top 25,13,rows,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Ranked rows in address+type groups larger than 10,77,requests,2026-10-13,inferred,research/prioritisation-scripts/simulate_rank.py
+Kansas City MO lower-income/minority neighbourhoods under-report street and nuisance issues,yes,finding,2021 (publication),reported,https://marroninstitute.nyu.edu/papers/bias-in-smart-city-governance-how-socio-spatial-disparities-in-311-complaint-behavior-impact-the-fairness-of-data-driven-decisions (doi:10.1016/j.scs.2020.102503)

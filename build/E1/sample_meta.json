@@ -1,0 +1,10 @@
+{
+ "seed": "E1-status-page-2026-10-14",
+ "window": [
+  "2025-01-01",
+  "2026-08-31"
+ ],
+ "n": 1440,
+ "n_strata": 41,
+ "tree_pair_in_top20": false
+}

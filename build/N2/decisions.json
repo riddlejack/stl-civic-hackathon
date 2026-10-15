@@ -1,0 +1,129 @@
+[
+  {
+    "id": "n2_ai_drafted_classes",
+    "decision": "The closure classes were assigned by Claude (an AI model) reading every distinct closing text (262 distinct strings including blank; 2,992 request-type and text pairs on closures filed 2024-2026) with its top request types. The result is a fixed rule table, not a model: scripts/night/N2/classes.py, its output research/chapters/N2-closure-classes.csv, and the same table as plain SQL in build/N2/closure_class.sql (checked to agree on all 2,992 pairs).",
+    "why": "The brief makes classing the AI-assisted step and asks that a person can review it. ITSA IT Policy 2026-001 (23 Jul 2026) says AI output 'should be treated as a draft or support tool'; freezing the judgement into a table keeps the product AI-free and the draft reviewable.",
+    "alternative_rejected": "A model classifying texts at run time (not reviewable, not allowed under the city's AI policy without ITSA approval); keyword regexes alone (silently misclass type-specific meanings).",
+    "how_to_review": "Open research/chapters/N2-closure-classes.csv, sort by n, read class and rule_or_judgement; change a line in scripts/night/N2/classes.py and rerun 02, 03, 07 and 08. Ten texts cover about 60% of hand-off closures.",
+    "shows_up_in": "every class share in build/N2/figures.json; N1 closure_class; N3 like-for-like; site landing number"
+  },
+  {
+    "id": "n2_line_done_vs_handed_off",
+    "decision": "A closure is 'done' only when its words say the requested work was performed (work completed, collection made, repairs made, graffiti removed, vehicle towed, animal picked up). Anything in the future or passed on is 'handed_off': scheduled, 'will be', referred, queued, in progress, parts on order, tagged, sent to another agency or utility, awaiting funding.",
+    "why": "The city's own texts are explicit about tense ('Collection will be made next scheduled day', 'on schedule to be cut', 'scheduled for repair by water department'); CityStat's towing page says 'Closed' does not necessarily indicate that a vehicle has been towed (research/synthesis-notes.md).",
+    "alternative_rejected": "Treating any closure as completion (what time-to-close measures do); treating 'investigated' or 'contacted' as done.",
+    "shows_up_in": "n2_share_closed_handoff, n2_share_closed_done, n2_on_time_closures_that_are_handoffs"
+  },
+  {
+    "id": "n2_enforcement_notices",
+    "decision": "Enforcement steps that pass the fix to an owner (issued notice of violation, Building already under notice, already under notice, owner notified, secure notice sent, warning letters, verbal advice to a pet owner or property owner, vehicle ticketed, Issued Fine, summons issued, referred to court, cleared by arrest, extension given) are classed handed_off with rule handed_off:enforcement, and every headline is also given without them.",
+    "why": "The closing words do not say the condition was fixed; compliance is the owner's act, recorded (if anywhere) in the Building Division's case system. But the inspector did the city's part, so a reader may fairly count these as done. They are 10.0% of 2025-26 closures.",
+    "alternative_rejected": "Counting notices as done (done would rise from 37.3% to 47.3%); a seventh class (the brief fixes six).",
+    "shows_up_in": "n2_share_closed_handoff (35.2%) vs n2_share_closed_handoff_excl_notices (25.2%)"
+  },
+  {
+    "id": "n2_converted_narrow",
+    "decision": "'converted' only when a work order or crew work ticket is created (removal/trim work order created, Work order created, work ticket issued to crew). Programme queues (approved for next available planting, added to sewer lateral repair program, sidewalk programme, Major Capital Improvement Project) are handed_off:queued_program.",
+    "why": "A work order is a record that can be joined and finished; a queue position is not published (50/50 sidewalk page: the wait 'depends on the amount of funds available in your ward').",
+    "alternative_rejected": "Counting queues as conversions.",
+    "shows_up_in": "class 'converted' (0.4% of closures, mostly tree inspections)"
+  },
+  {
+    "id": "n2_borderline_rulings",
+    "decision": "Rulings on borderline texts: 'complete', 'Services completed', 'Park maintenance complete' = done. 'investigation complete', 'canceled' (as closing text), 'Camera request' = info_other (outcome unstated). 'teehead shut - owner to be billed', 'stop box shut', 'destroy tap/service' = done (the city's valve work stops the leak). 'no lead hazards found' and 'lead inspection completed' = done (the inspection is the service). 'permit approved'/'permit issued' = done; 'permit denied' = no_action. 'abated before inspection', 'Completed by owner', 'collection made by private hauler' = no_action (the city did nothing). 'responsibility of Ameren UE', 'no jurisdiction', 'owner's responsibility' = no_action; but 'ameren signal outage', 'reported to Ameren', 'report to MODOT' = handed_off (passed to the other body). 'not funded by traffic division, seeking outside funding support' and 'Aldermanic funding support' = handed_off:funding_pending; 'Alderman did not provide funds' = no_action. 'collection will be made;problem items removed from container' = handed_off (the collection asked for is future). 'shelter full, unable to accept animals' and 'yard waste now on winter schedule' = no_action:declined. 'See LRA comments' = info_other (comments are not public).",
+    "why": "Same test throughout: do the words say the requested work was performed, passed on, not needed, or nothing about it. Each ruling is in rule_or_judgement in the CSV.",
+    "alternative_rejected": "Leaving borderline texts unclassed (they are small but N1 needs a class for every closure).",
+    "shows_up_in": "research/chapters/N2-closure-classes.csv rule_or_judgement"
+  },
+  {
+    "id": "n2_type_overrides",
+    "decision": "Two type-specific overrides: 'Foreman cntct citizn' closed 'citizen contacted' = done, and 'Instructn hshld/blky' closed 'instructions issued to customer' = done. Everywhere else those texts are info_other.",
+    "why": "For those two request types the contact or the instructions are the service asked for.",
+    "alternative_rejected": "Text-only classes (would understate done for those types).",
+    "shows_up_in": "TYPE_OVERRIDES in scripts/night/N2/classes.py; closure_type_override in build/N2/closure_class.sql"
+  },
+  {
+    "id": "n2_dedupe_requests",
+    "decision": "Count requests, not rows: one row per REQUESTID. Channel is 'resident' if any of the request's rows has a resident caller type (WEB, PHONE, EMAIL, CHAT, TWITTER, LETTER), else 'staff' if NSO, else 'indeterminate'.",
+    "why": "The city's 2024-2026 CSVs hold 349,031 rows for 322,104 REQUESTIDs (24,020 ids repeated up to 21 times; 19,431 rows are exact duplicates and the rest differ only in CALLERTYPE), so rows over-count requests by about 8% and weight multi-caller requests (scripts/night/N2/01_load.py).",
+    "alternative_rejected": "Row counts (the earlier figure '190,856 closed 2025-26' appears to be rows; the request count is 175,876 filed and closed in 2025-26).",
+    "shows_up_in": "every N2 count; flagged to N1 and N3 in the N2 report"
+  },
+  {
+    "id": "n2_scope_periods",
+    "decision": "The classes CSV covers every request type and closing text on closures of requests filed 1 Jan 2024 to 13 Oct 2026 (types under 100 closures flagged, not dropped). Measures and headlines use requests filed 1 Jan 2025 to 12 Oct 2026 that are CLOSED.",
+    "why": "N1 needs a class for every closure; the brief asks for 2024-2026 strings and 2025-26 headlines. Filing date keeps cohorts comparable.",
+    "alternative_rejected": "Only types with 100 or more closures (would leave N1 rows unclassed); closure-date cohorts.",
+    "shows_up_in": "research/chapters/N2-closure-classes.csv, build/N2/headline.json"
+  },
+  {
+    "id": "n2_text_matching",
+    "decision": "Texts match after trimming, collapsing internal whitespace and lower-casing. The CSV shows trim(PUBLICRESOLUTION) with the city's internal spacing; blank closures appear as an empty string with class blank. One closing text contains a staff e-mail address; it is written out with the address removed and matched by its prefix.",
+    "why": "530 closures (2024-26, deduplicated) differ only by leading or trailing spaces; no staff fields in outputs (COMMON rules).",
+    "alternative_rejected": "Exact raw-string joins (fail on spacing); publishing the raw text with the e-mail.",
+    "shows_up_in": "classes.norm(), closure_class.sql, the CSV"
+  },
+  {
+    "id": "n2_promise_is_prjcompletedate",
+    "decision": "Grade closures against the request's own PRJCOMPLETEDATE (the city's per-request promise), and report the share of on-time closures that are hand-offs.",
+    "why": "PRJCOMPLETEDATE is populated on about 98% of requests and is a fixed offset per type (COMMON correction 1); CityStat's denominators are unpublished.",
+    "alternative_rejected": "Our reading of CityStat's goals.",
+    "shows_up_in": "n2_on_time_closures_that_are_handoffs, n2_handoff_closed_before_promise, by_type_class.csv"
+  },
+  {
+    "id": "n2_closures_only_denominator",
+    "decision": "Class shares are shares of closures. Cancelled and open requests are reported beside them in the register, not folded in.",
+    "why": "The brief asks what 'closed' means. Cancellation is its own large outcome for some services (city trees: 8,214 of 14,007 requests filed 2025-26 cancelled) and would distort a closure mix.",
+    "alternative_rejected": "Counting CANCEL as a seventh closure class.",
+    "shows_up_in": "build/N2/register.json columns closed / cancelled / open"
+  },
+  {
+    "id": "n2_logging_only_type",
+    "decision": "Keep 'Public Nuisance Rpt' in the headline denominator but give the headline without it too.",
+    "why": "The city's own help text says nuisance complaints are a logging service that closes automatically on submission; 97% of its closures are blank. Removing it moves the hand-off share from 35.2% to 36.1%.",
+    "alternative_rejected": "Silent exclusion.",
+    "shows_up_in": "build/N2/headline.json mix_excl_logging_only_public_nuisance"
+  },
+  {
+    "id": "n2_register_record_test",
+    "decision": "A service has an independent completion record only if a city file outside the 311 request holds dated work at an address that can be joined to the request. The Cityworks pothole layer does not count: its 1,500 sampled requests are the same REQUESTIDs with the same close times (time-zone offset).",
+    "why": "The register is meant to show where 'done' can be checked, not where a second copy of the request exists.",
+    "alternative_rejected": "Counting inventories (street lights, signals, sidewalks) or the request system's own copies as completion records.",
+    "shows_up_in": "build/N2/register.json independent_completion_record"
+  },
+  {
+    "id": "n2_boardup_join",
+    "decision": "Join 'Vacnt Bldg Unsecured' requests to the board-up layer by normalised street address (the project normaliser); count the first DateBoardedUp from one day before filing; restrict to requests filed by 14 Jul 2026 so each has 90 days of follow-up; report a prior-year board-up rate as a baseline.",
+    "why": "The layer has ParcelID and ADDRESS; the 311 file has only an address. 33% of 'referred' addresses had a board-up 30 to 365 days before filing, so board-ups recur and a match is not proof the request was answered.",
+    "alternative_rejected": "Parcel join through MSD address file (more work tonight, similar match); an open-ended window (would credit board-ups years later).",
+    "shows_up_in": "n2_boardup_within_promise, n2_boardup_within_90d, register row vacant_unsecured"
+  },
+  {
+    "id": "n2_demolition_join",
+    "decision": "Join 'LRA Demo Submission' and 'Building Collapse' requests to demolition permits by normalised address; count a permit Completed with DateClosed on or after the filing date. Owner and contractor fields in the layer are never used or written.",
+    "why": "Completed permit is the city's own record that the building is gone; personal-data rule.",
+    "alternative_rejected": "Counting permits merely submitted or issued as completion (given separately in joins.json).",
+    "shows_up_in": "n2_lra_demo_open_but_demolished, register rows lra_demolition and building_collapse"
+  },
+  {
+    "id": "n2_divisions",
+    "decision": "Division = SUBMITTO with its trailing number removed; divisions with fewer than 50 closures pooled as 'OTHER (small)'.",
+    "why": "Small groups are noise, and one SUBMITTO value is a person's name, which must not be published.",
+    "alternative_rejected": "Raw SUBMITTO strings.",
+    "shows_up_in": "build/N2/by_division_class.csv, by_division_type_class.csv"
+  },
+  {
+    "id": "n2_aggregates_only",
+    "decision": "Address-level joins are computation only; every N2 output is aggregated by type, division, class or service. No homeless-call or encampment locations are used.",
+    "why": "COMMON rules: block level or coarser in public outputs; no encampment or homeless-call points.",
+    "alternative_rejected": "Example addresses in the report.",
+    "shows_up_in": "all build/N2 outputs"
+  },
+  {
+    "id": "n2_keep_negative_results",
+    "decision": "Keep the negative and weak joins visible: Forest ReLeaf planting sample matches 0.3% of 'approved for next available planting' requests; sidewalk DateRepair is empty in all 36,822 rows; the forestry ledger stopped recording debris clean-ups after 2021.",
+    "why": "AGENTS.md evidence rules.",
+    "alternative_rejected": "Dropping them from the register.",
+    "shows_up_in": "build/N2/register.json, build/N2/joins.json, the N2 report"
+  }
+]

@@ -1,0 +1,137 @@
+[
+ {
+  "id": "n6-bridge-not-direct-reads",
+  "category": "privacy",
+  "decision": "The page reads only site/data/*.json, written by scripts/night/N6/bridge.py; it never fetches build/ directly.",
+  "why": "The agents' own files carry fields the public page must never show (N5's first heroes.json had a parcel id, handle, coordinates and house-number address; N1's receipts carried request ids). Copying only contract fields, then scanning, means nothing finer than a block reaches site/ (COMMON 'Public outputs: block level'; correction 10).",
+  "alternative_rejected": "Serving the repository root and reading build/out/*.json and build/N*/*.json in the browser with JavaScript adapters.",
+  "shows_up_in": "site/DATA-CONTRACT.md; every section",
+  "strength": "strong"
+ },
+ {
+  "id": "n6-no-ids-lookup-server",
+  "category": "privacy",
+  "decision": "The site's data carries no request, work-order or parcel ids. Named examples ('The lot', 'The tree', 'The cave-in pair') replace sample ids; a number a visitor types is answered by a local read-only lookup (scripts/night/N6/serve.py, /api/receipt/<n>) that returns block-level fields and never echoes the number.",
+  "why": "COMMON correction 10: each id leads straight to an exact address in the city's own files. A hashed id would still be reversible (about 1.45 million sequential ids), so the lookup has to stay on the server side.",
+  "alternative_rejected": "Shipping the 200 sample receipts with their ids, or with hashed ids, for a purely static search box.",
+  "shows_up_in": "Receipt section; serve.py",
+  "strength": "strong"
+ },
+ {
+  "id": "n6-svg-not-vegalite",
+  "category": "method",
+  "decision": "Charts are hand-built SVG and HTML in site/js/charts.js, with no chart library.",
+  "why": "The brief named Vega-Lite, vendored. No copy was on disk, and fetching one would have meant an unattended download. The six charts needed (stacked bar, dumbbell, waterfall bar, line, columns, inline bars) are small, and hand-built marks follow the dataviz method exactly: 4px rounded data ends, 2px surface gaps, hairline solid grid, a tooltip on every mark, direct labels. Works offline.",
+  "alternative_rejected": "Downloading vega, vega-lite and vega-embed into site/vendor/.",
+  "shows_up_in": "every chart",
+  "strength": "moderate"
+ },
+ {
+  "id": "n6-three-doors",
+  "category": "presentation",
+  "decision": "Three pages for three readers: residents (index.html: landing, receipt, scoreboard, fairness, dumping), city staff (brief.html: a one-page printable Monday brief) and the CityStat team (methods.html: register, definitions, SQL, choices, negative results), with the three doors on the landing view.",
+  "why": "Jack's question 'who is the end user?' (coordinator, 14 Oct about 00:10). The public CityStat site is what Ben's question 5 asks about, so redesigning it for residents is legitimate. The staff page is a plain memo, not a mock-up of Cityworks or any city software, so nothing imitates a city system.",
+  "alternative_rejected": "One long page with every section, including the Monday list and register.",
+  "shows_up_in": "index.html, brief.html, methods.html",
+  "strength": "strong"
+ },
+ {
+  "id": "n6-lead-config",
+  "category": "presentation",
+  "decision": "The landing lead (headline, figure id, sentence, mix bar, hero case) is driven by site/config.json.",
+  "why": "N6 brief: Jack may change the lead in the morning, and that should be a config edit, not a rebuild.",
+  "alternative_rejected": "Hard-coding the lead in HTML.",
+  "shows_up_in": "Landing",
+  "strength": "moderate"
+ },
+ {
+  "id": "n6-fairness-framing",
+  "category": "correction",
+  "decision": "The fairness section leads with N3's settled reading: 'The north does not wait longer for crews. It waits longer for someone to look.' It shows the decomposition of CityStat's ward 1 vs ward 10 gap, the first-step medians (towing tag 12.0 vs 36.9 days, cave-in referral 0.8 vs 41.7, building notices 3.3 vs 8.4) and a no-gap table where work is recorded as done. It omits single light out and the disputed towing 'promise met' shares.",
+  "why": "COMMON correction 2 and coordinator messages, 13\u201314 Oct: single light out is a two-quarter episode and not robust; the promise-met shares differ between N3 (38% vs 11%) and an independent recompute (32% vs 4%) until N8 settles them; the medians match exactly on recompute.",
+  "alternative_rejected": "Leading with single light out, or with the 'ward chart measures paperwork' framing.",
+  "shows_up_in": "Fairness section; Monday brief section 2",
+  "strength": "strong"
+ },
+ {
+  "id": "n6-scoreboard-credibility",
+  "category": "presentation",
+  "decision": "The scoreboard opens with residential potholes, Q2 to Q3 (CityStat published 90.6%; today's file 84.4%; Q3 24.3%, our definition), with the line 'A weekly run would have shown this in July'. The credibility line is the qualified one: counts within 0.2% for 8 of 9 measures (identical in 66 of 72 metric-quarters, never off by more than 4 requests; parks within 2.1%).",
+  "why": "COMMON correction 8 and the coordinator: frame as what a weekly run would show, not 'potholes collapsed'. N4's figure n4_repro_counts_exact_C supports 'within 0.2%', not an unqualified 'exactly'.",
+  "alternative_rejected": "'Potholes collapsed'; 'reproduces CityStat exactly'.",
+  "shows_up_in": "Scoreboard; Monday brief callout",
+  "strength": "strong"
+ },
+ {
+  "id": "n6-brief-recomputed-by-ward",
+  "category": "method",
+  "decision": "The Monday brief's per-ward first-step table, its three lists and the week-on-week compliance table are computed by the bridge from N1's database views (promise, requests, receipt_base, request_wo_summary). Each is registered in build/N6/figures.json with a derivation.",
+  "why": "N3 publishes ward-group medians, not per-ward medians for the towing tag; the brief needs per-ward rows and this week's lists. Ward-group medians from the database match N3 for towing (12.0 vs 36.9); for cave-in referrals they differ slightly (0.8 vs 41.1 here, 41.7 in N3, n 367/116 vs 361/115), because N1 fills blank wards from the polygons.",
+  "alternative_rejected": "Leaving the brief to wait for further agent exports.",
+  "shows_up_in": "brief.html",
+  "strength": "moderate"
+ },
+ {
+  "id": "n6-images-labelled",
+  "category": "presentation",
+  "decision": "Aerial images are shown with the imagery year, the caption 'it shows the block, not this year's grass', and no marker. They are re-encoded to JPEG for size.",
+  "why": "COMMON correction 9: imagery is 2022\u20132025 (no keyless 2026 imagery); Jack's ruling: block-framed, no marker on the lot.",
+  "alternative_rejected": "Presenting the image as evidence of the 2026 grass.",
+  "shows_up_in": "Landing teaser; receipt side panel",
+  "strength": "moderate"
+ },
+ {
+  "id": "n6-privacy-scan",
+  "category": "privacy",
+  "decision": "scripts/night/N6/privacy_scan.py checks every text file under site/ for request and work-order ids (exact match against N1's 1,454,222 request ids and 4,525 work orders), parcel-like ids, coordinates, e-mail addresses and house-number addresses. It found and removed the lead lot's exact address, which had been used as an example in DATA-CONTRACT.md.",
+  "why": "The block-level rule binds every public output, including documentation that ships inside site/.",
+  "alternative_rejected": "Relying on the bridge's scrubbing alone.",
+  "shows_up_in": "build/N6/privacy-scan.json",
+  "strength": "moderate"
+ },
+ {
+  "id": "n6-plain-names",
+  "category": "presentation",
+  "decision": "Pages show the city's own plain-English name for each request type (PLAIN_ENGLISH_NAME_FOR_PROBLEMCODE, most common value per code, from N1's requests.type_name), never the abbreviated PROBLEMCODE; fallback is the code with abbreviations spelled out. Quoted codes inside N5's event text are replaced the same way.",
+  "why": "Coordinator, 14 Oct: raw codes such as 'Containr damaged' or 'Illegl Use-Opn Storg' read as internal jargon on a resident page and a staff memo.",
+  "alternative_rejected": "Showing PROBLEMCODE, or code plus abbreviated category ('Prpty Insp Exterior').",
+  "shows_up_in": "Monday brief table; receipt cards and timelines; scoreboard rows; Monday list rows",
+  "strength": "minor"
+ },
+ {
+  "id": "n6-scrub-address-fields-only",
+  "category": "correction",
+  "decision": "The bridge's address scrubber now runs only on address-bearing fields (block, public_address, closing words, receipt story and timeline text, captions), case-sensitively; prose (decisions, negative results, derivations) is passed through as written. Two-number labels (of the form '1234 & 1236 EXAMPLE AV') round to the first number's block.",
+  "why": "N8 finding 9: a case-insensitive scrub over prose rendered 'wards 6-14 for Street Department' as 'wards 0 block of For Street Department'. N8 finding 14: two house numbers leaked through 'N & M' labels.",
+  "alternative_rejected": "Scrubbing every string on the page.",
+  "shows_up_in": "methods page; Monday list CSV",
+  "strength": "moderate"
+ },
+ {
+  "id": "n6-disclosure-line-only",
+  "category": "privacy",
+  "decision": "The only public line about exposed data is 'A private note about exposed data is being raised with the city through the hackathon organiser.' The bridge holds back any decision or negative result that describes the data, and the methods page uses the line verbatim.",
+  "why": "N8 finding 3: site/data/decisions.json described the exposure before the city was told.",
+  "alternative_rejected": "Describing the layers, or claiming the note was sent.",
+  "shows_up_in": "methods page; site/data/decisions.json",
+  "strength": "strong"
+ },
+ {
+  "id": "n6-brief-uses-n5-and-published-ward",
+  "category": "correction",
+  "decision": "Monday brief: the LRA list is resident-filed with N5's headline (94 requests on 75 lots); the tree list matches the removal order at the same address with N5's headline (288, median 575 days); per-ward first-step medians use the published WARD column (cave-in referral 41.7, not 41.1).",
+  "why": "N8 conflicts 2, 3 and 4: N5's rule has a registered funnel; within 30 m reaches neighbouring trees; the published column is reproducible from the CSV without GIS.",
+  "alternative_rejected": "N1's wider join (103 on 82; 499 within 30 m; filled wards).",
+  "shows_up_in": "brief.html",
+  "strength": "moderate"
+ },
+ {
+  "id": "n6-naip-default",
+  "category": "presentation",
+  "decision": "Block images are NAIP 2024 (USDA, public domain) by default; MSDIS images appear only if site/config.json sets show_msdis_imagery to true (default false).",
+  "why": "Coordinator, 14 Oct: MSDIS terms for public reuse are unsettled; NAIP is a public-domain USDA product.",
+  "alternative_rejected": "Showing the 2022\u20132025 MSDIS imagery by default.",
+  "shows_up_in": "landing teaser; receipt",
+  "strength": "moderate"
+ }
+]

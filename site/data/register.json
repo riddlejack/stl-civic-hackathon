@@ -1,0 +1,1068 @@
+{
+ "meta": {
+  "contract": "register/1",
+  "mock": false,
+  "state": "real",
+  "built_at": "2026-10-14 16:41",
+  "sources": [
+   {
+    "path": "build/N2/register.json",
+    "mtime": "2026-10-13 23:53"
+   },
+   {
+    "path": "build/E1/service_table.csv",
+    "mtime": "2026-10-14 15:56"
+   }
+  ],
+  "notes": []
+ },
+ "scope": "311 requests filed 2025-01-01 to 2026-10-12, one row per REQUESTID; closure class from scripts/night/N2/classes.py",
+ "columns": [
+  {
+   "key": "intake",
+   "label": "Request recorded",
+   "help": "The 311 file records the request."
+  },
+  {
+   "key": "promise",
+   "label": "Promise date",
+   "help": "The city sets a promised completion date (PRJCOMPLETEDATE) on the request."
+  },
+  {
+   "key": "says_done",
+   "label": "Closing words say done",
+   "help": "Share of closures whose words record finished work: mostly (50% or more), sometimes (15–49%), rarely (under 15%)."
+  },
+  {
+   "key": "record",
+   "label": "Independent record of the work",
+   "help": "A city record of the work itself, outside the 311 request."
+  },
+  {
+   "key": "joined",
+   "label": "Joined here",
+   "help": "This prototype joins the request to that record."
+  },
+  {
+   "key": "attached",
+   "label": "Work orders attached (public status page)",
+   "help": "Whether the City's public status page lists inspections or work orders attached to the request (E1's sample of status pages)."
+  }
+ ],
+ "rows": [
+  {
+   "id": "weeds_vacant_lot",
+   "service": "Weeds and grass on vacant lots (city mowing)",
+   "problemcodes": [
+    "Weeds-Vacant Lot",
+    "Missed Cut - V Lot",
+    "Unsatisfy Cut - VLot"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 14 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 1% of closures"
+    },
+    "record": {
+     "state": "yes",
+     "text": "yes"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "yes (earlier session, scripts/synthesis-checks/02_weeds_vs_ledger.py: vacant lots closed 'on schedule' 2026: cut on the parcel within 30 days 35%, by season end 63%, never in 2026 26%); N1 rebuilds this join tonight"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 40 sampled status pages list an attached work order (\"Weeds-Vacant Lot: on schedule to be cut, call csb for details\": 0 of 40). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 3817,
+   "share_closed_done": 0.01,
+   "share_closed_handoff": 0.854,
+   "top_closing_text": "on schedule to be cut, call CSB for details",
+   "record_source": "Forestry billing ledger: data/raw/stlouis-mo.gov/files/forestry-service-records.csv ('Grass Maint', 'Weed-Grass' by PARCEL and SERVICEDATE, posted to 13 Oct 2026; batched, precise to weeks)",
+   "what_it_would_take": "Nothing new: the ledger is already published; run the join weekly and show the cut date on the request."
+  },
+  {
+   "id": "weeds_vacant_bldg",
+   "service": "Weeds and grass at vacant buildings (city mowing)",
+   "problemcodes": [
+    "Weeds-Vacant Bldg",
+    "Missed Cut - VBldg",
+    "Unsatisfy Cut -VBldg"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 90 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 0% of closures"
+    },
+    "record": {
+     "state": "yes",
+     "text": "yes"
+    },
+    "joined": {
+     "state": "partial",
+     "text": "not for buildings in the earlier session (it reported vacant lots); N1's ledger join covers weed codes tonight"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 80 sampled status pages list an attached work order (\"Weeds-Vacant Bldg: added to rotation\": 0 of 40; \"Weeds-Vacant Bldg: on schedule to be cut, call csb for details\": 0 of 40). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 6085,
+   "share_closed_done": 0.004,
+   "share_closed_handoff": 0.837,
+   "top_closing_text": "on schedule to be cut, call CSB for details",
+   "record_source": "Forestry billing ledger: data/raw/stlouis-mo.gov/files/forestry-service-records.csv ('Grass Maint', 'Weed-Grass' by PARCEL and SERVICEDATE, posted to 13 Oct 2026; batched, precise to weeks)",
+   "what_it_would_take": "Nothing new: the ledger is already published; run the join weekly and show the cut date on the request."
+  },
+  {
+   "id": "weeds_occupied",
+   "service": "Weeds on occupied property (code enforcement)",
+   "problemcodes": [
+    "Weeds-Occupied Ppty"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 14 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 3% of closures"
+    },
+    "record": {
+     "state": "partial",
+     "text": "partial"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "yes",
+     "text": "24 of 30 sampled status pages list an attached work order (\"Weeds-Occupied Ppty: (open past promise)\": 24 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 4908,
+   "share_closed_done": 0.027,
+   "share_closed_handoff": 0.081,
+   "top_closing_text": "no forestry violations",
+   "record_source": "Partial: ledger rows of type 'Weed-Grass' and 'Occupied' (forced cuts billed to owners) in forestry-service-records.csv",
+   "what_it_would_take": "Same ledger join by parcel as vacant lots; separate notice-then-cut timeline."
+  },
+  {
+   "id": "trees_city",
+   "service": "City trees: inspection, limbs down, trees down, stumps",
+   "problemcodes": [
+    "Inspect City Tree",
+    "City Tree Down",
+    "City Tree Limb Down",
+    "Broken/Hanging Limb",
+    "Stump Removal"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 14 days after filing"
+    },
+    "says_done": {
+     "state": "yes",
+     "text": "mostly: 63% of closures"
+    },
+    "record": {
+     "state": "partial",
+     "text": "partial (open work orders, sampled; no completion dates)"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "yes (earlier session, scripts/synthesis-checks/03: cancelled tree-inspection addresses appear in the work-order sample about five times as often as unrelated requests, 10.8% vs 1.9%; recall is poor); N1 rebuilds tonight"
+    },
+    "attached": {
+     "state": "partial",
+     "text": "67 of 100 sampled status pages list an attached work order (\"Inspect City Tree: removal work order created\": 40 of 40; \"Inspect City Tree: (open past promise)\": 27 of 30; \"City Tree Down: (open past promise)\": 0 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 14007,
+   "share_closed_done": 0.626,
+   "share_closed_handoff": 0.172,
+   "top_closing_text": "complete",
+   "record_source": "Cityworks work-order samples: data/raw/city-services/arcgis/cityworks-service/layers/WO_Easement_Tree_Removals_New_6955.json and WO_Easement_Trims_6942.json (1,500 each of 2,522 and 6,276; status NEW, no finish date). Tree inventory CITY_TREES.geojson has no dates.",
+   "what_it_would_take": "The full Cityworks work-order export with ActualFinishDate and the request-to-work-order link Cityworks already stores."
+  },
+  {
+   "id": "tree_planting",
+   "service": "Tree planting requests",
+   "problemcodes": [
+    "Tree Planting requst"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 14 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 1% of closures"
+    },
+    "record": {
+     "state": "partial",
+     "text": "partial (partner programme sample)"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "yes, tonight: of 767 requests filed Jan 2024 to Jun 2025 and closed 'approved for next available planting', 0.3% match a completed planting in the sample. The sample does not cover city plantings from 311; negative result."
+    },
+    "attached": {
+     "state": "yes",
+     "text": "34 of 40 sampled status pages list an attached work order (\"Tree Planting requst: approved for next available planting\": 34 of 40). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 2284,
+   "share_closed_done": 0.012,
+   "share_closed_handoff": 0.877,
+   "top_closing_text": "approved for next available planting",
+   "record_source": "Cityworks Forest ReLeaf completed-planting work orders, data/raw/city-services/arcgis/cityworks-service/layers/Forest_ReLeaf_Completed_Planting_WOs_6862.json (1,500 sample, finished 27 Sep 2024 to 22 Aug 2025)",
+   "what_it_would_take": "Forestry's own planting work orders with finish dates."
+  },
+  {
+   "id": "potholes",
+   "service": "Potholes (residential, major street, alley)",
+   "problemcodes": [
+    "Potholes - Residnl",
+    "Potholes - Major St",
+    "Potholes - Alley"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 8 days after filing"
+    },
+    "says_done": {
+     "state": "yes",
+     "text": "mostly: 89% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no (same system)"
+    },
+    "joined": {
+     "state": "partial",
+     "text": "yes, tonight (consistency check only)"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 60 sampled status pages list an attached work order (\"Potholes - Residnl: (any done phrase)\": 0 of 30; \"Potholes - Major St: (any done phrase)\": 0 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 10726,
+   "share_closed_done": 0.894,
+   "share_closed_handoff": 0.095,
+   "top_closing_text": "work completed",
+   "record_source": "None independent. The Cityworks pothole layer (data/raw/city-services/arcgis/cityworks-service/layers/potholes_closed_3321.json) is the same request records: all 1,500 sampled REQUESTIDs are in the 311 file with the same close times (offset by time zone).",
+   "what_it_would_take": "Crew work orders or asphalt tickets with location and date, from Cityworks."
+  },
+  {
+   "id": "cave_ins",
+   "service": "Cave-ins (street, alley, sidewalk)",
+   "problemcodes": [
+    "Cave-Ins"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 3 days after filing"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "sometimes: 22% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "partial",
+     "text": "16 of 70 sampled status pages list an attached work order (\"Cave-Ins: referred to street maintenance for repair work to be scheduled\": 16 of 40; \"Cave-Ins: (open past promise)\": 0 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 4210,
+   "share_closed_done": 0.222,
+   "share_closed_handoff": 0.563,
+   "top_closing_text": "referred to street maintenance for repair work to be scheduled",
+   "record_source": "None found on disk. Closures read 'referred to street maintenance for repair work to be scheduled'; the Street Maintenance work order is not published.",
+   "what_it_would_take": "Street Maintenance work orders from Cityworks with finish dates, linked to the request id."
+  },
+  {
+   "id": "street_lights",
+   "service": "Street lights out or damaged",
+   "problemcodes": [
+    "Single Light Out",
+    "Whole Blk Lights Out",
+    "Light Damaged"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 3 days after filing"
+    },
+    "says_done": {
+     "state": "yes",
+     "text": "mostly: 84% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 90 sampled status pages list an attached work order (\"Single Light Out: (any done phrase)\": 0 of 30; \"Whole Blk Lights Out: (any done phrase)\": 0 of 30; \"Light Damaged: (any done phrase)\": 0 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 10244,
+   "share_closed_done": 0.837,
+   "share_closed_handoff": 0.054,
+   "top_closing_text": "work completed",
+   "record_source": "None. data/raw/city-services/arcgis/layers/maps8_STREETS_OneCall_StreetLights.geojson is an inventory (52,573 lights; Verification_Date on 2,931, all 2022; no repair dates).",
+   "what_it_would_take": "Traffic Division repair log or Cityworks work orders; networked outage detection was not found (research notes)."
+  },
+  {
+   "id": "signals_signs",
+   "service": "Traffic signals and signs",
+   "problemcodes": [
+    "Signals out of sync",
+    "Signal Damaged",
+    "Signals Flashing",
+    "Signal Dark",
+    "Signal Bulb Out",
+    "Signal Stuck",
+    "Other Signal Damaged",
+    "Critical Sign",
+    "Sign needs attention"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 3 days after filing"
+    },
+    "says_done": {
+     "state": "yes",
+     "text": "mostly: 68% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 30 sampled status pages list an attached work order (\"Sign needs attention: (any done phrase)\": 0 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 7906,
+   "share_closed_done": 0.683,
+   "share_closed_handoff": 0.206,
+   "top_closing_text": "work completed",
+   "record_source": "None. data/raw/city-services/arcgis/layers/maps8_STREETS_OneCall_TrafficSignals.geojson is an inventory of 683 signals without repair dates.",
+   "what_it_would_take": "Traffic Division work orders."
+  },
+  {
+   "id": "towing",
+   "service": "Derelict or abandoned vehicles (towing)",
+   "problemcodes": [
+    "Vehicle Towing"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 5 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 6% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 40 sampled status pages list an attached work order (\"Vehicle Towing: vehicle tagged for tow\": 0 of 40). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 15610,
+   "share_closed_done": 0.057,
+   "share_closed_handoff": 0.29,
+   "top_closing_text": "vehicle gone upon inspection",
+   "record_source": "None joinable. The Towed Vehicle Lookup (data/raw/tools-inventory/tow_lookup_48h.html) lists plate, state, make, model, VIN and date towed for 48 hours only, with no pick-up address; the CityStat towing chart does not render for the public. CityStat itself says 'Closed' does not necessarily indicate a tow.",
+   "what_it_would_take": "Tow-lot intake records carrying the pick-up address or the 311 request id."
+  },
+  {
+   "id": "refuse",
+   "service": "Missed refuse, bulky, yard-waste and recycling collection",
+   "problemcodes": [
+    "Refuse not collected",
+    "Bulky items missed",
+    "Yrd Wste Not Collect",
+    "Recycling not collec",
+    "Rcy Pickup Missed"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 3 days after filing"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "sometimes: 39% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 270 sampled status pages list an attached work order (\"Refuse not collected: collection will be made next scheduled day\": 0 of 40; \"Refuse not collected: due to employee shortage, the routes will be completed in order, as soon possible\": 0 of 40; \"Refuse not collected: matter will be investigated and appropriate action taken\": 0 of 40; \"Refuse not collected: (any done phrase)\": 0 of 30; \"Bulky items missed: collection will be made next scheduled day\": 0 of 40; \"Bulky items missed: due to employee shortage, the routes will be completed in order, as soon possible\": 0 of 40; \"Bulky items missed: bulk will be picked up in correct week\": 0 of 40). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 22949,
+   "share_closed_done": 0.392,
+   "share_closed_handoff": 0.536,
+   "top_closing_text": "collection made",
+   "record_source": "None on disk. The city says refuse route data was not recorded until September 2025; new trucks carry route tablets (research/synthesis-notes.md).",
+   "what_it_would_take": "Route-completion or GPS logs from the truck tablets, by alley and date."
+  },
+  {
+   "id": "debris_street",
+   "service": "Debris in alley or street; illegal dumping reports",
+   "problemcodes": [
+    "Debris-alley/street",
+    "Illegal dumpg report"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 3 days after filing"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "sometimes: 29% of closures"
+    },
+    "record": {
+     "state": "partial",
+     "text": "partial (enforcement outcome only)"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 110 sampled status pages list an attached work order (\"Debris-alley/street: matter will be investigated and appropriate action taken\": 0 of 40; \"Debris-alley/street: bulk will be picked up in correct week\": 0 of 40; \"Debris-alley/street: (any done phrase)\": 0 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 7553,
+   "share_closed_done": 0.293,
+   "share_closed_handoff": 0.578,
+   "top_closing_text": "collection made",
+   "record_source": "Pickup: none. Illegal dumping: the 311 closing text is itself the enforcement outcome (summons issued, cleared by arrest, no evidence).",
+   "what_it_would_take": "Street Division pickup work orders with date; for dumping, court disposition of summonses."
+  },
+  {
+   "id": "debris_vacant",
+   "service": "Debris on vacant lots and buildings (city clean-up)",
+   "problemcodes": [
+    "Debris-Vacant Lot",
+    "Debris-Vacant Bldg"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 14 days after filing"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "sometimes: 47% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no (ledger stopped recording in 2022)"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "untested",
+     "text": "Not yet tested: no status pages of this service in the sample"
+    }
+   },
+   "filed": 1495,
+   "share_closed_done": 0.473,
+   "share_closed_handoff": 0.291,
+   "top_closing_text": "Services completed",
+   "record_source": "Stopped: the forestry ledger's 'Light Debris' rows fell from 2,038 in 2019 to 14 in 2022 and 1 or none a year since; 'Heavy Debris' 39 in 2025, 4 in 2026 (forestry-service-records.csv).",
+   "what_it_would_take": "Resume posting debris clean-ups to the ledger, as grass cuts still are."
+  },
+  {
+   "id": "sidewalks",
+   "service": "Sidewalk repair (50/50 programme)",
+   "problemcodes": [
+    "Sidewalk Repair"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 14 days after filing"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "sometimes: 25% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no (field exists, empty)"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "partial",
+     "text": "6 of 30 sampled status pages list an attached work order (\"Sidewalk Repair: (open past promise)\": 6 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 2057,
+   "share_closed_done": 0.253,
+   "share_closed_handoff": 0.403,
+   "top_closing_text": "Work Completed",
+   "record_source": "None. data/raw/city-services/arcgis/layers/maps8_Sidewalks.geojson has a DateRepair field that is empty in all 36,822 rows; maps8_CurbRamps.geojson DateRepair empty in all 7,932. Project Sidewalk labels record condition, not repair.",
+   "what_it_would_take": "Fill DateRepair from 50/50 contractor completions; the field is already there."
+  },
+  {
+   "id": "water",
+   "service": "Water leaks, no water, low pressure, hydrants",
+   "problemcodes": [
+    "WTR-COMING-UP",
+    "NOWATER",
+    "PRESSURE",
+    "FH-RUNNING",
+    "FH-MAINTENANCE",
+    "LEAKING-METER",
+    "MISSING-COVER",
+    "LOOSE-COVER",
+    "HYDRANT-HIT"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 9 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 5% of closures"
+    },
+    "record": {
+     "state": "partial",
+     "text": "partial (live list, no history, no finish date)"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 40 sampled status pages list an attached work order (\"WTR-COMING-UP: scheduled for repair by water department\": 0 of 40). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 5490,
+   "share_closed_done": 0.046,
+   "share_closed_handoff": 0.601,
+   "top_closing_text": "scheduled for repair by water department",
+   "record_source": "Partial, live only: stlwater.com/outages lists current outages and about 26 recent repair work orders (initiate date, type, location; no finish date), refreshed every 15 minutes. Two snapshots on disk (data/raw/city-live/stlwater_outages_20261014T00*.out); no history.",
+   "what_it_would_take": "Archive the 15-minute list (keyless) or obtain the Water Division work-order export with finish dates."
+  },
+  {
+   "id": "lead",
+   "service": "Lead-paint inspections",
+   "problemcodes": [
+    "Lead Insp"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 30 days after filing"
+    },
+    "says_done": {
+     "state": "partial",
+     "text": "sometimes: 34% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "untested",
+     "text": "Not yet tested: no status pages of this service in the sample"
+    }
+   },
+   "filed": 388,
+   "share_closed_done": 0.338,
+   "share_closed_handoff": 0.297,
+   "top_closing_text": "lead inspection completed",
+   "record_source": "None found on disk.",
+   "what_it_would_take": "Building Division lead programme case outcomes (inspection date, clearance date)."
+  },
+  {
+   "id": "vacant_unsecured",
+   "service": "Vacant building unsecured (board-up)",
+   "problemcodes": [
+    "Vacnt Bldg Unsecured"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 14 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 1% of closures"
+    },
+    "record": {
+     "state": "yes",
+     "text": "yes"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "yes, tonight: of 2,437 requests filed Jan 2024 to mid-Jul 2026 and closed 'referred to board up crew' (median 3.7 days to close), a board-up is recorded at the address within the 14-day promise for 19%, within 30 days for 36%, within 90 days for 71%; median 34.5 days to board-up where one exists"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 40 sampled status pages list an attached work order (\"Vacnt Bldg Unsecured: referred to board up crew\": 0 of 40). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 3662,
+   "share_closed_done": 0.013,
+   "share_closed_handoff": 0.895,
+   "top_closing_text": "referred to board up crew",
+   "record_source": "Yes: data/raw/city-services/arcgis/layers/maps8_BUILDING_DIVISION_Boardups.geojson (33,141 board-ups with DateCreated and DateBoardedUp, to 8 Oct 2026).",
+   "what_it_would_take": "Nothing new: both files are public; join weekly by parcel."
+  },
+  {
+   "id": "tornado_debris",
+   "service": "Tornado debris removal",
+   "problemcodes": [
+    "TDebris-alley/street"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 3 days after filing"
+    },
+    "says_done": {
+     "state": "yes",
+     "text": "mostly: 76% of closures"
+    },
+    "record": {
+     "state": "partial",
+     "text": "partial (May 2025 sweep only)"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 30 sampled status pages list an attached work order (\"TDebris-alley/street: (open past promise)\": 0 of 30). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 458,
+   "share_closed_done": 0.765,
+   "share_closed_handoff": 0.039,
+   "top_closing_text": "collection made",
+   "record_source": "Street-level only: data/raw/city-services/arcgis/layers/agol_Debris_Clearing.geojson (76 street segments cleared 23 to 28 May 2025). No per-address record.",
+   "what_it_would_take": "Debris contractor load tickets or monitoring records by address."
+  },
+  {
+   "id": "lra_demolition",
+   "service": "LRA demolition submissions",
+   "problemcodes": [
+    "LRA Demo Submission"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 30 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 0% of closures"
+    },
+    "record": {
+     "state": "yes",
+     "text": "yes"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "yes, tonight: of 246 LRA demolition submissions filed 2024 to 2026 and still open in 311, 70 (28%) have a completed demolition permit at the same address after filing"
+    },
+    "attached": {
+     "state": "untested",
+     "text": "Not yet tested: no status pages of this service in the sample"
+    }
+   },
+   "filed": 209,
+   "share_closed_done": 0.0,
+   "share_closed_handoff": 0.143,
+   "top_closing_text": "See LRA comments",
+   "record_source": "Yes: data/raw/city-services/arcgis/layers/maps8_BUILDING_DIVISION_Demolitions.geojson (3,767 demolition permits with DateSubmitted, DateIssued, DateClosed, PermitStatus).",
+   "what_it_would_take": "Close the 311 request from the permit's DateClosed; both are city systems."
+  },
+  {
+   "id": "building_collapse",
+   "service": "Building collapse / dangerous building",
+   "problemcodes": [
+    "Building Collapse"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 3 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 1% of closures"
+    },
+    "record": {
+     "state": "partial",
+     "text": "partial"
+    },
+    "joined": {
+     "state": "yes",
+     "text": "yes, tonight: of 1,286 closed or cancelled requests filed 2024 to 2026, 219 (17%) later have a completed demolition at the address"
+    },
+    "attached": {
+     "state": "untested",
+     "text": "Not yet tested: no status pages of this service in the sample"
+    }
+   },
+   "filed": 976,
+   "share_closed_done": 0.008,
+   "share_closed_handoff": 0.883,
+   "top_closing_text": "Building already under notice",
+   "record_source": "Partial: the demolition permit layer above.",
+   "what_it_would_take": "Building Division case outcomes (re-inspection, emergency demolition)."
+  },
+  {
+   "id": "code_enforcement",
+   "service": "Property maintenance and open-storage complaints",
+   "problemcodes": [
+    "Ppty Maint Code-Ext",
+    "Ppty Maint Code-Int",
+    "Illegl Use-Opn Storg"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 14 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 1% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "no",
+     "text": "0 of 190 sampled status pages list an attached work order (\"Ppty Maint Code-Ext: issued notice of violation\": 0 of 40; \"Ppty Maint Code-Ext: building already under notice\": 0 of 40; \"Ppty Maint Code-Ext: (open past promise)\": 0 of 30; \"Illegl Use-Opn Storg: issued notice of violation\": 0 of 40; \"Illegl Use-Opn Storg: building already under notice\": 0 of 40). Source: E1, build/E1/service_table.csv."
+    }
+   },
+   "filed": 11327,
+   "share_closed_done": 0.008,
+   "share_closed_handoff": 0.719,
+   "top_closing_text": "issued notice of violation",
+   "record_source": "None public. Closures are the notice step ('issued notice of violation', 'Building already under notice'); compliance on re-inspection is held in the Building Division case system.",
+   "what_it_would_take": "Case status from the Building Division system: re-inspection date and outcome."
+  },
+  {
+   "id": "graffiti",
+   "service": "Graffiti removal",
+   "problemcodes": [
+    "Graffiti-Private",
+    "Graffiti-Public",
+    "Traffic Graffiti",
+    "Graffiti-Prvt Dmpstr"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 28 days after filing"
+    },
+    "says_done": {
+     "state": "yes",
+     "text": "mostly: 92% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "untested",
+     "text": "Not yet tested: no status pages of this service in the sample"
+    }
+   },
+   "filed": 3376,
+   "share_closed_done": 0.923,
+   "share_closed_handoff": 0.002,
+   "top_closing_text": "Graffiti removed  painted",
+   "record_source": "None besides the closing text ('Graffiti removed  painted' etc.).",
+   "what_it_would_take": "Crew logs (Operation Brightside)."
+  },
+  {
+   "id": "sirens",
+   "service": "Outdoor warning sirens not heard",
+   "problemcodes": [
+    "Sirens Not Heard"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "yes",
+     "text": "yes, median 3 days after filing"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 0% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "untested",
+     "text": "Not yet tested: no status pages of this service in the sample"
+    }
+   },
+   "filed": 232,
+   "share_closed_done": 0.0,
+   "share_closed_handoff": 0.0,
+   "top_closing_text": "other - call CSB for details",
+   "record_source": "None. No public siren-status map; the 2026 audit lists sirens 'Not Tested' (research/synthesis-notes.md).",
+   "what_it_would_take": "CEMA siren test log by siren and date."
+  },
+  {
+   "id": "homeless",
+   "service": "Homeless outreach calls (shelter)",
+   "problemcodes": [
+    "Homeless Call"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "partial",
+     "text": "on 17% of requests"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 0% of closures"
+    },
+    "record": {
+     "state": "no",
+     "text": "no"
+    },
+    "joined": {
+     "state": "no",
+     "text": "no"
+    },
+    "attached": {
+     "state": "untested",
+     "text": "Not yet tested: no status pages of this service in the sample"
+    }
+   },
+   "filed": 206,
+   "share_closed_done": 0.0,
+   "share_closed_handoff": 0.0,
+   "top_closing_text": "",
+   "record_source": "None public (HMIS is not public; no shelter-bed availability is published). Reported here at type level only; no locations.",
+   "what_it_would_take": "Aggregate outreach outcomes from Human Services (counts only)."
+  },
+  {
+   "id": "nuisance_log",
+   "service": "Public nuisance reports (logging only)",
+   "problemcodes": [
+    "Public Nuisance Rpt"
+   ],
+   "cells": {
+    "intake": {
+     "state": "yes",
+     "text": "yes (311)"
+    },
+    "promise": {
+     "state": "partial",
+     "text": "on 2% of requests"
+    },
+    "says_done": {
+     "state": "no",
+     "text": "rarely: 0% of closures"
+    },
+    "record": {
+     "state": "na",
+     "text": "n/a"
+    },
+    "joined": {
+     "state": "na",
+     "text": "n/a"
+    },
+    "attached": {
+     "state": "untested",
+     "text": "Not yet tested: no status pages of this service in the sample"
+    }
+   },
+   "filed": 4563,
+   "share_closed_done": 0.0,
+   "share_closed_handoff": 0.001,
+   "top_closing_text": "",
+   "record_source": "Not applicable: the city describes this type as logging only; requests close automatically on submission.",
+   "what_it_would_take": "Nothing; but it should be excluded from any closure-rate measure."
+  }
+ ]
+}

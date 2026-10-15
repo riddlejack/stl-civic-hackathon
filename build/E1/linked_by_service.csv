@@ -1,0 +1,12 @@
+stratum,family,service,n_sampled,n_with_work_order,share_with_work_order,n_with_post_filing_work_order,share_with_post_filing_work_order,n_linked,n_done_by_promise,n_done_late,n_no_finish,n_not_yet_due,n_done_no_promise,n_inspection_only,n_only_older_work_orders,n_items_not_read,median_days_late,n_graded_due,share_done_by_promise_of_due,n_wo_joined_to_cityworks,n_wo
+H04,handoff,"Weeds-Vacant Bldg | on schedule to be cut, call csb for details",40,0,0.0,0,0.0,4,0,0,0,0,0,4,0,0,,0,,0,0
+H09,handoff,"Weeds-Vacant Lot | on schedule to be cut, call csb for details",40,0,0.0,0,0.0,1,0,0,0,0,0,1,0,0,,0,,0,0
+H10,handoff,Tree Planting requst | approved for next available planting,40,34,0.85,34,0.85,39,2,24,8,0,0,5,0,0,121.0,34,0.059,2,117
+H15,handoff,Weeds-Vacant Bldg | added to rotation,40,0,0.0,0,0.0,40,0,0,0,0,0,40,0,0,,0,,0,0
+H18,handoff,Cave-Ins | referred to street maintenance for repair work to be scheduled,40,16,0.4,16,0.4,16,4,12,0,0,0,0,0,0,9.0,16,0.25,0,17
+H_tree,handoff,Inspect City Tree | removal work order created,40,40,1.0,40,1.0,40,1,39,0,0,0,0,0,0,211,40,0.025,33,113
+O01,open_past_promise,Inspect City Tree | (open past promise),30,27,0.9,27,0.9,27,0,2,24,1,0,0,0,0,276.0,26,0.0,27,44
+O02,open_past_promise,Cave-Ins | (open past promise),30,0,0.0,0,0.0,1,0,0,0,0,0,1,0,0,,0,,0,0
+O03,open_past_promise,Sidewalk Repair | (open past promise),30,6,0.2,6,0.2,10,0,0,6,0,0,4,0,0,,6,0.0,0,6
+O04,open_past_promise,Weeds-Occupied Ppty | (open past promise),30,24,0.8,24,0.8,28,0,1,22,1,0,4,0,0,36,23,0.0,0,52
+O06,open_past_promise,Sewer Lateral Defect | (open past promise),30,10,0.333,10,0.333,14,0,0,10,0,0,4,0,0,,10,0.0,0,20
