@@ -1,0 +1,256 @@
+{
+ "built_at": "2026-10-14 16:41",
+ "files": {
+  "run": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/out/run.json",
+     "mtime": "2026-10-14 01:51"
+    }
+   ],
+   "notes": []
+  },
+  "figures": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/out/figures.json",
+     "mtime": "2026-10-14 01:51"
+    },
+    {
+     "path": "build/E3/figures.json",
+     "mtime": "2026-10-14 16:41"
+    },
+    {
+     "path": "build/out/derivations.json",
+     "mtime": "2026-10-14 16:41"
+    }
+   ],
+   "notes": [
+    "459 figures; 459 carry a derivation sentence"
+   ]
+  },
+  "receipts": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/N5/heroes.json",
+     "mtime": "2026-10-14 01:42"
+    },
+    {
+     "path": "build/N5/lot_funnel.json",
+     "mtime": "2026-10-14 00:00"
+    }
+   ],
+   "notes": [
+    "not shown (single light out is not robust, COMMON correction 2): light-1, light-2"
+   ]
+  },
+  "scoreboard": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/N4/scoreboard.json",
+     "mtime": "2026-10-13 23:56"
+    },
+    {
+     "path": "build/N4/citystat_comparison.csv",
+     "mtime": "2026-10-13 23:59"
+    },
+    {
+     "path": "build/N4/q3_2026.json",
+     "mtime": "2026-10-13 23:59"
+    }
+   ],
+   "notes": []
+  },
+  "fairness": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/N3/decomposition.json",
+     "mtime": "2026-10-13 23:54"
+    },
+    {
+     "path": "build/N3/robust_comparisons.csv",
+     "mtime": "2026-10-13 23:55"
+    },
+    {
+     "path": "site/config.json (CityStat ward figures, reported)",
+     "mtime": null
+    }
+   ],
+   "notes": []
+  },
+  "register": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/N2/register.json",
+     "mtime": "2026-10-13 23:53"
+    },
+    {
+     "path": "build/E1/service_table.csv",
+     "mtime": "2026-10-14 15:56"
+    }
+   ],
+   "notes": []
+  },
+  "monday": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/out/monday_list.json",
+     "mtime": "2026-10-14 01:51"
+    },
+    {
+     "path": "build/out/monday_list.csv",
+     "mtime": "2026-10-14 01:51"
+    }
+   ],
+   "notes": []
+  },
+  "dumping": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/out/dumping_blocks.json",
+     "mtime": "2026-10-14 01:51"
+    }
+   ],
+   "notes": []
+  },
+  "brief": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/stl.duckdb (N1 views: promise, requests, receipt_base, request_wo_summary)",
+     "mtime": "2026-10-14 01:51"
+    }
+   ],
+   "notes": [
+    "every figure here is registered in build/N6/figures.json with its derivation"
+   ]
+  },
+  "queue": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/E3/queue.json",
+     "mtime": "2026-10-14 16:40"
+    },
+    {
+     "path": "build/E3/queue_rows.json",
+     "mtime": "2026-10-14 16:40"
+    }
+   ],
+   "notes": [
+    "14573 rows in queue.csv; 6207 block dots"
+   ]
+  },
+  "statuspage": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "build/E3/statuspage.json",
+     "mtime": "2026-10-14 16:41"
+    }
+   ],
+   "notes": []
+  },
+  "decisions": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "deliverable/choices.md",
+     "mtime": "2026-10-14 16:41"
+    },
+    {
+     "path": "build/out/decisions.json",
+     "mtime": "2026-10-14 16:41"
+    },
+    {
+     "path": "build/E3/decisions.json",
+     "mtime": "2026-10-14 16:41"
+    }
+   ],
+   "notes": [
+    "2 decisions held back from the public file (privacy rule)"
+   ]
+  },
+  "negative": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "deliverable/negative-results.md",
+     "mtime": "2026-10-14 16:41"
+    }
+   ],
+   "notes": []
+  },
+  "downloads": {
+   "state": "real",
+   "sources": [
+    {
+     "path": "scripts/night/N1/measures.sql",
+     "mtime": null
+    },
+    {
+     "path": "build/N2/closure_class.sql",
+     "mtime": null
+    },
+    {
+     "path": "research/chapters/N2-closure-classes.csv",
+     "mtime": null
+    },
+    {
+     "path": "build/N4/scoreboard.csv",
+     "mtime": null
+    },
+    {
+     "path": "scripts/night/N6/bridge.py",
+     "mtime": null
+    },
+    {
+     "path": "scripts/night/N6/bridge.py",
+     "mtime": null
+    },
+    {
+     "path": "scripts/night/N6/bridge.py",
+     "mtime": null
+    },
+    {
+     "path": "scripts/night/N6/bridge.py",
+     "mtime": null
+    },
+    {
+     "path": "scripts/night/N6/bridge.py",
+     "mtime": null
+    },
+    {
+     "path": "scripts/night/N6/bridge.py",
+     "mtime": null
+    }
+   ],
+   "notes": []
+  }
+ },
+ "log": [
+  "bridge 2026-10-14 16:41",
+  "  wrote site/data/run.json (real; from build/out/run.json)",
+  "  wrote site/data/figures.json (real; from build/out/figures.json, build/E3/figures.json, build/out/derivations.json)",
+  "  wrote site/data/receipts.json (real; from build/N5/heroes.json, build/N5/lot_funnel.json)",
+  "  wrote site/data/scoreboard.json (real; from build/N4/scoreboard.json, build/N4/citystat_comparison.csv, build/N4/q3_2026.json)",
+  "  wrote site/data/fairness.json (real; from build/N3/decomposition.json, build/N3/robust_comparisons.csv, site/config.json (CityStat ward figures, reported))",
+  "  wrote site/data/register.json (real; from build/N2/register.json, build/E1/service_table.csv)",
+  "  wrote site/data/monday.json (real; from build/out/monday_list.json, build/out/monday_list.csv)",
+  "  wrote site/data/dumping.json (real; from build/out/dumping_blocks.json)",
+  "  wrote site/data/brief.json (real; from build/stl.duckdb (N1 views: promise, requests, receipt_base, request_wo_summary))",
+  "  wrote site/data/queue.json (real; from build/E3/queue.json, build/E3/queue_rows.json)",
+  "  wrote site/data/statuspage.json (real; from build/E3/statuspage.json)",
+  "  wrote site/data/decisions.json (real; from deliverable/choices.md, build/out/decisions.json, build/E3/decisions.json)",
+  "  wrote site/data/negative.json (real; from deliverable/negative-results.md)",
+  "  wrote site/data/downloads.json (real; from scripts/night/N1/measures.sql, build/N2/closure_class.sql, research/chapters/N2-closure-classes.csv, build/N4/scoreboard.csv, scripts/night/N6/bridge.py, scripts/night/N6/bridge.py, scripts/night/N6/bridge.py, scripts/night/N6/bridge.py, scripts/night/N6/bridge.py, scripts/night/N6/bridge.py)"
+ ]
+}

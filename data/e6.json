@@ -1,0 +1,747 @@
+{
+ "meta": {
+  "contract": "e6/1",
+  "mock": false,
+  "state": "real",
+  "built_at": "2026-10-14 18:55",
+  "sources": [
+   {
+    "path": "build/E5/summary.json"
+   },
+   {
+    "path": "data/MANIFEST.csv (public export)"
+   },
+   {
+    "path": "context/AUTHORISATION-NOTE.md"
+   }
+  ],
+  "notes": [
+   "Built by scripts/exec/E6/build_e6.py; the bridge does not touch this file."
+  ]
+ },
+ "figures": {
+  "e5_queue_done_n": {
+   "id": "e5_queue_done_n",
+   "value": 388,
+   "unit": "requests",
+   "definition": "A record shows the work done after filing (mowing ledger cut, finished Forestry or sidewalk work order, board-up, completed demolition permit, or an E1 status page showing a finish), so \"open\" is clerical.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). A record shows the work done after filing (mowing ledger cut, finished Forestry or sidewalk work order, board-up, completed demolition permit, or an E1 status page showing a finish), so \"open\" is clerical.",
+   "note": "summary.json: summary[class=a_done_after_filing].n"
+  },
+  "e5_queue_done_share": {
+   "id": "e5_queue_done_share",
+   "value": 0.026,
+   "unit": "share of open requests past promise",
+   "definition": "A record shows the work done after filing (mowing ledger cut, finished Forestry or sidewalk work order, board-up, completed demolition permit, or an E1 status page showing a finish), so \"open\" is clerical.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "388 of 14,902 (2.6%). Each request takes the first class that applies. A record shows the work done after filing (mowing ledger cut, finished Forestry or sidewalk work order, board-up, completed demolition permit, or an E1 status page showing a finish), so \"open\" is clerical.",
+   "note": "summary.json: summary[class=a_done_after_filing].pct = 2.6"
+  },
+  "e5_queue_pending_n": {
+   "id": "e5_queue_pending_n",
+   "value": 1206,
+   "unit": "requests",
+   "definition": "A city work record created after filing is still pending (an open Forestry work order, a board-up or demolition record with no completion, or an E1 status page with an unfinished work order).",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). A city work record created after filing is still pending (an open Forestry work order, a board-up or demolition record with no completion, or an E1 status page with an unfinished work order).",
+   "note": "summary.json: summary[class=b_pending_in_records].n"
+  },
+  "e5_queue_pending_share": {
+   "id": "e5_queue_pending_share",
+   "value": 0.0809,
+   "unit": "share of open requests past promise",
+   "definition": "A city work record created after filing is still pending (an open Forestry work order, a board-up or demolition record with no completion, or an E1 status page with an unfinished work order).",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "1,206 of 14,902 (8.09%). Each request takes the first class that applies. A city work record created after filing is still pending (an open Forestry work order, a board-up or demolition record with no completion, or an E1 status page with an unfinished work order).",
+   "note": "summary.json: summary[class=b_pending_in_records].pct = 8.09"
+  },
+  "e5_queue_superseded_n": {
+   "id": "e5_queue_superseded_n",
+   "value": 333,
+   "unit": "requests",
+   "definition": "Possibly superseded: a later request with the same code at the same address is closed.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). Possibly superseded: a later request with the same code at the same address is closed.",
+   "note": "summary.json: summary[class=c_possibly_superseded].n"
+  },
+  "e5_queue_superseded_share": {
+   "id": "e5_queue_superseded_share",
+   "value": 0.0223,
+   "unit": "share of open requests past promise",
+   "definition": "Possibly superseded: a later request with the same code at the same address is closed.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "333 of 14,902 (2.23%). Each request takes the first class that applies. Possibly superseded: a later request with the same code at the same address is closed.",
+   "note": "summary.json: summary[class=c_possibly_superseded].pct = 2.23"
+  },
+  "e5_queue_admin_n": {
+   "id": "e5_queue_admin_n",
+   "value": 409,
+   "unit": "requests",
+   "definition": "Likely administrative leftover: sirens, no water, mosquito spraying, more than 90 days past promise.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "inferred",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). Likely administrative leftover: sirens, no water, mosquito spraying, more than 90 days past promise.",
+   "note": "summary.json: summary[class=d_admin_leftover].n"
+  },
+  "e5_queue_admin_share": {
+   "id": "e5_queue_admin_share",
+   "value": 0.0274,
+   "unit": "share of open requests past promise",
+   "definition": "Likely administrative leftover: sirens, no water, mosquito spraying, more than 90 days past promise.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "inferred",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "409 of 14,902 (2.74%). Each request takes the first class that applies. Likely administrative leftover: sirens, no water, mosquito spraying, more than 90 days past promise.",
+   "note": "summary.json: summary[class=d_admin_leftover].pct = 2.74"
+  },
+  "e5_queue_no_record_n": {
+   "id": "e5_queue_no_record_n",
+   "value": 12566,
+   "unit": "requests",
+   "definition": "No evidence either way: no public record on disk shows the work done or pending. A missing record does not mean the work was not done.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). No evidence either way: no public record on disk shows the work done or pending. A missing record does not mean the work was not done.",
+   "note": "summary.json: summary[class=e_no_evidence].n"
+  },
+  "e5_queue_no_record_share": {
+   "id": "e5_queue_no_record_share",
+   "value": 0.8432,
+   "unit": "share of open requests past promise",
+   "definition": "No evidence either way: no public record on disk shows the work done or pending. A missing record does not mean the work was not done.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "12,566 of 14,902 (84.32%). Each request takes the first class that applies. No evidence either way: no public record on disk shows the work done or pending. A missing record does not mean the work was not done.",
+   "note": "summary.json: summary[class=e_no_evidence].pct = 84.32"
+  },
+  "e5_queue_base": {
+   "id": "e5_queue_base",
+   "value": 14902,
+   "unit": "requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "definition": "The base set of the reality check; equal to e3_queue_past_promise.",
+   "derivation": "requests WHERE ts_init >= '2025-01-01' AND status_group = 'open' AND ts_promised < '2026-10-13 23:59:59' in build/stl.duckdb.",
+   "note": "summary.json: n_base"
+  }
+ },
+ "sources": {
+  "published": [
+   {
+    "name": "311 service requests, 2008 to date (csb.zip)",
+    "url": "https://www.stlouis-mo.gov/data/upload/data-files/csb.zip",
+    "retrieved": "2026-10-13 18:10 CDT to 2026-10-13 19:36 CDT",
+    "rows": "1,502,836",
+    "size": "128.1 MB",
+    "used_by": "N1 figures (78, ids n1_*); read or cited by research/chapters/N3-fairness.md, research/voters-and-residents-facts.csv, research/voters-and-residents.md, scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N9/seed_derivations.py and 2 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "City map layer BUILDING_DIVISION/BldgDiv_Boardups",
+    "url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/BUILDING_DIVISION/BldgDiv_Boardups/MapServer/0",
+    "retrieved": "2026-10-13 18:32 CDT",
+    "rows": "33,141",
+    "size": "22.0 MB",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/data/fetch_public.sh, scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py and 1 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "City map layer BUILDING_DIVISION/Demolitions",
+    "url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/BUILDING_DIVISION/Demolitions/MapServer/0",
+    "retrieved": "2026-10-13 18:32 CDT",
+    "rows": "3,767",
+    "size": "5.1 MB",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/data/fetch_public.sh, scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py and 1 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "City map layer STLOUIS/BOUNDARIES",
+    "url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer/4",
+    "retrieved": "2026-10-13 18:33 CDT",
+    "rows": "14",
+    "size": "0.3 MB",
+    "used_by": "N1 figures (78, ids n1_*); N2 figures (54, ids n2_*); N3 figures (41, ids n3_*); R1 figures (150, ids r1_*); …",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Cityworks public saved search 3320 (potholes_open_3320.json)",
+    "url": "https://service.stlouis-mo.gov/cityworks/gis/1/3320/rest/services/cw/FeatureServer/1",
+    "retrieved": "2026-10-13 19:18 CDT",
+    "rows": "95",
+    "size": "30 KB",
+    "used_by": "N1 figures (78, ids n1_*); N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py and 1 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Cityworks public saved search 3321 (potholes_closed_3321.json)",
+    "url": "https://service.stlouis-mo.gov/cityworks/gis/1/3321/rest/services/cw/FeatureServer/1",
+    "retrieved": "2026-10-13 19:18 CDT",
+    "rows": "1,500",
+    "size": "0.5 MB",
+    "used_by": "N1 figures (78, ids n1_*); N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py and 2 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Cityworks public saved search 6861 (WO_Forest_ReLeaf_Tree_Planting_6861.json)",
+    "url": "https://service.stlouis-mo.gov/cityworks/gis/1/6861/rest/services/cw/FeatureServer/2",
+    "retrieved": "2026-10-13 19:18 CDT",
+    "rows": "25",
+    "size": "10 KB",
+    "used_by": "N1 figures (78, ids n1_*); N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py and 1 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Cityworks public saved search 6862 (Forest_ReLeaf_Completed_Planting_WOs_6862.json)",
+    "url": "https://service.stlouis-mo.gov/cityworks/gis/1/6862/rest/services/cw/FeatureServer/2",
+    "retrieved": "2026-10-13 19:19 CDT",
+    "rows": "1,500",
+    "size": "0.5 MB",
+    "used_by": "N1 figures (78, ids n1_*); N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py and 2 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Cityworks public saved search 6942 (WO_Easement_Trims_6942.json)",
+    "url": "https://service.stlouis-mo.gov/cityworks/gis/1/6942/rest/services/cw/FeatureServer/2",
+    "retrieved": "2026-10-13 19:18 CDT",
+    "rows": "1,500",
+    "size": "0.5 MB",
+    "used_by": "N1 figures (78, ids n1_*); N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py and 1 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Cityworks public saved search 6955 (WO_Easement_Tree_Removals_New_6955.json)",
+    "url": "https://service.stlouis-mo.gov/cityworks/gis/1/6955/rest/services/cw/FeatureServer/2",
+    "retrieved": "2026-10-13 19:18 CDT",
+    "rows": "1,500",
+    "size": "0.6 MB",
+    "used_by": "N1 figures (78, ids n1_*); N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/N8/trees.py and 3 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Forestry maintenance properties",
+    "url": "https://www.stlouis-mo.gov/data/upload/data-files/forestry-maintenance-properties.csv",
+    "retrieved": "2026-10-13 18:16 CDT",
+    "rows": "26,527",
+    "size": "1.8 MB",
+    "used_by": "N1 figures (78, ids n1_*); N5 figures (102, ids n5_*); read or cited by research/voters-and-residents.md, scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N5/01_build_db.py",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Forestry service records (billing ledger)",
+    "url": "https://www.stlouis-mo.gov/data/upload/data-files/forestry-service-records.csv",
+    "retrieved": "2026-10-13 18:10 CDT to 2026-10-13 19:36 CDT",
+    "rows": "2,252,031",
+    "size": "292.9 MB",
+    "used_by": "N1 figures (78, ids n1_*); N2 figures (54, ids n2_*); N5 figures (102, ids n5_*); read or cited by research/voters-and-residents.md, scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N2/06_register.py, scripts/night/N5/01_build_db.py, scripts/night/N5/03_lot_validate.py and 7 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "Land Reutilization Authority inventory",
+    "url": "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY.csv",
+    "retrieved": "2026-10-13 18:10 CDT to 2026-10-13 19:36 CDT",
+    "rows": "10,349",
+    "size": "2.9 MB",
+    "used_by": "N1 figures (78, ids n1_*); N5 figures (102, ids n5_*); read or cited by research/voters-and-residents.md, scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N5/01_build_db.py, scripts/night/N8/ledger.py",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "MSD parcel attributes inside the city",
+    "url": "https://services1.arcgis.com/plGX8WiX9ylnkcee/arcgis/rest/services/Development_Review/FeatureServer/9",
+    "retrieved": "2026-10-13 19:21 CDT",
+    "rows": "134,919",
+    "size": "118.3 MB",
+    "used_by": "N1 figures (78, ids n1_*); N5 figures (102, ids n5_*); read or cited by scripts/data/fetch_public.sh, scripts/night/N1/build_db.py, scripts/night/N5/03_lot_validate.py, scripts/night/N8/msd.py, scripts/night/N9/seed_derivations.py, scripts/synthesis-checks/common.py and 1 more",
+    "tier": "fetched by script",
+    "published_as": ""
+   },
+   {
+    "name": "CityStat chart tables as published (transcribed from the pages' Tableau summary data)",
+    "url": "https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/",
+    "retrieved": "2026-10-13 18:26 CDT",
+    "rows": "",
+    "size": "12 KB",
+    "used_by": "N3 figures (41, ids n3_*); N4 figures (154, ids n4_*); read or cited by build/E3/figures.json, build/N4/decisions.json, build/N4/figures.json, build/out/figures.json, research/chapters/N3-fairness.md, research/chapters/N4-citystat.md and 10 more",
+    "tier": "vendored",
+    "published_as": "data/public/citystat/tableau-extract.md"
+   }
+  ],
+  "withheld": [
+   {
+    "name": "adoption",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:23 CDT to 2026-10-13 19:06 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by research/what-gets-adopted.md"
+   },
+   {
+    "name": "analysis.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:19 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "chart_tables.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:19 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/charts.py, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "handcheck_",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:10 CDT to 2026-10-13 19:15 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/facts.py"
+   },
+   {
+    "name": "items.jsonl",
+    "url": "",
+    "files": 2,
+    "retrieved": "2026-10-13 19:02 CDT to 2026-10-13 19:04 CDT",
+    "note": "over 5 MB; fetch it from the URL; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "items_report.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:04 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "tagged.jsonl",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:16 CDT",
+    "note": "over 5 MB; fetch it from the URL; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "gdelt_ksdk.log",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:59 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "stltoday_local.log",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:13 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "bsky.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:21 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "gnews.xml",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:21 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "kmov_sm400.xml",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:23 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "ksdk_gnews.xml",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:23 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "moindep_wp.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:21 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "reddit_new.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:21 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "manifest.json",
+    "url": "",
+    "files": 6,
+    "retrieved": "2026-10-13 18:26 CDT to 2026-10-13 18:41 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, research/attention-over-time.md, scripts/attention/collect.py, scripts/attention/facts.py"
+   },
+   {
+    "name": "gdelt_ksdk",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:33 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by research/attention-over-time-facts.csv, scripts/attention/facts.py"
+   },
+   {
+    "name": "census_acs_sf",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:14 CDT to 2026-10-13 18:15 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by research/voters-and-residents.md"
+   },
+   {
+    "name": "federal",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:07 CDT to 2026-10-13 19:12 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by research/demand-and-existing-tools.md"
+   },
+   {
+    "name": "2026-27_BB22_rams.txt",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:24 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/demand-and-existing-tools.md, research/voters-and-residents-facts.csv"
+   },
+   {
+    "name": "R_19094.txt",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:25 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/chapters/R3-voices.md, research/demand-and-existing-tools.md"
+   },
+   {
+    "name": "stlwater_outages_20261014T00",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:10 CDT to 2026-10-13 19:21 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "N2 figures (54, ids n2_*); read or cited by scripts/night/N2/06_register.py, site/data/register.json"
+   },
+   {
+    "name": "City map layer Debris_Clearing/FeatureServer",
+    "url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Debris_Clearing/FeatureServer/0",
+    "files": 1,
+    "retrieved": "2026-10-13 18:33 CDT",
+    "note": "holds latlon (scan_public.py); fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py, site/data/register.json"
+   },
+   {
+    "name": "City map layer Demolitions/FeatureServer",
+    "url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Demolitions/FeatureServer/82",
+    "files": 1,
+    "retrieved": "2026-10-13 18:33 CDT",
+    "note": "holds address, id-field, latlon, parcel-id (scan_public.py); fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py"
+   },
+   {
+    "name": "City map layer PCI2025/FeatureServer",
+    "url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/PCI2025/FeatureServer/0",
+    "files": 1,
+    "retrieved": "2026-10-13 18:33 CDT",
+    "note": "holds latlon (scan_public.py); fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py"
+   },
+   {
+    "name": "City map layer Condemned/MapServer",
+    "url": "https://maps6.stlouis-mo.gov/arcgis/rest/services/Condemned/MapServer/8",
+    "files": 1,
+    "retrieved": "2026-10-13 18:33 CDT",
+    "note": "holds address, id-field, latlon, parcel-id (scan_public.py); fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py"
+   },
+   {
+    "name": "City map layer Curb_and_Side_MIL1/MapServer",
+    "url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/Curb_and_Side_MIL1/MapServer/19",
+    "files": 2,
+    "retrieved": "2026-10-13 18:32 CDT",
+    "note": "over 5 MB; fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py"
+   },
+   {
+    "name": "City map layer SLDC/LRA_and_LCRA_Properties",
+    "url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/LRA_and_LCRA_Properties/MapServer/0",
+    "files": 1,
+    "retrieved": "2026-10-13 18:34 CDT",
+    "note": "over 5 MB; fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); N5 figures (102, ids n5_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/N5/05_imagery.py, scripts/night/R1/common.py"
+   },
+   {
+    "name": "City map layer SLDC/Projects_Vacant_Building_Demolitions",
+    "url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Projects_Vacant_Building_Demolitions/MapServer/0",
+    "files": 1,
+    "retrieved": "2026-10-13 18:33 CDT",
+    "note": "holds address, id-field, latlon, parcel-id (scan_public.py); fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py"
+   },
+   {
+    "name": "City map layer STREETS/OneCall",
+    "url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/OneCall/MapServer/1",
+    "files": 2,
+    "retrieved": "2026-10-13 18:33 CDT",
+    "note": "over 5 MB; fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py, site/data/register.json"
+   },
+   {
+    "name": "City map layer STREETS/Street_Sweeping",
+    "url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer/0",
+    "files": 1,
+    "retrieved": "2026-10-13 18:32 CDT",
+    "note": "holds latlon (scan_public.py); fetch it from the URL",
+    "used_by": "N2 figures (54, ids n2_*); R1 figures (150, ids r1_*); read or cited by scripts/exec/E5/01_ledger.py, scripts/night/N2/04_probe_completion_files.py, scripts/night/N2/05_joins.py, scripts/night/N2/06_register.py, scripts/night/R1/common.py"
+   },
+   {
+    "name": "Cityworks query-service layers, authorised read",
+    "url": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer",
+    "files": 46,
+    "retrieved": "2026-10-14 13:48 CDT to 2026-10-14 13:53 CDT",
+    "note": "Cityworks query-service extract read under the office-hours authorisation, which covered reading, not republishing; its ids resolve to addresses. Retrieval manifest: research/cityworks-retrieval-manifest.csv; aggregates: research/cityworks-*",
+    "used_by": "E1 figures (64, ids e1_*); read or cited by scripts/exec/E1/07_linked.py"
+   },
+   {
+    "name": "qe_catalog.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-14 13:35 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by build/E2/figures.json, research/precedents-closed-loop-facts.csv, research/precedents-closed-loop.md"
+   },
+   {
+    "name": "qe_layer_",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-14 13:36 CDT to 2026-10-14 13:53 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by build/E2/figures.json"
+   },
+   {
+    "name": "towing_assignments_geom_oid_only.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 23:46 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "N3 figures (41, ids n3_*); read or cited by research/chapters/N3-fairness.md, scripts/night/N3/07_boundaries.py"
+   },
+   {
+    "name": "campaign",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:27 CDT to 2026-10-13 19:37 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by research/chapters/R3-voices.md"
+   },
+   {
+    "name": "datatech",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:27 CDT to 2026-10-13 19:21 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by deliverable/video-script-v4.md"
+   },
+   {
+    "name": "www-firstalert4-com-2026-08-14-cut-down-unmowed-vacant-lots-st-louis-city-looks-data-north-city-resident-discu-c0396f.html",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:03 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by build/R3/figures.json, research/chapters/R3-voices.md, research/mayors-office-voice.md"
+   },
+   {
+    "name": "ltJWr1X9UTc.txt",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:38 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by build/R3/figures.json, research/chapters/R3-voices.md, research/mayors-office-voice-facts.csv, research/mayors-office-voice.md"
+   },
+   {
+    "name": "msd_service_address_stl_city.geojsonl",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:24 CDT",
+    "note": "over 5 MB; fetch it from the URL; retrieved = file time on disk",
+    "used_by": "N5 figures (102, ids n5_*); N6 figures (10, ids n6_*); read or cited by scripts/night/N5/05_imagery.py, scripts/night/N6/privacy_scan.py"
+   },
+   {
+    "name": "N5_export_log.json",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-14 01:08 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "N5 figures (102, ids n5_*); read or cited by build/N5/decisions.json, scripts/night/N5/05_imagery.py"
+   },
+   {
+    "name": "meta_",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-14 01:06 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "N5 figures (102, ids n5_*); read or cited by scripts/night/N5/05_imagery.py"
+   },
+   {
+    "name": "other-cities",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:33 CDT to 2026-10-13 19:10 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by research/demand-and-existing-tools.md"
+   },
+   {
+    "name": "EO96.txt",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:32 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "read or cited by research/chapters/R3-voices.md, research/pressures-next-six-months.md"
+   },
+   {
+    "name": "stl-recovers-tracker",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 19:08 CDT",
+    "note": "a set of files, listed so the claims that cite it can be traced; retrieved = file time on disk",
+    "used_by": "read or cited by research/demand-and-existing-tools.md"
+   },
+   {
+    "name": "robots-2026-10-14.txt",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-14 15:27 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "N1 figures (78, ids n1_*); read or cited by build/E3/decisions.json, research/chapters/E3-demo.md, scripts/exec/E3/build_statuspage.py, scripts/night/N1/build_db.py, site/data/decisions.json"
+   },
+   {
+    "name": "csb-status-items",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-14 15:25 CDT to 2026-10-14 15:53 CDT",
+    "note": "311 status-page sample (E1); each page's request id resolves to an address on the city's public status page. Aggregates: build/E1/service_table.csv and linkage tables; retrieved = file time on disk",
+    "used_by": "E1 figures (64, ids e1_*); read or cited by research/status-page-linkage.md, scripts/exec/E1/07_linked.py"
+   },
+   {
+    "name": "311 status pages, E1 stratified sample",
+    "url": "https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/check-service-request.cfm",
+    "files": 1,
+    "retrieved": "2026-10-14 15:15 CDT",
+    "note": "311 status-page sample (E1); each page's request id resolves to an address on the city's public status page. Aggregates: build/E1/service_table.csv and linkage tables; retrieved = file time on disk",
+    "used_by": "E1 figures (64, ids e1_*); N1 figures (78, ids n1_*); read or cited by context/AUTHORISATION-NOTE.md, research/chapters/E3-demo.md, research/status-page-linkage.md, scripts/exec/E1/05_probe.py, scripts/exec/E3/build_statuspage.py, scripts/night/N1/build_db.py"
+   },
+   {
+    "name": "LRA_OFFERS.csv",
+    "url": "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_OFFERS.csv",
+    "files": 1,
+    "retrieved": "2026-10-13 18:15 CDT",
+    "note": "holds id-field, parcel-id (scan_public.py); fetch it from the URL; retrieved = file time on disk",
+    "used_by": "N1 figures (78, ids n1_*); N5 figures (102, ids n5_*); read or cited by research/voters-and-residents.md, scripts/night/N1/build_db.py, scripts/night/N5/04_heroes.py"
+   },
+   {
+    "name": "Precincts_Current.zip",
+    "url": "https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip",
+    "files": 1,
+    "retrieved": "2026-10-13 18:10 CDT to 2026-10-13 19:36 CDT",
+    "note": "binary file the privacy scan cannot read; fetch it from the URL",
+    "used_by": "N1 figures (78, ids n1_*); read or cited by research/voters-and-residents-facts.csv, research/voters-and-residents.md, scripts/night/N1/build_db.py"
+   },
+   {
+    "name": "wards_2020.zip",
+    "url": "https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip",
+    "files": 1,
+    "retrieved": "2026-10-13 18:16 CDT",
+    "note": "binary file the privacy scan cannot read; fetch it from the URL; retrieved = file time on disk",
+    "used_by": "N1 figures (78, ids n1_*); read or cited by research/voters-and-residents-facts.csv, research/voters-and-residents.md, scripts/night/N1/build_db.py"
+   },
+   {
+    "name": "tow_lookup_48h.html",
+    "url": "",
+    "files": 1,
+    "retrieved": "2026-10-13 18:24 CDT",
+    "note": "source URL not recorded in the retrieval logs; the citing report names the source; retrieved = file time on disk",
+    "used_by": "N2 figures (54, ids n2_*); read or cited by scripts/night/N2/06_register.py, site/data/register.json"
+   }
+  ],
+  "counts": {
+   "all": 120,
+   "fetched": 14,
+   "vendored": 1,
+   "not_published": 105
+  }
+ },
+ "authorisation": {
+  "statement": "Beyond the open 311 file and the City's public map services, this entry read the City's Cityworks saved searches and public 311 status pages. City staff authorised this at the hackathon office hours on 14 October 2026 for the purpose of this entry. Reads were limited to one request per second and to operational fields; no personal data was collected; raw data is not published; every public figure is at block level or coarser.",
+  "authorised": [
+   "Date and time: Wednesday 14 October 2026, [time] Central, at the hackathon office hours ([in person at T-REX / on the 2 p.m. Teams call]).",
+   "Who gave it: [name and role; e.g. a member of the Mayor's Office / the organiser], speaking for [the City / the Mayor's Office / themselves].",
+   "What was said (as close to verbatim as Jack can recall): \"[…]\"",
+   "Scope as Jack understood it: reading publicly reachable City web pages and data services for this hackathon entry, including pages a robots.txt comment asks bots not to crawl, provided the use is to recommend improvements to City services and no personal data is collected.",
+   "What was not discussed or not covered: [e.g. editing anything; systems behind a login; personal data; publishing raw data].",
+   "Written record: [none / an email / a message; path or link if any]."
+  ],
+  "status": "Jack to complete the bracketed fields in his own words. Until he does, every statement here is \"reported by Jack\" and the submission says so.",
+  "source": "context/AUTHORISATION-NOTE.md"
+ }
+}

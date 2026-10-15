@@ -1,0 +1,155 @@
+{
+  "_about": "Edit this file to change the lead. No rebuild: reload the page. {fig:<id>} inserts a figure from data/figures.json, formatted by its unit; {fig:<id>|raw} inserts it unformatted.",
+  "_e6": "E6 (14 Oct, evening): the site is five product screens. no product name (Jack, 15 Oct): product_name holds the tagline; links.case points at the repository README (set it to the public GitHub URL once the repository exists).",
+  "_v7": "v7 (15 Oct): no product name (Jack). The header's brand slot (product_name) carries the tagline, so the nav reads \"Which promises did St. Louis keep? PROTOTYPE\"; product_tagline is empty so the landing page does not print the line twice. If a name is picked: product_name = the name, product_tagline = \"Which promises did St. Louis keep?\".",
+  "_name": "15 Oct, 3:30 p.m.: the header, the landing page and the tab titles read product_name and product_tagline through brand() in js/common.js. Either one alone shows once; both show as name, then tagline. Name decided 15 Oct afternoon (Jack): Follow-Through STL; the _e6 and _v7 notes above predate it.",
+  "product_name": "Follow-Through STL",
+  "product_tagline": "Which promises did St. Louis keep?",
+  "product_tag": "Prototype",
+  "theme": "light",
+  "show_msdis_imagery": false,
+  "footer": "Independent prototype built from the City of St. Louis's open data. Not a City website.",
+  "links": {
+    "case": "https://github.com/riddlejack/stl-civic-hackathon",
+    "case_label": "Read the full case",
+    "handover": "https://github.com/riddlejack/stl-civic-hackathon/tree/HEAD/deliverable/handover"
+  },
+  "lead": {
+    "_e3": "E3 (14 Oct): re-centred on the thesis. figure_id is a pair figure {published, done_only}; support[1] is the queue count. The mix bar is off (n2_share_closed_handoff carries it as support[0]).",
+    "kicker": "St. Louis 311 and CityStat · alley and street debris, cleaned within 3 days, Q2 2026",
+    "headline": "The city grades the hand-off, not the job.",
+    "figure_id": "e3_citystat_debris_published_vs_done",
+    "pair": {
+      "published_label": "on time, as CityStat published it",
+      "done_label": "on time, counting only closings that say the work was done"
+    },
+    "figure_sentence": "Rebuilt from the City’s own 311 file, the grade comes out close to CityStat’s. But most on-time closings record a hand-off (“referred”, “scheduled”), not a clean-up.",
+    "support": [
+      {
+        "figure_id": "n2_share_closed_handoff",
+        "text": "of requests the city closed since January 2025 were closed at the hand-off (scheduled, referred, tagged), not when the work was finished."
+      },
+      {
+        "figure_id": "e3_queue_past_promise",
+        "text": "open requests filed since January 2025 are past the date the city promised. No published list ranks them across divisions; we found none among the city's pages and saved searches.",
+        "href": "queue.html",
+        "link": "See the queue →"
+      }
+    ],
+    "mix_bar": false,
+    "hero_id": "lot-1",
+    "hero_label": "One request, start to finish"
+  },
+  "receipt": {
+    "default_id": "",
+    "sample_ids_max": 8
+  },
+  "scoreboard": {
+    "top_n": 16,
+    "min_requests": 1000,
+    "pin": [
+      "Potholes - Residnl",
+      "Potholes - Major St",
+      "Cave-Ins",
+      "Weeds-Vacant Lot",
+      "Inspect City Tree",
+      "Vehicle Towing",
+      "Illegal dumpg report",
+      "Whole Blk Lights Out"
+    ],
+    "exclude": [
+      "Single Light Out"
+    ]
+  },
+  "fairness": {
+    "headline": "The north does not wait longer for crews. It waits longer for someone to look.",
+    "sub": "Where the closing words say the work was done, wards 1–5 and 10–14 are served at about the same speed. The gap sits in the first step: the inspector's tag, the referral, the notice. What happens after that step is not recorded on the request, so the city cannot see the rest of the wait.",
+    "citystat": {
+      "a_label": "Ward 1",
+      "b_label": "Ward 10",
+      "a_days": 17.18,
+      "b_days": 35.07,
+      "period": "requests filed 1 Jan 2024 to 30 Jun 2026, all CSB requests, mean days to close",
+      "label": "reported",
+      "source": "CityStat, Citizens' Service Bureau ward map (CSBRequestMap), extracted 13 Oct 2026 (data/raw/citystat/tableau-extract.md)"
+    },
+    "decomposition_key": "citystat_window_snapshot_2026-07-10 | ward 1 vs ward 10",
+    "decomposition_figure": "n3_decomp_ward1_vs_10_gap",
+    "reproduction_figures": [
+      "n3_citystat_ward1_reproduced",
+      "n3_citystat_reproduction_error"
+    ],
+    "lead": [
+      {
+        "type": "Vehicle Towing",
+        "measure": "text: vehicle tagged for tow",
+        "period": "after",
+        "title": "Abandoned vehicle",
+        "words": "vehicle tagged for tow",
+        "step": "first visit: the inspector's tag",
+        "figure_id": "n3_towing_tagged_median_after"
+      },
+      {
+        "type": "Cave-Ins",
+        "measure": "text: referred to street maintenance for repair work to be scheduled",
+        "period": "after",
+        "title": "Cave-in",
+        "words": "referred to street maintenance for repair work to be scheduled",
+        "step": "first step: the referral",
+        "figure_id": "n3_cavein_referral_median_after"
+      },
+      {
+        "type": "Ppty Maint Code-Ext",
+        "measure": "text: issued notice of violation",
+        "period": "after",
+        "title": "Exterior property maintenance",
+        "words": "issued notice of violation",
+        "step": "first step: the notice",
+        "figure_id": "n3_code_enforcement_nov_median"
+      }
+    ],
+    "no_gap_figure": "n3_no_gap_done_types_after",
+    "no_gap": [
+      {
+        "type": "Whole Blk Lights Out",
+        "title": "Whole block of lights out"
+      },
+      {
+        "type": "Refuse not collected",
+        "title": "Refuse not collected"
+      },
+      {
+        "type": "Potholes - Residnl",
+        "title": "Pothole, residential street"
+      },
+      {
+        "type": "Potholes - Major St",
+        "title": "Pothole, major street"
+      },
+      {
+        "type": "Containr damaged",
+        "title": "Damaged trash container"
+      },
+      {
+        "type": "Sign needs attention",
+        "title": "Street sign needs attention"
+      }
+    ]
+  },
+  "register": {
+    "_cityworks_source": "N8 verification finding 6: of the 21 services without a full join, the register's 'what it would take' names Cityworks work orders for these 5",
+    "cityworks_ids": [
+      "trees_city",
+      "tree_planting",
+      "potholes",
+      "cave_ins",
+      "street_lights"
+    ]
+  },
+  "sections": [
+    "lead",
+    "receipt",
+    "scoreboard",
+    "dumping"
+  ]
+}

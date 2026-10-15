@@ -1,0 +1,45 @@
+/* The Monday brief: a plain printable memo, not a mock-up of any city software. */
+body.briefpage { background: var(--page); }
+.sheet {
+  max-width: 1040px; margin: 36px auto 60px; background: #fff; color: #111; border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 10px 30px rgba(0,0,0,.06); padding: 56px 72px 64px; font-size: 15.5px; line-height: 1.5;
+}
+.memo-head { border-bottom: 2px solid #111; padding-bottom: 18px; margin-bottom: 26px; }
+.memo-head .row { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.memo-head h1 { font-size: 34px; letter-spacing: -0.02em; margin: 0 0 4px; }
+.memo-head .sub { font-size: 16px; color: #444; }
+.memo-head dl { display: grid; grid-template-columns: 64px 1fr; gap: 3px 12px; margin: 16px 0 0; font-size: 14px; }
+.memo-head dt { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: .06em; color: #555; padding-top: 2px; }
+.memo-head dd { margin: 0; color: #222; }
+.memo-actions { display: flex; gap: 8px; }
+.memo-actions .btn { height: 36px; font-size: 13.5px; padding: 0 14px; border-radius: 6px; }
+.sheet h2 { font-size: 19px; margin: 34px 0 6px; letter-spacing: -0.005em; display: flex; gap: 10px; align-items: baseline; }
+.sheet h2 .n { font-variant-numeric: tabular-nums; color: #777; font-weight: 600; }
+.sheet .lede { color: #333; margin: 0 0 12px; max-width: 80ch; }
+.sheet table.t { font-size: 14px; }
+.sheet table.t th { font-size: 11.5px; }
+.sheet table.t td { padding: 6px 10px; }
+.sheet table.t tr:hover td { background: transparent; }
+.sheet .flag { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
+.sheet .down { color: #b3261e; font-weight: 600; }
+.sheet .up { color: #1b6e1b; font-weight: 600; }
+.callout { border: 1px solid #ddd; border-left: 4px solid #111; background: #fafaf8; padding: 16px 20px; margin: 16px 0 6px; border-radius: 4px; }
+.callout b { font-size: 16px; }
+.wardgrid td.bar { width: 210px; }
+.minibar { height: 10px; background: #eee; border-radius: 5px; position: relative; overflow: hidden; }
+.minibar span { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; }
+.listblock { margin-top: 22px; break-inside: avoid; }
+.listblock h3 { font-size: 16.5px; margin: 0 0 2px; }
+.listblock .meta { font-size: 13px; color: #555; margin: 0 0 8px; }
+.listblock .sum { font-weight: 600; }
+.memo-foot { margin-top: 34px; border-top: 1px solid #ccc; padding-top: 12px; font-size: 12.5px; color: #555; }
+.sheet .hwk { font-size: 12.5px; }
+
+@media print {
+  @page { size: letter; margin: 0.5in; }
+  body.briefpage { background: #fff; }
+  .nav, footer.foot, .memo-actions, .hwk, .mock-banner + .partial-note { display: none !important; }
+  .sheet { box-shadow: none; border: 0; margin: 0; padding: 0; max-width: none; font-size: 11pt; }
+  .sheet h2 { break-after: avoid; }
+  table { break-inside: avoid; }
+}
