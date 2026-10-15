@@ -1,6 +1,8 @@
-# Which promises did St. Louis keep?
+# Follow-Through STL
 
-**When St. Louis 311 hands a job to a crew, the request stops tracking the work.** Usually it is closed at the hand-off; sometimes it is left open with nothing attached. Either way, residents, departments and CityStat lose sight of whether the job was done. This repository is Jack Riddle's entry to the Innovate USA Civic AI Hackathon (City of St. Louis, 13–15 October 2026): the audit behind that finding, a working prototype of the fix, and a hand-over package the city could run inside the systems it already has.
+*Which promises did St. Louis keep?*
+
+**When St. Louis 311 hands a job to a crew, the request stops tracking the work.** Usually it is closed at the hand-off; sometimes it is left open with nothing attached. Either way, residents, departments and CityStat lose sight of whether the job was done. This repository is Jack Riddle's entry to the Innovate USA Civic AI Hackathon (City of St. Louis, 13–15 October 2026). **The product is the analysis:** a request-by-request audit of the city's own records, packaged as plain SQL and saved searches that plug into the systems the city already runs (Cityworks, CityStat and the 311 status page). It does not replace the city's 311 system. The website is a demo of what that output looks like on real city data, and the hand-over package says how to set it up.
 
 > Independent prototype built from the City of St. Louis's open data, plus Cityworks saved searches and public 311 status pages read with the City's permission (operational fields only; no personal data). Not a City website. Every public figure is at block level or coarser.
 

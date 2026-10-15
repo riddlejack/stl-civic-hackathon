@@ -1,14 +1,15 @@
 // E6: shared start-up for the five product screens. Reuses common.js (data loading, figures, "How we know",
-// tooltip) and adds the E6 file (data/e6.json: E5 figures from build/E5/summary.json, the source manifest and
-// the authorisation wording), card mode for the video crops, and the page title.
-import { state, h, $, fig, figText, howWeKnow, load, loadConfig, loadFigures, nav, setRunLine, updateMockCount, footer } from './common.js';
+// tooltip) and adds the E6 file (data/e6.json: E5 figures from build/E5/summary.json and the source manifest),
+// card mode for the video crops, and the page title (name and tagline via common.js brand()).
+import { state, h, $, fig, figText, howWeKnow, load, loadConfig, loadFigures, nav, brand, setRunLine, updateMockCount, footer } from './common.js';
 
 export const params = new URLSearchParams(location.search);
 export const card = params.get('card');
 
 export async function boot(active, title) {
   await loadConfig();
-  document.title = [title, state.config.product_name, title ? '' : state.config.product_tagline].filter(Boolean).join(' · ');
+  const b = brand(state.config);
+  document.title = [title, b.name, title ? '' : b.tagline].filter(Boolean).join(' · ');
   if (card) document.body.classList.add('cardmode');
   nav(active);
   await loadFigures();

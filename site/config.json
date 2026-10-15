@@ -2,15 +2,17 @@
   "_about": "Edit this file to change the lead. No rebuild: reload the page. {fig:<id>} inserts a figure from data/figures.json, formatted by its unit; {fig:<id>|raw} inserts it unformatted.",
   "_e6": "E6 (14 Oct, evening): the site is five product screens. no product name (Jack, 15 Oct): product_name holds the tagline; links.case points at the repository README (set it to the public GitHub URL once the repository exists).",
   "_v7": "v7 (15 Oct): no product name (Jack). The header's brand slot (product_name) carries the tagline, so the nav reads \"Which promises did St. Louis keep? PROTOTYPE\"; product_tagline is empty so the landing page does not print the line twice. If a name is picked: product_name = the name, product_tagline = \"Which promises did St. Louis keep?\".",
-  "product_name": "Which promises did St. Louis keep?",
-  "product_tagline": "",
+  "_name": "15 Oct, 3:30 p.m.: the header, the landing page and the tab titles read product_name and product_tagline through brand() in js/common.js. Either one alone shows once; both show as name, then tagline. Name decided 15 Oct afternoon (Jack): Follow-Through STL; the _e6 and _v7 notes above predate it.",
+  "product_name": "Follow-Through STL",
+  "product_tagline": "Which promises did St. Louis keep?",
   "product_tag": "Prototype",
   "theme": "light",
   "show_msdis_imagery": false,
   "footer": "Independent prototype built from the City of St. Louis's open data. Not a City website.",
   "links": {
-    "case": "../README.md",
-    "case_label": "Read the full case"
+    "case": "https://github.com/riddlejack/stl-civic-hackathon",
+    "case_label": "Read the full case",
+    "handover": "https://github.com/riddlejack/stl-civic-hackathon/tree/HEAD/deliverable/handover"
   },
   "lead": {
     "_e3": "E3 (14 Oct): re-centred on the thesis. figure_id is a pair figure {published, done_only}; support[1] is the queue count. The mix bar is off (n2_share_closed_handoff carries it as support[0]).",

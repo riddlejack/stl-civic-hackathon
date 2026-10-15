@@ -1,5 +1,6 @@
-// E6 "The data": every source with its URL, retrieval time, rows and use (E4's manifest, via data/e6.json), the
-// downloads, the authorisation statement in the words of context/AUTHORISATION-NOTE.md, and the fetch script.
+// E6 "The data": the downloads, every public source with its URL, retrieval time, rows and use (E4's manifest,
+// via data/e6.json), and the fetch script. v7 (15 Oct): the permission section and the withheld-file list are off
+// this page (the sources.csv download is unchanged).
 import { state, h, $, fmt, load } from './common.js';
 import { boot, finish, page } from './app.js';
 
@@ -36,10 +37,13 @@ async function main() {
   const dls = await load('downloads').catch(() => ({ files: [] }));
   const kb = Object.fromEntries((dls.files || []).map((f) => [f.name, f.kb]));
   const S = e6?.sources || { published: [], withheld: [], counts: {} };
-  const A = e6?.authorisation || {};
   const root = page(
     h('h1', { class: 'title', text: 'The data' }),
-    h('p', { class: 'say', text: 'Every figure on these screens comes from the city’s own public files, re-downloadable with one script; what was read with the city’s permission is listed here and not republished.' }));
+    h('p', { class: 'say', text: 'Every figure on these screens comes from the city’s own records. The public files are listed below with where and when each was downloaded, and one script downloads them again.' }));
+
+  const handover = state.config.links?.handover;
+  if (handover) root.append(h('p', { class: 'sec-say', style: 'margin-top:14px' }, 'The hand-over package (the SQL, the Cityworks saved search, the dashboard and one practice page per division) is in the repository: ',
+    h('a', { href: handover, text: 'deliverable/handover' }), '.'));
 
   root.append(h('div', { class: 'dl-grid' }, ...DL.map(([file, name, desc]) => h('a', { class: 'card dl', href: `data/downloads/${file}`, download: '' },
     h('b', { text: name }), h('span', { text: desc }), h('small', { text: `${file}${kb[file] ? ` · ${fmt.int(kb[file])} KB` : ''}` })))));
@@ -53,33 +57,12 @@ async function main() {
     tb.append(h('tr', {},
       h('td', { class: 'nm' }, r.name, r.url ? h('a', { href: r.url, text: r.url }) : null, r.published_as ? h('span', { class: 'fine', style: 'display:block', text: `A copy ships in the repository: ${r.published_as}` }) : null),
       h('td', { class: 'when', text: when(r.retrieved) }),
-      h('td', { class: 'r', text: r.rows || '–' }),
-      h('td', { class: 'r', text: r.size || '–' }),
+      h('td', { class: 'r', 'data-k': 'Rows', text: r.rows || '–' }),
+      h('td', { class: 'r', 'data-k': 'Size', text: r.size || '–' }),
       h('td', { class: 'use', text: use(r.used_by) })));
   }
   t.append(tb);
   root.append(h('div', { class: 'card tbl-wrap' }, t));
-
-  // listed, not published (collapsed)
-  const det = h('details', { class: 'how' }, h('summary', { text: `Listed, not published (${S.counts.not_published ?? S.withheld.length} files)` }));
-  const t2 = h('table', { class: 'src' });
-  t2.append(h('thead', {}, h('tr', {}, h('th', { text: 'Source' }), h('th', { text: 'Retrieved (Central)' }), h('th', { class: 'r', text: 'Files' }), h('th', { text: 'Why it is not shipped' }))));
-  const tb2 = h('tbody');
-  for (const g of S.withheld) {
-    tb2.append(h('tr', {}, h('td', { class: 'nm' }, g.name, g.url ? h('a', { href: g.url, text: g.url }) : null), h('td', { class: 'when', text: when(g.retrieved) }),
-      h('td', { class: 'r', text: String(g.files) }), h('td', { class: 'use', text: g.note || '' })));
-  }
-  t2.append(tb2);
-  det.append(h('div', { class: 'card tbl-wrap', style: 'margin-bottom:8px' }, t2));
-  root.append(det);
-
-  // authorisation, in the note's words
-  root.append(h('h2', { class: 'sec', text: 'What was read with the city’s permission' }));
-  const auth = h('div', { class: 'card auth' });
-  if (A.statement) auth.append(h('blockquote', { text: A.statement }));
-  if ((A.authorised || []).length) auth.append(h('ul', {}, ...A.authorised.map((b) => h('li', { text: b }))));
-  auth.append(h('p', { class: 'fine', style: 'margin:14px 0 0', text: `${A.status || ''} Source: ${A.source || 'context/AUTHORISATION-NOTE.md'}.` }));
-  root.append(auth);
 
   root.append(h('h2', { class: 'sec', text: 'Run it yourself' }),
     h('div', { class: 'card auth' },

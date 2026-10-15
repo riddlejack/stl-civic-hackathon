@@ -255,15 +255,30 @@ export function bindTip(el, rowsFn) {
 
 // ------------------------------------------------------------------ nav + footer
 // E6: the five product screens. The Monday brief (brief.html) is out of the nav; the README links it.
-export const DOORS = [['queue.html', 'Forestry\u2019s list'], ['citystat.html', 'CityStat'], ['status.html', 'A resident\u2019s page'], ['data.html', 'Data']];
+// v7: in the video's order (residents, departments, City Hall), then the data.
+export const DOORS = [['status.html', 'A resident\u2019s page'], ['queue.html', 'Past-due list'], ['citystat.html', 'CityStat'], ['data.html', 'Data']];
+
+// The name and the tagline from config. With no separate name, product_name holds the tagline (or
+// product_tagline does): show it once, as the name. Setting product_name = "<Name>" and
+// product_tagline = "Which promises did St. Louis keep?" then shows both, with no other edit.
+export function brand(cfg = state.config) {
+  const name = String(cfg?.product_name || '').trim();
+  const tagline = String(cfg?.product_tagline || '').trim();
+  if (!name) return { name: tagline, tagline: '' };
+  return { name, tagline: tagline === name ? '' : tagline };
+}
+
 export function nav(active, links = DOORS) {
   const cfg = state.config;
+  const b = brand(cfg);
   const ul = h('ul');
   for (const [href, label] of links) ul.append(h('li', {}, h('a', { href, text: label, class: href === active ? 'on' : '' })));
   const run = h('span', { class: 'runline', id: 'runline' });
   const mc = h('span', { class: 'mockcount', id: 'mockcount' });
   const n = h('nav', { class: 'nav' }, h('div', { class: 'wrap' },
-    h('a', { class: 'brand', href: 'index.html', style: 'text-decoration:none' }, cfg.product_name, h('span', { class: 'tag', text: cfg.product_tag || 'Prototype' })),
+    h('a', { class: 'brand', href: 'index.html', style: 'text-decoration:none' }, b.name,
+      b.tagline ? h('span', { class: 'brand-sub', text: b.tagline }) : null,
+      h('span', { class: 'tag', text: cfg.product_tag || 'Prototype' })),
     ul, run, mc));
   document.body.prepend(n);
   return n;
@@ -280,9 +295,12 @@ export function updateMockCount() {
   el.classList.toggle('show', n > 0);
 }
 export function footer() {
+  const links = [['index.html', 'Home'], ...DOORS];
+  const repo = state.config.links?.case;
+  if (/^https?:/.test(repo || '')) links.push([repo, 'Source on GitHub']);
   const f = h('footer', { class: 'foot' }, h('div', { class: 'wrap' },
     h('span', { text: state.config.footer }),
-    h('span', {}, ...DOORS.flatMap(([href, text], i) => [i ? ' · ' : null, h('a', { href, text })]))));
+    h('span', {}, ...links.flatMap(([href, text], i) => [i ? ' · ' : null, h('a', { href, text })]))));
   document.body.append(f);
 }
 
