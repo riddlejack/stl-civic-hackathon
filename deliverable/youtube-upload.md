@@ -18,6 +18,7 @@ The fix needs no new 311 system:
 
 It runs as plain SQL and saved searches inside the systems the city already uses (Cityworks, CityStat and the 311 status page). The website in the video is a demo of that output, running on real city data.
 
+Live demo site: https://riddlejack.github.io/stl-civic-hackathon/
 Code, analysis, sources and the hand-over package: https://github.com/riddlejack/stl-civic-hackathon
 
 Chapters
@@ -36,6 +37,10 @@ Chapters
 8:00 What the city gets
 
 Independent prototype built from the City of St. Louis's open data. Not a City website. Analysis by Jack Riddle with AI research and coding agents; the city would run plain SQL.
+
+## Thumbnail
+
+`deliverable/youtube-thumbnail.png` (1280×720).
 
 ## Settings
 
