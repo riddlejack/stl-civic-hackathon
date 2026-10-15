@@ -48,7 +48,7 @@ Written Thu 15 Oct 2026, early afternoon Central. Jack reviewed rough cut v4 (sc
 >
 > **13.** My assumption is that a lot of missed and late work is work nobody can see. You don't have to take my word for it. Here's what it would take to test it: one quarter, on tree removals, cave-ins and vacant-lot mowing, measured against their baselines from the 13th of October. It needs no new software, no app, and no city data leaving the city. The saved searches, the dashboard, the SQL and a one-page practice for each division are ready. My AI agents did the audit. The city would run plain SQL.
 >
-> **14.** Then you'll know which promises you kept.
+> **14.** By implementing this, residents would see the truth about their requests: open until the work is done, not "closed" the day it's handed off, so they don't have to call to find out why. Missed jobs would stop falling through the cracks, because every miss lands on someone's list. And the most urgent work, trees down, cave-ins, water coming up, would rise to the top of that list every week. The city wouldn't just know which promises it kept. It would see every promise it hasn't kept yet, and could keep the most urgent ones first.
 
 ## Action titles
 
@@ -67,7 +67,7 @@ Written Thu 15 Oct 2026, early afternoon Central. Jack reviewed rough cut v4 (sc
 | 11 | Four segments: **For residents: "open" until the job is done** · **For departments: a weekly list of the misses** · **Danger first, with the reason on every row** · **For City Hall: count only work that says it's done** |
 | 12 | **Nothing falls through silently: about 5,000 unexplained requests accounted for in one quarter (estimate)** |
 | 13 | **What it would take to test it: one quarter, three request types, measured against 13 October** |
-| 14 | **Which promises did St. Louis keep?** Then the end card: the closing line only, with no product name and no link |
+| 14 | **What changes: residents see the truth · misses land on a list · urgent work first** Then the end card: "Which promises did St. Louis keep?", with no product name and no link |
 
 ## Screen notes for builders (what each beat must show)
 
@@ -86,7 +86,7 @@ Written Thu 15 Oct 2026, early afternoon Central. Jack reviewed rough cut v4 (sc
 | 11 | b06 demo (`demo6_*.mp4`; `video/tools/make_demo6.py`) | **Revised 15 Oct (Jack): plainer narration; new sentence map** s1 intro · s2–3 resident page (Today, then After the fix) · s4 the weekly past-due list · s5–7 the ranked view and the 9 → 25 callout · s8–9 CityStat and the added column. Four segments, each opening on its audience line:<br>• `status.html`: North Taylor, Today then With the fix. The panel's own words: "Open · no crew job linked", "Flagged to Forestry", "Reported again: added to this open request".<br>• `queue.html`: the past-due list.<br>• `queue.html`: Ranked view and "why this rank", with the 9 → 25 comparison.<br>• `citystat.html`: the "Closing says done" column.<br>**Before re-shooting,** remove "[NAME]" from the site header and page titles (`site/config.json` `product_name`, five `<title>` tags), because no name is used. |
 | 12 | b11 counter style | **Revised 15 Oct (Jack): 8 sentences.** s2 "I can't promise faster crews" · s3 "nothing falls through silently" · s4–s5 the 479 misses ("on schedule to be cut", no cut on record), each flagged · s6 **today**: 12,566 overdue requests with no record either way (done? waiting? lost?) · s7 **with the fix**: about 5,000 of them settled in one quarter, labelled ESTIMATE · s8 how: about 1,500 by linking work orders that already exist + about 3,500 by each department checking 25 a week (close the done ones, re-send the missed ones); range 2,600–7,100. |
 | 13 | b14 plus b07 | Three baselines: 1,630 tree-removal work orders past Forestry's date; 1,233 cave-ins and 289 vacant-lot mowing requests past the city's date. "What working looks like": "no record either way" falls to zero for these types, and overdue counts are compared with the baseline. The three "no"s. The hand-over package glyphs. |
-| 14 | b15 | The closing line, then the end card. **No product name and no link.** |
+| 14 | b15 | **Revised 15 Oct (Jack): a real ending, 5 sentences.** s1 "Residents see the truth": a status chip flips from "Closed" to "Open · until the work is done", with "no need to call". s2 "Missed jobs stop falling through the cracks": a dropped card lands on a list. s3 "Urgent work first": tree-down, cave-in and water icons rise to the top of the list. s4–s5: "Not just which promises it kept: every promise it hasn't kept yet, the most urgent first". Then the end card, "Which promises did St. Louis keep?" plus the credit line, with no product name and no link. |
 
 v6 b02 (thesis card), b07 (landing card), b11 ($7,000 and the 52 lots) and b12 (alternatives) are dropped as beats; their useful parts move into beats 1, 9, 12 and 13.
 
@@ -146,7 +146,8 @@ What differs, and what was done:
 - **Beat 11:** he adds "The city needs a way to prioritize overdue jobs, and I've created it in case there isn't already a working system." Kept.
 - **Beat 13:** he adds that no data goes "to third-party vendors" and that the city could "audit and verify my work". Kept.
 - **Beat 13:** "…are ready now. I built them out." This is now true: `deliverable/handover/` holds the saved-search spec, the dashboard definition, the SQL pointer and the one-page practices.
-- **Beat 14:** "By implementing this, you'll know which promises the city actually kept."
+- **Beat 14:** first recorded as "By implementing this, you'll know which promises the city actually kept." Jack then rewrote the ending to say what changes, and re-recorded it separately (`video/audio/jack/ending.m4a`). He added a closing line, "The best part is, the solution requires no additional money or resources and operates within the systems the government already has." **"requires no additional money or resources and" was cut from the audio**, because the fix needs staff time: about 150 hours to set up and about an hour per division per week (`research/impact-quantification.md` §6). It now reads "The best part is, the solution operates within the systems the government already has."
+- **Audio:** the take was normalised to −20 LUFS (true peak −3 dB). Reading pauses are digital silence, inserted only at real pauses. The final cut measures −19.5 LUFS.
 
 ## Recording sheet
 
@@ -283,6 +284,10 @@ One file per beat, named `beat_01` to `beat_14` (`.m4a` from Voice Memos or Quic
 6. My AI agents did the audit.
 7. The city would run plain SQL.
 
-**Beat 14** · file `beat_14` · 1 sentence
+**Beat 14** · file `beat_14` · 5 sentences
 
-1. Then you'll know which promises you kept.
+1. By implementing this, residents would see the truth about their requests: open until the work is done, not "closed" the day it's handed off, so they don't have to call to find out why.
+2. Missed jobs would stop falling through the cracks, because every miss lands on someone's list.
+3. And the most urgent work, trees down, cave-ins, water coming up, would rise to the top of that list every week.
+4. The city wouldn't just know which promises it kept.
+5. It would see every promise it hasn't kept yet, and could keep the most urgent ones first.
