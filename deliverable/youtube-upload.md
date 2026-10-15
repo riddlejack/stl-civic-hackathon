@@ -1,6 +1,6 @@
 # YouTube upload: Follow-Through STL
 
-File: `video/out/Follow-Through-STL-1080p.mp4` (8:37, 1080p).
+File: `video/out/Follow-Through-STL-1080p.mp4` (8:39, 1080p).
 
 ## Title
 
@@ -31,9 +31,9 @@ Chapters
 4:13 One cause, four requirements
 4:45 Already done elsewhere, and what I'm handing over
 5:34 The demo: residents, departments, City Hall
-6:34 What changes
-7:22 How to test it in one quarter
-7:58 What the city gets
+6:36 What changes
+7:25 How to test it in one quarter
+8:00 What the city gets
 
 Independent prototype built from the City of St. Louis's open data. Not a City website. Analysis by Jack Riddle with AI research and coding agents; the city would run plain SQL.
 
