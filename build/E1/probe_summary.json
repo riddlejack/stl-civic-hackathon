@@ -1,0 +1,77 @@
+{
+ "tree_removal": {
+  "n": 2,
+  "n_with_item": 2,
+  "items": [
+   5,
+   3
+  ],
+  "wilson95": [
+   0.342,
+   1
+  ]
+ },
+ "handoff": {
+  "n": 6,
+  "n_with_item": 0,
+  "items": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "wilson95": [
+   0,
+   0.39
+  ]
+ },
+ "done": {
+  "n": 2,
+  "n_with_item": 0,
+  "items": [
+   0,
+   0
+  ],
+  "wilson95": [
+   0,
+   0.658
+  ]
+ },
+ "open": {
+  "n": 2,
+  "n_with_item": 1,
+  "items": [
+   0,
+   3
+  ],
+  "wilson95": [
+   0.095,
+   0.905
+  ]
+ },
+ "agreement": {
+  "due_by_agrees": {
+   "agree": 12,
+   "n": 12
+  },
+  "status_agrees": {
+   "agree": 12,
+   "n": 12
+  },
+  "closed_date_agrees": {
+   "agree": 10,
+   "n": 10
+  },
+  "invt_date_agrees": {
+   "agree": 9,
+   "n": 9
+  },
+  "resolution_agrees": {
+   "agree": 8,
+   "n": 10
+  }
+ },
+ "pages": 12
+}

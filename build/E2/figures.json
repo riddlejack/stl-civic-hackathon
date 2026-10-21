@@ -1,0 +1,123 @@
+[
+ {
+  "id": "e2_cw_release",
+  "value": "23.10",
+  "unit": "Cityworks release",
+  "period": "as of 2026-10-14",
+  "definition": "Release named in the description of the St. Louis Cityworks query service",
+  "label": "observed",
+  "source_sql_or_script": "data/raw/cityworks-gap/qe_catalog.json (saved copy of https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json, retrieved 2026-10-14 18:35:39 UTC)",
+  "note": "Description text: 'AMS and PLL Event Service Powered by Cityworks - CW 23.10 (19.71.5)'. Makes the Cityworks 23 help pages applicable.",
+  "derivation": "Read the 'description' key of the saved service JSON."
+ },
+ {
+  "id": "e2_cw_autoclose_documented",
+  "value": true,
+  "unit": "boolean",
+  "period": "help pages updated 2026-03-23 and 2026-09-25",
+  "definition": "Cityworks documents that a service request associated to a work order closes automatically when the work order is closed",
+  "label": "observed",
+  "source_sql_or_script": "https://help.cityworks.com/AMS/OC/Content/AMS/OC/WorkOrder/CloseAWorkOrder.htm ; https://help.cityworks.com/AMS/OC/Content/AMS/OC/ServiceRequest/CloseAServiceRequest.htm ; https://help.cityworks.com/Respond/5-1/Content/WorkOrder/CloseAWorkOrder.htm",
+  "note": "No Designer/Admin preference found to disable it; behaviour with several linked work orders not documented.",
+  "derivation": "Read three vendor help pages on 2026-10-14 15:15-15:18 CDT."
+ },
+ {
+  "id": "e2_qe_wo_searches_without_request_field",
+  "value": 13,
+  "unit": "work-order saved-search schemas checked, none with a request-link field",
+  "period": "as of 2026-10-14",
+  "definition": "Work-order layers on the St. Louis query service whose field list includes no RequestIds or other request-link field",
+  "label": "observed",
+  "source_sql_or_script": "data/raw/cityworks-gap/qe_layer_*_metadata.json (13 WorkOrder layers)",
+  "note": "Of 32 WO saved searches; 13 schemas were on disk and all share the same 134-field WO schema.",
+  "derivation": "Listed field names per saved metadata file and filtered for 'request'; only RequestedByName/RequestedBySid appear (staff fields, not links)."
+ },
+ {
+  "id": "e2_dc_linked_requests",
+  "value": 260071,
+  "unit": "requests with a work-order id",
+  "period": "DC DDOT Cityworks requests, FY2009-FY2019 (none FY2020+)",
+  "definition": "Rows of DC DDOT's public CityworksRequest layer with WORKORDERID populated",
+  "label": "observed",
+  "source_sql_or_script": "https://maps2.dcgis.dc.gov/DCGIS/rest/services/DDOT/Cityworks/MapServer/1/query?where=WORKORDERID%20IS%20NOT%20NULL&returnCountOnly=true&f=json",
+  "note": "Of 1,519,813 rows; 0 linked rows for FISCALYEAR >= 2020 (publication or practice change, unknown).",
+  "derivation": "returnCountOnly queries at 2026-10-14 15:24 CDT."
+ },
+ {
+  "id": "e2_dc_same_minute_close_share_fy2018",
+  "value": 0.84,
+  "unit": "share of linked request/work-order pairs",
+  "period": "DC DDOT requests FY2018, first 1,000 linked by OBJECTID",
+  "definition": "Share of linked pairs (both closed) where the request's CLOSEDDATE is within one minute of its work order's WORKORDERCLOSEDDATE",
+  "label": "observed (derived from public rows)",
+  "source_sql_or_script": "build/E2/dc_same_minute_check.py 2018",
+  "note": "821 of 977 pairs; 123 requests closed more than a day before their WO (St. Louis pattern). B3 agent: FY2019 89.8% of 1,976; FY2016 56.8% of 1,714. Mechanism (auto-close vs script) not distinguishable. A sample, not the population.",
+  "derivation": "Query SR layer 1 (FY2018, WORKORDERID not null, 1,000 rows by OBJECTID); query WO layer 0 for those ids; compare close timestamps."
+ },
+ {
+  "id": "e2_houston_ap223_remain_open",
+  "value": "AP 2-23 \u00a75.3.3",
+  "unit": "policy clause",
+  "period": "approved 2022-05-03",
+  "definition": "Houston administrative policy: SRs remain open until no further action is required; pending work stays open until completed",
+  "label": "observed",
+  "source_sql_or_script": "https://houstontx.gov/policies/adminpolicies/2-23.pdf",
+  "note": "Also \u00a75.2.2.1: SR types under 90% on time in a month require a performance review.",
+  "derivation": "pdftotext of the PDF, read 2026-10-14 15:26 CDT."
+ },
+ {
+  "id": "e2_stl_csb_closed_definition",
+  "value": "Closed = work indicated by the problem code finished by the department",
+  "unit": "definition",
+  "period": "archived 2025-06-22; page inactive since about 2025-09-07",
+  "definition": "St. Louis CSB 'Status Code Definitions of Service Requests'",
+  "label": "observed (archived copy)",
+  "source_sql_or_script": "https://web.archive.org/web/20250622131705/https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/status-definitions.cfm",
+  "note": "Live page shows 'Inactive Content' on 2026-10-14. Do not present as current policy; present as the city's published definition through mid-2025.",
+  "derivation": "Wayback CDX listing and id_ snapshot fetch, 2026-10-14 15:21-15:23 CDT."
+ },
+ {
+  "id": "e2_geoportal_cityworks_maps",
+  "value": 7,
+  "unit": "public city-owned web maps with Cityworks record layers",
+  "period": "2026-10-14",
+  "definition": "Public web maps owned by city accounts on geoportal.stlouis-mo.gov whose operational layers point at Cityworks qe or cw services",
+  "label": "observed",
+  "source_sql_or_script": "https://geoportal.stlouis-mo.gov/portal/sharing/rest/search?num=100&f=json&q=type:%22Web%20Map%22 then /content/items/<id>/data?f=json for each",
+  "note": "Of 166 city-owned public web maps; QE layers 19, 20, 65, 69 and ten cw search ids. C agent, 15:15-15:33 CDT.",
+  "derivation": "Paged search for type Web Map, filtered to city owners, walked operationalLayers of each map's data JSON."
+ },
+ {
+  "id": "e2_geoportal_dashboards_working",
+  "value": "0 of 4",
+  "unit": "public Dashboards showing data to an anonymous visitor",
+  "period": "2026-10-14",
+  "definition": "Public Dashboard items on the city portal whose data widgets render for a signed-out visitor",
+  "label": "observed",
+  "source_sql_or_script": "https://geoportal.stlouis-mo.gov/portal/sharing/rest/search?q=type:%22Dashboard%22&num=100&f=json ; layer checks on maps6.stlouis-mo.gov",
+  "note": "Two layers return error 500, one 'Token Required', one dashboard is an empty shell. None reads Cityworks. Re-checked count and layer errors at 15:29 CDT.",
+  "derivation": "Each dashboard was opened in a browser (15:22-15:24 CDT) and the layers re-queried."
+ },
+ {
+  "id": "e2_cities_done_by_promise",
+  "value": "0 of 11",
+  "unit": "cities publishing work-finished-by-promise per request type",
+  "period": "read 2026-10-14",
+  "definition": "Cities (Houston, San Antonio, Baltimore, New York, Boston, Chicago, Philadelphia, Louisville, Kansas City, Denver, Austin) that publish, per request type, the share of jobs finished by the promised date (not requests closed)",
+  "label": "observed (negative)",
+  "source_sql_or_script": "research/precedents-closed-loop.md section B1; build/E2/work/B1a-dashboards.md; build/E2/work/B1b-B2-cities-statuspages.md",
+  "note": "New York (annual MMR) and Boston (CityScore, series null since Jun-Sep 2026) publish close-against-target per type. 5 of 11 publish a per-request due date. None publishes an overdue list by department.",
+  "derivation": "Each city's dashboards, reports and open-data dictionaries read and classified."
+ },
+ {
+  "id": "e2_written_stay_open_rules",
+  "value": "Houston 2022; Chicago (design, OIG 2026); Toronto 2023",
+  "unit": "cities with a written rule that the request stays open until the work is done",
+  "period": "as published",
+  "definition": "Policy or official description stating a request closes only when its work (order) is complete",
+  "label": "observed",
+  "source_sql_or_script": "https://houstontx.gov/policies/adminpolicies/2-23.pdf ; https://occprodstoragev1.blob.core.usgovcloudapi.net/matterattachmentspublic/6a4b4f70-7aff-4729-aef1-385d7e18b5c9.pdf ; https://www.toronto.ca/legdocs/mmis/2023/bu/bgrd/backgroundfile-233955.pdf",
+  "note": "Quotes verified in each PDF. Kansas City planned the same for its CRM (2018 audit follow-up); current practice not established.",
+  "derivation": "pdftotext of each document; grep for the clause."
+ }
+]

@@ -1,0 +1,67 @@
+figure,value,unit,date_refers_to,label,source
+CityStat published on-time share;Debris alley/street;3-day goal,78.57,%,2026 Q2 (filed),reported,https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/street/streets.cfm (via data/raw/citystat/tableau-extract.md; read 2026-10-13 23:14-23:40 UTC)
+CityStat published request count;Debris alley/street,546,requests,2026 Q2 (filed),reported,https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/street/streets.cfm (via data/raw/citystat/tableau-extract.md)
+Closed Debris-alley/street requests filed Q2 2026 (file as of 13 Oct 2026),572,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests; https://www.stlouis-mo.gov/data/upload/data-files/csb.zip
+Closed within 3 days (on time),448,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+On-time share rebuilt (N4 definition C),78.3,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests; scripts/night/R1/05_restate.py
+Distinct closing phrases on Q2 2026 debris closures (incl. blank),14,phrases,2026 Q2 (filed),observed,build/stl.duckdb v_requests.res_key
+"Closures: ""collection made""",188,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+"Closures: ""bulk will be picked up in correct week""",154,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+"Closures: ""matter will be investigated and appropriate action taken""",114,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+"Closures: ""citizen's responsibility to clean up trash""",45,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+"Closures: ""referred to forestry""",38,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+"Closures: ""no service necessary""",14,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+Done and on time (collection made 84 + bulk/debris items have been collected 2),86,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests + closure_class
+(a) Done-only on-time share;table as is,15.0,%,2026 Q2 (filed),observed,build/stl.duckdb; matches build/R1/figures.json r1_citystat_debris_alley_street_q2_2026_ontime_done_only
+(b) Done-only on-time share;reviewer corrections,15.0,%,2026 Q2 (filed),inferred,research/closure-class-review.md section 3 (no done/not-done change)
+(c) Done-only on-time share;ambiguous wording (blank) counted done,15.4,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (88/572)
+(c wide) On-time share if every pickup/investigate promise kept within 3 days,60.8,%,2026 Q2 (filed),estimated,build/stl.duckdb v_requests (348/572; assumption-driven bound)
+(c widest) Also counting referrals to Forestry/Trash Task Force as done,67.8,%,2026 Q2 (filed),estimated,build/stl.duckdb v_requests (388/572; bound)
+(d) Done-only on-time share with no_action closures removed from denominator,16.8,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (86/512)
+(d') Also removing bulk-week deferrals from denominator,24.0,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (86/358)
+(e) Done-on-time if promised pickups made at recorded-pickup speed,36.2,%,2026 Q2 (filed),estimated,build/stl.duckdb v_requests ((86+0.447*271)/572)
+Done-only on-time share at CityStat-sized denominator (closed by 30 Jun; n=545),14.1,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+Done-only on-time share closed by 1 Jul (n=556),14.6,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+"On-time rate of ""collection made"" closures",44.7,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (84/188)
+"On-time rate of ""bulk will be picked up in correct week"" closures",98.1,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (151/154)
+"On-time rate of ""matter will be investigated"" closures",93.0,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (106/114)
+"Median hours filing to close, ""collection made""",94.4,hours,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+"Median hours filing to close, ""bulk will be picked up in correct week""",2.8,hours,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+Bulk-week closures made within 1 hour of filing,43,requests,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+"Median hours filing to close, ""matter will be investigated""",14.8,hours,2026 Q2 (filed),observed,build/stl.duckdb v_requests
+Share of on-time closures whose words say collected,19.2,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (86/448)
+Share of on-time closures whose words say not collected,80.8,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (362/448)
+Share of on-time closures saying will be picked up later or looked into,58.0,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (260/448)
+Share of on-time closures referred to Forestry or Trash Task Force,8.9,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (40/448)
+Share of on-time closures saying not city's job / no service / no such address,12.7,%,2026 Q2 (filed),observed,build/stl.duckdb v_requests (57/448)
+Hand-off share of on-time closures (table as is),67.0,%,2026 Q2 (filed),observed,build/stl.duckdb; build/R1/figures.json
+Hand-off share of on-time closures with bulk week relabelled as deferral,33.3,%,2026 Q2 (filed),inferred,build/stl.duckdb v_requests (149/448; relabel is reviewer judgement)
+Done-and-on-time share 2024 Q1,3.6,%,2024 Q1 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2024 Q2,7.0,%,2024 Q2 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2024 Q3,2.5,%,2024 Q3 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2024 Q4,2.1,%,2024 Q4 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2025 Q1,0.2,%,2025 Q1 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2025 Q2,1.7,%,2025 Q2 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2025 Q3,8.8,%,2025 Q3 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2025 Q4,6.7,%,2025 Q4 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2026 Q1,15.6,%,2026 Q1 (filed),observed,build/stl.duckdb v_requests
+Done-and-on-time share 2026 Q3,18.3,%,2026 Q3 (filed; closed only),observed,build/stl.duckdb v_requests
+Done-only on-time share six quarters 2025 Q1-2026 Q2,7.2,%,2025 Q1-2026 Q2 (filed),reported,build/R1/restated_citystat.csv
+"14-day re-report after ""collection made"" (debris)",1.8,%,2025-26 closures,reported,build/R2/rereport_by_type_text.csv
+"14-day re-report after ""matter will be investigated"" (debris)",4.9,%,2025-26 closures,reported,build/R2/rereport_by_type_text.csv
+"14-day re-report after ""bulk will be picked up in correct week"" (debris)",2.4,%,2025-26 closures,reported,build/R2/rereport_by_type_text.csv
+Bulk pickup frequency (designated week),1,per month,2026-10-13,reported,research/parts/G-seasonal.md section 3.3 (City Refuse pages retrieved 2026-10-13)
+Closed requests filed 1 Jan 2025-12 Oct 2026,175876,requests,2026-10-13,observed,build/stl.duckdb v_requests
+Closures in top 40 type x phrase pairs,87132,requests,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+Top 40 pairs share of all 2025-26 closures,49.5,%,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+Top 40 pairs moved across done/not-done line,0,requests,2025-01-01 to 2026-10-12 (filed),inferred,research/closure-class-review.md section 4
+Top 40 closures I would relabel out of handed_off (still not done),4338,requests,2025-01-01 to 2026-10-12 (filed),inferred,research/closure-class-review.md section 4
+"""bulk will be picked up in correct week"" closures (Debris 878 + Bulky 875)",1753,requests,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+"""building already under notice"" closures (Ppty Maint Ext 1359 + Illegl Use 1226)",2585,requests,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+"""issued notice of violation"" closures flagged ambiguous (1741 + 1405)",3146,requests,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+"""next scheduled day"" and ""employee shortage"" closures (wording flag only)",7839,requests,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+Hand-off or work-order closures 2025-26 (table as is),61845,requests,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+Hand-off or work-order share 2025-26 (table as is),35.2,%,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+Hand-off or work-order share 2025-26 after top-40 relabel,32.7,%,2025-01-01 to 2026-10-12 (filed),inferred,build/stl.duckdb v_requests (57507/175876; relabel is reviewer judgement)
+"Snow/Ice - Residnl ""work completed"" closures",3667,requests,2025-01-01 to 2026-10-12 (filed),observed,build/stl.duckdb v_requests
+"Snow/Ice - Residnl ""work completed"" closed 3-5 Feb 2025",1630,requests,2025-02-03 to 2025-02-05,observed,build/stl.duckdb v_requests

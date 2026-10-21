@@ -1,0 +1,81 @@
+metric_id,figure,unit,date,label,url,derivation,notes
+F01,61,problem-code filters,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,"count of exact non-sensitive problemcodes from build/N2/register.csv after excluding lead homeless nuisance_log",SQL filter scope
+F02,19291,rows,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,helper count_before equals rows equals count_after,Active SRs
+F03,19291,unique request ids,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,distinct RequestId in requested projection,No ids reported publicly
+F04,60,returned problem-code strings,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,distinct ProblemCode after safe filtered extract,Signal Stuck absent
+F05,18993,exact request-id matches,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,inner join layer18 RequestId to build/stl.duckdb requests.request_id,98.5 percent of F02
+F06,98.5,percent exact request-id match,through 2026-10-13,derived,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,F05 divided by F02,
+F07,298,unmatched layer18 ids,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,F02 minus F05,
+F08,296,unmatched ids initiated 2026-10-13 or 2026-10-14,2026-10-13 to 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,DateTimeInit bins among unmatched rows,Local file edge explains most nonmatches
+F09,22,non-null public-311 division labels,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,distinct requests.division among F05,Labels are not verified departments
+F10,29,matched rows missing division,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,null requests.division among F05,
+F11,14,division labels with at least 10 matches,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,grouped exact-id matches excluding null divisions,
+F12,18950,rows in the 14 division labels with at least 10 matches,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,grouped exact-id matches excluding null divisions,99.9 percent of rows with non-null division
+F13,18964,matched rows with non-null division,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,F05 minus F10,
+F14,9001,rows assigned FORESTRY,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join grouped by division,
+F15,5365,rows assigned STREET DEPT 510,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join grouped by division,
+F16,1418,rows assigned BUILDING DIV,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join grouped by division,
+F17,1151,rows assigned WATER DIV,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join grouped by division,
+F18,454,rows assigned TRAFFIC DIVISION 511,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join grouped by division,
+F19,395,rows assigned CITY EMRGCY MNG,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join grouped by division,
+F20,380,rows assigned Tornado Recovery,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join grouped by division,
+F21,338,rows assigned LRA,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join grouped by division,
+F22,11299,locally open safe-scope requests filed from 2025-01-01,2025-01-01 through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,requests joined to safe code list where status_group=open,
+F23,10984,locally open current-cohort requests present in layer18,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,exact RequestId intersection with F22,
+F24,97.2,percent locally open current cohort present in layer18,2025-01-01 through 2026-10-13,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,F23 divided by F22,
+F25,315,locally open current-cohort requests absent from layer18,2025-01-01 through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,F22 minus F23,Absence is not completion evidence
+F26,2,layer18 rows locally closed or cancelled,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,one local closed plus one local cancelled exact-id match,
+F27,18821,status values agreeing exactly,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,q18.Status is not distinct from requests.status among F05,
+F28,99.1,percent exact status agreement,through 2026-10-13,derived,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,F27 divided by F05,
+F29,172,status disagreements,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,F05 minus F27,May reflect source timing
+F30,19261,layer18 rows with DateSubmitTo,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,count non-null DateSubmitTo,
+F31,99.8,percent layer18 rows with DateSubmitTo,2026-10-14,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,F30 divided by F02,
+F32,12883,layer18 rows with DateDispatchTo,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,count non-null DateDispatchTo,
+F33,66.8,percent layer18 rows with DateDispatchTo,2026-10-14,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,F32 divided by F02,Not documented as first dispatch
+F34,7995,layer18 rows with DateDispatchOpen,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,count non-null DateDispatchOpen,
+F35,41.4,percent layer18 rows with DateDispatchOpen,2026-10-14,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,F34 divided by F02,
+F36,9193,layer18 rows with DateInvtDone,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,count non-null DateInvtDone,Not actual field-work finish
+F37,47.7,percent layer18 rows with DateInvtDone,2026-10-14,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,F36 divided by F02,
+F38,2,layer18 rows with DateTimeClosed,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,count non-null DateTimeClosed,
+F39,0,layer18 rows with DateSubmitToOpen,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,count non-null DateSubmitToOpen,
+F40,0,actual-start or actual-finish fields in service-request schema,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,metadata field-name check,Completion gap remains
+F41,5306,layer18 rows where DateDispatchOpen precedes DateDispatchTo,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,epoch comparison where both populated,Do not infer first dispatch
+F42,85,layer18 rows with DateDispatchOpen but no DateDispatchTo,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,null-pattern check,Do not infer first dispatch
+F43,9202,layer18 rows with Completed=1,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,sum Completed,
+F44,47.7,percent layer18 rows with Completed=1,2026-10-14,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,F43 divided by F02,
+F45,9165,locally open exact matches with Completed=1,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join filtered local status_group=open,
+F46,18991,layer18 exact matches locally classified open,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join filtered local status_group=open,
+F47,48.3,percent locally open exact matches with Completed=1,through 2026-10-13,derived,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,F45 divided by F46,Completed is not final closure
+F48,514,Emergency Tree rows and unique request ids,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,helper count_before equals rows equals unique ids equals count_after,
+F49,511,Emergency Tree exact public-311 matches,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact RequestId join,
+F50,3,Emergency Tree non-null division labels,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,distinct division among exact matches,
+F51,487,Emergency Tree Completed=1 and DateInvtDone rows,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,sum Completed and count DateInvtDone both equal 487,
+F52,501,Emergency Tree rows with DateDispatchTo,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,count non-null,
+F53,251,Emergency Tree rows with DateDispatchOpen,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,count non-null,
+F54,682,Storm Response rows and unique request ids,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/69,helper count_before equals rows equals unique ids equals count_after,
+F55,11,Storm Response problem codes,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/69,distinct ProblemCode,
+F56,682,Storm Response exact public-311 matches,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact RequestId join,
+F57,5,Storm Response non-null division labels,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,distinct division among exact matches,
+F58,585,Storm Response requests locally closed,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join local status_group closed,
+F59,97,Storm Response requests locally open,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact-id join local status_group open,
+F60,16,Open Debris rows and unique request ids,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/106,helper count_before equals rows equals unique ids equals count_after,
+F61,6,Open Debris exact public-311 matches,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact RequestId join,
+F62,1,Open Debris non-null division labels,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,distinct division among exact matches,
+F63,15,Open Debris rows with DateSubmitTo,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/106,count non-null,
+F64,1,Open Debris rows with DateDispatchTo,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/106,count non-null,
+F65,97.5,percent Emergency Tree rows with DateDispatchTo,2026-10-14,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,F52 divided by F48,
+F66,48.8,percent Emergency Tree rows with DateDispatchOpen,2026-10-14,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,F53 divided by F48,
+F67,94.7,percent Emergency Tree rows with DateInvtDone,2026-10-14,derived,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,F51 divided by F48,
+F68,514,Emergency Tree rows also present in layer18,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,exact RequestId intersection with layer18,Complete subset
+F69,511,Emergency Tree exact matches locally open,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,exact RequestId join filtered local status_group open,
+F70,2025-05-16 to 2025-06-04,date range,through 2026-10-13,observed,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,min and max requests.init_date among layer69 exact matches,
+F71,2,requested fields exposed by Storm Response,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/69,RequestId and ProblemCode only,No status or workflow date fields
+F72,16,Open Debris rows also present in layer18,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/106,exact RequestId intersection with layer18,Complete subset
+F73,10,Open Debris ids absent from local public file,2026-10-13 to 2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/106,exact RequestId anti-join to requests,Four initiated Oct 13 and six Oct 14
+F74,99.9,percent non-null-division matches in 14 division labels,through 2026-10-13,derived,https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5,F12 divided by F13,
+F75,2,Emergency Tree returned problem codes,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/68,distinct ProblemCode,
+F76,2,Open Debris returned problem codes,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/106,distinct ProblemCode,
+qe18_unmatched_2024,1,requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Independent review of saved rows,One unmatched request has initiation in2024
+qe18_unmatched_null_init,1,requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Independent review of saved rows,One unmatched request has null initiation
+qe18_promise_sentinel,1,requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Independent review of saved rows,Projected completion date has year1900
+qe18_promise_sentinel_year,1900,year,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Independent review of saved rows,Projected completion sentinel year

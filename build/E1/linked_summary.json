@@ -1,0 +1,84 @@
+{
+ "all": {
+  "n_linked": 220,
+  "n_done_by_promise": 7,
+  "n_done_late": 78,
+  "n_no_finish": 70,
+  "n_not_yet_due": 2,
+  "n_done_no_promise": 0,
+  "n_inspection_only": 63,
+  "n_only_older_work_orders": 0,
+  "n_items_not_read": 0,
+  "median_days_late": 148.0,
+  "n_graded_due": 155,
+  "share_done_by_promise_of_due": 0.045,
+  "n_wo_joined_to_cityworks": 62,
+  "n_wo": 369
+ },
+ "by_family": {
+  "handoff": {
+   "n_linked": 100,
+   "n_done_by_promise": 6,
+   "n_done_late": 36,
+   "n_no_finish": 8,
+   "n_not_yet_due": 0,
+   "n_done_no_promise": 0,
+   "n_inspection_only": 50,
+   "n_only_older_work_orders": 0,
+   "n_items_not_read": 0,
+   "median_days_late": 100.0,
+   "n_graded_due": 50,
+   "share_done_by_promise_of_due": 0.12,
+   "n_wo_joined_to_cityworks": 2,
+   "n_wo": 134
+  },
+  "tree": {
+   "n_linked": 40,
+   "n_done_by_promise": 1,
+   "n_done_late": 39,
+   "n_no_finish": 0,
+   "n_not_yet_due": 0,
+   "n_done_no_promise": 0,
+   "n_inspection_only": 0,
+   "n_only_older_work_orders": 0,
+   "n_items_not_read": 0,
+   "median_days_late": 211,
+   "n_graded_due": 40,
+   "share_done_by_promise_of_due": 0.025,
+   "n_wo_joined_to_cityworks": 33,
+   "n_wo": 113
+  },
+  "open_past_promise": {
+   "n_linked": 80,
+   "n_done_by_promise": 0,
+   "n_done_late": 3,
+   "n_no_finish": 62,
+   "n_not_yet_due": 2,
+   "n_done_no_promise": 0,
+   "n_inspection_only": 13,
+   "n_only_older_work_orders": 0,
+   "n_items_not_read": 0,
+   "median_days_late": 219,
+   "n_graded_due": 65,
+   "share_done_by_promise_of_due": 0.0,
+   "n_wo_joined_to_cityworks": 27,
+   "n_wo": 122
+  }
+ },
+ "page_vs_cityworks_finish": {
+  "agree": 1,
+  "both": 2
+ },
+ "templates_post_filing": {
+  "Tree Removal": 59,
+  "Stump Removal": 47,
+  "Tree Planting": 45,
+  "Occupied": 24,
+  "Right of Way Repair": 16,
+  "Tree Trim": 11,
+  "SLRP_Bid": 10,
+  "Pmt_SLRPExcvtn": 10,
+  "Sidewalk Repair - 50-50": 6,
+  "HandCrew": 1
+ }
+}

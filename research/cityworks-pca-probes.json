@@ -1,0 +1,192 @@
+[
+  {
+    "layer": 23,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/23"
+  },
+  {
+    "layer": 27,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/27"
+  },
+  {
+    "layer": 31,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/31"
+  },
+  {
+    "layer": 35,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/35"
+  },
+  {
+    "layer": 39,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/39"
+  },
+  {
+    "layer": 43,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/43"
+  },
+  {
+    "layer": 47,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/47"
+  },
+  {
+    "layer": 51,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/51"
+  },
+  {
+    "layer": 55,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/55"
+  },
+  {
+    "layer": 59,
+    "description": "Priority 1, PCA",
+    "count": 4,
+    "probe_rows": 3,
+    "template_ids": [
+      "110"
+    ],
+    "status_values": [
+      "NEW",
+      "SUPERVISOR"
+    ],
+    "nonnull_in_probe": {
+      "InspDate": 1,
+      "ActFinishDate": 2,
+      "DateClosed": 0
+    },
+    "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/59"
+  }
+]

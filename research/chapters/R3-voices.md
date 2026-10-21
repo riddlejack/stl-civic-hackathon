@@ -1,0 +1,173 @@
+# R3a. They already said it: officials, residents and news on "closed is not done"
+
+Checked 14 Oct 2026. Sources and argument only; no new data analysis. Figures: `build/R3/figures.json`. Page checks: `build/R3/voices-url-checks.csv` (one row per phrase looked for, with the time, HTTP code and context).
+
+## Summary (admission first)
+
+**Found.** The city has already said most of what the entry claims, in its own words.
+- **Towing.** CityStat says a "Closed" tow request "does not necessarily indicate that a vehicle has been towed", and plans changes "such that requests are only closed once a vehicle is actually towed".
+- **Mowing.** CityStat Forestry cannot tell whether unmowed lots were mowed by others "or because it was missed".
+- **311 itself.** The head of the division that runs 311 wants to answer residents asking "why it's past the completion date, but it's still not completed".
+- **Transition advice.** The mayor's transition committee recommended "Audit previously closed requests to ensure action was taken", and defined closed as "action taken".
+- **Assets.** Executive Order 96 orders an "Asset Management program".
+- **Stale figures.** CityStat pages still read "last updated June 30th, 2026".
+- **Residents.** Accounts describe four calls before a lot was cut, and a building with squatters "already under notice".
+
+The table matches 53 statements to nine findings; the ten strongest were confirmed today.
+
+**How confirmed.** Ten statements were checked against the live source today (city pages fetched and phrase-matched; YouTube hearing pages opened, with the words checked in the saved auto-captions). Three of the ten rest partly on a saved copy. Two are city PDFs, whose HTML landing pages were opened instead. The third is the transition report: its Wayback announcement page opened at 12:42 p.m. after three HTTP 429s, and the words are in the 62-page PDF saved on 13 Oct.
+
+**Could not establish.** News pages on `firstalert4.com`, `stlpr.org`, `stlmag.com` and `spectrumlocalnews.com` were not re-opened. Their words were checked against copies saved earlier, on 13 Oct, about 7:03 p.m., and are labelled that way. No city statement was found about *why* tree-inspection requests are cancelled with no words. No count of residents' "closed without work" complaints exists. Google review texts were captured only as paraphrases.
+
+**What cuts against the entry.** The city is already fixing towing closures and per-lot mowing records, at least on paper. That helps adoption, but it means the entry's novelty is the cross-service, weekly, request-level measure, not the discovery. CityStat also gives an innocent reason for some lots showing no cut billed: some are "already mowed by someone else". See "Caveats" below.
+
+## The ten strongest statements (confirmed 14 Oct 2026)
+
+| # | Finding | Who, when | Exact words (city text quoted in full; news at most 15 words) | Confirmed how | Does the fix address it directly? |
+|---|---|---|---|---|---|
+| 1 | Towing "closed" is not "towed"; closed is not done | City of St. Louis, CityStat Towing page (data to 30 Jun 2026) | "Currently, "Closed" does not necessarily indicate that a vehicle has been towed, but rather means that a final disposition has been reached regarding that vehicle (ex., "Vehicle Not Found" or "Dispatched to Towing Division")." … "In future quarters, the City plans to implement process changes around the closure of service requests such that requests are only closed once a vehicle is actually towed." | Live page, 12:28 p.m. (HTTP 200, phrase match) | **Yes, and the city already agrees.** The city states the rule the entry asks for, for one service. DoneStat measures whether it happens, and applies the same test to the other 100-plus request types. |
+| 2 | Closed is not done | CHANGEforSTL Transition Advisory Committees, report to the mayor, 16 Jul 2025 (volunteer advisers; recommendations, not commitments) | "Audit previously closed requests to ensure action was taken." Measure: "Track the average amount of time for a case to be closed (defined as action taken)." Also "Create consistent feedback loops with constituents so that progress on reported issues is easily tracked." | Wayback page opened 12:42 p.m. (HTTP 200, after 429s at 12:28, 12:31 and 12:39): it is the report's announcement page and links the full PDF. Words confirmed in the saved PDF (62 pp., created 16 Jul 2025, report p. 9) | **Yes.** DoneStat is this audit run every week. The report's own definition (closed = action taken) is the definition DoneStat applies. |
+| 3 | Closed is not done; residents chase overdue requests | Karen Clifford, Acting Director, Neighborhood Stabilization Division (houses CSB/311), Budget & Public Employees Committee, 12 May 2026 | "We want to be able to answer residents questions about the status of a of a city's service request before they even call us or follow up with the city department as to why it's past the completion date, but it's still not completed." (auto-caption, about 3:31:10) | YouTube page opened 12:31 p.m. (title, date, City channel); words in the saved caption file | **Yes.** The receipt answers that question per request, using the promise date the city itself sets. |
+| 4 | Mowing not tracked per lot | City, CityStat Forestry page (data to 30 Jun 2026) | "For each such property that the Forestry Division mows or trims, owners are billed for City maintenance." … "The data shows that Forestry mowed and billed for approximately 7,000 lots in the first rotation. More root cause analysis needs to be done to determine why some lots were not mowed in the first rotation, whether this was done because the grass was not high early in the mowing season, because the lot was already mowed by someone else, or because it was missed. Forestry is currently implementing new processes to better track the mowing rotation and to confirm the status of each lot after Forestry visits it on rotation." | Live page, 12:28 p.m. | **Yes.** The city treats the billing record as proof of a cut, which is the join DoneStat makes per lot and per request. It cannot separate "mowed by someone else" from "missed" either. |
+| 5 | CityStat measures routing, not completion; ward gap | City, CityStat CSB page | "The dashboard below measures the percentage of service requests that were routed to the appropriate department in 2.5 days or less. This means that CSB has correctly identified which Department should be responsible for completing this request and has dispatched the service request to that Department." … "From January 2024 to March 2026, Ward 1 had the quickest average response time at 17.2 days, and Ward 10 had the slowest average response time at 35.1 days." … "How well CSB works is directly tied to trust in city government." | Live page, 12:28 p.m. | **Yes.** DoneStat adds the missing "done" column in CityStat's own structure. N3 finds that type mix and closing words explain only 12% of this ward gap; it sits in first-step closures (tow tags, referrals), not where the words say the work was done. |
+| 6 | Stale public figures | City, CityStat leaf pages as of 14 Oct 2026 (four checked); against the launch release, 31 Mar 2026 | "This data was last updated June 30th, 2026. 2026 Quarter 2 statistics are preliminary, with validated Q2 data available on August 1st, 2026." Launch release: "CityStat will continue to expand and be updated with the latest data each quarter to ensure ongoing transparency." | Live pages (Towing, Forestry, CSB, Refuse) and live release, 12:28 p.m. | **Yes.** It is a weekly run over the 311 file, which the city refreshes weekly. Its freshness depends on the city keeping that file published. |
+| 7 | Completion data exists but nobody joins or reads it (no asset management); trees | Forestry Commissioner (captioned; not named in captions), Budget & Public Employees Committee, 6 May 2026 | "we collect a lot of data uh within city works and our team our arborist and weed control and sometimes we have all this data but we don't have somebody on staff that's just designated to kind of analyze all that data" (about 2:34:06). Later: "It would be nice to kind of give um some vision of where we're going with our tree section and how we're cutting and and what what trees we're tackling next." (about 2:35:44) | YouTube page opened 12:31 p.m.; words in saved captions | **Partly.** DoneStat reads that data back against requests. It does not replace an analyst, and the tree join rests on a sample of open work orders. |
+| 8 | Vacant buildings left open; lots not cut | Board of Aldermen, Resolution 142 "LRA Properties", introduced 25 Sep 2026 (sponsor Ald. Sharon Tyus) | "the problems residents experience living next door to vacant LRA property include: falling bricks and boards falling onto their property, the entire building collapsing onto their property, the property is open and unsecured allowing for a small child or person to enter or be drug into the structure, other criminal activity occurring in the property, fires being set by the unhoused, low to no level of grass cutting, possums, rats, raccoons, and other wild life living in and on the property" | Resolution page opened 12:28 p.m. (title, date, sponsor, summary); quoted words from the saved text of the introduced PDF (PDF not re-opened) | **Partly.** DoneStat shows whether a board-up followed a "referred to board up crew" closure (19% within the 14-day promise, 71% within 90 days). It does not secure buildings or cover owner-enforcement notices beyond their closing words. |
+| 9 | No asset management | Mayor Cara Spencer, Executive Order 96, 11 Jun 2026 | "Develop an Asset Management program that can be used to evaluate all equipment, sidewalk surface conditions, curb ramps, and other assets & corridors/streets in the City" … "Build an internal centralized asset inventory and performance dashboard to be used across departments" | EO page opened 12:28 p.m. (title, date); words from the saved PDF text (not re-opened) | **Partly.** DoneStat is not an asset system. Its register of 25 services lists where no completion record exists (13 "none"), e.g. a sidewalk `DateRepair` field empty in all 36,822 rows. That gives the order a starting list. |
+| 10 | Hazard trees wait behind a backlog (context for silent cancellations) | City, CityStat launch release, 31 Mar 2026; CityStat Forestry page | "In the first quarter of 2026, 39.2% of hazardous trees were removed within 30 days. The City aims to remove all validated, hazardous trees within that timeframe. Despite being well below the target, this does show a clear improvement over both 2025 and 2024, when the annual average was below 20%." Forestry page: "One of the reasons that hazard trees are not removed on time is because there is a sizable backlog of requests that the Division needs to address prior to working the newest requests (received in the past 30 days)." | Live release and live page, 12:28 p.m. | **Partly.** The receipt tells the resident the tree is already on an open removal order (288 such cancellations, median order age 575 days). It does not shorten the backlog. |
+
+Also strong, but not re-opened because the host bars Claude agents (words checked in copies saved 13 Oct 2026, about 7:03 p.m. Central):
+- **Alex Price, CityStat Program Manager**, First Alert 4, 9 Jul 2026, on vacant-lot mowing: "We have that tracked on paper, but we don't have that tracked in a system". This is the single most direct statement of "mowing not tracked per lot".
+- **Price**, First Alert 4, 14 Aug 2026: "We aren't sure what's going on with these numbers". She also said per-lot visit logging was expected within weeks, and that the goal is to catch skipped or missed lots before residents call (paraphrase). Earlier research found no such log published by 13 Oct.
+- **Cara Spencer as a candidate**, St. Louis Magazine transcript, 17 Feb 2025: she promised "a true accountability of citizen service requests". In the same answer she said residents have lost faith that a CSB request will be dealt with, and that she would show how long a pothole really takes to fill.
+
+## Full table: nine findings, 53 statements
+
+Labels: **observed** = I read it on the live page today; **observed (saved)** = read in a copy saved earlier, not re-opened today; **reported** = known only from an earlier log or summary, not re-checked by me. "Fix" = does DoneStat address it directly (Yes / Partly / No).
+
+### F1. Closed is not done
+
+| Who | Exact words | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| Transition Advisory Committees (to the mayor) | "Audit previously closed requests to ensure action was taken." / "Track the average amount of time for a case to be closed (defined as action taken)." | 16 Jul 2025 | https://web.archive.org/web/20250729223020/https://www.changeforstl.com/updates/transition-advisory-report | observed (saved PDF) | Yes |
+| Acting Director, Neighborhood Stabilization (CSB) | "as to why it's past the completion date, but it's still not completed" | 12 May 2026 | https://www.youtube.com/watch?v=tyS2V5Ae98I (about 3:31:10) | observed (page) + saved captions | Yes |
+| Same hearing | "we have such a great system in city works. It may not always get the service requests done, but we can utilize those um statistics" | 12 May 2026 | same, about 3:33:10 | observed (page) + saved captions | Yes |
+| City, CityStat Towing | "Closed" … "means that a final disposition has been reached" (full text in table above) | data to 30 Jun 2026 | https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/street/towing.cfm | observed | Yes |
+| City, first-year accomplishments page | "Enabled real-time case tracking for residents interacting with city services." | 15 Apr / 29 May 2026 | https://www.stlouis-mo.gov/government/departments/mayor/initiatives/spencer-accomplishments.cfm | observed | Yes: the tracker shows "Closed" at hand-off; the receipt adds what happened next |
+| City, CSB "status definitions" page | Page reads "Inactive Content" (no public definition of what "Closed" means) | 14 Oct 2026 | https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/status-definitions.cfm | observed (absence) | Yes: DoneStat publishes the closure classes |
+| Mayor Spencer, inaugural address | "We will use data to better understand citizens' satisfaction and to identify real and immediate opportunities to serve you better." | 15 Apr 2025 | https://www.stlouis-mo.gov/government/departments/mayor/news/speeches-remarks/inaugural-address.cfm | observed | Partly |
+| Mayor Spencer, as candidate (St. Louis Magazine transcript) | "a true accountability of citizen service requests" | 17 Feb 2025 | https://www.stlmag.com/news/transcript-citizens-agenda-cara-spencer/ | observed (saved) | Yes |
+| Mayor Spencer at CityStat launch | "CityStat measures what matters and gives my team the information we need to deliver better results." | 31 Mar 2026 | https://www.stlouis-mo.gov/government/departments/mayor/news/citystat-launch.cfm | observed | Yes: what matters to a resident is whether the work happened |
+
+### F2. Mowing not tracked per lot
+
+| Who | Exact words | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| City, CityStat Forestry | "More root cause analysis needs to be done … or because it was missed." / "to confirm the status of each lot after Forestry visits it on rotation." | data to 30 Jun 2026 | https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/parks/forestry-division.cfm | observed | Yes |
+| City, CityStat Forestry (vacant-building lots) | "As of June 30, 2026, the vacant building crews had not yet completed the first full rotation." … "The City is planning a deep dive into this data to understand and address service gaps." | data to 30 Jun 2026 | same | observed | Yes |
+| Alex Price, CityStat Program Manager (First Alert 4) | "We have that tracked on paper, but we don't have that tracked in a system" | 9 Jul 2026 | https://www.firstalert4.com/2026/07/09/cant-walk-down-street-tall-grass-overruns-sidewalks-north-st-louis-neighborhood/ | observed (saved) | Yes |
+| Alex Price (First Alert 4) | "We aren't sure what's going on with these numbers" | 14 Aug 2026 (published 13 Aug, 10:38 p.m.) | https://www.firstalert4.com/2026/08/14/cut-down-unmowed-vacant-lots-st-louis-city-looks-data-north-city-resident-discusses-wait/ | observed (saved) | Yes |
+| Alex Price (same story), on per-lot logging | (paraphrase) per-lot tracking of when crews visited and what they found, which she expected within weeks, would give a continuous feedback loop so a lot missed repeatedly one year is not missed the next | 14 Aug 2026 | same | observed (saved) | Yes: DoneStat is a feedback loop from records that already exist |
+| Land Reutilization Authority statement (First Alert 4), Greater Ville lots | "The sites are part of Forestry's rotation and should be cut relatively soon" | 24 Jul 2026 | https://www.firstalert4.com/2026/07/24/st-louis-woman-says-overgrown-city-owned-lots-make-it-unsafe-leave-her-home/ | observed (saved) | Yes: the same promise as the 311 words "on schedule to be cut", with no record of when it was kept |
+| Forestry Division statement (First Alert 4, paraphrase) | at about 60% of seasonal grass-cutting staff; more than 20,000 vacant properties on rotation; lots normally cut five to six times a season | 14 Aug 2026 | same as Price, 14 Aug | observed (saved) | No (capacity) |
+| Mayor, Strategic Priorities (Vacant lots) | "Optimize the mowing and trimming operations model for vacant private and public lots." | 7 Jul 2026 | https://www.stlouis-mo.gov/government/departments/mayor/news/spencer-strategic-priorities.cfm | observed | Partly: supplies the per-lot measure the model needs |
+| Budget Division, FY2027 operating plan | "excessive undergrowth has exceeded current mowing capacity" | 26 Jun 2026 | https://www.stlouis-mo.gov/government/departments/budget/documents/upload/2-FY2027-AOP-Executive-Summary-and-Overview.pdf | reported (PDF; not re-opened) | No (capacity) |
+
+### F3. Towing "closed" is not "towed"
+
+| Who | Exact words | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| City, CityStat Towing | "requests are only closed once a vehicle is actually towed" (planned); "This change will also allow for a more complete understanding of the amount of time it currently takes for towing requests to be completed." | data to 30 Jun 2026 | https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/street/towing.cfm | observed | Yes (measures whether the planned change happens) |
+| Mayor, Strategic Priorities (Towing) | "Eliminate backlog and develop a tow lot expansion plan." | 7 Jul 2026 | https://www.stlouis-mo.gov/government/departments/mayor/news/spencer-strategic-priorities.cfm | observed | Partly |
+| Comptroller, Internal Audit of Towing | "Four audits over the past five years have repeated the same findings. As of this date, none of the findings have been resolved." (findings: tow tickets missing or in error; vehicle inventory records not kept) | 26 Mar 2025 | https://www.stlouis-mo.gov/government/departments/comptroller/services/online-audit-database.cfm (report is a PDF) | reported (earlier log; PDF not re-opened) | Partly: record-keeping, not service |
+
+### F4. Trees cancelled silently; the hazard-tree backlog
+
+| Who | Exact words | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| City, CityStat launch release | "39.2% of hazardous trees were removed within 30 days … Despite being well below the target" | 31 Mar 2026 | https://www.stlouis-mo.gov/government/departments/mayor/news/citystat-launch.cfm | observed | Partly |
+| City, CityStat Forestry | "a sizable backlog of requests that the Division needs to address prior to working the newest requests"; "Forestry's hazard tree backlog grew in 2024 due to inadequate staffing" | data to 30 Jun 2026 | https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/parks/forestry-division.cfm | observed | Partly: the receipt says "already on the backlog" instead of a blank cancellation |
+| Forestry Commissioner (hearing) | "what what trees we're tackling next" (wants to show residents the tree plan) | 6 May 2026 | https://www.youtube.com/watch?v=9lsGp9Wy4yw (about 2:35:44) | observed (page) + saved captions | Yes |
+| Parks/Forestry leadership (hearing; the caption speaker is attributed to Parks Director Greg Hayes in the log) | "7,000 stumps in the hopper so to speak and about 3,000 hazardous trees" | 30 Sep 2026 | https://www.youtube.com/watch?v=ltJWr1X9UTc (about 1:01:03) | observed (page) + saved captions | No (capacity) |
+| COO Ben Jonsson (hearing), proposed public metric | "number four, a number of hazardous trees removed citywide and by ward" | 30 Sep 2026 | same video, about 0:12:17 | observed (page) + saved captions | Yes: a completion count by ward is the metric DoneStat computes |
+| Google Maps review of Forestry (paraphrase from an earlier pass) | a four-month wait for a hazardous tree (about 2023) | review dated about 2023 | see `research/voters-and-residents--service-review-themes.csv` | reported (paraphrase) | Partly |
+| KSDK, "Fallen tree wasn't on city's removal list despite repeated calls from neighbors" (Pershing Ave.) | Per the search engine's summary: at least 11 inspection requests from the nearest homes since 2013; a 100-foot tree fell across several homes; it was not on the removal list | undated; names "Ward 28", so before the 2023 cut to 14 wards | https://ksdk.com/article/news/fallen-tree-wasnt-on-citys-removal-list-despite-repeated-calls-from-neighbors/63-ec4d9413-d013-4b74-aefa-e277ae2fa746 | reported (search summary only; ksdk.com bars Claude agents, not opened) | Partly: the receipt would show each request's fate, but a hazard rating, not a request count, decides removal |
+| KSDK, "Neighbors complained of dangerous trees for years, then one fell on their house" | headline only | undated | https://ksdk.com/article/news/neighbors-complained-of-dangerous-trees-for-years-then-one-fell-on-their-house/63-362ef593-7619-4013-9232-04124c504dd6 | reported (headline in search results; not opened) | Partly |
+
+### F5. Vacant buildings left open
+
+| Who | Exact words | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| Board of Aldermen, Resolution 142 | "the property is open and unsecured allowing for a small child or person to enter … fires being set by the unhoused, low to no level of grass cutting" (fuller text above) | 25 Sep 2026 | https://www.stlouis-mo.gov/government/city-laws/resolutions/resolution.cfm?RSDetail=true&RSId=19094 | observed (page) + saved PDF text | Partly |
+| Building Commissioner appointee Sarah Mangapora (First Alert 4) | "It's a systemic problem" (on vacancy citywide) | 1 Oct 2026 | https://www.firstalert4.com/2026/10/01/st-louis-city-announces-appointment-next-building-commissioner/ | observed (saved) | Partly |
+| r/StLouis post "What to do about squatters?" (via archive API) | resident says CSB's reply was that the building was "already under notice" | 15 Sep 2026 | Reddit post id recorded in `research/parts/B-resident-voice.md` §2.7 | observed in an earlier pass (not re-opened) | Yes: notices are a hand-off class. An earlier pass counted 2,266 closures reading "Building already under notice" (period and row-vs-request basis not stated; not re-derived here) |
+| First Alert 4 (headline) | a firefighter fell through the floor of a vacant building as vacant-building fires increased | 18 Dec 2025 | https://www.firstalert4.com/2025/12/18/firefighter-falls-through-floor-vacant-building-vacant-building-fires-ramp-up-st-louis/ | reported (headline only; not re-opened) | No (harm context) |
+
+### F6. No asset management; completion records not joined
+
+| Who | Exact words | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| Mayor, EO 96 | "Develop an Asset Management program …"; "Build an internal centralized asset inventory and performance dashboard to be used across departments" | 11 Jun 2026 | https://www.stlouis-mo.gov/government/departments/mayor/documents/executive-orders/mayor-executive-order-no-96.cfm | observed (page) + saved PDF text | Partly |
+| Transition Advisory Committees | "(Data Infrastructure) Establish a data warehouse and integrate city data sets" | 16 Jul 2025 | Wayback URL above | observed (saved PDF) | Partly: a narrow, working version of that integration |
+| Streets Director James Jackson (hearing) | "a platform that will assist us in bringing together the service request information input tracking and storage real-time access to … performance data" | 13 May 2026 | https://www.youtube.com/watch?v=2erY12agBgU (about 0:26:47) | observed (page) + saved captions | Partly: same aim, from published files, no new platform |
+| CIO Cindy Riordan (hearing), on analysts for CityStat | "that's a big need and a big gap to be filled" | 11 May 2026 | https://www.youtube.com/watch?v=2MX-2honIkI (about 2:13:49) | observed (page) + saved captions | Partly |
+| City, CityStat Refuse | "While route completion and coverage data was not recorded until September 2025, CSB requests for missed refuse collections indicate 50-65% completion rates in the first half of 2025." | data to 30 Jun 2026 | https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/street/refuse.cfm | observed | Partly: the city itself used 311 requests as the completion record when it had none |
+| COO Ben Jonsson (hearing) | "we did approve a $500,000 contract to do the tree inventory" | 30 Sep 2026 | https://www.youtube.com/watch?v=ltJWr1X9UTc | reported (earlier log; not re-checked) | Partly |
+
+### F7. CityStat measures routing, not completion
+
+| Who | Exact words | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| City, CityStat CSB | "routed to the appropriate department in 2.5 days or less" (full text in the top ten) | data to 30 Jun 2026 | https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/public-safety/csb.cfm | observed | Yes |
+| City, CityStat launch release | "In the first quarter of 2026, 93.5% of Citizens' Service Bureau Requests were routed to the appropriate department within 2.5 days. That is just short of the City's goal of 95%." | 31 Mar 2026 | https://www.stlouis-mo.gov/government/departments/mayor/news/citystat-launch.cfm | observed | Yes |
+| Mayor Spencer, CityStat launch press conference | "We are currently not meeting our goal to route 95% of our citizen requests to the correct department in just 2.5 days or less." | 2 Apr 2026 | https://www.youtube.com/watch?v=a1H60btjS2E (about 0:04:54) | observed (page) + saved captions | Yes |
+| COO Ben Jonsson, CityStat launch press conference | "All 21 departments and agencies have briefed their data to the mayor and right now we're in the process of refining those measures and goals." | 2 Apr 2026 | https://www.youtube.com/watch?v=a1H60btjS2E (about 0:07:37) | observed (page) + saved captions | Yes: the measures are still being refined, so a completion measure can be added now |
+| Mayor, Strategic Priorities (Data-Driven Performance) | "Define operational KPIs and targets for all departments and incorporate them in CityStat." | 7 Jul 2026 | https://www.stlouis-mo.gov/government/departments/mayor/news/spencer-strategic-priorities.cfm | observed | Yes: "done by the promise date" is such a KPI |
+| Mayor, Strategic Priorities (Customer-First Culture) | "improve response times, resolutions, and accessibility" | 7 Jul 2026 | same | observed | Yes: "resolutions" needs a measure of resolution |
+
+### F8. Stale public figures
+
+| Who | Exact words | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| City, CityStat leaf pages | "This data was last updated June 30th, 2026." | read 14 Oct 2026 | towing, forestry, CSB and refuse pages above | observed | Yes |
+| City, CityStat launch release | "updated with the latest data each quarter to ensure ongoing transparency" | 31 Mar 2026 | https://www.stlouis-mo.gov/government/departments/mayor/news/citystat-launch.cfm | observed | Yes |
+| Mayor Spencer (Spectrum News) | on regular public reporting of service requests and turnaround: "a lot of work to do on that" | 24 Jul 2025 | https://spectrumlocalnews.com/mo/st-louis/news/2025/07/24/st--louis-mayor-cara-spencer-s-first-100-days | reported (earlier log; no saved copy found) | Yes |
+
+### F9. Residents: requests close, or are ignored, without the work
+
+| Who | Exact words (news: at most 15) | Date | URL | Label | Fix |
+|---|---|---|---|---|---|
+| North-side resident beside a land-bank lot (First Alert 4) | "I've caught 30" (mice). She says no crew came this year; she called Forestry three times and Citizen Service once, then her alderwoman and the station; a crew came after the station asked | 14 Aug 2026 | https://www.firstalert4.com/2026/08/14/cut-down-unmowed-vacant-lots-st-louis-city-looks-data-north-city-resident-discusses-wait/ | observed (saved) | Partly: the receipt shows the request against the ledger; it does not mow |
+| 78-year-old amputee, Greater Ville (First Alert 4) | (paraphrase) overgrown city-owned lots behind her home made leaving it unsafe, and she said she feels forgotten | 24 Jul 2026 | https://www.firstalert4.com/2026/07/24/st-louis-woman-says-overgrown-city-owned-lots-make-it-unsafe-leave-her-home/ | observed (saved) | Partly |
+| Tower Grove South residents (First Alert 4) | a hole on Miami Street "had been causing concern for months" until the station called; filled within hours | 18 Aug 2026 | https://www.firstalert4.com/2026/08/18/sinkholes-causing-concern-across-st-louis-residents-say-streets-disrepair/ | observed (saved) | Partly (cave-ins have no public completion record) |
+| Google Maps review of CSB (paraphrase from an earlier pass) | phone menu fails; nobody follows up after a ticket is closed; an ignored work order cannot be resubmitted | about Oct 2025 | CSB Google Maps listing (URL in `research/voters-and-residents--service-review-themes.csv`) | reported (paraphrase; exact words not captured) | Yes |
+| Resident with a refuse-truck complaint (St. Louis Magazine) | complaints "fell on deaf ears" | 19 Feb 2025 | https://www.stlmag.com/news/city-services-st-louis-citizens-agenda | reported (confirmed in an earlier pass; no saved copy found today) | Partly |
+
+## Caveats: where these voices cut against the entry
+
+1. **The city already admits the core problem for towing and is fixing it.** The CityStat towing note says requests will be "only closed once a vehicle is actually towed". The pitch for towing is therefore "measure whether that change happened", not "you have a problem". Credit the city.
+2. **Forestry says it is building per-lot status tracking** (July 2026, "hopefully" weeks away in mid-August). Earlier research found no published per-lot log by 13 Oct. If it appears, DoneStat should read it in place of, or beside, the billing ledger.
+3. **"Mowed by someone else" is the city's own innocent explanation** for lots with no cut billed. It weakens any reading of "no cut billed" as "never cut". N5's lead lot was checked against it (36 other parcels on its city block billed on 15 days; a resident's "cut incomplete" call), but the citywide 21.4% figure was not, and should be worded "no cut billed", as N1 already does.
+4. **The transition committee's measure, "average amount of time for a case to be closed", rewards early closure** unless closure is defined as action taken, which the committee did. If CSB adopts the measure without that definition, it will reward exactly the hand-off closures the entry documents (inferred).
+5. **The lot stories in the news are not lot-1.** The 24 Jul 2026 Greater Ville story concerns lots behind a house on Cora Ave., east of N Kingshighway. Lot-1 is on the 1700 block of N Taylor Av. Same ward and same month, so the statements give context but are not evidence about lot-1 (observed in the saved article; inferred that the blocks differ).
+6. **Most news statements are from one outlet** (First Alert 4/KMOV), which ran a series on overgrown lots in July and August 2026. That is one newsroom's agenda, not a survey of residents.
+
+## Negative results
+
+- Not re-opened: firstalert4.com, stlpr.org, stlmag.com, spectrumlocalnews.com, ksdk.com and news.yahoo.com. Two KSDK tree stories found by web search are cited from the search engine's summary only, and their dates are not established.
+- The Wayback copy of the transition report page returned HTTP 429 at 12:28, 12:31 and 12:39 p.m. and opened at 12:42 p.m.; WebFetch refuses web.archive.org. The report text itself is a linked Dropbox PDF; the copy saved on 13 Oct was used.
+- City PDFs (EO 96, Resolution 142, FY2027 operating plan, towing audit) were not re-opened. Their HTML landing pages were opened for EO 96 and Resolution 142.
+- No city statement found explaining blank cancellations of tree-inspection requests.
+- No saved copy found for the Spectrum 100-days story or the St. Louis Magazine O'Malley story ("report card" quote), so neither is used.
+- The CityStat landing page (`/citystat/`) carries no "last updated" text; the leaf pages do.
+- An "abandoned-vehicle operations chief" row in the earlier log (azfamily.com, 3 Mar 2026) is from an Arizona station, not St. Louis; excluded.
+
+## URLs opened for this file (14 Oct 2026, Central)
+
+| Time | URL | Result |
+|---|---|---|
+| 12:28 | 12 stlouis-mo.gov pages listed in `build/R3/voices-url-checks.csv` | 200 |
+| 12:28, 12:31, 12:39, 12:42 | Wayback transition-report page | 429, 429, 429, 200 |
+| 12:31 | YouTube watch pages tyS2V5Ae98I, 9lsGp9Wy4yw, a1H60btjS2E, 2erY12agBgU, ltJWr1X9UTc, 2MX-2honIkI | 200 (title, upload date, "City of St. Louis, Missouri" channel) |
+
+Saved copies read: `data/raw/mayors-office/news-2026/` (First Alert 4, retrieved 2026-10-14 00:03–00:10 UTC in an earlier pass), `data/raw/mayors-office/campaign/` (transition report PDF; St. Louis Magazine transcript), `data/raw/mayors-office/other-channels/yt/*.txt` (auto-captions), `data/raw/pressures/elections-legislation/eo/EO96.txt`, `data/raw/city-docs/pdf/resolutions/R_19094.txt`. Today's HTML copies: `build/R3/private/raw/voices/` (git-ignored).

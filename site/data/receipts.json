@@ -1,0 +1,1408 @@
+{
+ "meta": {
+  "contract": "receipts/1",
+  "mock": false,
+  "state": "real",
+  "built_at": "2026-10-14 16:41",
+  "sources": [
+   {
+    "path": "build/N5/heroes.json",
+    "mtime": "2026-10-14 01:42"
+   },
+   {
+    "path": "build/N5/lot_funnel.json",
+    "mtime": "2026-10-14 00:00"
+   }
+  ],
+  "notes": [
+   "not shown (single light out is not robust): light-1, light-2"
+  ]
+ },
+ "examples": [
+  {
+   "key": "lot",
+   "label": "The lot",
+   "cases": [
+    "lot-1"
+   ]
+  },
+  {
+   "key": "tree",
+   "label": "The tree",
+   "cases": [
+    "tree-2"
+   ]
+  },
+  {
+   "key": "cave",
+   "label": "The cave-in pair",
+   "cases": [
+    "cave-1",
+    "cave-2"
+   ]
+  },
+  {
+   "key": "works",
+   "label": "When it works",
+   "cases": [
+    "lot-counterexample"
+   ]
+  },
+  {
+   "key": "lot2",
+   "label": "Another lot",
+   "cases": [
+    "lot-2"
+   ]
+  },
+  {
+   "key": "tree1",
+   "label": "Another tree",
+   "cases": [
+    "tree-1"
+   ]
+  }
+ ],
+ "cases": {
+  "lot-1": {
+   "id": "lot-1",
+   "role": "hero",
+   "type": "Weeds-Vacant Lot",
+   "type_label": "High weeds/grass on vacant lot",
+   "ward": "12",
+   "neighborhood": "Greater Ville",
+   "block": "1700 block of N Taylor Av",
+   "what": "a vacant lot owned by the city land bank (LRA)",
+   "story": "Three city-owned vacant lots around the corner of N Taylor Av and Aldine Av in the Greater Ville (Ward 12) were reported together on 2 July and again on 28 July 2026, and every request closed within minutes as \"on schedule to be cut\"; the city's own ledger bills cuts on two of them within four weeks, and none on the third, on the 1700 block of N Taylor, all season: not by the city's own 30 September promise date, and not after a 9 September call reporting that the lot's cut was left incomplete.",
+   "days_to_close": null,
+   "promise_days": null,
+   "facts": {
+    "weeds_requests_2026": 2,
+    "weeds_requests_2026_filed": [
+     "2026-07-02",
+     "2026-07-28"
+    ],
+    "weeds_requests_2026_minutes_to_close": [
+     13,
+     7
+    ],
+    "weeds_requests_2026_promise": [
+     "2026-09-30",
+     "2026-10-26"
+    ],
+    "weeds_requests_2026_closed_on_schedule_within_3d": 2,
+    "cuts_billed_2026": 0,
+    "cuts_billed_2025": 0,
+    "cuts_billed_2019_2024": {
+     "2019": 6,
+     "2020": 5,
+     "2021": 3,
+     "2022": 2,
+     "2023": 4,
+     "2024": 4
+    },
+    "on_forestry_maintenance_list": "Vacant Lot",
+    "other_parcels_on_city_block_cut_2026": 36,
+    "other_lra_parcels_on_city_block_cut_2026": 23,
+    "distinct_cut_days_on_city_block_2026": 15,
+    "lra_offer_decisions": 0,
+    "cut_complaint_calls_2026": {
+     "Unsatisfy Cut - VLot": 1
+    }
+   },
+   "timeline": [
+    {
+     "date": "2015",
+     "kind": "history",
+     "title": "The land bank (LRA, city-owned) acquires the lot",
+     "source": "lra",
+     "label": "observed",
+     "derivation": "LRA inventory: ACQUISITION_DATE of the parcel (year shown publicly)."
+    },
+    {
+     "date": "2019",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 6 distinct date(s) in 2019",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2020",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 5 distinct date(s) in 2020",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2021",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 3 distinct date(s) in 2021",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2022",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 2 distinct date(s) in 2022",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2023",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 4 distinct date(s) in 2023",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2024",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 4 distinct date(s) in 2024",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2025",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 0 distinct date(s) in 2025 (the 2025 ledger is thin overall: about half the usual parcels)",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2026-06-03",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 4500 block of Aldine Av: Forestry ledger bills a grass cut",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: SERVICEDATE of a 'Grass Maint' or 'Weed-Grass' charge on the lot's parcel, joined from the 311 address to the parcel through MSD's parcel address file; ledger dates are posted in weekly batches, so read to the week."
+    },
+    {
+     "date": "2026-07-02 10:17",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-02 10:17",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 4500 block of Aldine Av: 311 weed request filed (WEB); closed after 13 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-02 10:19",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 1500 block of N Taylor Av: 311 weed request filed (WEB); closed after 12 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-02 10:30",
+     "kind": "closed",
+     "title": "Closed after 13 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-07-14 09:21",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 4500 block of Aldine Av: 311 weed request filed (WEB); closed after 4 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-14 09:24",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 1500 block of N Taylor Av: 311 weed request filed (WEB); closed after 29 hours: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-20",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 4500 block of Aldine Av: Forestry ledger bills a grass cut",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: SERVICEDATE of a 'Grass Maint' or 'Weed-Grass' charge on the lot's parcel, joined from the 311 address to the parcel through MSD's parcel address file; ledger dates are posted in weekly batches, so read to the week."
+    },
+    {
+     "date": "2026-07-28 08:57",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 4500 block of Aldine Av: 311 weed request filed (WEB); closed after 12 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-28 09:04",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-28 09:06",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 1500 block of N Taylor Av: 311 weed request filed (WEB); closed after 57 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-28 09:08",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 4500 block of Aldine Av: 311 weed request filed (WEB); closed after 59 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-28 09:11",
+     "kind": "closed",
+     "title": "Closed after 7 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-07-29",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 1500 block of N Taylor Av: Forestry ledger bills a grass cut",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: SERVICEDATE of a 'Grass Maint' or 'Weed-Grass' charge on the lot's parcel, joined from the 311 address to the parcel through MSD's parcel address file; ledger dates are posted in weekly batches, so read to the week."
+    },
+    {
+     "date": "2026-09-09 13:40",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 4500 block of Aldine Av: 311 weed request filed (PHONE); closed after 4 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-09-09 13:42",
+     "kind": "history",
+     "title": "A resident reports the lot's cut was left incomplete (311 type \"Vacant lot cut incomplete\"); 311 closes it after 24 hours, \"supervisor notified\". No cut is billed on the lot in 2026, before or after.",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT, DATETIMECLOSED, PUBLICRESOLUTION and CALLERTYPE; ledger context from the Forestry billing ledger (distinct cut dates on the lot's parcel, joined through MSD's parcel address file)."
+    },
+    {
+     "date": "2026-09-13",
+     "kind": "related",
+     "title": "Neighbouring land-bank lot on the 4500 block of Aldine Av: Forestry ledger bills a grass cut",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: SERVICEDATE of a 'Grass Maint' or 'Weed-Grass' charge on the lot's parcel, joined from the 311 address to the parcel through MSD's parcel address file; ledger dates are posted in weekly batches, so read to the week."
+    },
+    {
+     "date": "2026-09-30",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 2 July (a 90-day promise; most 2026 vacant-lot weed requests carry 14 days: 1,244 of 1,497)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-10-13",
+     "kind": "record",
+     "title": "Latest date in the ledger. Cuts billed on the lot in 2026: 0. Other parcels on its city block (same ledger CITYBLOCK) cut in 2026: 36 (23 of them land-bank lots), on 15 different days",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: charges in 2026 on other parcels with the same CITYBLOCK code as the lot."
+    },
+    {
+     "date": "2026-10-26",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 28 July (a 90-day promise; most 2026 vacant-lot weed requests carry 14 days: 1,244 of 1,497)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    }
+   ],
+   "images": [
+    {
+     "src": "img/lot-1_block_naip2024.jpg",
+     "year": "2024",
+     "service": "NAIP/NAIP2024",
+     "kind": "naip",
+     "source_label": "NAIP 2024 (USDA, public domain), via MSDIS",
+     "licence": "USDA National Agriculture Imagery Program 2024 (producer USDA FPAC-BC-GEO), served by MSDIS. The service states no licence; the NAIP metadata (meta/naip2024_mo510.xml, St. Louis City mosaic, dated 2024-05-31) has one use limitation: 'Use of this data requires a general understanding of GIS and spatial data.' No redistribution limit found. Public domain as a USDA product (reported; not stated in the file).",
+     "caption": "The 1700 block of N TAYLOR AV from above. Image: NAIP 2024 (USDA, public domain), via MSDIS, 2024. About 175 m across, no marker; the image predates the 2026 requests.",
+     "note": "USDA NAIP, 0.3 m (resampled to 0.25 m), leaf-on; metadata date 2024-05-31 (reported), no separate flight date found"
+    }
+   ]
+  },
+  "lot-2": {
+   "id": "lot-2",
+   "role": "hero",
+   "type": "Weeds-Vacant Lot",
+   "type_label": "High weeds/grass on vacant lot",
+   "ward": "12",
+   "neighborhood": "Baden",
+   "block": "8100 block of Church Rd",
+   "what": "a vacant lot owned by the city land bank (LRA)",
+   "story": "A city-owned vacant lot on the 8100 block of Church Rd in Baden (Ward 12) was reported four times between April and August 2026; each request closed within hours as \"on schedule to be cut\", and the city's ledger records no cut on it in 2026 at all.",
+   "days_to_close": null,
+   "promise_days": null,
+   "facts": {
+    "weeds_requests_2026": 4,
+    "weeds_requests_2026_filed": [
+     "2026-04-21",
+     "2026-05-26",
+     "2026-08-09",
+     "2026-08-14"
+    ],
+    "weeds_requests_2026_minutes_to_close": [
+     551,
+     19,
+     2,
+     4
+    ],
+    "weeds_requests_2026_promise": [
+     "2026-05-05",
+     "2026-06-09",
+     "2026-08-23",
+     "2026-08-28"
+    ],
+    "weeds_requests_2026_closed_on_schedule_within_3d": 4,
+    "cuts_billed_2026": 0,
+    "cuts_billed_2025": 1,
+    "cuts_billed_2019_2024": {
+     "2020": 3,
+     "2021": 3,
+     "2022": 3,
+     "2023": 1,
+     "2024": 4
+    },
+    "on_forestry_maintenance_list": "Vacant Lot",
+    "other_parcels_on_city_block_cut_2026": 1,
+    "other_lra_parcels_on_city_block_cut_2026": 0,
+    "distinct_cut_days_on_city_block_2026": 1,
+    "lra_offer_decisions": 0,
+    "cut_complaint_calls_2026": {}
+   },
+   "timeline": [
+    {
+     "date": "2011",
+     "kind": "history",
+     "title": "The land bank (LRA, city-owned) acquires the lot",
+     "source": "lra",
+     "label": "observed",
+     "derivation": "LRA inventory: ACQUISITION_DATE of the parcel (year shown publicly)."
+    },
+    {
+     "date": "2020",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 3 distinct date(s) in 2020",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2021",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 3 distinct date(s) in 2021",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2022",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 3 distinct date(s) in 2022",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2023",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 1 distinct date(s) in 2023",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2024",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 4 distinct date(s) in 2024",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2025",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 1 distinct date(s) in 2025 (the 2025 ledger is thin overall: about half the usual parcels)",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2025-06-19 18:38",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2025-06-19 18:40",
+     "kind": "closed",
+     "title": "Closed after 1 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2025-07-03",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 19 June (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-04-21 23:31",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-04-22 08:43",
+     "kind": "closed",
+     "title": "Closed after 9 hours: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-05-05",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 21 April (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-05-26 08:40",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-05-26 08:59",
+     "kind": "closed",
+     "title": "Closed after 19 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-06-09",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 26 May (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-08-09 23:38",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-08-09 23:40",
+     "kind": "closed",
+     "title": "Closed after 2 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-08-14 13:41",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-08-14 13:45",
+     "kind": "closed",
+     "title": "Closed after 4 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-08-23",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 9 August (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-08-28",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 14 August (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-10-13",
+     "kind": "record",
+     "title": "Latest date in the ledger. Cuts billed on the lot in 2026: 0. Other parcels on its city block (same ledger CITYBLOCK) cut in 2026: 1 (0 of them land-bank lots), on 1 different days",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: charges in 2026 on other parcels with the same CITYBLOCK code as the lot."
+    }
+   ],
+   "images": [
+    {
+     "src": "img/lot-2_block_naip2024.jpg",
+     "year": "2024",
+     "service": "NAIP/NAIP2024",
+     "kind": "naip",
+     "source_label": "NAIP 2024 (USDA, public domain), via MSDIS",
+     "licence": "USDA National Agriculture Imagery Program 2024 (producer USDA FPAC-BC-GEO), served by MSDIS. The service states no licence; the NAIP metadata (meta/naip2024_mo510.xml, St. Louis City mosaic, dated 2024-05-31) has one use limitation: 'Use of this data requires a general understanding of GIS and spatial data.' No redistribution limit found. Public domain as a USDA product (reported; not stated in the file).",
+     "caption": "The 8100 block of CHURCH RD from above. Image: NAIP 2024 (USDA, public domain), via MSDIS, 2024. About 175 m across, no marker; the image predates the 2026 requests.",
+     "note": "USDA NAIP, 0.3 m (resampled to 0.25 m), leaf-on; metadata date 2024-05-31 (reported), no separate flight date found"
+    }
+   ]
+  },
+  "lot-3": {
+   "id": "lot-3",
+   "role": "hero",
+   "type": "Weeds-Vacant Lot",
+   "type_label": "High weeds/grass on vacant lot",
+   "ward": "13",
+   "neighborhood": "Hamilton Heights",
+   "block": "1300 block of Arlington Av",
+   "what": "a vacant lot owned by the city land bank (LRA)",
+   "story": "A city-owned vacant lot on the 1300 block of Arlington Av in Hamilton Heights (Ward 13) drew five weed reports in July and August 2026, each closed within a day as \"on schedule to be cut\", plus a staff report that it was missed on the cutting rotation and a resident call that its cut was left incomplete; the ledger, which billed cuts on it in every year but one from 1996 to 2024, shows none in 2025 or 2026, and the land bank's own offers file (an offer marked accepted in January 2026) may be why, an explanation 311 never gave.",
+   "days_to_close": null,
+   "promise_days": null,
+   "facts": {
+    "weeds_requests_2026": 5,
+    "weeds_requests_2026_filed": [
+     "2026-07-24",
+     "2026-08-01",
+     "2026-08-09",
+     "2026-08-12",
+     "2026-08-26"
+    ],
+    "weeds_requests_2026_minutes_to_close": [
+     2,
+     4,
+     1048,
+     4,
+     2
+    ],
+    "weeds_requests_2026_promise": [
+     "2026-08-07",
+     "2026-08-15",
+     "2026-11-07",
+     "2026-08-26",
+     "2026-09-09"
+    ],
+    "weeds_requests_2026_closed_on_schedule_within_3d": 5,
+    "cuts_billed_2026": 0,
+    "cuts_billed_2025": 0,
+    "cuts_billed_2019_2024": {
+     "2019": 10,
+     "2020": 5,
+     "2021": 3,
+     "2022": 3,
+     "2023": 5,
+     "2024": 3
+    },
+    "on_forestry_maintenance_list": "Vacant Lot",
+    "other_parcels_on_city_block_cut_2026": 13,
+    "other_lra_parcels_on_city_block_cut_2026": 5,
+    "distinct_cut_days_on_city_block_2026": 12,
+    "lra_offer_decisions": 2,
+    "cut_complaint_calls_2026": {
+     "Unsatisfy Cut - VLot": 1,
+     "Missed Cut - V Lot": 1
+    }
+   },
+   "timeline": [
+    {
+     "date": "2010",
+     "kind": "history",
+     "title": "The land bank (LRA, city-owned) acquires the lot",
+     "source": "lra",
+     "label": "observed",
+     "derivation": "LRA inventory: ACQUISITION_DATE of the parcel (year shown publicly)."
+    },
+    {
+     "date": "2019",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 10 distinct date(s) in 2019",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2020",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 5 distinct date(s) in 2020",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2021",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 3 distinct date(s) in 2021",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2022",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 3 distinct date(s) in 2022",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2023",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 5 distinct date(s) in 2023",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2024",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 3 distinct date(s) in 2024",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2025",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 0 distinct date(s) in 2025 (the 2025 ledger is thin overall: about half the usual parcels)",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2025-11-04",
+     "kind": "history",
+     "title": "LRA offers file records a decision on an offer to buy the lot (ACCEPTED=1, REJECTED=0)",
+     "source": "lra_offers",
+     "label": "observed",
+     "derivation": "LRA offers file: DECISION_DATE and the ACCEPTED/REJECTED flags for an offer on the parcel (no names in the file)."
+    },
+    {
+     "date": "2026-01-29",
+     "kind": "history",
+     "title": "LRA offers file records a decision on an offer to buy the lot (ACCEPTED=1, REJECTED=0)",
+     "source": "lra_offers",
+     "label": "observed",
+     "derivation": "LRA offers file: DECISION_DATE and the ACCEPTED/REJECTED flags for an offer on the parcel (no names in the file)."
+    },
+    {
+     "date": "2026-07-24 17:28",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-24 17:30",
+     "kind": "closed",
+     "title": "Closed after 2 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-07-28 12:20",
+     "kind": "history",
+     "title": "City staff (caller type NSO) reports the lot was missed on the ward cutting rotation (311 type \"Vacant lot missed on ward cutting rotation\"); 311 closes it after 2 hours, \"supervisor notified\". No cut is billed on the lot in 2026, before or after.",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT, DATETIMECLOSED, PUBLICRESOLUTION and CALLERTYPE; ledger context from the Forestry billing ledger (distinct cut dates on the lot's parcel, joined through MSD's parcel address file)."
+    },
+    {
+     "date": "2026-08-01 12:36",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-08-01 12:40",
+     "kind": "closed",
+     "title": "Closed after 4 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-08-07",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 24 July (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-08-07 15:44",
+     "kind": "history",
+     "title": "A resident reports the lot's cut was left incomplete (311 type \"Vacant lot cut incomplete\"); 311 closes it after 51 minutes, \"supervisor notified\". No cut is billed on the lot in 2026, before or after.",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT, DATETIMECLOSED, PUBLICRESOLUTION and CALLERTYPE; ledger context from the Forestry billing ledger (distinct cut dates on the lot's parcel, joined through MSD's parcel address file)."
+    },
+    {
+     "date": "2026-08-09 17:27",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-08-10 10:55",
+     "kind": "closed",
+     "title": "Closed after 17 hours: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-08-12 09:46",
+     "kind": "filed",
+     "title": "311 request filed (PHONE, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-08-12 09:50",
+     "kind": "closed",
+     "title": "Closed after 4 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-08-15",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 1 August (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-08-26",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 12 August (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-08-26 18:18",
+     "kind": "filed",
+     "title": "311 request filed (WEB, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-08-26 18:20",
+     "kind": "closed",
+     "title": "Closed after 2 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-09-09",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 26 August (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-10-13",
+     "kind": "record",
+     "title": "Latest date in the ledger. Cuts billed on the lot in 2026: 0. Other parcels on its city block (same ledger CITYBLOCK) cut in 2026: 13 (5 of them land-bank lots), on 12 different days",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: charges in 2026 on other parcels with the same CITYBLOCK code as the lot."
+    },
+    {
+     "date": "2026-11-07",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 9 August (a 90-day promise; most 2026 vacant-lot weed requests carry 14 days: 1,244 of 1,497)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    }
+   ],
+   "images": [
+    {
+     "src": "img/lot-3_block_naip2024.jpg",
+     "year": "2024",
+     "service": "NAIP/NAIP2024",
+     "kind": "naip",
+     "source_label": "NAIP 2024 (USDA, public domain), via MSDIS",
+     "licence": "USDA National Agriculture Imagery Program 2024 (producer USDA FPAC-BC-GEO), served by MSDIS. The service states no licence; the NAIP metadata (meta/naip2024_mo510.xml, St. Louis City mosaic, dated 2024-05-31) has one use limitation: 'Use of this data requires a general understanding of GIS and spatial data.' No redistribution limit found. Public domain as a USDA product (reported; not stated in the file).",
+     "caption": "The 1300 block of ARLINGTON AV from above. Image: NAIP 2024 (USDA, public domain), via MSDIS, 2024. About 175 m across, no marker; the image predates the 2026 requests.",
+     "note": "USDA NAIP, 0.3 m (resampled to 0.25 m), leaf-on; metadata date 2024-05-31 (reported), no separate flight date found"
+    }
+   ]
+  },
+  "lot-counterexample": {
+   "id": "lot-counterexample",
+   "role": "counterexample",
+   "type": "Weeds-Vacant Lot",
+   "type_label": "High weeds/grass on vacant lot",
+   "ward": "12",
+   "neighborhood": "Greater Ville",
+   "block": "4000 block of Ashland Av",
+   "what": "a vacant lot owned by the city land bank (LRA)",
+   "story": "The system working: a city-owned vacant lot on the 4000 block of Ashland Av in the Greater Ville (Ward 12), reported on 11 September 2026, closed in three minutes as \"on schedule to be cut\", and the ledger bills a cut four days later.",
+   "days_to_close": null,
+   "promise_days": null,
+   "facts": {
+    "weeds_requests_2026": 1,
+    "weeds_requests_2026_filed": [
+     "2026-09-11"
+    ],
+    "weeds_requests_2026_minutes_to_close": [
+     2
+    ],
+    "weeds_requests_2026_promise": [
+     "2026-09-25"
+    ],
+    "weeds_requests_2026_closed_on_schedule_within_3d": 1,
+    "cuts_billed_2026": 3,
+    "cuts_billed_2025": 1,
+    "cuts_billed_2019_2024": {
+     "2019": 5,
+     "2020": 5,
+     "2021": 4,
+     "2022": 2,
+     "2023": 5,
+     "2024": 2
+    },
+    "on_forestry_maintenance_list": "Vacant Lot",
+    "other_parcels_on_city_block_cut_2026": 6,
+    "other_lra_parcels_on_city_block_cut_2026": 3,
+    "distinct_cut_days_on_city_block_2026": 8,
+    "lra_offer_decisions": 0,
+    "cut_complaint_calls_2026": {}
+   },
+   "timeline": [
+    {
+     "date": "2007",
+     "kind": "history",
+     "title": "The land bank (LRA, city-owned) acquires the lot",
+     "source": "lra",
+     "label": "observed",
+     "derivation": "LRA inventory: ACQUISITION_DATE of the parcel (year shown publicly)."
+    },
+    {
+     "date": "2019",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 5 distinct date(s) in 2019",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2020",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 5 distinct date(s) in 2020",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2021",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 4 distinct date(s) in 2021",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2022",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 2 distinct date(s) in 2022",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2023",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 5 distinct date(s) in 2023",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2024",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 2 distinct date(s) in 2024",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2025",
+     "kind": "history",
+     "title": "Forestry ledger bills grass cuts on the lot on 1 distinct date(s) in 2025 (the 2025 ledger is thin overall: about half the usual parcels)",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: count of 'Grass Maint'/'Weed-Grass' charges on the lot's parcel in that year (same join as above)."
+    },
+    {
+     "date": "2026-04-14",
+     "kind": "record",
+     "title": "Forestry ledger bills a grass cut on the lot",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: SERVICEDATE of a 'Grass Maint' or 'Weed-Grass' charge on the lot's parcel, joined from the 311 address to the parcel through MSD's parcel address file; ledger dates are posted in weekly batches, so read to the week."
+    },
+    {
+     "date": "2026-06-04",
+     "kind": "record",
+     "title": "Forestry ledger bills a grass cut on the lot",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: SERVICEDATE of a 'Grass Maint' or 'Weed-Grass' charge on the lot's parcel, joined from the 311 address to the parcel through MSD's parcel address file; ledger dates are posted in weekly batches, so read to the week."
+    },
+    {
+     "date": "2026-06-23 14:44",
+     "kind": "filed",
+     "title": "311 request filed (PHONE, \"Debris around a vacant building\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-07-01 15:21",
+     "kind": "closed",
+     "title": "Closed after 8.0 days: \"no forestry violations\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-08-04 11:32",
+     "kind": "filed",
+     "title": "311 request filed (PHONE, \"Inspect for violation of zoning code (including open storage)\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-09-11 11:37",
+     "kind": "filed",
+     "title": "311 request filed (PHONE, \"High weeds/grass on vacant lot\")",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-09-11 11:40",
+     "kind": "closed",
+     "title": "Closed after 2 minutes: \"on schedule to be cut, call CSB for details\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2026-09-15",
+     "kind": "record",
+     "title": "Forestry ledger bills a grass cut on the lot",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: SERVICEDATE of a 'Grass Maint' or 'Weed-Grass' charge on the lot's parcel, joined from the 311 address to the parcel through MSD's parcel address file; ledger dates are posted in weekly batches, so read to the week."
+    },
+    {
+     "date": "2026-09-25",
+     "kind": "promised",
+     "title": "The city's own promise date for the request filed 11 September (the usual 14-day promise)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-10-13",
+     "kind": "record",
+     "title": "Latest date in the ledger. Cuts billed on the lot in 2026: 3. Other parcels on its city block (same ledger CITYBLOCK) cut in 2026: 6 (3 of them land-bank lots), on 8 different days",
+     "source": "ledger",
+     "label": "observed",
+     "derivation": "Forestry billing ledger: charges in 2026 on other parcels with the same CITYBLOCK code as the lot."
+    }
+   ],
+   "images": [
+    {
+     "src": "img/lot-counterexample_block_naip2024.jpg",
+     "year": "2024",
+     "service": "NAIP/NAIP2024",
+     "kind": "naip",
+     "source_label": "NAIP 2024 (USDA, public domain), via MSDIS",
+     "licence": "USDA National Agriculture Imagery Program 2024 (producer USDA FPAC-BC-GEO), served by MSDIS. The service states no licence; the NAIP metadata (meta/naip2024_mo510.xml, St. Louis City mosaic, dated 2024-05-31) has one use limitation: 'Use of this data requires a general understanding of GIS and spatial data.' No redistribution limit found. Public domain as a USDA product (reported; not stated in the file).",
+     "caption": "The 4000 block of ASHLAND AV from above. Image: NAIP 2024 (USDA, public domain), via MSDIS, 2024. About 175 m across, no marker; the image predates the 2026 requests.",
+     "note": "USDA NAIP, 0.3 m (resampled to 0.25 m), leaf-on; metadata date 2024-05-31 (reported), no separate flight date found"
+    }
+   ]
+  },
+  "tree-1": {
+   "id": "tree-1",
+   "role": "tree",
+   "type": "Inspect City Tree",
+   "type_label": "Inspect city tree",
+   "ward": "14",
+   "neighborhood": null,
+   "block": "1200 block of Hebert St",
+   "what": null,
+   "story": "A resident asked Forestry to inspect a city tree on the 1200 block of HEBERT ST (Ward 14) on 19 March 2025; the inspection was logged done on 10 April, a Forestry removal work order at the same address shows a projected start of 12:26 PM that day, and the 311 request was cancelled a minute later with no words; the public record says \"cancelled\", the work order says removal by 14 November 2025, and it was still open on 13 October 2026.",
+   "days_to_close": null,
+   "promise_days": null,
+   "facts": {
+    "minutes_cancel_after_wo_start": 0.8,
+    "wo_priority": "4",
+    "wo_status_2026_10_13": "NEW",
+    "days_from_request_to_oct13_2026": 572.5,
+    "days_past_projected_finish": 332.5
+   },
+   "timeline": [
+    {
+     "date": "2025-03-19 10:48",
+     "kind": "filed",
+     "title": "311 \"Inspect city tree\" request filed (WEB)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2025-04-02",
+     "kind": "promised",
+     "title": "The city's own promise date: 14.0 days after filing",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2025-04-10 11:44",
+     "kind": "history",
+     "title": "Investigation recorded as done",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATEINVTDONE (investigation done)."
+    },
+    {
+     "date": "2025-04-10 12:26",
+     "kind": "record",
+     "title": "Read as: the inspection became a removal work order at this moment",
+     "source": "wo_rm",
+     "label": "inferred",
+     "derivation": "Cityworks saved search 6955 (open tree-removal work orders): ProjStartDate, stored in UTC and converted to Central; matched to the 311 request because the two addresses are identical after the project's address normaliser."
+    },
+    {
+     "date": "2025-04-10 12:26",
+     "kind": "record",
+     "title": "A Forestry tree-removal work order at the same address shows its projected start (priority 4)",
+     "source": "wo_rm",
+     "label": "observed",
+     "derivation": "Cityworks saved search 6955 (open tree-removal work orders): ProjStartDate, stored in UTC and converted to Central; matched to the 311 request because the two addresses are identical after the project's address normaliser."
+    },
+    {
+     "date": "2025-04-10 12:27",
+     "kind": "cancelled",
+     "title": "311 request cancelled, no public text",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: STATUS CANCEL with DATECANCELLED; PUBLICRESOLUTION empty."
+    },
+    {
+     "date": "2025-11-14",
+     "kind": "record",
+     "title": "The work order's projected finish date",
+     "source": "wo_rm",
+     "label": "observed",
+     "derivation": "Cityworks saved search 6955: ProjFinishDate (UTC converted to Central)."
+    },
+    {
+     "date": "2026-10-13",
+     "kind": "record",
+     "title": "The work order is still status \"NEW\" when the saved search was read",
+     "source": "wo_rm",
+     "label": "observed",
+     "derivation": "Cityworks saved search 6955 as read on 2026-10-14 00:19 UTC: Status field."
+    }
+   ],
+   "images": [
+    {
+     "src": "img/tree-1_block_naip2024.jpg",
+     "year": "2024",
+     "service": "NAIP/NAIP2024",
+     "kind": "naip",
+     "source_label": "NAIP 2024 (USDA, public domain), via MSDIS",
+     "licence": "USDA National Agriculture Imagery Program 2024 (producer USDA FPAC-BC-GEO), served by MSDIS. The service states no licence; the NAIP metadata (meta/naip2024_mo510.xml, St. Louis City mosaic, dated 2024-05-31) has one use limitation: 'Use of this data requires a general understanding of GIS and spatial data.' No redistribution limit found. Public domain as a USDA product (reported; not stated in the file).",
+     "caption": "The 1200 block of HEBERT ST from above. Image: NAIP 2024 (USDA, public domain), via MSDIS, 2024. About 175 m across, no marker; the image predates the 2026 requests.",
+     "note": "USDA NAIP, 0.3 m (resampled to 0.25 m), leaf-on; metadata date 2024-05-31 (reported), no separate flight date found"
+    }
+   ]
+  },
+  "tree-2": {
+   "id": "tree-2",
+   "role": "tree-backlog",
+   "type": "Inspect City Tree",
+   "type_label": "Inspect city tree",
+   "ward": "4",
+   "neighborhood": null,
+   "block": "6700 block of Dale Ave",
+   "what": null,
+   "story": "On 12 June 2026 a resident asked Forestry to inspect a city tree on the 6700 block of DALE AVE (Ward 4); Forestry already had an open removal work order there, started 575 days earlier and due by 20 June 2025; the request was cancelled 2 hours later with no public words, so the public record never says the tree was already on the removal list (3 inspection requests at that address since the work order started), and the work order was still open on 13 October 2026.",
+   "days_to_close": null,
+   "promise_days": null,
+   "facts": {
+    "wo_age_days_at_request": 575,
+    "wo_priority": "1",
+    "wo_status_2026_10_13": "NEW",
+    "inspect_requests_at_address_since_wo_start": 3,
+    "days_past_projected_finish": 479.5
+   },
+   "timeline": [
+    {
+     "date": "2024-11-14 12:20",
+     "kind": "record",
+     "title": "A Forestry tree-removal work order at this address shows its projected start (priority 1)",
+     "source": "wo_rm",
+     "label": "observed",
+     "derivation": "Cityworks saved search 6955 (open tree-removal work orders): ProjStartDate, stored in UTC and converted to Central; matched to the 311 request because the two addresses are identical after the project's address normaliser."
+    },
+    {
+     "date": "2025-06-20",
+     "kind": "record",
+     "title": "The work order's projected finish date",
+     "source": "wo_rm",
+     "label": "observed",
+     "derivation": "Cityworks saved search 6955: ProjFinishDate (UTC converted to Central)."
+    },
+    {
+     "date": "2026-06-12 14:09",
+     "kind": "filed",
+     "title": "311 \"Inspect city tree\" request filed (WEB), 575 days after the work order started",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2026-06-12 16:17",
+     "kind": "cancelled",
+     "title": "311 request cancelled, no public text",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: STATUS CANCEL with DATECANCELLED; PUBLICRESOLUTION empty."
+    },
+    {
+     "date": "2026-06-26",
+     "kind": "promised",
+     "title": "The city's own promise date: 14 days after filing",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2026-10-13",
+     "kind": "record",
+     "title": "The work order is still status \"NEW\" when the saved search was read",
+     "source": "wo_rm",
+     "label": "observed",
+     "derivation": "Cityworks saved search 6955 as read on 2026-10-14 00:19 UTC: Status field."
+    }
+   ],
+   "images": [
+    {
+     "src": "img/tree-2_block_naip2024.jpg",
+     "year": "2024",
+     "service": "NAIP/NAIP2024",
+     "kind": "naip",
+     "source_label": "NAIP 2024 (USDA, public domain), via MSDIS",
+     "licence": "USDA National Agriculture Imagery Program 2024 (producer USDA FPAC-BC-GEO), served by MSDIS. The service states no licence; the NAIP metadata (meta/naip2024_mo510.xml, St. Louis City mosaic, dated 2024-05-31) has one use limitation: 'Use of this data requires a general understanding of GIS and spatial data.' No redistribution limit found. Public domain as a USDA product (reported; not stated in the file).",
+     "caption": "The 6700 block of DALE AVE from above. Image: NAIP 2024 (USDA, public domain), via MSDIS, 2024. About 175 m across, no marker; the image predates the 2026 requests.",
+     "note": "USDA NAIP, 0.3 m (resampled to 0.25 m), leaf-on; metadata date 2024-05-31 (reported), no separate flight date found"
+    }
+   ]
+  },
+  "cave-1": {
+   "id": "cave-1",
+   "role": "cave-paperwork",
+   "type": "Cave-Ins",
+   "type_label": "Street, alley or sidewalk cave-in or depression",
+   "ward": "2",
+   "neighborhood": null,
+   "block": "4600 block of Dahlia Ave",
+   "what": null,
+   "story": "A cave-in on the 4600 block of DAHLIA AVE (Ward 2) closed in 1.0 days, which a time-to-close scoreboard counts as fast, but the closing words were \"referred to street maintenance for repair work to be scheduled\": a hand-off, and no public file we hold says when the repair happened.",
+   "days_to_close": 1.0,
+   "promise_days": 3.0,
+   "facts": {
+    "same_type_requests_at_address_while_open": 0,
+    "same_type_requests_within_60d_after_close": 0
+   },
+   "timeline": [
+    {
+     "date": "2025-09-02 10:32",
+     "kind": "filed",
+     "title": "311 request filed (PHONE)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2025-09-03 09:38",
+     "kind": "closed",
+     "title": "Closed after 1.0 days: \"referred to street maintenance for repair work to be scheduled\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    },
+    {
+     "date": "2025-09-05",
+     "kind": "promised",
+     "title": "The city's own promise date: 3.0 days after filing",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    }
+   ],
+   "images": [
+    {
+     "src": "img/cave-1_block_naip2024.jpg",
+     "year": "2024",
+     "service": "NAIP/NAIP2024",
+     "kind": "naip",
+     "source_label": "NAIP 2024 (USDA, public domain), via MSDIS",
+     "licence": "USDA National Agriculture Imagery Program 2024 (producer USDA FPAC-BC-GEO), served by MSDIS. The service states no licence; the NAIP metadata (meta/naip2024_mo510.xml, St. Louis City mosaic, dated 2024-05-31) has one use limitation: 'Use of this data requires a general understanding of GIS and spatial data.' No redistribution limit found. Public domain as a USDA product (reported; not stated in the file).",
+     "caption": "The 4600 block of DAHLIA AVE from above. Image: NAIP 2024 (USDA, public domain), via MSDIS, 2024. About 175 m across, no marker; the image predates the 2026 requests.",
+     "note": "USDA NAIP, 0.3 m (resampled to 0.25 m), leaf-on; metadata date 2024-05-31 (reported), no separate flight date found"
+    }
+   ]
+  },
+  "cave-2": {
+   "id": "cave-2",
+   "role": "cave-work",
+   "type": "Cave-Ins",
+   "type_label": "Street, alley or sidewalk cave-in or depression",
+   "ward": "11",
+   "neighborhood": null,
+   "block": "4300 block of College Ave",
+   "what": null,
+   "story": "Filed 3 days later, a cave-in on the 4300 block of COLLEGE AVE (Ward 11) closed after 24.0 days with \"work completed\", which the same scoreboard counts as slow, though it is the only one of the two whose closure says the work was done.",
+   "days_to_close": 24.0,
+   "promise_days": 3.0,
+   "facts": {
+    "same_type_requests_at_address_while_open": 0,
+    "same_type_requests_within_60d_after_close": 0
+   },
+   "timeline": [
+    {
+     "date": "2025-09-05 14:26",
+     "kind": "filed",
+     "title": "311 request filed (PHONE)",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMEINIT."
+    },
+    {
+     "date": "2025-09-08",
+     "kind": "promised",
+     "title": "The city's own promise date: 3.0 days after filing",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's PRJCOMPLETEDATE, the completion date the city sets on each request (a fixed offset per request type)."
+    },
+    {
+     "date": "2025-09-29 15:13",
+     "kind": "closed",
+     "title": "Closed after 24.0 days: \"work completed\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "311 file: the request's DATETIMECLOSED and its PUBLICRESOLUTION text."
+    }
+   ],
+   "images": [
+    {
+     "src": "img/cave-2_block_naip2024.jpg",
+     "year": "2024",
+     "service": "NAIP/NAIP2024",
+     "kind": "naip",
+     "source_label": "NAIP 2024 (USDA, public domain), via MSDIS",
+     "licence": "USDA National Agriculture Imagery Program 2024 (producer USDA FPAC-BC-GEO), served by MSDIS. The service states no licence; the NAIP metadata (meta/naip2024_mo510.xml, St. Louis City mosaic, dated 2024-05-31) has one use limitation: 'Use of this data requires a general understanding of GIS and spatial data.' No redistribution limit found. Public domain as a USDA product (reported; not stated in the file).",
+     "caption": "The 4300 block of COLLEGE AVE from above. Image: NAIP 2024 (USDA, public domain), via MSDIS, 2024. About 175 m across, no marker; the image predates the 2026 requests.",
+     "note": "USDA NAIP, 0.3 m (resampled to 0.25 m), leaf-on; metadata date 2024-05-31 (reported), no separate flight date found"
+    }
+   ]
+  }
+ },
+ "lead_case": "lot-1",
+ "lot_funnel": {
+  "requests": 331,
+  "parcels": 268,
+  "no_cut_after_requests": 94,
+  "no_cut_after_parcels": 75,
+  "no_2026_cut_requests": 47,
+  "no_2026_cut_parcels": 32,
+  "ge60d_requests": 84,
+  "cut_by_promise_requests": 106,
+  "cut_within_7d_requests": 38,
+  "before_15jul_requests": 151,
+  "before_15jul_no_cut_requests": 26,
+  "weeds_vacant_lot_2026_requests": 1500,
+  "with_parcel_match": 1252,
+  "on_lra_parcel": 493,
+  "ledger_end": "2026-10-13 06:29:57.647000"
+ },
+ "lookup": {
+  "endpoint": "api/receipt/",
+  "note": "Typed request numbers are looked up live by the local weekly-job server (scripts/night/N6/serve.py); the page ships no ids."
+ }
+}

@@ -1,0 +1,32 @@
+figure,value,unit,refers_to,label,source,used_in
+Tree-removal baseline,1630,open tree-removal work orders past Forestry's projected finish,13 Oct 2026 (extract of 14 Oct),observed,build/E8/baselines.json; https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/63,README; practice-forestry; dashboard
+Open tree-removal work orders,2504,work orders,13 Oct 2026,observed,build/E8/baselines.json,README (source only)
+Cave-in baseline,1233,requests open past the promised date (filed since 1 Jan 2025),13 Oct 2026,observed,build/E8/baselines.json; https://www.stlouis-mo.gov/data/upload/data-files/csb.zip,README; practice-streets; dashboard
+Vacant-lot mowing baseline,289,requests open past the promised date (three vacant-lot weed codes; filed since 1 Jan 2025),13 Oct 2026,observed,build/E8/baselines.json,README; dashboard
+Vacant-lot mowing requests routed to the land bank,49,requests,13 Oct 2026,observed,build/E8/baselines.json,README
+Cave-ins with no record either way,1196 of 1233 (97.0%),requests,13 Oct 2026,observed,build/E5/ledger_by_type.csv; research/open-queue-reality-check.md,README; practice-streets
+Vacant-lot mowing with no record either way,218 of 289 (75.4%),requests,13 Oct 2026,observed,"build/E5/private/ledger_rows.parquet, aggregated 15 Oct 2026 (class e_no_evidence; codes Weeds-Vacant Lot, Missed Cut - V Lot, Unsatisfy Cut - VLot)",README
+Open Inspect City Tree requests past the date with no record either way,578 of 1481 (39.0%),requests,13 Oct 2026,observed,build/E5/ledger_by_type.csv,README
+Tree-removal requests listing their work orders,40 of 40,sampled status pages,14 Oct 2026,observed,research/status-page-linkage.md,practice-forestry
+"Vacant-lot and vacant-building ""on schedule to be cut"" pages with a work order",0 of 80,sampled status pages,14 Oct 2026,observed,research/status-page-linkage.md,practice-forestry
+Referred cave-ins with a Right of Way Repair work order,16 of 40,sampled status pages,14 Oct 2026,observed,research/status-page-linkage.md,practice-streets
+Linked cave-ins: filing to first finish (median),5,days,14 Oct 2026,observed,research/status-page-linkage.md,practice-streets
+Building hand-off pages with anything attached,0 of 200,sampled status pages,14 Oct 2026,observed,research/status-page-linkage.md,practice-building
+Board-up referrals with a board-up order within 2 days,80%,share of referrals,2025-26,observed,research/chapters/R1-trace.md,practice-building
+Board-up referrals boarded by the promised date,17.0% of 1528,share of referrals whose promise passed by 13 Sep 2026,2025-26,observed,research/chapters/R1-trace.md,practice-building
+Board-up referrals boarded late,64.6% (median 26 days late),share of referrals,2025-26,observed,research/chapters/R1-trace.md,practice-building
+Board-up layer miss rate,about 1 in 5 (54 of 67 secured buildings found),buildings,2025-26,observed,research/chapters/R1-trace.md,practice-building
+Unsecured buildings with an owner notice later showing a board-up in the city record,72.8% (n = 1405),share,2025-26,observed,research/chapters/R1-trace.md,practice-building
+Forestry ranked list,4350,requests (ranked view; close-out excluded),13 Oct 2026,observed,site/data/ranked.json,practice-forestry
+Street Department ranked list,4106 (1173 cave-ins),requests,13 Oct 2026,observed,site/data/ranked.json,practice-streets
+Building ranked list,"1149 (exterior maintenance 370, open storage 235, interior maintenance 195, unsecured vacant buildings 142, building collapse 73)",requests,13 Oct 2026,observed,site/data/ranked.json,practice-building
+Life-safety rows in the top 25: oldest first vs ranked,Forestry 9 vs 25; Street 1 vs 25; Building 2 vs 25,rows,13 Oct 2026,observed,research/prioritisation-option.md §3,practices
+Weekly review pace,25 rows at 3 minutes each (about 75 minutes),rows per division per week,assumption,estimated,research/impact-quantification.md §5,practices
+PrjCompleteDate filled,19804 of 19821,extracted service-request values,14 Oct 2026,observed,research/prioritisation-option.md §1a,saved-search
+Ranking weights,tier 60/30/0; 1 point per 12 days past (cap 30); 5 per extra report (cap 10),points,15 Oct 2026,our design,site/data/rank-weights.json,saved-search
+CityStat alley and street debris on time (published),78.6%,share of closed requests,Q2 2026,reported,site/data/figures.json (e3_citystat_debris_alley_street_q2_published),dashboard
+"CityStat alley and street debris on time, counting only closings that say done",15.0%,share of closed requests,Q2 2026,observed,site/data/figures.json (e3_citystat_debris_alley_street_q2_done_on_time),dashboard
+Public city maps reading Cityworks,7 of 166,public web maps,14 Oct 2026,observed,research/precedents-closed-loop.md §C,dashboard
+Public city dashboards showing data,0 of 4,dashboards,14 Oct 2026,observed,research/precedents-closed-loop.md §C,dashboard
+monday_list cave-ins filed since 2025,1231,requests (file timestamp cut-off),13 Oct 2026 file,observed,build/stl.duckdb (read-only; 15 Oct 2026),sql
+Cityworks release,23.10,version,14 Oct 2026,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,README; saved-search

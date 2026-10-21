@@ -1,0 +1,136 @@
+{
+ "figures": [
+  {
+   "id": "e5_queue_done_n",
+   "value": 388,
+   "unit": "requests",
+   "definition": "A record shows the work done after filing (mowing ledger cut, finished Forestry or sidewalk work order, board-up, completed demolition permit, or an E1 status page showing a finish), so \"open\" is clerical.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). A record shows the work done after filing (mowing ledger cut, finished Forestry or sidewalk work order, board-up, completed demolition permit, or an E1 status page showing a finish), so \"open\" is clerical.",
+   "note": "summary.json: summary[class=a_done_after_filing].n"
+  },
+  {
+   "id": "e5_queue_done_share",
+   "value": 0.026,
+   "unit": "share of open requests past promise",
+   "definition": "A record shows the work done after filing (mowing ledger cut, finished Forestry or sidewalk work order, board-up, completed demolition permit, or an E1 status page showing a finish), so \"open\" is clerical.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "388 of 14,902 (2.6%). Each request takes the first class that applies. A record shows the work done after filing (mowing ledger cut, finished Forestry or sidewalk work order, board-up, completed demolition permit, or an E1 status page showing a finish), so \"open\" is clerical.",
+   "note": "summary.json: summary[class=a_done_after_filing].pct = 2.6"
+  },
+  {
+   "id": "e5_queue_pending_n",
+   "value": 1206,
+   "unit": "requests",
+   "definition": "A city work record created after filing is still pending (an open Forestry work order, a board-up or demolition record with no completion, or an E1 status page with an unfinished work order).",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). A city work record created after filing is still pending (an open Forestry work order, a board-up or demolition record with no completion, or an E1 status page with an unfinished work order).",
+   "note": "summary.json: summary[class=b_pending_in_records].n"
+  },
+  {
+   "id": "e5_queue_pending_share",
+   "value": 0.0809,
+   "unit": "share of open requests past promise",
+   "definition": "A city work record created after filing is still pending (an open Forestry work order, a board-up or demolition record with no completion, or an E1 status page with an unfinished work order).",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "1,206 of 14,902 (8.09%). Each request takes the first class that applies. A city work record created after filing is still pending (an open Forestry work order, a board-up or demolition record with no completion, or an E1 status page with an unfinished work order).",
+   "note": "summary.json: summary[class=b_pending_in_records].pct = 8.09"
+  },
+  {
+   "id": "e5_queue_superseded_n",
+   "value": 333,
+   "unit": "requests",
+   "definition": "Possibly superseded: a later request with the same code at the same address is closed.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). Possibly superseded: a later request with the same code at the same address is closed.",
+   "note": "summary.json: summary[class=c_possibly_superseded].n"
+  },
+  {
+   "id": "e5_queue_superseded_share",
+   "value": 0.0223,
+   "unit": "share of open requests past promise",
+   "definition": "Possibly superseded: a later request with the same code at the same address is closed.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "333 of 14,902 (2.23%). Each request takes the first class that applies. Possibly superseded: a later request with the same code at the same address is closed.",
+   "note": "summary.json: summary[class=c_possibly_superseded].pct = 2.23"
+  },
+  {
+   "id": "e5_queue_admin_n",
+   "value": 409,
+   "unit": "requests",
+   "definition": "Likely administrative leftover: sirens, no water, mosquito spraying, more than 90 days past promise.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "inferred",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). Likely administrative leftover: sirens, no water, mosquito spraying, more than 90 days past promise.",
+   "note": "summary.json: summary[class=d_admin_leftover].n"
+  },
+  {
+   "id": "e5_queue_admin_share",
+   "value": 0.0274,
+   "unit": "share of open requests past promise",
+   "definition": "Likely administrative leftover: sirens, no water, mosquito spraying, more than 90 days past promise.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "inferred",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "409 of 14,902 (2.74%). Each request takes the first class that applies. Likely administrative leftover: sirens, no water, mosquito spraying, more than 90 days past promise.",
+   "note": "summary.json: summary[class=d_admin_leftover].pct = 2.74"
+  },
+  {
+   "id": "e5_queue_no_record_n",
+   "value": 12566,
+   "unit": "requests",
+   "definition": "No evidence either way: no public record on disk shows the work done or pending. A missing record does not mean the work was not done.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "Each of the 14,902 requests takes the first class that applies (classes are mutually exclusive). No evidence either way: no public record on disk shows the work done or pending. A missing record does not mean the work was not done.",
+   "note": "summary.json: summary[class=e_no_evidence].n"
+  },
+  {
+   "id": "e5_queue_no_record_share",
+   "value": 0.8432,
+   "unit": "share of open requests past promise",
+   "definition": "No evidence either way: no public record on disk shows the work done or pending. A missing record does not mean the work was not done.",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "derivation": "12,566 of 14,902 (84.32%). Each request takes the first class that applies. No evidence either way: no public record on disk shows the work done or pending. A missing record does not mean the work was not done.",
+   "note": "summary.json: summary[class=e_no_evidence].pct = 84.32"
+  },
+  {
+   "id": "e5_queue_base",
+   "value": 14902,
+   "unit": "requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026 and past their promised date on 13 Oct 2026",
+   "label": "observed",
+   "source_sql_or_script": "build/E5/summary.json (scripts/exec/E5/01_ledger.py); report research/open-queue-reality-check.md",
+   "owner": "E5 (copied by E6)",
+   "definition": "The base set of the reality check; equal to e3_queue_past_promise.",
+   "derivation": "requests WHERE ts_init >= '2025-01-01' AND status_group = 'open' AND ts_promised < '2026-10-13 23:59:59' in build/stl.duckdb.",
+   "note": "summary.json: n_base"
+  }
+ ]
+}

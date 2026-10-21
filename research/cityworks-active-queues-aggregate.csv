@@ -1,0 +1,146 @@
+layer,layer_name,group_type,group_value,rows,matched_local_requests,local_open,local_closed,local_cancelled
+18,Active SRs (safe registered codes),overall,all,19291,18993,18991,1,1
+18,Active SRs (safe registered codes),problem_code,Inspect City Tree,5569,5559,5558,0,1
+18,Active SRs (safe registered codes),problem_code,Sidewalk Repair,3752,3749,3749,0,0
+18,Active SRs (safe registered codes),problem_code,Cave-Ins,1248,1244,1243,1,0
+18,Active SRs (safe registered codes),problem_code,Weeds-Occupied Ppty,1160,1149,1149,0,0
+18,Active SRs (safe registered codes),problem_code,Vehicle Towing,519,491,491,0,0
+18,Active SRs (safe registered codes),problem_code,Ppty Maint Code-Ext,470,464,464,0,0
+18,Active SRs (safe registered codes),problem_code,Weeds-Vacant Bldg,443,441,441,0,0
+18,Active SRs (safe registered codes),problem_code,Sirens Not Heard,399,399,399,0,0
+18,Active SRs (safe registered codes),problem_code,WTR-COMING-UP,384,382,382,0,0
+18,Active SRs (safe registered codes),problem_code,Broken/Hanging Limb,380,378,378,0,0
+18,Active SRs (safe registered codes),problem_code,TDebris-alley/street,368,368,368,0,0
+18,Active SRs (safe registered codes),problem_code,City Tree Down,355,346,346,0,0
+18,Active SRs (safe registered codes),problem_code,Illegl Use-Opn Storg,353,342,342,0,0
+18,Active SRs (safe registered codes),problem_code,City Tree Limb Down,336,336,336,0,0
+18,Active SRs (safe registered codes),problem_code,Vacnt Bldg Unsecured,291,288,288,0,0
+18,Active SRs (safe registered codes),problem_code,LRA Demo Submission,282,282,282,0,0
+18,Active SRs (safe registered codes),problem_code,Ppty Maint Code-Int,262,251,251,0,0
+18,Active SRs (safe registered codes),problem_code,Single Light Out,223,183,183,0,0
+18,Active SRs (safe registered codes),problem_code,Missed Cut - VBldg,213,212,212,0,0
+18,Active SRs (safe registered codes),problem_code,Tree Planting requst,213,211,211,0,0
+18,Active SRs (safe registered codes),problem_code,Weeds-Vacant Lot,213,212,212,0,0
+18,Active SRs (safe registered codes),problem_code,NOWATER,193,193,193,0,0
+18,Active SRs (safe registered codes),problem_code,PRESSURE,149,145,145,0,0
+18,Active SRs (safe registered codes),problem_code,Sign needs attention,145,141,141,0,0
+18,Active SRs (safe registered codes),problem_code,Light Damaged,118,114,114,0,0
+18,Active SRs (safe registered codes),problem_code,FH-MAINTENANCE,104,103,103,0,0
+18,Active SRs (safe registered codes),problem_code,Illegal dumpg report,101,99,99,0,0
+18,Active SRs (safe registered codes),problem_code,Building Collapse,88,87,87,0,0
+18,Active SRs (safe registered codes),problem_code,FH-RUNNING,88,88,88,0,0
+18,Active SRs (safe registered codes),problem_code,MISSING-COVER,86,85,85,0,0
+18,Active SRs (safe registered codes),problem_code,Stump Removal,74,74,74,0,0
+18,Active SRs (safe registered codes),problem_code,Unsatisfy Cut -VBldg,74,73,73,0,0
+18,Active SRs (safe registered codes),problem_code,Graffiti-Private,72,68,68,0,0
+18,Active SRs (safe registered codes),problem_code,HYDRANT-HIT,71,70,70,0,0
+18,Active SRs (safe registered codes),problem_code,Missed Cut - V Lot,56,56,56,0,0
+18,Active SRs (safe registered codes),problem_code,Refuse not collected,55,12,12,0,0
+18,Active SRs (safe registered codes),problem_code,Potholes - Residnl,49,38,38,0,0
+18,Active SRs (safe registered codes),problem_code,LEAKING-METER,43,43,43,0,0
+18,Active SRs (safe registered codes),problem_code,Unsatisfy Cut - VLot,43,40,40,0,0
+18,Active SRs (safe registered codes),problem_code,Graffiti-Public,42,40,40,0,0
+18,Active SRs (safe registered codes),problem_code,LOOSE-COVER,41,41,41,0,0
+18,Active SRs (safe registered codes),problem_code,Potholes - Major St,31,23,23,0,0
+18,Active SRs (safe registered codes),problem_code,Potholes - Alley,21,21,21,0,0
+18,Active SRs (safe registered codes),problem_code,Debris-alley/street,19,5,5,0,0
+18,Active SRs (safe registered codes),problem_code,Traffic Graffiti,19,19,19,0,0
+18,Active SRs (safe registered codes),problem_code,Yrd Wste Not Collect,15,8,8,0,0
+18,Active SRs (safe registered codes),problem_code,Other Signal Damaged,10,7,7,0,0
+18,Active SRs (safe registered codes),problem_code,Signals out of sync,10,7,7,0,0
+18,Active SRs (safe registered codes),problem_code,Whole Blk Lights Out,10,0,0,0,0
+18,Active SRs (safe registered codes),problem_code,Bulky items missed,8,1,1,0,0
+18,Active SRs (safe registered codes),problem_code,Graffiti-Prvt Dmpstr,7,2,2,0,0
+18,Active SRs (safe registered codes),problem_code,Critical Sign,4,1,1,0,0
+18,Active SRs (safe registered codes),problem_code,Debris-Vacant Bldg,2,0,0,0,0
+18,Active SRs (safe registered codes),problem_code,Recycling not collec,2,0,0,0,0
+18,Active SRs (safe registered codes),problem_code,Signal Bulb Out,2,0,0,0,0
+18,Active SRs (safe registered codes),problem_code,Signal Damaged,2,0,0,0,0
+18,Active SRs (safe registered codes),problem_code,Debris-Vacant Lot,1,1,1,0,0
+18,Active SRs (safe registered codes),problem_code,Rcy Pickup Missed,1,1,1,0,0
+18,Active SRs (safe registered codes),problem_code,Signal Dark,1,0,0,0,0
+18,Active SRs (safe registered codes),problem_code,Signals Flashing,1,0,0,0,0
+18,Active SRs (safe registered codes),division,FORESTRY,9001,9001,9000,0,1
+18,Active SRs (safe registered codes),division,"STREET DEPT, 510",5365,5365,5364,1,0
+18,Active SRs (safe registered codes),division,BUILDING DIV,1418,1418,1418,0,0
+18,Active SRs (safe registered codes),division,WATER DIV,1151,1151,1151,0,0
+18,Active SRs (safe registered codes),division,"TRAFFIC DIVISION, 511",454,454,454,0,0
+18,Active SRs (safe registered codes),division,CITY EMRGCY MNG,395,395,395,0,0
+18,Active SRs (safe registered codes),division,"Tornado, Recovery",380,380,380,0,0
+18,Active SRs (safe registered codes),division,LRA,338,338,338,0,0
+18,Active SRs (safe registered codes),division,(unmatched request id),298,0,0,0,0
+18,Active SRs (safe registered codes),division,"STREET DIVISION, 514",113,113,113,0,0
+18,Active SRs (safe registered codes),division,OP BRIGHTSIDE,112,112,112,0,0
+18,Active SRs (safe registered codes),division,TOW LOT,100,100,100,0,0
+18,Active SRs (safe registered codes),division,ENVIRONMENTAL INVESTIGATIONS,85,85,85,0,0
+18,Active SRs (safe registered codes),division,(missing division),29,29,29,0,0
+18,Active SRs (safe registered codes),division,REFUSE,24,24,24,0,0
+18,Active SRs (safe registered codes),division,CSB,14,14,14,0,0
+18,Active SRs (safe registered codes),division,FIRE DEPT,4,4,4,0,0
+18,Active SRs (safe registered codes),division,Board of Public Service,2,2,2,0,0
+18,Active SRs (safe registered codes),division,NST,2,2,2,0,0
+18,Active SRs (safe registered codes),division,TREASURER,2,2,2,0,0
+18,Active SRs (safe registered codes),division,BD OF PUB SVC,1,1,1,0,0
+18,Active SRs (safe registered codes),division,CULTURAL RES,1,1,1,0,0
+18,Active SRs (safe registered codes),division,DEPT HUMAN SVC,1,1,1,0,0
+18,Active SRs (safe registered codes),division,FACILITIES MGT,1,1,1,0,0
+18,Active SRs (safe registered codes),queue_status,Pending,6814,6788,6787,1,0
+18,Active SRs (safe registered codes),queue_status,Disptch,5963,5861,5861,0,0
+18,Active SRs (safe registered codes),queue_status,NEW,4063,3996,3996,0,0
+18,Active SRs (safe registered codes),queue_status,Inspect,1661,1622,1621,0,1
+18,Active SRs (safe registered codes),queue_status,Reinsp,273,271,271,0,0
+18,Active SRs (safe registered codes),queue_status,Letter,269,269,269,0,0
+18,Active SRs (safe registered codes),queue_status,ON HOLD,71,71,71,0,0
+18,Active SRs (safe registered codes),queue_status,SCHEDULED,61,61,61,0,0
+18,Active SRs (safe registered codes),queue_status,WEB,60,0,0,0,0
+18,Active SRs (safe registered codes),queue_status,(null),17,17,17,0,0
+18,Active SRs (safe registered codes),queue_status,Extended,16,16,16,0,0
+18,Active SRs (safe registered codes),queue_status,Refer,16,14,14,0,0
+18,Active SRs (safe registered codes),queue_status,Hearing,6,6,6,0,0
+18,Active SRs (safe registered codes),queue_status,BPS APPROVED,1,1,1,0,0
+18,Active SRs (safe registered codes),local_status,open,18991,18991,18991,0,0
+18,Active SRs (safe registered codes),local_status,(unmatched request id),298,0,0,0,0
+18,Active SRs (safe registered codes),local_status,cancelled,1,1,0,0,1
+18,Active SRs (safe registered codes),local_status,closed,1,1,0,1,0
+68,Emergency Tree Service Requests,overall,all,514,511,511,0,0
+68,Emergency Tree Service Requests,problem_code,City Tree Down,300,297,297,0,0
+68,Emergency Tree Service Requests,problem_code,City Tree Limb Down,214,214,214,0,0
+68,Emergency Tree Service Requests,division,FORESTRY,508,508,508,0,0
+68,Emergency Tree Service Requests,division,(unmatched request id),3,0,0,0,0
+68,Emergency Tree Service Requests,division,"Tornado, Recovery",2,2,2,0,0
+68,Emergency Tree Service Requests,division,"STREET DEPT, 510",1,1,1,0,0
+68,Emergency Tree Service Requests,queue_status,Disptch,514,511,511,0,0
+68,Emergency Tree Service Requests,local_status,open,511,511,511,0,0
+68,Emergency Tree Service Requests,local_status,(unmatched request id),3,0,0,0,0
+69,Storm Response SRs,overall,all,682,682,97,585,0
+69,Storm Response SRs,problem_code,Ppty Maint Code-Ext,147,147,22,125,0
+69,Storm Response SRs,problem_code,Light Damaged,116,116,0,116,0
+69,Storm Response SRs,problem_code,City Tree Down,113,113,50,63,0
+69,Storm Response SRs,problem_code,Building Collapse,85,85,1,84,0
+69,Storm Response SRs,problem_code,Whole Blk Lights Out,75,75,0,75,0
+69,Storm Response SRs,problem_code,Single Light Out,56,56,0,56,0
+69,Storm Response SRs,problem_code,Inspect City Tree,44,44,24,20,0
+69,Storm Response SRs,problem_code,Signal Damaged,17,17,0,17,0
+69,Storm Response SRs,problem_code,Other Street Repair,12,12,0,12,0
+69,Storm Response SRs,problem_code,Signal Dark,12,12,0,12,0
+69,Storm Response SRs,problem_code,Signals Flashing,5,5,0,5,0
+69,Storm Response SRs,division,"TRAFFIC DIVISION, 511",281,281,0,281,0
+69,Storm Response SRs,division,BUILDING DIV,232,232,23,209,0
+69,Storm Response SRs,division,FORESTRY,152,152,73,79,0
+69,Storm Response SRs,division,"STREET DIVISION, 514",12,12,0,12,0
+69,Storm Response SRs,division,"Tornado, Recovery",5,5,1,4,0
+69,Storm Response SRs,queue_status,(not exposed),682,682,97,585,0
+69,Storm Response SRs,local_status,closed,585,585,0,585,0
+69,Storm Response SRs,local_status,open,97,97,97,0,0
+106,Open Debris SRs,overall,all,16,6,6,0,0
+106,Open Debris SRs,problem_code,Debris-alley/street,15,5,5,0,0
+106,Open Debris SRs,problem_code,Debris-Vacant Lot,1,1,1,0,0
+106,Open Debris SRs,division,(unmatched request id),10,0,0,0,0
+106,Open Debris SRs,division,"STREET DIVISION, 514",5,5,5,0,0
+106,Open Debris SRs,division,(missing division),1,1,1,0,0
+106,Open Debris SRs,queue_status,Disptch,10,6,6,0,0
+106,Open Debris SRs,queue_status,NEW,4,0,0,0,0
+106,Open Debris SRs,queue_status,Pending,1,0,0,0,0
+106,Open Debris SRs,queue_status,Refer,1,0,0,0,0
+106,Open Debris SRs,local_status,(unmatched request id),10,0,0,0,0
+106,Open Debris SRs,local_status,open,6,6,6,0,0

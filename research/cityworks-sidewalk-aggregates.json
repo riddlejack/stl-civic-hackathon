@@ -1,0 +1,132 @@
+{
+  "source": "https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78",
+  "asof": "2026-10-13",
+  "timezone": "America/Chicago; serialized timestamps are Central local time",
+  "join_method": "Same normalized address and finish calendar date on/after filing; 25m spatial sensitivity. This is candidate evidence, not a direct foreign-key join. Before-WO-init finishes excluded at date grain. No record does not mean no repair.",
+  "workorders": [
+    {
+      "total": 1738,
+      "unique_workorders": 1738,
+      "actual_finish_present": 1627,
+      "finishes_2025_26": 633,
+      "finish_before_init": 0,
+      "finish_before_init_timestamp": 1,
+      "closure_before_finish_timestamp": 1,
+      "future_finishes": 0,
+      "address_present": 1738,
+      "valid_stl_coords": 1734,
+      "first_finish": "2019-04-10 10:49:00",
+      "last_finish": "2026-10-01 11:57:10.970000",
+      "first_wo_closure": "2023-01-05 08:02:37.467000",
+      "last_wo_closure": "2026-10-01 11:59:31.390000"
+    }
+  ],
+  "finish_years": [
+    {
+      "finish_year": 2019,
+      "n": 1
+    },
+    {
+      "finish_year": 2023,
+      "n": 378
+    },
+    {
+      "finish_year": 2024,
+      "n": 615
+    },
+    {
+      "finish_year": 2025,
+      "n": 447
+    },
+    {
+      "finish_year": 2026,
+      "n": 186
+    },
+    {
+      "finish_year": null,
+      "n": 111
+    }
+  ],
+  "cohorts": [
+    {
+      "cohort": "Sidewalk requests filed2025-26",
+      "requests": 2057,
+      "exact_address_matches": 49,
+      "address_or_25m_matches": 84,
+      "exact_by_promise": 3,
+      "exact_after_promise": 46,
+      "multiple_exact_workorders": 0,
+      "median_days_to_exact_finish": 106.0,
+      "median_days_late": 93.0
+    },
+    {
+      "cohort": "Sidewalk handoffs filed2025-26",
+      "requests": 186,
+      "exact_address_matches": 16,
+      "address_or_25m_matches": 17,
+      "exact_by_promise": 0,
+      "exact_after_promise": 16,
+      "multiple_exact_workorders": 0,
+      "median_days_to_exact_finish": 193.5,
+      "median_days_late": 179.5
+    },
+    {
+      "cohort": "Sidewalk handoffs with promise passed30days",
+      "requests": 183,
+      "exact_address_matches": 16,
+      "address_or_25m_matches": 17,
+      "exact_by_promise": 0,
+      "exact_after_promise": 16,
+      "multiple_exact_workorders": 0,
+      "median_days_to_exact_finish": 193.5,
+      "median_days_late": 179.5
+    },
+    {
+      "cohort": "Sidewalk done closures filed2025-26",
+      "requests": 117,
+      "exact_address_matches": 6,
+      "address_or_25m_matches": 10,
+      "exact_by_promise": 0,
+      "exact_after_promise": 6,
+      "multiple_exact_workorders": 0,
+      "median_days_to_exact_finish": 36.5,
+      "median_days_late": 22.5
+    },
+    {
+      "cohort": "Other service addresses contextual baseline",
+      "requests": 24918,
+      "exact_address_matches": 114,
+      "address_or_25m_matches": 286,
+      "exact_by_promise": 2,
+      "exact_after_promise": 112,
+      "multiple_exact_workorders": 0,
+      "median_days_to_exact_finish": 180.0,
+      "median_days_late": 177.0
+    }
+  ],
+  "many_requests_one_workorder": [
+    {
+      "matched_workorders": 41,
+      "with_multiple_sidewalk_requests": 6
+    }
+  ],
+  "address_coordinate_check": [
+    {
+      "exact_candidate_requests": 49,
+      "also_within25m": 49,
+      "max_distance_m": 4.534792165995235
+    }
+  ],
+  "handoff_unique_workorders": [
+    {
+      "workorders": 15,
+      "requests": 16
+    }
+  ],
+  "nonindependence_check": [
+    {
+      "exact_candidates": 49,
+      "finish_equals_311_close": 0
+    }
+  ]
+}

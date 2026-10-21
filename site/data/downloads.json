@@ -1,0 +1,123 @@
+{
+ "meta": {
+  "contract": "downloads/1",
+  "mock": false,
+  "state": "real",
+  "built_at": "2026-10-14 16:41",
+  "sources": [
+   {
+    "path": "scripts/night/N1/measures.sql",
+    "mtime": null
+   },
+   {
+    "path": "build/N2/closure_class.sql",
+    "mtime": null
+   },
+   {
+    "path": "research/chapters/N2-closure-classes.csv",
+    "mtime": null
+   },
+   {
+    "path": "build/N4/scoreboard.csv",
+    "mtime": null
+   },
+   {
+    "path": "scripts/night/N6/bridge.py",
+    "mtime": null
+   },
+   {
+    "path": "scripts/night/N6/bridge.py",
+    "mtime": null
+   },
+   {
+    "path": "scripts/night/N6/bridge.py",
+    "mtime": null
+   },
+   {
+    "path": "scripts/night/N6/bridge.py",
+    "mtime": null
+   },
+   {
+    "path": "scripts/night/N6/bridge.py",
+    "mtime": null
+   },
+   {
+    "path": "scripts/night/N6/bridge.py",
+    "mtime": null
+   }
+  ],
+  "notes": []
+ },
+ "files": [
+  {
+   "name": "measures.sql",
+   "href": "data/downloads/measures.sql",
+   "desc": "The measures as plain DuckDB SQL: promise, re-filed, ledger and work-order joins, Monday list, receipt.",
+   "from": "scripts/night/N1/measures.sql",
+   "kb": 21
+  },
+  {
+   "name": "closure_class.sql",
+   "href": "data/downloads/closure_class.sql",
+   "desc": "The closure classes as SQL: the city's closing words to done / handed off / no action.",
+   "from": "build/N2/closure_class.sql",
+   "kb": 21
+  },
+  {
+   "name": "closure-classes.csv",
+   "href": "data/downloads/closure-classes.csv",
+   "desc": "Every closing text, its class and the rule or judgement behind it: the table a person reviews.",
+   "from": "research/chapters/N2-closure-classes.csv",
+   "kb": 255
+  },
+  {
+   "name": "scoreboard.csv",
+   "href": "data/downloads/scoreboard.csv",
+   "desc": "The scoreboard, every request type.",
+   "from": "build/N4/scoreboard.csv",
+   "kb": 70
+  },
+  {
+   "name": "queue.csv",
+   "href": "data/downloads/queue.csv",
+   "desc": "The overdue queue: every open request filed since 1 Jan 2025 past its promised date, oldest first, block level, no request numbers.",
+   "from": "scripts/night/N6/bridge.py",
+   "kb": 1898
+  },
+  {
+   "name": "monday_list.csv",
+   "href": "data/downloads/monday_list.csv",
+   "desc": "The Monday list: every open request past its promised date, block level, no request numbers.",
+   "from": "scripts/night/N6/bridge.py",
+   "kb": 3378
+  },
+  {
+   "name": "brief_lra_lots.csv",
+   "href": "data/downloads/brief_lra_lots.csv",
+   "desc": "Brief list 1: city-owned lots closed \"on schedule\" with no cut billed since.",
+   "from": "scripts/night/N6/bridge.py",
+   "kb": 4
+  },
+  {
+   "name": "brief_cavein_referred.csv",
+   "href": "data/downloads/brief_cavein_referred.csv",
+   "desc": "Brief list 2: cave-ins referred in the last 90 days.",
+   "from": "scripts/night/N6/bridge.py",
+   "kb": 5
+  },
+  {
+   "name": "brief_tree_cancelled.csv",
+   "href": "data/downloads/brief_tree_cancelled.csv",
+   "desc": "Brief list 3: tree requests cancelled where a removal order is open.",
+   "from": "scripts/night/N6/bridge.py",
+   "kb": 8
+  },
+  {
+   "name": "dumping_blocks.csv",
+   "href": "data/downloads/dumping_blocks.csv",
+   "desc": "Illegal dumping and debris reports by block, last 365 days.",
+   "from": "scripts/night/N6/bridge.py",
+   "kb": 14
+  }
+ ]
+}

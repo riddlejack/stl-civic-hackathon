@@ -1,0 +1,15 @@
+import duckdb
+con=duckdb.connect('n8.duckdb')
+X=lambda q: con.execute(q).fetchall()
+print('tree cancel 2025-26', X("select count(*), sum(case when res='' then 1 else 0 end) from req where code='Inspect City Tree' and upper(status)='CANCEL' and t_init>='2025-01-01'"))
+print('vlot on-sched median min', X("select median(epoch(t_closed-t_init)/60) from req where code='Weeds-Vacant Lot' and res ilike 'on schedule to be cut%' and upper(status)='CLOSED' and t_init>='2025-01-01' and t_init<'2026-10-13'"))
+print('vbldg on-sched median min', X("select median(epoch(t_closed-t_init)/60) from req where code='Weeds-Vacant Bldg' and res ilike 'on schedule to be cut%' and upper(status)='CLOSED' and t_init>='2025-01-01' and t_init<'2026-10-13'"))
+print('promise populated 2024+', X("select avg(case when t_prj is not null then 1.0 else 0 end) from req where t_init>='2024-01-01'"))
+print('open past promise', X("select count(*), sum(case when t_init>='2025-10-13' then 1 else 0 end) from req where upper(coalesce(status,'')) not in ('CLOSED','CANCEL') and t_prj<'2026-10-13'"))
+print('open past promise (status not null)', X("select count(*) from req where status is not null and upper(status) not in ('CLOSED','CANCEL') and t_prj<'2026-10-13 00:33'"))
+print('cave-ins kept', X("select round(100*avg(case when upper(status)='CLOSED' and t_closed<=t_prj then 1.0 else 0 end),1), count(*) from req where code='Cave-Ins' and t_init>='2025-01-01' and t_prj<='2026-10-13' and upper(status)<>'CANCEL'"))
+print('sidewalk kept', X("select code, round(100*avg(case when upper(status)='CLOSED' and t_closed<=t_prj then 1.0 else 0 end),1), count(*) from req where code ilike '%sidewalk%' and t_init>='2025-01-01' and t_prj<='2026-10-13' and upper(status)<>'CANCEL' group by 1"))
+print('tow towed', X("select count(*), sum(case when res ilike '%towed%' then 1 else 0 end) from req where code='Vehicle Towing' and upper(status)='CLOSED' and t_init>='2024-01-01' and t_init<'2026-07-01'"))
+print('tow by close month', X("select strftime(t_closed,'%Y-%m') m, sum(case when res='vehicle tagged for tow' then 1 else 0 end), sum(case when res='vehicle towed' then 1 else 0 end) from req where code='Vehicle Towing' and t_closed>='2026-06-01' group by 1 order by 1"))
+for kw in ['lead','siren','tornado']:
+    print(kw, X(f"select code, count(*), sum(case when upper(coalesce(status,'')) not in ('CLOSED','CANCEL') then 1 else 0 end) from req where code ilike '%{kw}%' and t_init>='2025-01-01' group by 1"))

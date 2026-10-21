@@ -1,0 +1,91 @@
+/* CityStat, corrected: department sections, one card per measure, quarterly chart with three series.
+   Series colours validated with the dataviz palette check (light surface): published keeps the site's
+   promise blue (contrast WARN, relieved by the stat row and the table), rebuilt indigo, closing-says-done
+   a darker step of the site's done green so the 2px line holds on white. */
+:root {
+  --cs-pub: #58c4dd;
+  --cs-reb: #5b4fc4;
+  --cs-done: #4f9a3a;
+}
+
+.cs-lead { margin-top: 30px; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); }
+.cs-lead .cs-chart .cs-source { margin-top: 18px; }
+
+.cs-guide { padding: 30px 34px 26px; }
+.cs-guide h2 { margin: 0 0 14px; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.cs-key { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; font-size: 16.5px; color: var(--ink-2); line-height: 1.45; }
+.cs-key li { padding-left: 30px; position: relative; }
+.cs-key li .cs-sw { position: absolute; left: 0; top: 4px; }
+.cs-key b { color: var(--ink); }
+.cs-cover { margin: 18px 0 0; font-size: 15px; color: var(--muted); }
+
+.cs-sw { display: inline-block; width: 16px; height: 14px; border-radius: 3px; vertical-align: -2px; margin-right: 7px; flex: none; }
+.cs-sw.pub { background: var(--cs-pub); }
+.cs-sw.reb { background: none; height: 0; border-top: 2.5px solid var(--cs-reb); border-radius: 0; position: relative; vertical-align: 4px; }
+.cs-sw.reb::after { content: ""; position: absolute; left: 4px; top: -6.5px; width: 6px; height: 6px; border: 2px solid var(--cs-reb); border-radius: 50%; background: var(--surface); }
+.cs-sw.done { background: none; height: 0; border-top: 2.5px solid var(--cs-done); border-radius: 0; position: relative; vertical-align: 4px; }
+.cs-sw.done::after { content: ""; position: absolute; left: 4px; top: -6.5px; width: 10px; height: 10px; border-radius: 50%; background: var(--cs-done); }
+.cs-sw.goal { background: none; height: 0; border-top: 2px dashed var(--ink-2); border-radius: 0; vertical-align: 4px; }
+
+.cs-dept { margin-top: 46px; }
+.cs-dept-head { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 20px; }
+.cs-dept-head h2 { margin: 0; font-size: clamp(24px, 1.7vw, 32px); font-weight: 720; letter-spacing: -0.015em; }
+.cs-src-link { font-size: 15px; color: var(--muted); }
+
+.cs-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.cs-m { padding: 22px 24px 18px; display: flex; flex-direction: column; min-width: 0; }
+.cs-kick { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+.cs-m h3 { margin: 6px 0 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.cs-goal { margin: 4px 0 0; font-size: 15.5px; color: var(--ink-2); }
+
+.cs-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 14px; margin-top: 16px; padding: 12px 0 2px; border-top: 1px solid var(--line); }
+.cs-stats-head { grid-column: 1 / -1; margin: 0 0 2px; font-size: 13px; color: var(--muted); }
+.cs-stat { display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
+.cs-stat-k { font-size: 13.5px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cs-stat-v { font-size: 28px; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: var(--ink); line-height: 1.15; }
+.cs-stat.done .cs-stat-v { color: var(--ink); }
+
+.cs-plot { margin-top: 10px; min-height: 210px; }
+.cs-svg { display: block; overflow: visible; }
+.cs-svg .cs-grid-l { stroke: var(--line); stroke-width: 1; }
+.cs-svg .cs-base { stroke: var(--line-2); stroke-width: 1; }
+.cs-svg .cs-tick { font-size: 12.5px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.cs-svg .cs-year { font-size: 12.5px; fill: var(--ink-2); font-weight: 650; }
+.cs-svg .cs-unpub { fill: var(--surface-2); }
+.cs-svg .cs-col { fill: var(--cs-pub); }
+.cs-svg .cs-goal-l { stroke: var(--ink-2); stroke-width: 1.25; stroke-dasharray: 5 4; }
+.cs-svg .cs-goal-t { font-size: 12px; fill: var(--ink-2); font-weight: 600; paint-order: stroke; stroke: var(--surface); stroke-width: 3px; }
+.cs-svg .cs-line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.cs-svg .cs-line.reb { stroke: var(--cs-reb); }
+.cs-svg .cs-line.done { stroke: var(--cs-done); }
+.cs-svg .cs-dot { stroke: var(--surface); stroke-width: 2; }
+.cs-svg .cs-dot.done { fill: var(--cs-done); }
+.cs-svg .cs-dot.reb.ring { fill: var(--surface); stroke: var(--cs-reb); stroke-width: 2; }
+.cs-svg .cs-cross { stroke: var(--ink-2); stroke-width: 1; opacity: 0; }
+.cs-svg .cs-cross.on { opacity: 0.4; }
+.cs-svg .cs-hit { fill: transparent; cursor: crosshair; }
+
+.cs-q3 { margin: 10px 0 0; font-size: 15px; color: var(--ink-2); }
+.cs-q3 b { color: var(--ink); font-weight: 650; }
+.cs-note { margin: 8px 0 0; font-size: 14px; color: var(--muted); }
+.cs-source { margin: auto 0 0; padding-top: 12px; font-size: 12.5px; line-height: 1.45; color: var(--muted); }
+.cs-source a { color: inherit; }
+
+.cs-next { margin: 14px 0 0; font-size: 17px; font-weight: 600; color: var(--ink-2); }
+table.cs td.m a { text-decoration: none; }
+table.cs td.m a:hover { text-decoration: underline; }
+
+@media (max-width: 1400px) {
+  .cs-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1180px) {
+  .cs-lead { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .cs-cards { grid-template-columns: 1fr; gap: 16px; }
+  .cs-m { padding: 18px 16px 14px; }
+  .cs-guide { padding: 20px 18px; }
+  .cs-stat-v { font-size: 22px; }
+  .cs-stat-k { font-size: 12px; white-space: normal; }
+  .cs-dept { margin-top: 34px; }
+}

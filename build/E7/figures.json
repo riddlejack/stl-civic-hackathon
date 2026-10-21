@@ -1,0 +1,148 @@
+{
+ "figures": [
+  {
+   "id": "e7_closeout_n",
+   "value": 1130,
+   "unit": "requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Open past-promise requests routed to Close-out instead of the ranked list.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "research/open-queue-reality-check.md classes a, c, d",
+   "owner": "E7",
+   "derivation": "Of the 14,902, those E5 classes as done after filing (388), possibly superseded by a later closed request of the same type at the same address (333) or an administrative leftover (409). They need a desk to verify and close the record, not a crew."
+  },
+  {
+   "id": "e7_ranked_n",
+   "value": 13772,
+   "unit": "requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Open past-promise requests ranked (E5 classes b and e).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "14,902 minus the 1130 routed to Close-out. 308 of them are sensitive types or SLMPD routings, counted but never listed."
+  },
+  {
+   "id": "e7_ranked_public_n",
+   "value": 13464,
+   "unit": "requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Ranked requests shown on the list (sensitive types excluded).",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "13,772 ranked minus 308 sensitive or SLMPD-routed requests, as in E3's queue."
+  },
+  {
+   "id": "e7_tier1_base_n",
+   "value": 2991,
+   "unit": "requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Requests among the 14,902 whose type falls in hazard tier 1.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "Problem codes mapped to tiers by research/prioritisation-option.md (tier 1: life-safety, blocked right of way or loss of an essential service; tier 2: hazard not immediate; tier 3: everything else). Matches the report's simulation (2,991 / 7,423 / 4,488)."
+  },
+  {
+   "id": "e7_tier2_base_n",
+   "value": 7423,
+   "unit": "requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Requests among the 14,902 whose type falls in hazard tier 2.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "Problem codes mapped to tiers by research/prioritisation-option.md (tier 1: life-safety, blocked right of way or loss of an essential service; tier 2: hazard not immediate; tier 3: everything else). Matches the report's simulation (2,991 / 7,423 / 4,488)."
+  },
+  {
+   "id": "e7_tier3_base_n",
+   "value": 4488,
+   "unit": "requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Requests among the 14,902 whose type falls in hazard tier 3.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "Problem codes mapped to tiers by research/prioritisation-option.md (tier 1: life-safety, blocked right of way or loss of an essential service; tier 2: hazard not immediate; tier 3: everything else). Matches the report's simulation (2,991 / 7,423 / 4,488)."
+  },
+  {
+   "id": "e7_forestry_top25_t1_oldest",
+   "value": 9,
+   "unit": "of 25 requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Forestry: life-safety (tier 1) requests among the 25 furthest past their date, within the ranked set.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "Forestry's ranked set (4,353 requests: E5 classes b and e, sensitive types included as in the report) sorted by days past the promised date; of the first 25, 9 are tier 1. On the page's Oldest-first view (every listed request, Close-out included) the count is 9 of 25."
+  },
+  {
+   "id": "e7_forestry_top25_t1_ranked",
+   "value": 25,
+   "unit": "of 25 requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Forestry: life-safety (tier 1) requests among the top 25 of the Ranked view.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "The same set sorted by score (hazard tier + lateness + repeats, ties to the oldest); of the first 25, 25 are tier 1. Same on the page (25 of 25)."
+  },
+  {
+   "id": "e7_forestry_top25_overlap",
+   "value": 0,
+   "unit": "of 25 requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Forestry: requests in both the top 25 oldest-first and the top 25 ranked.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "Within the ranked set: 0 of 25 in common. On the page (Oldest first lists every request, Close-out included): 0 of 25."
+  },
+  {
+   "id": "e7_street_dept_510_top25_t1_oldest",
+   "value": 1,
+   "unit": "of 25 requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Street Department (510): life-safety (tier 1) requests among the 25 furthest past their date, within the ranked set.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "Street Department (510)'s ranked set (4,109 requests: E5 classes b and e, sensitive types included as in the report) sorted by days past the promised date; of the first 25, 1 are tier 1. On the page's Oldest-first view (every listed request, Close-out included) the count is 3 of 25."
+  },
+  {
+   "id": "e7_street_dept_510_top25_t1_ranked",
+   "value": 25,
+   "unit": "of 25 requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Street Department (510): life-safety (tier 1) requests among the top 25 of the Ranked view.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "The same set sorted by score (hazard tier + lateness + repeats, ties to the oldest); of the first 25, 25 are tier 1. Same on the page (25 of 25)."
+  },
+  {
+   "id": "e7_street_dept_510_top25_overlap",
+   "value": 0,
+   "unit": "of 25 requests",
+   "period": "open requests filed 1 Jan 2025 to 13 Oct 2026, past their promised date on 13 Oct 2026",
+   "definition": "Street Department (510): requests in both the top 25 oldest-first and the top 25 ranked.",
+   "label": "observed",
+   "source_sql_or_script": "scripts/exec/E7/rank.py, from build/E5/private/ledger_rows.parquet (E5 evidence classes) joined to the public 311 file (build/stl.duckdb)",
+   "note": "",
+   "owner": "E7",
+   "derivation": "Within the ranked set: 0 of 25 in common. On the page (Oldest first lists every request, Close-out included): 0 of 25."
+  }
+ ]
+}

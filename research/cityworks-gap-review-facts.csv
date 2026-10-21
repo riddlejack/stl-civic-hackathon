@@ -1,0 +1,109 @@
+figure,unit,date,label,url,note
+32,searches,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,work_order_layers
+36490,search memberships,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,work_order_memberships
+29018,distinct work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,unique_work_orders
+42,complete extracts,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,complete_layers
+0,conflicting work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,overlapping_work_orders_with_status_date_conflicts
+0,field occurrences,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,personal_field_occurrences_outside_requested_fields
+87,catalog entries,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,All saved searches
+32,searches,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Work-order searches
+42,searches,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Inspection searches
+8,searches,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Service-request searches
+5,searches,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Case-object searches
+40,searches,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Repeated PCA inspection entries
+10,sets,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Repeated PCA sets
+4,priorities,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Priorities per PCA set
+80,public maps,2026-10-14,observed,https://geoportal.stlouis-mo.gov/portal/sharing/rest/search?f=json,Bounded public map scan; only QE19 and QE20 references found
+1738,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Returned layer rows
+1627,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Valid actual finish dates
+2019-04-10,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Earliest valid actual finish
+2026-10-01,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Latest valid actual finish
+5596,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,Returned layer rows
+5031,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,Valid actual finish dates
+2022-03-28,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,Earliest valid actual finish
+2026-10-14,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/89,Latest valid actual finish
+3555,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Returned layer rows
+3554,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Valid actual finish dates
+2025-10-14,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Earliest valid actual finish
+2026-10-14,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Latest valid actual finish
+2297,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99,Returned layer rows
+2297,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99,Valid actual finish dates
+2022-06-11,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99,Earliest valid actual finish
+2026-10-06,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/99,Latest valid actual finish
+28,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108,Returned layer rows
+28,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108,Valid actual finish dates
+2026-09-22,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108,Earliest valid actual finish
+2026-10-07,Central date,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/108,Latest valid actual finish
+1,invalid dates,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Actual finish year 4152 excluded
+4152,year,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Invalid actual finish year
+633,work orders,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,finishes_2025_26
+0,work orders,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,finish_before_init
+0,work orders,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,future_finishes
+2057,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk requests filed2025-26: requests
+49,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk requests filed2025-26: exact_address_matches
+84,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk requests filed2025-26: address_or_25m_matches
+3,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk requests filed2025-26: exact_by_promise
+46,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk requests filed2025-26: exact_after_promise
+106.0,days,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk requests filed2025-26: median_days_to_exact_finish
+93.0,days,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk requests filed2025-26: median_days_late
+186,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs filed2025-26: requests
+16,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs filed2025-26: exact_address_matches
+17,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs filed2025-26: address_or_25m_matches
+0,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs filed2025-26: exact_by_promise
+16,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs filed2025-26: exact_after_promise
+193.5,days,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs filed2025-26: median_days_to_exact_finish
+179.5,days,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs filed2025-26: median_days_late
+183,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs with promise passed30days: requests
+16,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs with promise passed30days: exact_address_matches
+17,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs with promise passed30days: address_or_25m_matches
+0,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs with promise passed30days: exact_by_promise
+16,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs with promise passed30days: exact_after_promise
+193.5,days,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs with promise passed30days: median_days_to_exact_finish
+179.5,days,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Sidewalk handoffs with promise passed30days: median_days_late
+41,work orders,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Distinct work orders matched to all sidewalk requests
+49,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Exact-address candidates also within 25 metres
+25,metres,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Spatial sensitivity threshold
+4.535,metres,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,"Maximum coordinate distance for exact-address candidates, rounded"
+15,work orders,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Distinct work orders matched to handoffs
+30,days,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Maturity threshold past promise
+0,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Candidate actual-finish timestamp equals 311 closure
+61,selected codes,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Safe operational code allowlist
+19291,unique requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Scoped active queue
+18993,requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Exact joins to existing 311
+22,routing labels,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Non-null divisions among exact joins; not departments
+19261,requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,DateSubmitTo populated
+12883,requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,DateDispatchTo populated
+7995,requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,DateDispatchOpen populated
+9165,requests,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/18,Locally open but Completed=1
+663,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/19,ARPA scheduled-category records
+217,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/20,ARPA completed-category records
+880,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/19,Combined ARPA records; all join directly to 311
+649,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/19,Scheduled-category records CLOSED
+636,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/19,Scheduled-category records Work Completed
+13,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/14,Funded/in-process speed-control work orders
+0,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/13,New speed-control work orders
+0,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/15,Dispatched speed-control work orders
+0,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/16,Estimated speed-control work orders
+0,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/14,Actual speed-control finish dates
+1011,records,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/79,Sidewalk inspection completions
+2014–2023,filing years,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/19,ARPA requests filing period
+5,rows per probe,2026-10-14,observed,https://geoportal.stlouis-mo.gov/portal/sharing/rest/content/items/f2332491fba944878d838f8141407b97/data?f=json,Three public cw search probes did not return advertised RequestIds
+3,searches,2026-10-14,observed,https://geoportal.stlouis-mo.gov/portal/sharing/rest/content/items/f2332491fba944878d838f8141407b97/data?f=json,Public cw five-row probes
+1,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Finish precedes initiation within same calendar day
+50,minutes approximately,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Finish before initiation timestamp gap
+1,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Close timestamp precedes finish within same calendar day
+10,seconds approximately,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/78,Close before finish timestamp gap
+2,completion-source gaps,2026-10-14,inferred,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Sidewalk repairs and tree trimming substantially narrowed
+27267,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Unique forestry union
+16778,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Forestry open-status union
+10489,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Forestry CLOSED union
+94,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Open-status forestry with actual finish
+1750,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Forestry finish timestamp before initiation
+565,work orders,2026-10-14,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer?f=json,Recent forestry finish timestamp before initiation
+140,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Converted tree-trimming cohort
+74,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Tree-trimming exact-address completion candidates
+6,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Exact tree-trimming candidates by promise
+68,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Exact tree-trimming candidates after promise
+268.5,days,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Median lateness among exact-address tree candidates after promise
+30,projected metres,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Forestry spatial sensitivity in Web Mercator
+89,requests,2025-01-01 through 2026-10-13,observed,https://service.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/98,Tree-trimming address-or-spatial completion candidates

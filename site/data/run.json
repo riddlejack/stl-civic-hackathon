@@ -1,0 +1,18 @@
+{
+ "meta": {
+  "contract": "run/1",
+  "mock": false,
+  "state": "real",
+  "built_at": "2026-10-14 16:41",
+  "sources": [
+   {
+    "path": "build/out/run.json",
+    "mtime": "2026-10-14 01:51"
+   }
+  ],
+  "notes": []
+ },
+ "asof": "2026-10-13 00:33",
+ "ledger_max_date": "2026-10-13",
+ "built_at": "2026-10-14 01:51:20 CDT"
+}

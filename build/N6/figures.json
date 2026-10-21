@@ -1,0 +1,76 @@
+[
+ {
+  "id": "n6_brief_compliance_window",
+  "value": 22,
+  "unit": "services compared",
+  "period": "promised dates 2026-09-29 to 2026-10-13",
+  "definition": "Services with at least 20 requests due in each of the two weeks.",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N6/bridge.py (build_brief), over build/stl.duckdb (N1)",
+  "note": "",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped, one row per request number), as loaded by N1 into build/stl.duckdb; each request graded against its own promised date (N1 view promise), this week's due requests against last week's; cancelled requests left out.",
+  "owner": "N6"
+ },
+ {
+  "id": "n6_brief_pothole_first_week_below_half",
+  "value": "2026-06-15",
+  "unit": "week (Monday)",
+  "period": "residential pothole requests filed 6 Apr to 4 Oct 2026, closed by 13 Oct 2026",
+  "definition": "First week of 2026 in which fewer than half of closed residential pothole requests (at least 15) were closed within CityStat's 8-day goal.",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N6/bridge.py (build_brief), over build/stl.duckdb (N1)",
+  "note": "",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped, one row per request number), as loaded by N1 into build/stl.duckdb; residential pothole requests grouped by the week filed; share of closed requests closed within 8 days of filing (CityStat's goal and definition C, which N4 found reproduces CityStat's counts); weeks with fewer than 15 closed requests not used. Recent weeks still have open requests, so their shares can only fall.",
+  "owner": "N6"
+ },
+ {
+  "id": "n6_brief_first_step_by_ward",
+  "value": 14,
+  "unit": "wards",
+  "period": "resident requests filed 16 May 2025 to 13 Oct 2026",
+  "definition": "Median days to the first-step closing, by ward, for towing tags and cave-in referrals.",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N6/bridge.py (build_brief), over build/stl.duckdb (N1)",
+  "note": "",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped, one row per request number), as loaded by N1 into build/stl.duckdb; resident channels only; ward from the published WARD column, blank wards left out, so a city analyst can reproduce it from the CSV without GIS; only closures with the same closing words, so the comparison is like for like (N3's method, recomputed by ward).",
+  "owner": "N6"
+ },
+ {
+  "id": "n6_brief_cavein_referrals_90d",
+  "value": 118,
+  "unit": "requests",
+  "period": "closed 2026-07-15 to 2026-10-13",
+  "definition": "Cave-in requests closed as referred to Street Maintenance in the last 90 days.",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N6/bridge.py (build_brief), over build/stl.duckdb (N1)",
+  "note": "",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped, one row per request number), as loaded by N1 into build/stl.duckdb; closing words matched exactly; the city publishes no repair date for these, so none can be joined.",
+  "owner": "N6"
+ },
+ {
+  "id": "n6_brief_lra_no_cut_requests",
+  "value": 96,
+  "unit": "requests",
+  "period": "2026 season to 13 Oct 2026",
+  "definition": "Resident LRA-lot weed requests closed \"on schedule\" or \"added to rotation\" within 3 days with no cut billed after (N1's parcel join).",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N6/bridge.py (build_brief), over build/stl.duckdb (N1)",
+  "note": "Retired for public use 14 Oct 2026: N1's wider parcel join; earlier runs counted all channels (103 on 82 lots). The brief and every public text use N5's registered resident-filed count, n5_funnel_no_cut_requests and n5_funnel_no_cut_lots (94 on 75).",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped, one row per request number), as loaded by N1 into build/stl.duckdb, joined by N1 to parcels and to the Forestry billing ledger; land-bank ownership from the LRA inventory.",
+  "owner": "N6",
+  "retired": true
+ },
+ {
+  "id": "n6_brief_tree_cancelled_open_order",
+  "value": 289,
+  "unit": "requests",
+  "period": "1 Jan 2025 to 13 Oct 2026",
+  "definition": "Inspect City Tree requests cancelled with no words at the same address as a removal order started more than a day before (N1's join).",
+  "label": "observed",
+  "source_sql_or_script": "scripts/night/N6/bridge.py (build_brief), over build/stl.duckdb (N1)",
+  "note": "Retired for public use 14 Oct 2026: an earlier version counted removal orders within 30 m (499) under an 'at the address' definition. The brief and every public text use N5's exact-address count, n5_tree_cancel_blank_wo_predates (288, median 575 days).",
+  "derivation": "311 requests (City of St. Louis open data, csb.zip yearly CSVs, invalid bytes dropped, one row per request number), as loaded by N1 into build/stl.duckdb, joined by N1 to the city's published Cityworks tree work-order saved searches by normalised address.",
+  "owner": "N6",
+  "retired": true
+ }
+]
