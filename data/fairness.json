@@ -1,0 +1,803 @@
+{
+ "meta": {
+  "contract": "fairness/1",
+  "mock": false,
+  "state": "real",
+  "built_at": "2026-10-14 16:41",
+  "sources": [
+   {
+    "path": "build/N3/decomposition.json",
+    "mtime": "2026-10-13 23:54"
+   },
+   {
+    "path": "build/N3/robust_comparisons.csv",
+    "mtime": "2026-10-13 23:55"
+   },
+   {
+    "path": "site/config.json (CityStat ward figures, reported)",
+    "mtime": null
+   }
+  ],
+  "notes": []
+ },
+ "headline": "The north does not wait longer for crews. It waits longer for someone to look.",
+ "sub": "Where the closing words say the work was done, wards 1–5 and 10–14 are served at about the same speed. The gap sits in the first step: the inspector's tag, the referral, the notice. What happens after that step is not recorded on the request, so the city cannot see the rest of the wait.",
+ "citystat": {
+  "a_label": "Ward 1",
+  "b_label": "Ward 10",
+  "a_days": 17.18,
+  "b_days": 35.07,
+  "period": "requests filed 1 Jan 2024 to 30 Jun 2026, all CSB requests, mean days to close",
+  "label": "reported",
+  "source": "CityStat, Citizens' Service Bureau ward map (CSBRequestMap), extracted 13 Oct 2026 (data/raw/citystat/tableau-extract.md)"
+ },
+ "decomposition_key": "citystat_window_snapshot_2026-07-10 | ward 1 vs ward 10",
+ "decomposition_figure": "n3_decomp_ward1_vs_10_gap",
+ "reproduction_figures": [
+  "n3_citystat_ward1_reproduced",
+  "n3_citystat_reproduction_error"
+ ],
+ "no_gap_figure": "n3_no_gap_done_types_after",
+ "decompositions": [
+  {
+   "key": "citystat_window_snapshot_2026-07-10 | ward 1 vs ward 10",
+   "a_label": "Ward 1",
+   "b_label": "Ward 10",
+   "a_mean": 17.36,
+   "b_mean": 33.08,
+   "gap": 15.72,
+   "n_a": 19792,
+   "n_b": 15035,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": 0.43,
+     "share": 0.027
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 1.51,
+     "share": 0.096
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 1.3,
+     "share": 0.083
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 6.09,
+     "share": 0.387
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 6.39,
+     "share": 0.406
+    }
+   ],
+   "speed_share": 0.877,
+   "mix_share": 0.123
+  },
+  {
+   "key": "citystat_window_snapshot_2026-07-10 | wards 1-5 vs 10-14",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_mean": 20.05,
+   "b_mean": 27.65,
+   "gap": 7.6,
+   "n_a": 86226,
+   "n_b": 88973,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": -3.16,
+     "share": -0.416
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 0.89,
+     "share": 0.117
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 1.74,
+     "share": 0.229
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 3.1,
+     "share": 0.408
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 5.03,
+     "share": 0.661
+    }
+   ],
+   "speed_share": 1.298,
+   "mix_share": -0.298
+  },
+  {
+   "key": "citystat_window_status_2026-10-13 | ward 1 vs ward 10",
+   "a_label": "Ward 1",
+   "b_label": "Ward 10",
+   "a_mean": 18.37,
+   "b_mean": 37.58,
+   "gap": 19.21,
+   "n_a": 19929,
+   "n_b": 15387,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": 1.21,
+     "share": 0.063
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 1.83,
+     "share": 0.095
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 2.07,
+     "share": 0.108
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 6.56,
+     "share": 0.341
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 7.53,
+     "share": 0.392
+    }
+   ],
+   "speed_share": 0.841,
+   "mix_share": 0.158
+  },
+  {
+   "key": "citystat_window_status_2026-10-13 | wards 1-5 vs 10-14",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_mean": 21.56,
+   "b_mean": 31.3,
+   "gap": 9.75,
+   "n_a": 87055,
+   "n_b": 90700,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": -2.6,
+     "share": -0.267
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 1.01,
+     "share": 0.104
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 2.16,
+     "share": 0.222
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 3.43,
+     "share": 0.352
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 5.74,
+     "share": 0.589
+    }
+   ],
+   "speed_share": 1.162,
+   "mix_share": -0.163
+  },
+  {
+   "key": "resident_after_tornado_status_2026-10-13 | ward 1 vs ward 10",
+   "a_label": "Ward 1",
+   "b_label": "Ward 10",
+   "a_mean": 12.13,
+   "b_mean": 26.36,
+   "gap": 14.23,
+   "n_a": 8462,
+   "n_b": 5983,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": 0.72,
+     "share": 0.051
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 0.34,
+     "share": 0.024
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 2.61,
+     "share": 0.183
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 6.66,
+     "share": 0.468
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 3.9,
+     "share": 0.274
+    }
+   ],
+   "speed_share": 0.925,
+   "mix_share": 0.074
+  },
+  {
+   "key": "resident_after_tornado_status_2026-10-13 | wards 1-5 vs 10-14",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_mean": 13.59,
+   "b_mean": 19.59,
+   "gap": 6.0,
+   "n_a": 39623,
+   "n_b": 35790,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": -1.89,
+     "share": -0.315
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": -0.05,
+     "share": -0.008
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 1.57,
+     "share": 0.262
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 2.97,
+     "share": 0.495
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 3.4,
+     "share": 0.567
+    }
+   ],
+   "speed_share": 1.324,
+   "mix_share": -0.323
+  },
+  {
+   "key": "citystat_window_snapshot_2026-07-10 | ward 1 vs ward 10 | enforcement notices as own class",
+   "a_label": "Ward 1",
+   "b_label": "Ward 10",
+   "a_mean": 17.36,
+   "b_mean": 33.08,
+   "gap": 15.72,
+   "n_a": 19792,
+   "n_b": 15035,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": 0.43,
+     "share": 0.027
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 1.72,
+     "share": 0.109
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 1.3,
+     "share": 0.083
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 2.54,
+     "share": 0.162
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 9.73,
+     "share": 0.619
+    }
+   ],
+   "speed_share": 0.863,
+   "mix_share": 0.137
+  },
+  {
+   "key": "citystat_window_snapshot_2026-07-10 | wards 1-5 vs 10-14 | enforcement notices as own class",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_mean": 20.05,
+   "b_mean": 27.65,
+   "gap": 7.6,
+   "n_a": 86226,
+   "n_b": 88973,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": -3.16,
+     "share": -0.416
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 0.94,
+     "share": 0.124
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 1.74,
+     "share": 0.229
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 2.01,
+     "share": 0.264
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 6.07,
+     "share": 0.798
+    }
+   ],
+   "speed_share": 1.291,
+   "mix_share": -0.292
+  },
+  {
+   "key": "citystat_window_status_2026-10-13 | ward 1 vs ward 10 | enforcement notices as own class",
+   "a_label": "Ward 1",
+   "b_label": "Ward 10",
+   "a_mean": 18.37,
+   "b_mean": 37.58,
+   "gap": 19.21,
+   "n_a": 19929,
+   "n_b": 15387,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": 1.21,
+     "share": 0.063
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 2.06,
+     "share": 0.107
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 2.07,
+     "share": 0.108
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 2.8,
+     "share": 0.146
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 11.07,
+     "share": 0.576
+    }
+   ],
+   "speed_share": 0.83,
+   "mix_share": 0.17
+  },
+  {
+   "key": "citystat_window_status_2026-10-13 | wards 1-5 vs 10-14 | enforcement notices as own class",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_mean": 21.56,
+   "b_mean": 31.3,
+   "gap": 9.75,
+   "n_a": 87055,
+   "n_b": 90700,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": -2.6,
+     "share": -0.267
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 1.07,
+     "share": 0.11
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 2.16,
+     "share": 0.222
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 2.15,
+     "share": 0.221
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 6.95,
+     "share": 0.713
+    }
+   ],
+   "speed_share": 1.155,
+   "mix_share": -0.157
+  },
+  {
+   "key": "resident_after_tornado_status_2026-10-13 | ward 1 vs ward 10 | enforcement notices as own class",
+   "a_label": "Ward 1",
+   "b_label": "Ward 10",
+   "a_mean": 12.13,
+   "b_mean": 26.36,
+   "gap": 14.23,
+   "n_a": 8462,
+   "n_b": 5983,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": 0.72,
+     "share": 0.051
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 0.47,
+     "share": 0.033
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 2.61,
+     "share": 0.183
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 2.44,
+     "share": 0.171
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 7.98,
+     "share": 0.561
+    }
+   ],
+   "speed_share": 0.916,
+   "mix_share": 0.084
+  },
+  {
+   "key": "resident_after_tornado_status_2026-10-13 | wards 1-5 vs 10-14 | enforcement notices as own class",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_mean": 13.59,
+   "b_mean": 19.59,
+   "gap": 6.0,
+   "n_a": 39623,
+   "n_b": 35790,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": -1.89,
+     "share": -0.315
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": -0.01,
+     "share": -0.002
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: closings that record finished work",
+     "days": 1.57,
+     "share": 0.262
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs (referral, tag, notice)",
+     "days": 1.61,
+     "share": 0.268
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: no action, blank, other",
+     "days": 4.73,
+     "share": 0.788
+    }
+   ],
+   "speed_share": 1.319,
+   "mix_share": -0.317
+  }
+ ],
+ "lead": [
+  {
+   "type": "Vehicle Towing",
+   "title": "Abandoned vehicle",
+   "words": "vehicle tagged for tow",
+   "step": "first visit: the inspector's tag",
+   "figure_id": "n3_towing_tagged_median_after",
+   "period": "resident requests filed since 16 May 2025",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_median": 12.0,
+   "b_median": 36.9,
+   "n_a": 1300,
+   "n_b": 271,
+   "ratio": 3.08,
+   "ci_lo": 2.42,
+   "ci_hi": 3.89,
+   "before": {
+    "a_median": 16.0,
+    "b_median": 36.1
+   },
+   "promise_days": 5.0
+  },
+  {
+   "type": "Cave-Ins",
+   "title": "Cave-in",
+   "words": "referred to street maintenance for repair work to be scheduled",
+   "step": "first step: the referral",
+   "figure_id": "n3_cavein_referral_median_after",
+   "period": "resident requests filed since 16 May 2025",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_median": 0.8,
+   "b_median": 41.7,
+   "n_a": 361,
+   "n_b": 115,
+   "ratio": 52.72,
+   "ci_lo": 36.49,
+   "ci_hi": 76.48,
+   "before": {
+    "a_median": 2.0,
+    "b_median": 66.7
+   },
+   "promise_days": 3.0
+  },
+  {
+   "type": "Ppty Maint Code-Ext",
+   "title": "Exterior property maintenance",
+   "words": "issued notice of violation",
+   "step": "first step: the notice",
+   "figure_id": "n3_code_enforcement_nov_median",
+   "period": "resident requests filed since 16 May 2025",
+   "a_label": "Wards 1–5",
+   "b_label": "Wards 10–14",
+   "a_median": 3.3,
+   "b_median": 8.4,
+   "n_a": 317,
+   "n_b": 186,
+   "ratio": 2.57,
+   "ci_lo": 1.72,
+   "ci_hi": 3.63,
+   "before": {
+    "a_median": 3.3,
+    "b_median": 8.0
+   },
+   "promise_days": 14.0
+  }
+ ],
+ "no_gap": [
+  {
+   "before": {
+    "a_median": 0.8,
+    "b_median": 0.8,
+    "n_a": 654,
+    "n_b": 808,
+    "ratio": 1.02
+   },
+   "type": "Whole Blk Lights Out",
+   "title": "Whole block of lights out",
+   "a_median": 0.7,
+   "b_median": 0.7,
+   "n_a": 547,
+   "n_b": 970,
+   "ratio": 0.99,
+   "promise_days": 2.0
+  },
+  {
+   "before": {
+    "a_median": 1.9,
+    "b_median": 1.6,
+    "n_a": 811,
+    "n_b": 680,
+    "ratio": 0.86
+   },
+   "type": "Refuse not collected",
+   "title": "Refuse not collected",
+   "a_median": 1.7,
+   "b_median": 1.8,
+   "n_a": 2170,
+   "n_b": 1760,
+   "ratio": 1.05,
+   "promise_days": 3.0
+  },
+  {
+   "before": {
+    "a_median": 22.3,
+    "b_median": 31.8,
+    "n_a": 1204,
+    "n_b": 577,
+    "ratio": 1.43
+   },
+   "type": "Potholes - Residnl",
+   "title": "Pothole, residential street",
+   "a_median": 6.9,
+   "b_median": 8.0,
+   "n_a": 899,
+   "n_b": 454,
+   "ratio": 1.17,
+   "promise_days": 8.0
+  },
+  {
+   "before": {
+    "a_median": 15.2,
+    "b_median": 21.4,
+    "n_a": 1078,
+    "n_b": 881,
+    "ratio": 1.41
+   },
+   "type": "Potholes - Major St",
+   "title": "Pothole, major street",
+   "a_median": 7.0,
+   "b_median": 6.8,
+   "n_a": 632,
+   "n_b": 549,
+   "ratio": 0.97,
+   "promise_days": 3.0
+  },
+  {
+   "before": {
+    "a_median": 7.9,
+    "b_median": 9.1,
+    "n_a": 2396,
+    "n_b": 1067,
+    "ratio": 1.15
+   },
+   "type": "Containr damaged",
+   "title": "Damaged trash container",
+   "a_median": 7.8,
+   "b_median": 8.2,
+   "n_a": 2593,
+   "n_b": 1079,
+   "ratio": 1.05,
+   "promise_days": 10.0
+  },
+  {
+   "before": {
+    "a_median": 15.5,
+    "b_median": 13.2,
+    "n_a": 323,
+    "n_b": 210,
+    "ratio": 0.85
+   },
+   "type": "Sign needs attention",
+   "title": "Street sign needs attention",
+   "a_median": 7.0,
+   "b_median": 7.5,
+   "n_a": 304,
+   "n_b": 270,
+   "ratio": 1.07,
+   "promise_days": 30.0
+  }
+ ]
+}

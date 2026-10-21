@@ -1,0 +1,138 @@
+{
+ "meta": {
+  "contract": "fairness/1",
+  "mock": true,
+  "built_at": "mock",
+  "sources": [],
+  "notes": [
+   "Mock data: shaped like the contract, numbers are not real."
+  ]
+ },
+ "headline": "Mock headline for the fairness section.",
+ "sub": "Mock sub-headline.",
+ "citystat": {
+  "a_label": "Ward 1",
+  "b_label": "Ward 10",
+  "a_days": 17.0,
+  "b_days": 35.0,
+  "period": "mock period",
+  "label": "reported",
+  "source": "mock"
+ },
+ "decomposition_figure": null,
+ "reproduction_figures": [],
+ "no_gap_figure": null,
+ "decompositions": [
+  {
+   "key": "mock",
+   "a_label": "Ward 1",
+   "b_label": "Ward 10",
+   "a_mean": 17.0,
+   "b_mean": 33.0,
+   "gap": 16.0,
+   "n_a": 1000,
+   "n_b": 1000,
+   "speed_share": 0.75,
+   "mix_share": 0.25,
+   "components": [
+    {
+     "key": "type_mix",
+     "group": "mix",
+     "label": "Mix of request types",
+     "days": 2.0,
+     "share": 0.125
+    },
+    {
+     "key": "closing_practice",
+     "group": "mix",
+     "label": "Closing words used",
+     "days": 2.0,
+     "share": 0.125
+    },
+    {
+     "key": "speed_done",
+     "group": "speed",
+     "label": "Same type, same words: finished work",
+     "days": 4.0,
+     "share": 0.25
+    },
+    {
+     "key": "speed_handoff",
+     "group": "speed",
+     "label": "Same type, same words: hand-offs",
+     "days": 4.0,
+     "share": 0.25
+    },
+    {
+     "key": "speed_other",
+     "group": "speed",
+     "label": "Same type, same words: other",
+     "days": 4.0,
+     "share": 0.25
+    }
+   ]
+  }
+ ],
+ "lead": [
+  {
+   "type": "Mock type A",
+   "title": "Mock type A",
+   "words": "mock words",
+   "step": "mock step",
+   "figure_id": null,
+   "period": "mock",
+   "a_label": "Wards 1\u20135",
+   "b_label": "Wards 10\u201314",
+   "a_median": 10,
+   "b_median": 30,
+   "n_a": 300,
+   "n_b": 300,
+   "ratio": 3.0,
+   "ci_lo": null,
+   "ci_hi": null,
+   "before": null,
+   "promise_days": 5
+  },
+  {
+   "type": "Mock type B",
+   "title": "Mock type B",
+   "words": "mock words",
+   "step": "mock step",
+   "figure_id": null,
+   "period": "mock",
+   "a_label": "Wards 1\u20135",
+   "b_label": "Wards 10\u201314",
+   "a_median": 1,
+   "b_median": 40,
+   "n_a": 300,
+   "n_b": 300,
+   "ratio": 40.0,
+   "ci_lo": null,
+   "ci_hi": null,
+   "before": null,
+   "promise_days": 3
+  }
+ ],
+ "no_gap": [
+  {
+   "type": "Mock type C",
+   "title": "Mock type C",
+   "a_median": 1.0,
+   "b_median": 1.0,
+   "n_a": 300,
+   "n_b": 300,
+   "ratio": 1.0,
+   "promise_days": 3
+  },
+  {
+   "type": "Mock type D",
+   "title": "Mock type D",
+   "a_median": 7.0,
+   "b_median": 8.0,
+   "n_a": 300,
+   "n_b": 300,
+   "ratio": 1.14,
+   "promise_days": 3
+  }
+ ]
+}

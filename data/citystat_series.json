@@ -1,0 +1,1026 @@
+{
+ "about": "CityStat's nine 311 on-time measures, by quarter filed, with the rebuilt value and the share whose closing words say the work was done. Built by scripts/exec/citystat-clone/build_series.py.",
+ "quarters": [
+  "2024 Q1",
+  "2024 Q2",
+  "2024 Q3",
+  "2024 Q4",
+  "2025 Q1",
+  "2025 Q2",
+  "2025 Q3",
+  "2025 Q4",
+  "2026 Q1",
+  "2026 Q2",
+  "2026 Q3"
+ ],
+ "labels": {
+  "published": "reported: CityStat chart data (Tableau summary data, extracted 13 Oct 2026; pages last updated 30 June 2026)",
+  "rebuilt": "observed: rebuilt from the city's open 311 file (file of 13 Oct 2026), N4 definition",
+  "says_done": "derived: closed within CityStat's goal AND closing words say the work was done; closed requests only, by quarter filed; by quarter, recomputed from build/stl.duckdb with the R1 query"
+ },
+ "sources": {
+  "citystat": "https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/",
+  "file_311": "https://www.stlouis-mo.gov/data/upload/data-files/csb.zip",
+  "closing_classes": "data/downloads/closure_class.sql",
+  "measures_sql": "data/downloads/measures.sql"
+ },
+ "departments": [
+  {
+   "id": "streets",
+   "name": "Street Division",
+   "page": "https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/street/streets.cfm",
+   "path": "/street/streets.cfm",
+   "charts": [
+    {
+     "id": "potholes",
+     "title": "Pothole repair",
+     "worksheet": "PotholeRepairOpetion1",
+     "measures": [
+      "pothole_major",
+      "pothole_residential",
+      "pothole_alley"
+     ]
+    },
+    {
+     "id": "debris",
+     "title": "Debris removal",
+     "worksheet": "DebrisRemovalv2",
+     "measures": [
+      "debris_alley_street",
+      "debris_vacant_bldg",
+      "debris_vacant_lot"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "traffic",
+   "name": "Traffic and Lighting",
+   "page": "https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/street/traffic.cfm",
+   "path": "/street/traffic.cfm",
+   "charts": [
+    {
+     "id": "lights",
+     "title": "Whole block lights out",
+     "worksheet": "WholeBlockLightsOut",
+     "measures": [
+      "whole_block_lights"
+     ]
+    },
+    {
+     "id": "signs",
+     "title": "Critical signs",
+     "worksheet": "CriticalSign",
+     "measures": [
+      "critical_sign"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "parks",
+   "name": "Parks Division",
+   "page": "https://www.stlouis-mo.gov/government/departments/mayor/initiatives/citystat/parks/parks-division.cfm",
+   "path": "/parks/parks-division.cfm",
+   "charts": [
+    {
+     "id": "parks",
+     "title": "All parks requests",
+     "worksheet": "Parks-On-TimePercentage",
+     "measures": [
+      "parks_all"
+     ]
+    }
+   ]
+  }
+ ],
+ "measures": {
+  "pothole_major": {
+   "id": "pothole_major",
+   "name": "Potholes, major streets",
+   "goal": "repaired within 3 days",
+   "target": 0.8,
+   "cityStat_label": "Potholes, major streets, repaired within 3 days",
+   "mean_gap_pp": 1.41,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.1731,
+     "published_n": 543,
+     "rebuilt": 0.1915,
+     "says_done": 0.175,
+     "n_closed": 543
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.0624,
+     "published_n": 529,
+     "rebuilt": 0.0624,
+     "says_done": 0.051,
+     "n_closed": 529
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.1396,
+     "published_n": 838,
+     "rebuilt": 0.1384,
+     "says_done": 0.0143,
+     "n_closed": 838
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.0129,
+     "published_n": 311,
+     "rebuilt": 0.0161,
+     "says_done": 0.0032,
+     "n_closed": 311
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.0923,
+     "published_n": 921,
+     "rebuilt": 0.101,
+     "says_done": 0.0945,
+     "n_closed": 921
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.3056,
+     "published_n": 648,
+     "rebuilt": 0.2917,
+     "says_done": 0.2022,
+     "n_closed": 648
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.3647,
+     "published_n": 329,
+     "rebuilt": 0.3222,
+     "says_done": 0.1611,
+     "n_closed": 329
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.2593,
+     "published_n": 270,
+     "rebuilt": 0.2407,
+     "says_done": 0.1519,
+     "n_closed": 270
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.1849,
+     "published_n": 703,
+     "rebuilt": 0.1648,
+     "says_done": 0.1108,
+     "n_closed": 704
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.4447,
+     "published_n": 443,
+     "rebuilt": 0.4684,
+     "says_done": 0.3464,
+     "n_closed": 459
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.1342,
+     "says_done": 0.0173,
+     "n_closed": 231
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_pothole_major_q2_published",
+    "rebuilt": "n4_q2_2026_pothole_major_ours",
+    "says_done": "e3_citystat_pothole_major_q2_done_on_time"
+   }
+  },
+  "pothole_residential": {
+   "id": "pothole_residential",
+   "name": "Potholes, residential streets",
+   "goal": "repaired within 8 days",
+   "target": 0.8,
+   "cityStat_label": "Potholes, residential streets, repaired within 8 days",
+   "mean_gap_pp": 0.46,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.4109,
+     "published_n": 920,
+     "rebuilt": 0.4228,
+     "says_done": 0.3815,
+     "n_closed": 920
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.1405,
+     "published_n": 1025,
+     "rebuilt": 0.1424,
+     "says_done": 0.1249,
+     "n_closed": 1025
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.2637,
+     "published_n": 2575,
+     "rebuilt": 0.2652,
+     "says_done": 0.0214,
+     "n_closed": 2575
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.0173,
+     "published_n": 346,
+     "rebuilt": 0.0173,
+     "says_done": 0.0087,
+     "n_closed": 346
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.2236,
+     "published_n": 711,
+     "rebuilt": 0.2278,
+     "says_done": 0.2194,
+     "n_closed": 711
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.7162,
+     "published_n": 948,
+     "rebuilt": 0.711,
+     "says_done": 0.5939,
+     "n_closed": 948
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.5126,
+     "published_n": 437,
+     "rebuilt": 0.516,
+     "says_done": 0.395,
+     "n_closed": 438
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.4261,
+     "published_n": 399,
+     "rebuilt": 0.4311,
+     "says_done": 0.406,
+     "n_closed": 399
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.4386,
+     "published_n": 969,
+     "rebuilt": 0.4303,
+     "says_done": 0.3756,
+     "n_closed": 969
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.9061,
+     "published_n": 916,
+     "rebuilt": 0.844,
+     "says_done": 0.7628,
+     "n_closed": 936
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.2428,
+     "says_done": 0.0848,
+     "n_closed": 519
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_pothole_residential_q2_published",
+    "rebuilt": "n4_q2_2026_pothole_residential_ours",
+    "says_done": "e3_citystat_pothole_residential_q2_done_on_time"
+   }
+  },
+  "pothole_alley": {
+   "id": "pothole_alley",
+   "name": "Potholes, alleys",
+   "goal": "repaired within 17 days",
+   "target": 0.8,
+   "cityStat_label": "Potholes, alleys, repaired within 17 days",
+   "mean_gap_pp": 0.63,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.4872,
+     "published_n": 78,
+     "rebuilt": 0.4744,
+     "says_done": 0.4487,
+     "n_closed": 78
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.1788,
+     "published_n": 151,
+     "rebuilt": 0.1788,
+     "says_done": 0.1788,
+     "n_closed": 151
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.0966,
+     "published_n": 145,
+     "rebuilt": 0.0966,
+     "says_done": 0.0138,
+     "n_closed": 145
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.0286,
+     "published_n": 70,
+     "rebuilt": 0.0286,
+     "says_done": 0.0143,
+     "n_closed": 70
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.3878,
+     "published_n": 147,
+     "rebuilt": 0.3946,
+     "says_done": 0.3946,
+     "n_closed": 147
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.8777,
+     "published_n": 188,
+     "rebuilt": 0.8777,
+     "says_done": 0.7872,
+     "n_closed": 188
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.5859,
+     "published_n": 99,
+     "rebuilt": 0.58,
+     "says_done": 0.51,
+     "n_closed": 100
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.6104,
+     "published_n": 77,
+     "rebuilt": 0.6364,
+     "says_done": 0.5584,
+     "n_closed": 77
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.7063,
+     "published_n": 126,
+     "rebuilt": 0.7008,
+     "says_done": 0.6063,
+     "n_closed": 127
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.9823,
+     "published_n": 113,
+     "rebuilt": 0.8729,
+     "says_done": 0.8305,
+     "n_closed": 118
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.5096,
+     "says_done": 0.4327,
+     "n_closed": 104
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_pothole_alley_q2_published",
+    "rebuilt": "n4_q2_2026_pothole_alley_ours",
+    "says_done": "e3_citystat_pothole_alley_q2_done_on_time"
+   }
+  },
+  "debris_alley_street": {
+   "id": "debris_alley_street",
+   "name": "Debris, alley and street",
+   "goal": "cleaned up within 3 days",
+   "target": 0.8,
+   "cityStat_label": "Debris, alley/street, cleaned within 3 days",
+   "mean_gap_pp": 2.7,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.5297,
+     "published_n": 825,
+     "rebuilt": 0.4885,
+     "says_done": 0.0364,
+     "n_closed": 825
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.4134,
+     "published_n": 687,
+     "rebuilt": 0.4061,
+     "says_done": 0.0699,
+     "n_closed": 687
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.4875,
+     "published_n": 1081,
+     "rebuilt": 0.4607,
+     "says_done": 0.025,
+     "n_closed": 1081
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.3941,
+     "published_n": 609,
+     "rebuilt": 0.381,
+     "says_done": 0.0213,
+     "n_closed": 609
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.1096,
+     "published_n": 584,
+     "rebuilt": 0.089,
+     "says_done": 0.0017,
+     "n_closed": 584
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.7031,
+     "published_n": 1216,
+     "rebuilt": 0.6546,
+     "says_done": 0.0173,
+     "n_closed": 1216
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.5622,
+     "published_n": 1407,
+     "rebuilt": 0.543,
+     "says_done": 0.0881,
+     "n_closed": 1407
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.5283,
+     "published_n": 441,
+     "rebuilt": 0.4921,
+     "says_done": 0.0674,
+     "n_closed": 445
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.7617,
+     "published_n": 470,
+     "rebuilt": 0.7315,
+     "says_done": 0.1564,
+     "n_closed": 473
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.7857,
+     "published_n": 546,
+     "rebuilt": 0.7832,
+     "says_done": 0.1503,
+     "n_closed": 572
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.759,
+     "says_done": 0.1832,
+     "n_closed": 726
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_debris_alley_street_q2_published",
+    "rebuilt": "n4_q2_2026_debris_alley_street_ours",
+    "says_done": "e3_citystat_debris_alley_street_q2_done_on_time"
+   }
+  },
+  "debris_vacant_bldg": {
+   "id": "debris_vacant_bldg",
+   "name": "Debris, vacant building",
+   "goal": "cleaned up within 14 days",
+   "target": 0.8,
+   "cityStat_label": "Debris, vacant building, cleaned within 14 days",
+   "mean_gap_pp": 1.38,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.5963,
+     "published_n": 109,
+     "rebuilt": 0.5505,
+     "says_done": 0.0826,
+     "n_closed": 109
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.5463,
+     "published_n": 108,
+     "rebuilt": 0.5463,
+     "says_done": 0.2685,
+     "n_closed": 108
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.7115,
+     "published_n": 104,
+     "rebuilt": 0.7019,
+     "says_done": 0.2212,
+     "n_closed": 104
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.3881,
+     "published_n": 67,
+     "rebuilt": 0.3731,
+     "says_done": 0.1045,
+     "n_closed": 67
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.3261,
+     "published_n": 92,
+     "rebuilt": 0.3261,
+     "says_done": 0.0109,
+     "n_closed": 92
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.814,
+     "published_n": 86,
+     "rebuilt": 0.814,
+     "says_done": 0.2093,
+     "n_closed": 86
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.9247,
+     "published_n": 93,
+     "rebuilt": 0.871,
+     "says_done": 0.3118,
+     "n_closed": 93
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.8974,
+     "published_n": 78,
+     "rebuilt": 0.8974,
+     "says_done": 0.5641,
+     "n_closed": 78
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.8831,
+     "published_n": 77,
+     "rebuilt": 0.8831,
+     "says_done": 0.3377,
+     "n_closed": 77
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.9552,
+     "published_n": 67,
+     "rebuilt": 0.9412,
+     "says_done": 0.3676,
+     "n_closed": 68
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.9747,
+     "says_done": 0.3797,
+     "n_closed": 79
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_debris_vacant_bldg_q2_published",
+    "rebuilt": "n4_q2_2026_debris_vacant_bldg_ours",
+    "says_done": "e3_citystat_debris_vacant_bldg_q2_done_on_time"
+   }
+  },
+  "debris_vacant_lot": {
+   "id": "debris_vacant_lot",
+   "name": "Debris, vacant lot",
+   "goal": "cleaned up within 14 days",
+   "target": 0.8,
+   "cityStat_label": "Debris, vacant lot, cleaned within 14 days",
+   "mean_gap_pp": 0.79,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.4295,
+     "published_n": 156,
+     "rebuilt": 0.4295,
+     "says_done": 0.1346,
+     "n_closed": 156
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.4926,
+     "published_n": 136,
+     "rebuilt": 0.5074,
+     "says_done": 0.3162,
+     "n_closed": 136
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.7109,
+     "published_n": 128,
+     "rebuilt": 0.7188,
+     "says_done": 0.2969,
+     "n_closed": 128
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.4045,
+     "published_n": 89,
+     "rebuilt": 0.4045,
+     "says_done": 0.1573,
+     "n_closed": 89
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.2288,
+     "published_n": 118,
+     "rebuilt": 0.2119,
+     "says_done": 0.0169,
+     "n_closed": 118
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.7535,
+     "published_n": 142,
+     "rebuilt": 0.7535,
+     "says_done": 0.1761,
+     "n_closed": 142
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.8261,
+     "published_n": 161,
+     "rebuilt": 0.8137,
+     "says_done": 0.4348,
+     "n_closed": 161
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.7474,
+     "published_n": 95,
+     "rebuilt": 0.7368,
+     "says_done": 0.4211,
+     "n_closed": 95
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.9211,
+     "published_n": 114,
+     "rebuilt": 0.9123,
+     "says_done": 0.4035,
+     "n_closed": 114
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.9735,
+     "published_n": 113,
+     "rebuilt": 0.931,
+     "says_done": 0.4138,
+     "n_closed": 116
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.987,
+     "says_done": 0.5195,
+     "n_closed": 77
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_debris_vacant_lot_q2_published",
+    "rebuilt": "n4_q2_2026_debris_vacant_lot_ours",
+    "says_done": "e3_citystat_debris_vacant_lot_q2_done_on_time"
+   }
+  },
+  "whole_block_lights": {
+   "id": "whole_block_lights",
+   "name": "Whole block lights out",
+   "goal": "completed within 24 hours",
+   "target": 0.8,
+   "cityStat_label": "Whole block lights out, completed within 24 hours",
+   "mean_gap_pp": 4.69,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.735,
+     "published_n": 349,
+     "rebuilt": 0.702,
+     "says_done": 0.5931,
+     "n_closed": 349
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.7833,
+     "published_n": 299,
+     "rebuilt": 0.699,
+     "says_done": 0.6321,
+     "n_closed": 299
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.7947,
+     "published_n": 413,
+     "rebuilt": 0.7821,
+     "says_done": 0.7409,
+     "n_closed": 413
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.7592,
+     "published_n": 490,
+     "rebuilt": 0.7,
+     "says_done": 0.6265,
+     "n_closed": 490
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.5281,
+     "published_n": 640,
+     "rebuilt": 0.4906,
+     "says_done": 0.4594,
+     "n_closed": 640
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.5574,
+     "published_n": 601,
+     "rebuilt": 0.5191,
+     "says_done": 0.4226,
+     "n_closed": 601
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.6639,
+     "published_n": 482,
+     "rebuilt": 0.6411,
+     "says_done": 0.5996,
+     "n_closed": 482
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.7379,
+     "published_n": 597,
+     "rebuilt": 0.67,
+     "says_done": 0.6432,
+     "n_closed": 597
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.7833,
+     "published_n": 420,
+     "rebuilt": 0.7167,
+     "says_done": 0.6667,
+     "n_closed": 420
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.8017,
+     "published_n": 358,
+     "rebuilt": 0.7811,
+     "says_done": 0.6595,
+     "n_closed": 370
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.7816,
+     "says_done": 0.682,
+     "n_closed": 412
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_whole_block_lights_q2_published",
+    "rebuilt": "n4_q2_2026_whole_block_lights_ours",
+    "says_done": "e3_citystat_whole_block_lights_q2_done_on_time"
+   }
+  },
+  "critical_sign": {
+   "id": "critical_sign",
+   "name": "Critical signs (Stop, Yield, One-Way, Do Not Enter)",
+   "goal": "completed within 48 hours",
+   "target": 0.75,
+   "cityStat_label": "Critical signs (Stop/Yield/One-Way/Do Not Enter), within 48 hours",
+   "mean_gap_pp": 1.41,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.3149,
+     "published_n": 181,
+     "rebuilt": 0.326,
+     "says_done": 0.2983,
+     "n_closed": 181
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.3795,
+     "published_n": 166,
+     "rebuilt": 0.3855,
+     "says_done": 0.3012,
+     "n_closed": 166
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.1452,
+     "published_n": 124,
+     "rebuilt": 0.1694,
+     "says_done": 0.1371,
+     "n_closed": 124
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.1724,
+     "published_n": 116,
+     "rebuilt": 0.1897,
+     "says_done": 0.1466,
+     "n_closed": 116
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.4571,
+     "published_n": 210,
+     "rebuilt": 0.4762,
+     "says_done": 0.4095,
+     "n_closed": 210
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.4072,
+     "published_n": 167,
+     "rebuilt": 0.4311,
+     "says_done": 0.3533,
+     "n_closed": 167
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.4803,
+     "published_n": 152,
+     "rebuilt": 0.4737,
+     "says_done": 0.4013,
+     "n_closed": 152
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.563,
+     "published_n": 119,
+     "rebuilt": 0.5714,
+     "says_done": 0.4202,
+     "n_closed": 119
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.6947,
+     "published_n": 95,
+     "rebuilt": 0.7053,
+     "says_done": 0.6211,
+     "n_closed": 95
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.5893,
+     "published_n": 112,
+     "rebuilt": 0.5877,
+     "says_done": 0.4912,
+     "n_closed": 114
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.6444,
+     "says_done": 0.5333,
+     "n_closed": 90
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_critical_sign_q2_published",
+    "rebuilt": "n4_q2_2026_critical_sign_ours",
+    "says_done": "e3_citystat_critical_sign_q2_done_on_time"
+   }
+  },
+  "parks_all": {
+   "id": "parks_all",
+   "name": "All parks requests",
+   "goal": "completed on time (goal set per request type)",
+   "target": 0.8,
+   "cityStat_label": "All parks requests completed on time (per-type goal 5-30 days)",
+   "mean_gap_pp": 2.33,
+   "series": [
+    {
+     "quarter": "2024 Q1",
+     "published": 0.3804,
+     "published_n": 92,
+     "rebuilt": 0.3667,
+     "says_done": 0.1011,
+     "n_closed": 89
+    },
+    {
+     "quarter": "2024 Q2",
+     "published": 0.2256,
+     "published_n": 297,
+     "rebuilt": 0.2517,
+     "says_done": 0.0341,
+     "n_closed": 293
+    },
+    {
+     "quarter": "2024 Q3",
+     "published": 0.3188,
+     "published_n": 298,
+     "rebuilt": 0.3436,
+     "says_done": 0.0687,
+     "n_closed": 291
+    },
+    {
+     "quarter": "2024 Q4",
+     "published": 0.3268,
+     "published_n": 153,
+     "rebuilt": 0.3421,
+     "says_done": 0.0671,
+     "n_closed": 149
+    },
+    {
+     "quarter": "2025 Q1",
+     "published": 0.2107,
+     "published_n": 242,
+     "rebuilt": 0.2292,
+     "says_done": 0.0462,
+     "n_closed": 239
+    },
+    {
+     "quarter": "2025 Q2",
+     "published": 0.2298,
+     "published_n": 383,
+     "rebuilt": 0.1989,
+     "says_done": 0.0428,
+     "n_closed": 374
+    },
+    {
+     "quarter": "2025 Q3",
+     "published": 0.267,
+     "published_n": 352,
+     "rebuilt": 0.2968,
+     "says_done": 0.0957,
+     "n_closed": 345
+    },
+    {
+     "quarter": "2025 Q4",
+     "published": 0.5101,
+     "published_n": 198,
+     "rebuilt": 0.5333,
+     "says_done": 0.1813,
+     "n_closed": 193
+    },
+    {
+     "quarter": "2026 Q1",
+     "published": 0.4398,
+     "published_n": 166,
+     "rebuilt": 0.4121,
+     "says_done": 0.1829,
+     "n_closed": 164
+    },
+    {
+     "quarter": "2026 Q2",
+     "published": 0.6746,
+     "published_n": 378,
+     "rebuilt": 0.7044,
+     "says_done": 0.186,
+     "n_closed": 387
+    },
+    {
+     "quarter": "2026 Q3",
+     "published": null,
+     "published_n": null,
+     "rebuilt": 0.8451,
+     "says_done": 0.3275,
+     "n_closed": 284
+    }
+   ],
+   "figures": {
+    "published": "e3_citystat_parks_all_q2_published",
+    "rebuilt": "n4_q2_2026_parks_all_ours",
+    "says_done": "e3_citystat_parks_all_q2_done_on_time"
+   }
+  }
+ }
+}

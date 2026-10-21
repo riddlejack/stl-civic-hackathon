@@ -1,0 +1,242 @@
+{
+ "meta": {
+  "contract": "scoreboard/1",
+  "mock": true,
+  "built_at": "mock",
+  "sources": [],
+  "notes": [
+   "Mock data: shaped like the contract, numbers are not real."
+  ]
+ },
+ "window": "mock window",
+ "definition": {
+  "scored": "mock"
+ },
+ "rows": [
+  {
+   "problemcode": "Potholes - Residnl",
+   "name": "Potholes - Residnl",
+   "category": "Right of Way",
+   "requests": 4385,
+   "promise_days": 8,
+   "scored": 1000,
+   "kept_share": 0.226,
+   "done_kept_share": 0.12,
+   "late_share": 0.774,
+   "median_days_late": 19.9,
+   "open_past_promise": 398,
+   "median_days_to_close": 22.3,
+   "closed_done_share": 0.3,
+   "closed_handed_off_share": 0.3,
+   "closed_no_action_share": 0.3,
+   "citystat_metric": null,
+   "citystat_goal_days": null
+  },
+  {
+   "problemcode": "Single Light Out",
+   "name": "Single Light Out",
+   "category": "Street Light",
+   "requests": 2358,
+   "promise_days": 3,
+   "scored": 1000,
+   "kept_share": 0.424,
+   "done_kept_share": 0.092,
+   "late_share": 0.576,
+   "median_days_late": 32.5,
+   "open_past_promise": 383,
+   "median_days_to_close": 26.3,
+   "closed_done_share": 0.3,
+   "closed_handed_off_share": 0.3,
+   "closed_no_action_share": 0.3,
+   "citystat_metric": null,
+   "citystat_goal_days": null
+  },
+  {
+   "problemcode": "Cave-Ins",
+   "name": "Cave-Ins",
+   "category": "Right of Way",
+   "requests": 10835,
+   "promise_days": 3,
+   "scored": 1000,
+   "kept_share": 0.837,
+   "done_kept_share": 0.457,
+   "late_share": 0.163,
+   "median_days_late": 9.3,
+   "open_past_promise": 293,
+   "median_days_to_close": 21.3,
+   "closed_done_share": 0.3,
+   "closed_handed_off_share": 0.3,
+   "closed_no_action_share": 0.3,
+   "citystat_metric": null,
+   "citystat_goal_days": null
+  },
+  {
+   "problemcode": "Weeds-Vacant Lot",
+   "name": "Weeds-Vacant Lot",
+   "category": "Weeds/Grass",
+   "requests": 12860,
+   "promise_days": 14,
+   "scored": 1000,
+   "kept_share": 0.71,
+   "done_kept_share": 0.456,
+   "late_share": 0.29,
+   "median_days_late": 28.1,
+   "open_past_promise": 227,
+   "median_days_to_close": 10.7,
+   "closed_done_share": 0.3,
+   "closed_handed_off_share": 0.3,
+   "closed_no_action_share": 0.3,
+   "citystat_metric": null,
+   "citystat_goal_days": null
+  },
+  {
+   "problemcode": "Inspect City Tree",
+   "name": "Inspect City Tree",
+   "category": "Trees",
+   "requests": 8716,
+   "promise_days": 14,
+   "scored": 1000,
+   "kept_share": 0.265,
+   "done_kept_share": 0.171,
+   "late_share": 0.735,
+   "median_days_late": 18.9,
+   "open_past_promise": 58,
+   "median_days_to_close": 22.9,
+   "closed_done_share": 0.3,
+   "closed_handed_off_share": 0.3,
+   "closed_no_action_share": 0.3,
+   "citystat_metric": null,
+   "citystat_goal_days": null
+  },
+  {
+   "problemcode": "Vehicle Towing",
+   "name": "Vehicle Towing",
+   "category": "Vehicles",
+   "requests": 6770,
+   "promise_days": 5,
+   "scored": 1000,
+   "kept_share": 0.691,
+   "done_kept_share": 0.054,
+   "late_share": 0.309,
+   "median_days_late": 3.7,
+   "open_past_promise": 112,
+   "median_days_to_close": 25.0,
+   "closed_done_share": 0.3,
+   "closed_handed_off_share": 0.3,
+   "closed_no_action_share": 0.3,
+   "citystat_metric": null,
+   "citystat_goal_days": null
+  },
+  {
+   "problemcode": "Refuse not collected",
+   "name": "Refuse not collected",
+   "category": "Trash/Debris",
+   "requests": 9974,
+   "promise_days": 3,
+   "scored": 1000,
+   "kept_share": 0.839,
+   "done_kept_share": 0.626,
+   "late_share": 0.161,
+   "median_days_late": 36.6,
+   "open_past_promise": 273,
+   "median_days_to_close": 17.7,
+   "closed_done_share": 0.3,
+   "closed_handed_off_share": 0.3,
+   "closed_no_action_share": 0.3,
+   "citystat_metric": null,
+   "citystat_goal_days": null
+  },
+  {
+   "problemcode": "Illegal dumpg report",
+   "name": "Illegal dumpg report",
+   "category": "Trash/Debris",
+   "requests": 10252,
+   "promise_days": 10,
+   "scored": 1000,
+   "kept_share": 0.879,
+   "done_kept_share": 0.687,
+   "late_share": 0.121,
+   "median_days_late": 3.1,
+   "open_past_promise": 195,
+   "median_days_to_close": 8.1,
+   "closed_done_share": 0.3,
+   "closed_handed_off_share": 0.3,
+   "closed_no_action_share": 0.3,
+   "citystat_metric": null,
+   "citystat_goal_days": null
+  }
+ ],
+ "summary_figures": [],
+ "citystat": {
+  "metrics": [
+   {
+    "metric": "pothole_residential",
+    "label": "Mock measure",
+    "goal_days": 8,
+    "citystat_q2_share": 0.9,
+    "q2_ours_share": 0.85,
+    "q3_share": 0.5,
+    "q3_n": 500,
+    "series": [
+     {
+      "quarter": "2025 Q1",
+      "ours_share": 0.5,
+      "ours_n": 500,
+      "citystat_share": 0.5,
+      "citystat_n": 500
+     },
+     {
+      "quarter": "2025 Q2",
+      "ours_share": 0.55,
+      "ours_n": 500,
+      "citystat_share": 0.55,
+      "citystat_n": 500
+     },
+     {
+      "quarter": "2025 Q3",
+      "ours_share": 0.6,
+      "ours_n": 500,
+      "citystat_share": 0.6,
+      "citystat_n": 500
+     },
+     {
+      "quarter": "2025 Q4",
+      "ours_share": 0.65,
+      "ours_n": 500,
+      "citystat_share": 0.65,
+      "citystat_n": 500
+     },
+     {
+      "quarter": "2026 Q1",
+      "ours_share": 0.7,
+      "ours_n": 500,
+      "citystat_share": 0.7,
+      "citystat_n": 500
+     },
+     {
+      "quarter": "2026 Q2",
+      "ours_share": 0.75,
+      "ours_n": 500,
+      "citystat_share": 0.75,
+      "citystat_n": 500
+     },
+     {
+      "quarter": "2026 Q3",
+      "ours_share": 0.8,
+      "ours_n": 500,
+      "citystat_share": null,
+      "citystat_n": 500
+     }
+    ]
+   }
+  ],
+  "n_metrics": 1,
+  "n_counts_exact": 0,
+  "counts_exact_metrics": [],
+  "counts_derivation": "mock",
+  "counts_rule": "mock",
+  "lead_metric": "pothole_residential",
+  "lead_line": "Mock lead line.",
+  "lead_median_figures": []
+ }
+}

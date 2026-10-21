@@ -1,0 +1,3329 @@
+{
+ "meta": {
+  "contract": "brief/1",
+  "mock": false,
+  "state": "real",
+  "built_at": "2026-10-14 16:41",
+  "sources": [
+   {
+    "path": "build/stl.duckdb (N1 views: promise, requests, receipt_base, request_wo_summary)",
+    "mtime": "2026-10-14 01:51"
+   }
+  ],
+  "notes": [
+   "every figure here is registered in build/N6/figures.json with its derivation"
+  ]
+ },
+ "asof": "2026-10-13 00:33",
+ "week": {
+  "this_from": "2026-10-06",
+  "this_to": "2026-10-13",
+  "last_from": "2026-09-29",
+  "last_to": "2026-10-06"
+ },
+ "meeting_source": {
+  "text": "weekly cabinet data reviews since mid-November 2025, described by the mayor and the COO at CityStat's public launch",
+  "label": "reported",
+  "url": "https://www.youtube.com/watch?v=a1H60btjS2E",
+  "date": "2 Apr 2026"
+ },
+ "compliance": {
+  "rows": [
+   {
+    "service": "Vehicle (operable) illegally parked in right of way",
+    "problem_code": "Vehicle-Rt of Way",
+    "promise_days": 14.0,
+    "n_this": 39,
+    "kept_this": 0.6666666666666666,
+    "done_this": 0.0,
+    "n_last": 28,
+    "kept_last": 0.8571428571428571,
+    "change_pts": -19.0
+   },
+   {
+    "service": "Container is damaged",
+    "problem_code": "Containr damaged",
+    "promise_days": 10.0,
+    "n_this": 87,
+    "kept_this": 0.5517241379310345,
+    "done_this": 0.5057471264367817,
+    "n_last": 92,
+    "kept_last": 0.6956521739130435,
+    "change_pts": -14.4
+   },
+   {
+    "service": "Request for planting of a new city tree",
+    "problem_code": "Tree Planting requst",
+    "promise_days": 14.0,
+    "n_this": 41,
+    "kept_this": 0.04878048780487805,
+    "done_this": 0.0,
+    "n_last": 21,
+    "kept_last": 0.19047619047619047,
+    "change_pts": -14.2
+   },
+   {
+    "service": "Vacant building needs to be boarded up",
+    "problem_code": "Vacnt Bldg Unsecured",
+    "promise_days": 14.0,
+    "n_this": 75,
+    "kept_this": 0.7333333333333333,
+    "done_this": 0.0,
+    "n_last": 31,
+    "kept_last": 0.8709677419354839,
+    "change_pts": -13.8
+   },
+   {
+    "service": "Inspect for interior building code violations",
+    "problem_code": "Ppty Maint Code-Int",
+    "promise_days": 14.0,
+    "n_this": 36,
+    "kept_this": 0.3888888888888889,
+    "done_this": 0.0,
+    "n_last": 38,
+    "kept_last": 0.5263157894736842,
+    "change_pts": -13.7
+   },
+   {
+    "service": "Report stray dog(s) roaming at large",
+    "problem_code": "Stray Dog At Large",
+    "promise_days": 14.0,
+    "n_this": 55,
+    "kept_this": 0.8181818181818182,
+    "done_this": 0.2,
+    "n_last": 43,
+    "kept_last": 0.9534883720930233,
+    "change_pts": -13.5
+   },
+   {
+    "service": "Inspect for violation of zoning code (including open storage)",
+    "problem_code": "Illegl Use-Opn Storg",
+    "promise_days": 14.0,
+    "n_this": 59,
+    "kept_this": 0.6779661016949152,
+    "done_this": 0.01694915254237288,
+    "n_last": 50,
+    "kept_last": 0.8,
+    "change_pts": -12.2
+   },
+   {
+    "service": "Derelict, vandalized, inoperable, or abandoned vehicle",
+    "problem_code": "Vehicle Towing",
+    "promise_days": 5.0,
+    "n_this": 126,
+    "kept_this": 0.18253968253968253,
+    "done_this": 0.0,
+    "n_last": 140,
+    "kept_last": 0.3,
+    "change_pts": -11.7
+   },
+   {
+    "service": "Whole block of lights out",
+    "problem_code": "Whole Blk Lights Out",
+    "promise_days": 2.0,
+    "n_this": 56,
+    "kept_this": 0.9107142857142857,
+    "done_this": 0.8035714285714286,
+    "n_last": 29,
+    "kept_last": 1.0,
+    "change_pts": -8.9
+   },
+   {
+    "service": "High weeds/grass around vacant building",
+    "problem_code": "Weeds-Vacant Bldg",
+    "promise_days": 90.0,
+    "n_this": 107,
+    "kept_this": 0.7850467289719626,
+    "done_this": 0.0,
+    "n_last": 84,
+    "kept_last": 0.8690476190476191,
+    "change_pts": -8.4
+   },
+   {
+    "service": "Inspect for exterior building damage and code violations",
+    "problem_code": "Ppty Maint Code-Ext",
+    "promise_days": 14.0,
+    "n_this": 42,
+    "kept_this": 0.6904761904761905,
+    "done_this": 0.0,
+    "n_last": 27,
+    "kept_last": 0.7407407407407407,
+    "change_pts": -5.0
+   },
+   {
+    "service": "Yard waste container not emptied on scheduled day",
+    "problem_code": "Yrd Wste Not Collect",
+    "promise_days": 3.0,
+    "n_this": 38,
+    "kept_this": 0.7631578947368421,
+    "done_this": 0.5,
+    "n_last": 28,
+    "kept_last": 0.7857142857142857,
+    "change_pts": -2.3
+   },
+   {
+    "service": "Request to have trash container moved",
+    "problem_code": "Move container",
+    "promise_days": 5.0,
+    "n_this": 36,
+    "kept_this": 0.8333333333333334,
+    "done_this": 0.5555555555555556,
+    "n_last": 31,
+    "kept_last": 0.8387096774193549,
+    "change_pts": -0.5
+   },
+   {
+    "service": "Inspect city tree",
+    "problem_code": "Inspect City Tree",
+    "promise_days": 14.0,
+    "n_this": 31,
+    "kept_this": 0.25806451612903225,
+    "done_this": 0.0967741935483871,
+    "n_last": 46,
+    "kept_last": 0.2608695652173913,
+    "change_pts": -0.3
+   },
+   {
+    "service": "Weekly bulk collection missed",
+    "problem_code": "Bulky items missed",
+    "promise_days": 3.0,
+    "n_this": 40,
+    "kept_this": 1.0,
+    "done_this": 0.05,
+    "n_last": 46,
+    "kept_last": 1.0,
+    "change_pts": 0.0
+   },
+   {
+    "service": "Graffiti on public property",
+    "problem_code": "Graffiti-Public",
+    "promise_days": 14.0,
+    "n_this": 25,
+    "kept_this": 0.04,
+    "done_this": 0.0,
+    "n_last": 21,
+    "kept_last": 0.0,
+    "change_pts": 4.0
+   },
+   {
+    "service": "Pothole in a residential street",
+    "problem_code": "Potholes - Residnl",
+    "promise_days": 8.0,
+    "n_this": 40,
+    "kept_this": 0.525,
+    "done_this": 0.15,
+    "n_last": 50,
+    "kept_last": 0.44,
+    "change_pts": 8.5
+   },
+   {
+    "service": "Trash container not emptied on scheduled day",
+    "problem_code": "Refuse not collected",
+    "promise_days": 3.0,
+    "n_this": 135,
+    "kept_this": 0.8888888888888888,
+    "done_this": 0.6370370370370371,
+    "n_last": 184,
+    "kept_last": 0.7989130434782609,
+    "change_pts": 9.0
+   },
+   {
+    "service": "Inspect occupied property for high grass/weeds",
+    "problem_code": "Weeds-Occupied Ppty",
+    "promise_days": 14.0,
+    "n_this": 67,
+    "kept_this": 0.2835820895522388,
+    "done_this": 0.0,
+    "n_last": 61,
+    "kept_last": 0.13114754098360656,
+    "change_pts": 15.2
+   },
+   {
+    "service": "Bad condition in the right of way",
+    "problem_code": "Bad Condition",
+    "promise_days": 7.0,
+    "n_this": 25,
+    "kept_this": 0.36,
+    "done_this": 0.16,
+    "n_last": 24,
+    "kept_last": 0.20833333333333334,
+    "change_pts": 15.2
+   },
+   {
+    "service": "High weeds/grass on vacant lot",
+    "problem_code": "Weeds-Vacant Lot",
+    "promise_days": 14.0,
+    "n_this": 54,
+    "kept_this": 0.8888888888888888,
+    "done_this": 0.0,
+    "n_last": 33,
+    "kept_last": 0.7272727272727273,
+    "change_pts": 16.2
+   },
+   {
+    "service": "Debris dumped in the street or alley",
+    "problem_code": "Debris-alley/street",
+    "promise_days": 3.0,
+    "n_this": 48,
+    "kept_this": 0.8958333333333334,
+    "done_this": 0.125,
+    "n_last": 66,
+    "kept_last": 0.6212121212121212,
+    "change_pts": 27.5
+   }
+  ],
+  "definition": "Requests whose promised date (PRJCOMPLETEDATE, set by the city on each request) fell in the week; share closed on or before that date. Cancelled requests excluded; services with at least 20 requests due in each week.",
+  "figure_id": "n6_brief_compliance_window"
+ },
+ "pothole_weekly": {
+  "series": [
+   {
+    "week": "2026-04-06",
+    "n": 102,
+    "within_goal": 0.9607843137254902,
+    "median_days": 5.0
+   },
+   {
+    "week": "2026-04-13",
+    "n": 80,
+    "within_goal": 0.9875,
+    "median_days": 3.1
+   },
+   {
+    "week": "2026-04-20",
+    "n": 47,
+    "within_goal": 0.9574468085106383,
+    "median_days": 2.1
+   },
+   {
+    "week": "2026-04-27",
+    "n": 71,
+    "within_goal": 0.9859154929577465,
+    "median_days": 1.3
+   },
+   {
+    "week": "2026-05-04",
+    "n": 82,
+    "within_goal": 0.9146341463414634,
+    "median_days": 3.2
+   },
+   {
+    "week": "2026-05-11",
+    "n": 94,
+    "within_goal": 1.0,
+    "median_days": 1.7
+   },
+   {
+    "week": "2026-05-18",
+    "n": 71,
+    "within_goal": 0.8873239436619719,
+    "median_days": 4.1
+   },
+   {
+    "week": "2026-05-25",
+    "n": 69,
+    "within_goal": 0.9710144927536232,
+    "median_days": 5.2
+   },
+   {
+    "week": "2026-06-01",
+    "n": 60,
+    "within_goal": 0.9333333333333333,
+    "median_days": 4.6
+   },
+   {
+    "week": "2026-06-08",
+    "n": 69,
+    "within_goal": 0.782608695652174,
+    "median_days": 4.1
+   },
+   {
+    "week": "2026-06-15",
+    "n": 41,
+    "within_goal": 0.1951219512195122,
+    "median_days": 14.1
+   },
+   {
+    "week": "2026-06-22",
+    "n": 67,
+    "within_goal": 0.1791044776119403,
+    "median_days": 30.0
+   },
+   {
+    "week": "2026-06-29",
+    "n": 42,
+    "within_goal": 0.11904761904761904,
+    "median_days": 31.9
+   },
+   {
+    "week": "2026-07-06",
+    "n": 51,
+    "within_goal": 0.09803921568627451,
+    "median_days": 22.0
+   },
+   {
+    "week": "2026-07-13",
+    "n": 44,
+    "within_goal": 0.09090909090909091,
+    "median_days": 11.9
+   },
+   {
+    "week": "2026-07-20",
+    "n": 43,
+    "within_goal": 0.3488372093023256,
+    "median_days": 17.7
+   },
+   {
+    "week": "2026-07-27",
+    "n": 48,
+    "within_goal": 0.20833333333333334,
+    "median_days": 20.6
+   },
+   {
+    "week": "2026-08-03",
+    "n": 41,
+    "within_goal": 0.024390243902439025,
+    "median_days": 38.1
+   },
+   {
+    "week": "2026-08-10",
+    "n": 38,
+    "within_goal": 0.18421052631578946,
+    "median_days": 14.4
+   },
+   {
+    "week": "2026-08-17",
+    "n": 42,
+    "within_goal": 0.14285714285714285,
+    "median_days": 24.0
+   },
+   {
+    "week": "2026-08-24",
+    "n": 42,
+    "within_goal": 0.19047619047619047,
+    "median_days": 18.0
+   },
+   {
+    "week": "2026-08-31",
+    "n": 27,
+    "within_goal": 0.3333333333333333,
+    "median_days": 10.1
+   },
+   {
+    "week": "2026-09-07",
+    "n": 24,
+    "within_goal": 0.2916666666666667,
+    "median_days": 16.9
+   },
+   {
+    "week": "2026-09-14",
+    "n": 29,
+    "within_goal": 0.41379310344827586,
+    "median_days": 11.7
+   },
+   {
+    "week": "2026-09-21",
+    "n": 46,
+    "within_goal": 0.4782608695652174,
+    "median_days": 11.0
+   },
+   {
+    "week": "2026-09-28",
+    "n": 35,
+    "within_goal": 0.6,
+    "median_days": 6.6
+   }
+  ],
+  "goal_days": 8,
+  "first_week_below_half": "2026-06-15",
+  "figure_id": "n6_brief_pothole_first_week_below_half",
+  "definition": "Residential pothole requests by week filed: share of those closed that closed within 8 days (CityStat's goal; N4's definition C). Open requests are not counted, as CityStat does not count them."
+ },
+ "first_step": {
+  "wards": [
+   {
+    "ward": "01",
+    "cavein_referral": {
+     "n": 77,
+     "median_days": 0.7
+    },
+    "towing_tag": {
+     "n": 388,
+     "median_days": 11.0
+    }
+   },
+   {
+    "ward": "02",
+    "cavein_referral": {
+     "n": 115,
+     "median_days": 0.8
+    },
+    "towing_tag": {
+     "n": 309,
+     "median_days": 14.1
+    }
+   },
+   {
+    "ward": "03",
+    "cavein_referral": {
+     "n": 87,
+     "median_days": 1.1
+    },
+    "towing_tag": {
+     "n": 381,
+     "median_days": 15.0
+    }
+   },
+   {
+    "ward": "04",
+    "cavein_referral": {
+     "n": 23,
+     "median_days": 0.6
+    },
+    "towing_tag": {
+     "n": 72,
+     "median_days": 6.0
+    }
+   },
+   {
+    "ward": "05",
+    "cavein_referral": {
+     "n": 59,
+     "median_days": 0.8
+    },
+    "towing_tag": {
+     "n": 150,
+     "median_days": 8.9
+    }
+   },
+   {
+    "ward": "06",
+    "cavein_referral": {
+     "n": 30,
+     "median_days": 15.7
+    },
+    "towing_tag": {
+     "n": 137,
+     "median_days": 23.7
+    }
+   },
+   {
+    "ward": "07",
+    "cavein_referral": {
+     "n": 14,
+     "median_days": 44.2
+    },
+    "towing_tag": {
+     "n": 160,
+     "median_days": 24.9
+    }
+   },
+   {
+    "ward": "08",
+    "cavein_referral": {
+     "n": 22,
+     "median_days": 17.6
+    },
+    "towing_tag": {
+     "n": 113,
+     "median_days": 21.5
+    }
+   },
+   {
+    "ward": "09",
+    "cavein_referral": {
+     "n": 29,
+     "median_days": 54.9
+    },
+    "towing_tag": {
+     "n": 43,
+     "median_days": 22.6
+    }
+   },
+   {
+    "ward": "10",
+    "cavein_referral": {
+     "n": 38,
+     "median_days": 34.2
+    },
+    "towing_tag": {
+     "n": 45,
+     "median_days": 60.9
+    }
+   },
+   {
+    "ward": "11",
+    "cavein_referral": {
+     "n": 10,
+     "median_days": 102.0
+    },
+    "towing_tag": {
+     "n": 42,
+     "median_days": 25.9
+    }
+   },
+   {
+    "ward": "12",
+    "cavein_referral": {
+     "n": 29,
+     "median_days": 53.7
+    },
+    "towing_tag": {
+     "n": 89,
+     "median_days": 37.1
+    }
+   },
+   {
+    "ward": "13",
+    "cavein_referral": {
+     "n": 21,
+     "median_days": 33.8
+    },
+    "towing_tag": {
+     "n": 73,
+     "median_days": 31.1
+    }
+   },
+   {
+    "ward": "14",
+    "cavein_referral": {
+     "n": 17,
+     "median_days": 54.0
+    },
+    "towing_tag": {
+     "n": 22,
+     "median_days": 20.6
+    }
+   }
+  ],
+  "definition": "Resident-filed requests since 16 May 2025, one row per request number, closed with the same words: towing 'vehicle tagged for tow' (the inspector's first visit) and cave-ins 'referred to street maintenance for repair work to be scheduled' (the referral). Median days from filing to that closing, by ward as published in the file's WARD column (requests with a blank ward are left out, as in N3).",
+  "figure_id": "n6_brief_first_step_by_ward",
+  "n3_figures": [
+   "n3_towing_tagged_median_after",
+   "n3_cavein_referral_median_after"
+  ]
+ },
+ "lists": [
+  {
+   "key": "lra_lots",
+   "title": "City-owned lots closed \"on schedule\" with no cut billed since",
+   "scope": "Resident weed requests on land-bank (LRA) lots filed in 2026, closed within three days as \"on schedule to be cut\" or \"added to rotation\", with no grass cut billed on the parcel in the Forestry ledger after the request (ledger posted to the run date). Requests filed after mid-September have had little time.",
+   "owner": "Forestry",
+   "rows": [
+    {
+     "block": "3000 block of Marnice Pl",
+     "ward": "12",
+     "requests": 5,
+     "lots": 5,
+     "first_filed": "2026-08-13",
+     "last_filed": "2026-09-01",
+     "last_promised": "2026-09-15"
+    },
+    {
+     "block": "8100 block of Church Rd",
+     "ward": "12",
+     "requests": 6,
+     "lots": 2,
+     "first_filed": "2026-03-20",
+     "last_filed": "2026-08-14",
+     "last_promised": "2026-08-28"
+    },
+    {
+     "block": "4100 block of W Green Lea Pl",
+     "ward": "11",
+     "requests": 2,
+     "lots": 2,
+     "first_filed": "2026-06-08",
+     "last_filed": "2026-06-08",
+     "last_promised": "2026-06-22"
+    },
+    {
+     "block": "3700 block of Lee Av",
+     "ward": "11",
+     "requests": 2,
+     "lots": 2,
+     "first_filed": "2026-08-11",
+     "last_filed": "2026-08-11",
+     "last_promised": "2026-11-09"
+    },
+    {
+     "block": "1300 block of Arlington Av",
+     "ward": "13",
+     "requests": 5,
+     "lots": 1,
+     "first_filed": "2026-07-24",
+     "last_filed": "2026-08-26",
+     "last_promised": "2026-11-07"
+    },
+    {
+     "block": "700 block of Wilmington Av",
+     "ward": "03",
+     "requests": 3,
+     "lots": 1,
+     "first_filed": "2026-07-06",
+     "last_filed": "2026-09-19",
+     "last_promised": "2026-10-04"
+    },
+    {
+     "block": "4500 block of Alcott Av",
+     "ward": "13",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-04-09",
+     "last_filed": "2026-06-10",
+     "last_promised": "2026-06-24"
+    },
+    {
+     "block": "4700 block of Virginia Av",
+     "ward": "03",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-04-25",
+     "last_filed": "2026-05-08",
+     "last_promised": "2026-05-22"
+    },
+    {
+     "block": "1700 block of N Taylor Av",
+     "ward": "12",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-07-02",
+     "last_filed": "2026-07-28",
+     "last_promised": "2026-10-26"
+    },
+    {
+     "block": "9100 block of Edna St",
+     "ward": "13",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-07-16",
+     "last_filed": "2026-08-31",
+     "last_promised": "2026-09-14"
+    },
+    {
+     "block": "4500 block of Plover Av",
+     "ward": "13",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-07-19",
+     "last_filed": "2026-08-23",
+     "last_promised": "2026-09-06"
+    },
+    {
+     "block": "4100 block of Washington Av",
+     "ward": "09",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-07-21",
+     "last_filed": "2026-07-27",
+     "last_promised": "2026-08-10"
+    },
+    {
+     "block": "5300 block of Labadie Av",
+     "ward": "12",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-08-04",
+     "last_filed": "2026-09-04",
+     "last_promised": "2026-12-03"
+    },
+    {
+     "block": "4300 block of Desoto Av",
+     "ward": "11",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-08-28",
+     "last_filed": "2026-08-28",
+     "last_promised": "2026-09-11"
+    },
+    {
+     "block": "3000 block of Keokuk St",
+     "ward": "03",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-08-30",
+     "last_filed": "2026-09-13",
+     "last_promised": "2026-12-12"
+    },
+    {
+     "block": "6900 block of Magnolia Av",
+     "ward": "04",
+     "requests": 2,
+     "lots": 1,
+     "first_filed": "2026-09-07",
+     "last_filed": "2026-09-22",
+     "last_promised": "2026-12-06"
+    },
+    {
+     "block": "2900 block of Mount Pleasant St",
+     "ward": "03",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-03-13",
+     "last_filed": "2026-03-13",
+     "last_promised": "2026-03-27"
+    },
+    {
+     "block": "5900 block of Wells Av",
+     "ward": "13",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-04-14",
+     "last_filed": "2026-04-14",
+     "last_promised": "2026-04-28"
+    },
+    {
+     "block": "3700 block of S Broadway",
+     "ward": "08",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-04-30",
+     "last_filed": "2026-04-30",
+     "last_promised": "2026-05-14"
+    },
+    {
+     "block": "2600 block of Hickory St",
+     "ward": "07",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-05-27",
+     "last_filed": "2026-05-27",
+     "last_promised": "2026-06-10"
+    },
+    {
+     "block": "3900 block of Shaw Av",
+     "ward": "06",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-06-07",
+     "last_filed": "2026-06-07",
+     "last_promised": "2026-09-05"
+    },
+    {
+     "block": "4100 block of Green Lea Pl",
+     "ward": "11",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-06-08",
+     "last_filed": "2026-06-08",
+     "last_promised": "2026-06-22"
+    },
+    {
+     "block": "3600 block of Tholozan Av",
+     "ward": "06",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-06-10",
+     "last_filed": "2026-06-10",
+     "last_promised": "2026-06-24"
+    },
+    {
+     "block": "3100 block of N Grand Blvd",
+     "ward": "11",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-06-10",
+     "last_filed": "2026-06-10",
+     "last_promised": "2026-06-24"
+    },
+    {
+     "block": "5700 block of Page Blvd",
+     "ward": "10",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-06-15",
+     "last_filed": "2026-06-15",
+     "last_promised": "2026-06-29"
+    },
+    {
+     "block": "3800 block of Neosho St",
+     "ward": "03",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-06-23",
+     "last_filed": "2026-06-23",
+     "last_promised": "2026-07-07"
+    },
+    {
+     "block": "5100 block of St Louis Av",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-03",
+     "last_filed": "2026-07-03",
+     "last_promised": "2026-07-17"
+    },
+    {
+     "block": "4400 block of N 19th St",
+     "ward": "14",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-08",
+     "last_filed": "2026-07-08",
+     "last_promised": "2026-07-22"
+    },
+    {
+     "block": "7100 block of Alabama Av",
+     "ward": "01",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-12",
+     "last_filed": "2026-07-12",
+     "last_promised": "2026-07-26"
+    },
+    {
+     "block": "4600 block of Morgan Ford Rd",
+     "ward": "02",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-13",
+     "last_filed": "2026-07-13",
+     "last_promised": "2026-07-27"
+    },
+    {
+     "block": "2000 block of Osage St",
+     "ward": "08",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-22",
+     "last_filed": "2026-07-22",
+     "last_promised": "2026-08-05"
+    },
+    {
+     "block": "4400 block of Dr Martin Luther King Dr",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-23",
+     "last_filed": "2026-07-23",
+     "last_promised": "2026-08-06"
+    },
+    {
+     "block": "4500 block of Natural Bridge Av",
+     "ward": "11",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-28",
+     "last_filed": "2026-07-28",
+     "last_promised": "2026-08-11"
+    },
+    {
+     "block": "4500 block of Dr Martin Luther King Dr",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-28",
+     "last_filed": "2026-07-28",
+     "last_promised": "2026-08-11"
+    },
+    {
+     "block": "4400 block of Farlin Av",
+     "ward": "11",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-29",
+     "last_filed": "2026-07-29",
+     "last_promised": "2026-08-12"
+    },
+    {
+     "block": "6300 block of Pennsylvania Av",
+     "ward": "01",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-07-30",
+     "last_filed": "2026-07-30",
+     "last_promised": "2026-08-13"
+    },
+    {
+     "block": "5500 block of Era Av",
+     "ward": "13",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-02",
+     "last_filed": "2026-08-02",
+     "last_promised": "2026-08-16"
+    },
+    {
+     "block": "4600 block of R Moraine Av",
+     "ward": "11",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-03",
+     "last_filed": "2026-08-03",
+     "last_promised": "2026-08-17"
+    },
+    {
+     "block": "2900 block of Arlington Av",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-04",
+     "last_filed": "2026-08-04",
+     "last_promised": "2026-08-18"
+    },
+    {
+     "block": "5000 block of Minerva Av",
+     "ward": "10",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-05",
+     "last_filed": "2026-08-05",
+     "last_promised": "2026-11-03"
+    },
+    {
+     "block": "4000 block of Kennerly Av",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-10",
+     "last_filed": "2026-08-10",
+     "last_promised": "2026-08-24"
+    },
+    {
+     "block": "4400 block of Beck Av",
+     "ward": "06",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-11",
+     "last_filed": "2026-08-11",
+     "last_promised": "2026-08-25"
+    },
+    {
+     "block": "3700 block of Finney Av",
+     "ward": "11",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-11",
+     "last_filed": "2026-08-11",
+     "last_promised": "2026-08-25"
+    },
+    {
+     "block": "4700 block of R Wren Av",
+     "ward": "13",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-13",
+     "last_filed": "2026-08-13",
+     "last_promised": "2026-08-27"
+    },
+    {
+     "block": "4500 block of Michigan Av",
+     "ward": "03",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-15",
+     "last_filed": "2026-08-15",
+     "last_promised": "2026-08-29"
+    },
+    {
+     "block": "5300 block of St Louis Av",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-17",
+     "last_filed": "2026-08-17",
+     "last_promised": "2026-08-31"
+    },
+    {
+     "block": "4000 block of N Florissant Av",
+     "ward": "14",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-18",
+     "last_filed": "2026-08-18",
+     "last_promised": "2026-09-01"
+    },
+    {
+     "block": "4700 block of St Louis Av",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-20",
+     "last_filed": "2026-08-20",
+     "last_promised": "2026-09-03"
+    },
+    {
+     "block": "5300 block of Vernon Av",
+     "ward": "10",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-22",
+     "last_filed": "2026-08-22",
+     "last_promised": "2026-09-05"
+    },
+    {
+     "block": "4000 block of N 22nd St",
+     "ward": "14",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-22",
+     "last_filed": "2026-08-22",
+     "last_promised": "2026-09-05"
+    },
+    {
+     "block": "8200 block of Church Rd",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-08-30",
+     "last_filed": "2026-08-30",
+     "last_promised": "2026-09-13"
+    },
+    {
+     "block": "3700 block of N Euclid Av",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-02",
+     "last_filed": "2026-09-02",
+     "last_promised": "2026-09-16"
+    },
+    {
+     "block": "2900 block of Abner Pl",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-04",
+     "last_filed": "2026-09-04",
+     "last_promised": "2026-12-03"
+    },
+    {
+     "block": "3900 block of Eichelberger St",
+     "ward": "01",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-07",
+     "last_filed": "2026-09-07",
+     "last_promised": "2026-09-21"
+    },
+    {
+     "block": "5400 block of Partridge Av",
+     "ward": "13",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-08",
+     "last_filed": "2026-09-08",
+     "last_promised": "2026-12-07"
+    },
+    {
+     "block": "5300 block of Michigan Av",
+     "ward": "03",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-10",
+     "last_filed": "2026-09-10",
+     "last_promised": "2026-12-09"
+    },
+    {
+     "block": "4600 block of Cottage Av",
+     "ward": "12",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-11",
+     "last_filed": "2026-09-11",
+     "last_promised": "2026-09-25"
+    },
+    {
+     "block": "5000 block of Kensington Av",
+     "ward": "10",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-14",
+     "last_filed": "2026-09-14",
+     "last_promised": "2026-09-28"
+    },
+    {
+     "block": "1400 block of Arlington Av",
+     "ward": "13",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-14",
+     "last_filed": "2026-09-14",
+     "last_promised": "2026-09-28"
+    },
+    {
+     "block": "1900 block of Knox Av",
+     "ward": "04",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-14",
+     "last_filed": "2026-09-14",
+     "last_promised": "2026-09-28"
+    },
+    {
+     "block": "3100 block of Keokuk St",
+     "ward": "03",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-16",
+     "last_filed": "2026-09-16",
+     "last_promised": "2026-09-30"
+    },
+    {
+     "block": "2900 block of California Av",
+     "ward": "07",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-17",
+     "last_filed": "2026-09-17",
+     "last_promised": "2026-12-16"
+    },
+    {
+     "block": "4200 block of Eichelberger St",
+     "ward": "01",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-23",
+     "last_filed": "2026-09-23",
+     "last_promised": "2026-10-07"
+    },
+    {
+     "block": "1400 block of Union Blvd",
+     "ward": "13",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-25",
+     "last_filed": "2026-09-25",
+     "last_promised": "2026-10-09"
+    },
+    {
+     "block": "3100 block of Nebraska Av",
+     "ward": "07",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-27",
+     "last_filed": "2026-09-27",
+     "last_promised": "2026-10-11"
+    },
+    {
+     "block": "5800 block of Terry Av",
+     "ward": "13",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-30",
+     "last_filed": "2026-09-30",
+     "last_promised": "2026-12-29"
+    },
+    {
+     "block": "6700 block of Pennsylvania Av",
+     "ward": "01",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-30",
+     "last_filed": "2026-09-30",
+     "last_promised": "2026-12-29"
+    },
+    {
+     "block": "3700 block of Salena St",
+     "ward": "08",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-09-30",
+     "last_filed": "2026-09-30",
+     "last_promised": "2026-10-14"
+    },
+    {
+     "block": "5500 block of Robin Av",
+     "ward": "13",
+     "requests": 1,
+     "lots": 1,
+     "first_filed": "2026-10-07",
+     "last_filed": "2026-10-07",
+     "last_promised": "2026-10-21"
+    }
+   ],
+   "columns": [
+    "block",
+    "ward",
+    "lots",
+    "requests",
+    "first_filed",
+    "last_filed"
+   ],
+   "summary": "94 requests on 75 lots",
+   "summary_note": "69 blocks in the list below (the pipeline's parcel join; it finds 96 requests on 76 lots)",
+   "figure_id": [
+    "n5_funnel_no_cut_requests",
+    "n5_funnel_no_cut_lots"
+   ],
+   "csv": "data/downloads/brief_lra_lots.csv"
+  },
+  {
+   "key": "cavein_referred",
+   "title": "Cave-ins referred to Street Maintenance in the last 90 days: no completion record",
+   "scope": "Cave-in requests closed \"referred to street maintenance for repair work to be scheduled\" in the 90 days to the run date. No public file records when a referred cave-in is repaired, so every row is open as far as the record goes.",
+   "owner": "Street Department",
+   "rows": [
+    {
+     "block": "4900 block of Loughborough Av",
+     "ward": "02",
+     "referrals": 2,
+     "first_referred": "2026-07-15",
+     "last_referred": "2026-08-19",
+     "days_since_first": 90
+    },
+    {
+     "block": "5500 block of Dewey Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-07-15",
+     "last_referred": "2026-07-15",
+     "days_since_first": 90
+    },
+    {
+     "block": "5800 block of Mimika Av",
+     "ward": "13",
+     "referrals": 1,
+     "first_referred": "2026-07-16",
+     "last_referred": "2026-07-16",
+     "days_since_first": 89
+    },
+    {
+     "block": "5400 block of Grace Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-07-16",
+     "last_referred": "2026-07-16",
+     "days_since_first": 89
+    },
+    {
+     "block": "Lexington Av & Warne Av",
+     "ward": "12",
+     "referrals": 1,
+     "first_referred": "2026-07-16",
+     "last_referred": "2026-07-16",
+     "days_since_first": 89
+    },
+    {
+     "block": "4300 block of Michigan Av",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-07-16",
+     "last_referred": "2026-07-16",
+     "days_since_first": 89
+    },
+    {
+     "block": "6100 block of Lalite Av",
+     "ward": "13",
+     "referrals": 1,
+     "first_referred": "2026-07-16",
+     "last_referred": "2026-07-16",
+     "days_since_first": 89
+    },
+    {
+     "block": "3800 block of Page Blvd",
+     "ward": "11",
+     "referrals": 1,
+     "first_referred": "2026-07-17",
+     "last_referred": "2026-07-17",
+     "days_since_first": 88
+    },
+    {
+     "block": "4800 block of Eichelberger St",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-17",
+     "last_referred": "2026-07-17",
+     "days_since_first": 88
+    },
+    {
+     "block": "6400 block of Virginia Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-07-17",
+     "last_referred": "2026-07-17",
+     "days_since_first": 88
+    },
+    {
+     "block": "5100 block of Goethe Av",
+     "ward": "02",
+     "referrals": 2,
+     "first_referred": "2026-07-20",
+     "last_referred": "2026-08-17",
+     "days_since_first": 85
+    },
+    {
+     "block": "1100 block of Bellerive Blvd",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-07-20",
+     "last_referred": "2026-07-20",
+     "days_since_first": 85
+    },
+    {
+     "block": "2700 block of Chariton St",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-07-20",
+     "last_referred": "2026-07-20",
+     "days_since_first": 85
+    },
+    {
+     "block": "N 14th St & Wright St",
+     "ward": "14",
+     "referrals": 1,
+     "first_referred": "2026-07-21",
+     "last_referred": "2026-07-21",
+     "days_since_first": 84
+    },
+    {
+     "block": "3900 block of Itaska St",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-07-21",
+     "last_referred": "2026-07-21",
+     "days_since_first": 84
+    },
+    {
+     "block": "Neosho St & Ray Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-07-21",
+     "last_referred": "2026-07-21",
+     "days_since_first": 84
+    },
+    {
+     "block": "3900 block of Itaska Dr",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-07-21",
+     "last_referred": "2026-07-21",
+     "days_since_first": 84
+    },
+    {
+     "block": "Kings Dr & Gravois Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-22",
+     "last_referred": "2026-07-22",
+     "days_since_first": 83
+    },
+    {
+     "block": "4100 block of Taft Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-22",
+     "last_referred": "2026-07-22",
+     "days_since_first": 83
+    },
+    {
+     "block": "Sutherland Av & Hampton Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-23",
+     "last_referred": "2026-07-23",
+     "days_since_first": 82
+    },
+    {
+     "block": "5200 block of Waterman Blvd",
+     "ward": "09",
+     "referrals": 1,
+     "first_referred": "2026-07-23",
+     "last_referred": "2026-07-23",
+     "days_since_first": 82
+    },
+    {
+     "block": "6000 block of North Pointe Blvd",
+     "ward": "13",
+     "referrals": 1,
+     "first_referred": "2026-07-23",
+     "last_referred": "2026-07-23",
+     "days_since_first": 82
+    },
+    {
+     "block": "5200 block of Robert Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-27",
+     "last_referred": "2026-07-27",
+     "days_since_first": 78
+    },
+    {
+     "block": "4400 block of Neosho St",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-27",
+     "last_referred": "2026-07-27",
+     "days_since_first": 78
+    },
+    {
+     "block": "5400 block of Cologne St",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-28",
+     "last_referred": "2026-07-28",
+     "days_since_first": 77
+    },
+    {
+     "block": "5700 block of Goener Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-07-28",
+     "last_referred": "2026-07-28",
+     "days_since_first": 77
+    },
+    {
+     "block": "4400 block of Wilcox Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-29",
+     "last_referred": "2026-07-29",
+     "days_since_first": 76
+    },
+    {
+     "block": "4300 block of Ellenwood Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-30",
+     "last_referred": "2026-07-30",
+     "days_since_first": 75
+    },
+    {
+     "block": "1100 block of Dover Pl",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-07-30",
+     "last_referred": "2026-07-30",
+     "days_since_first": 75
+    },
+    {
+     "block": "5200 block of Blow St",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-07-31",
+     "last_referred": "2026-07-31",
+     "days_since_first": 74
+    },
+    {
+     "block": "5600 block of Rosa Av",
+     "ward": "05",
+     "referrals": 1,
+     "first_referred": "2026-08-04",
+     "last_referred": "2026-08-04",
+     "days_since_first": 70
+    },
+    {
+     "block": "5500 block of Rosa Av",
+     "ward": "05",
+     "referrals": 1,
+     "first_referred": "2026-08-04",
+     "last_referred": "2026-08-04",
+     "days_since_first": 70
+    },
+    {
+     "block": "Taft Av & Alfred Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-08-04",
+     "last_referred": "2026-08-04",
+     "days_since_first": 70
+    },
+    {
+     "block": "2700 block of Osage St",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-08-05",
+     "last_referred": "2026-08-05",
+     "days_since_first": 69
+    },
+    {
+     "block": "4900 block of Robert Av",
+     "ward": "02",
+     "referrals": 2,
+     "first_referred": "2026-08-06",
+     "last_referred": "2026-10-01",
+     "days_since_first": 68
+    },
+    {
+     "block": "3900 block of Lindell Blvd",
+     "ward": "09",
+     "referrals": 1,
+     "first_referred": "2026-08-06",
+     "last_referred": "2026-08-06",
+     "days_since_first": 68
+    },
+    {
+     "block": "Lake Av & Waterman Av",
+     "ward": "09",
+     "referrals": 1,
+     "first_referred": "2026-08-06",
+     "last_referred": "2026-08-06",
+     "days_since_first": 68
+    },
+    {
+     "block": "5200 block of Nagel Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-08-06",
+     "last_referred": "2026-08-06",
+     "days_since_first": 68
+    },
+    {
+     "block": "3900 block of Iowa Av",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-08-06",
+     "last_referred": "2026-08-06",
+     "days_since_first": 68
+    },
+    {
+     "block": "3900 block of Pennsylvania Av",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-08-07",
+     "last_referred": "2026-08-07",
+     "days_since_first": 67
+    },
+    {
+     "block": "3800 block of Meramec St",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-08-11",
+     "last_referred": "2026-08-11",
+     "days_since_first": 63
+    },
+    {
+     "block": "4600 block of Adkins Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-08-12",
+     "last_referred": "2026-08-12",
+     "days_since_first": 62
+    },
+    {
+     "block": "3700 block of Primm St",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-08-12",
+     "last_referred": "2026-08-12",
+     "days_since_first": 62
+    },
+    {
+     "block": "4600 block of Varrelmann Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-08-12",
+     "last_referred": "2026-08-12",
+     "days_since_first": 62
+    },
+    {
+     "block": "4600 block of Newport St",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-08-14",
+     "last_referred": "2026-08-14",
+     "days_since_first": 60
+    },
+    {
+     "block": "4400 block of Gannett St",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-08-17",
+     "last_referred": "2026-08-17",
+     "days_since_first": 57
+    },
+    {
+     "block": "5200 block of Walsh St",
+     "ward": "05",
+     "referrals": 1,
+     "first_referred": "2026-08-18",
+     "last_referred": "2026-08-18",
+     "days_since_first": 56
+    },
+    {
+     "block": "7600 block of Tennessee Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-08-19",
+     "last_referred": "2026-08-19",
+     "days_since_first": 55
+    },
+    {
+     "block": "4600 block of Virginia Av",
+     "ward": "03",
+     "referrals": 2,
+     "first_referred": "2026-08-24",
+     "last_referred": "2026-08-24",
+     "days_since_first": 50
+    },
+    {
+     "block": "3800 block of Connecticut Av",
+     "ward": "06",
+     "referrals": 2,
+     "first_referred": "2026-08-24",
+     "last_referred": "2026-09-08",
+     "days_since_first": 50
+    },
+    {
+     "block": "5400 block of Walsh St",
+     "ward": "05",
+     "referrals": 1,
+     "first_referred": "2026-08-24",
+     "last_referred": "2026-08-24",
+     "days_since_first": 50
+    },
+    {
+     "block": "4400 block of Taft Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-08-24",
+     "last_referred": "2026-08-24",
+     "days_since_first": 50
+    },
+    {
+     "block": "5700 block of Milentz Av",
+     "ward": "02",
+     "referrals": 2,
+     "first_referred": "2026-08-25",
+     "last_referred": "2026-09-02",
+     "days_since_first": 49
+    },
+    {
+     "block": "4400 block of S 37th St",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-08-25",
+     "last_referred": "2026-08-25",
+     "days_since_first": 49
+    },
+    {
+     "block": "5500 block of Murdoch Av",
+     "ward": "05",
+     "referrals": 2,
+     "first_referred": "2026-08-26",
+     "last_referred": "2026-09-30",
+     "days_since_first": 48
+    },
+    {
+     "block": "5300 block of Nottingham Av",
+     "ward": "05",
+     "referrals": 2,
+     "first_referred": "2026-08-26",
+     "last_referred": "2026-08-31",
+     "days_since_first": 48
+    },
+    {
+     "block": "5100 block of Wicklow Pl",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-08-26",
+     "last_referred": "2026-08-26",
+     "days_since_first": 48
+    },
+    {
+     "block": "4100 block of S Compton Av",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-08-26",
+     "last_referred": "2026-08-26",
+     "days_since_first": 48
+    },
+    {
+     "block": "5400 block of Christy Av",
+     "ward": "02",
+     "referrals": 2,
+     "first_referred": "2026-08-27",
+     "last_referred": "2026-09-09",
+     "days_since_first": 47
+    },
+    {
+     "block": "4600 block of Steffens Ct",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-08-27",
+     "last_referred": "2026-08-27",
+     "days_since_first": 47
+    },
+    {
+     "block": "4400 block of N Greer Av",
+     "ward": "12",
+     "referrals": 1,
+     "first_referred": "2026-08-27",
+     "last_referred": "2026-08-27",
+     "days_since_first": 47
+    },
+    {
+     "block": "Lansdowne Av & Donovan Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-08-27",
+     "last_referred": "2026-08-27",
+     "days_since_first": 47
+    },
+    {
+     "block": "Coronado Av & Bowen St",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-08-27",
+     "last_referred": "2026-08-27",
+     "days_since_first": 47
+    },
+    {
+     "block": "6200 block of Nottingham Av",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-08-28",
+     "last_referred": "2026-08-28",
+     "days_since_first": 46
+    },
+    {
+     "block": "6000 block of Clemens Av",
+     "ward": "10",
+     "referrals": 1,
+     "first_referred": "2026-08-28",
+     "last_referred": "2026-08-28",
+     "days_since_first": 46
+    },
+    {
+     "block": "4600 block of Tesson St",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-08-28",
+     "last_referred": "2026-08-28",
+     "days_since_first": 46
+    },
+    {
+     "block": "Gravois Av & Sunshine Dr",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-08-31",
+     "last_referred": "2026-08-31",
+     "days_since_first": 43
+    },
+    {
+     "block": "6100 block of Virginia Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-08-31",
+     "last_referred": "2026-08-31",
+     "days_since_first": 43
+    },
+    {
+     "block": "1300 block of Union Blvd",
+     "ward": "10",
+     "referrals": 1,
+     "first_referred": "2026-09-01",
+     "last_referred": "2026-09-01",
+     "days_since_first": 42
+    },
+    {
+     "block": "4800 block of Wabada Av",
+     "ward": "12",
+     "referrals": 1,
+     "first_referred": "2026-09-01",
+     "last_referred": "2026-09-01",
+     "days_since_first": 42
+    },
+    {
+     "block": "Bowen St & Coronado Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-09-02",
+     "last_referred": "2026-09-02",
+     "days_since_first": 41
+    },
+    {
+     "block": "3500 block of Kingsland Ct",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-09-02",
+     "last_referred": "2026-09-02",
+     "days_since_first": 41
+    },
+    {
+     "block": "4000 block of S Grand Blvd",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-09-03",
+     "last_referred": "2026-09-03",
+     "days_since_first": 40
+    },
+    {
+     "block": "5800 block of Lotus Av",
+     "ward": "13",
+     "referrals": 1,
+     "first_referred": "2026-09-03",
+     "last_referred": "2026-09-03",
+     "days_since_first": 40
+    },
+    {
+     "block": "4100 block of Louis St",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-09-03",
+     "last_referred": "2026-09-03",
+     "days_since_first": 40
+    },
+    {
+     "block": "5600 block of Greer Av",
+     "ward": "13",
+     "referrals": 1,
+     "first_referred": "2026-09-03",
+     "last_referred": "2026-09-03",
+     "days_since_first": 40
+    },
+    {
+     "block": "2800 block of Keokuk St",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-09-03",
+     "last_referred": "2026-09-03",
+     "days_since_first": 40
+    },
+    {
+     "block": "6200 block of Minnesota Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-09-04",
+     "last_referred": "2026-09-04",
+     "days_since_first": 39
+    },
+    {
+     "block": "3200 block of Taft Av",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-09-04",
+     "last_referred": "2026-09-04",
+     "days_since_first": 39
+    },
+    {
+     "block": "4300 block of Tesson St",
+     "ward": "02",
+     "referrals": 1,
+     "first_referred": "2026-09-09",
+     "last_referred": "2026-09-09",
+     "days_since_first": 34
+    },
+    {
+     "block": "5100 block of Rosa Av",
+     "ward": "05",
+     "referrals": 2,
+     "first_referred": "2026-09-10",
+     "last_referred": "2026-09-11",
+     "days_since_first": 33
+    },
+    {
+     "block": "Pershing Av & De Baliviere Av",
+     "ward": "10",
+     "referrals": 1,
+     "first_referred": "2026-09-11",
+     "last_referred": "2026-09-11",
+     "days_since_first": 32
+    },
+    {
+     "block": "4000 block of Darby St",
+     "ward": "13",
+     "referrals": 1,
+     "first_referred": "2026-09-11",
+     "last_referred": "2026-09-11",
+     "days_since_first": 32
+    },
+    {
+     "block": "5100 block of Cabanne Av",
+     "ward": "10",
+     "referrals": 1,
+     "first_referred": "2026-09-12",
+     "last_referred": "2026-09-12",
+     "days_since_first": 31
+    },
+    {
+     "block": "4800 block of Palm St",
+     "ward": "12",
+     "referrals": 1,
+     "first_referred": "2026-09-12",
+     "last_referred": "2026-09-12",
+     "days_since_first": 31
+    },
+    {
+     "block": "3900 block of Castleman Av",
+     "ward": "06",
+     "referrals": 2,
+     "first_referred": "2026-09-14",
+     "last_referred": "2026-09-24",
+     "days_since_first": 29
+    },
+    {
+     "block": "5500 block of Pershing Av",
+     "ward": "10",
+     "referrals": 1,
+     "first_referred": "2026-09-16",
+     "last_referred": "2026-09-16",
+     "days_since_first": 27
+    },
+    {
+     "block": "1600 block of Clark Av",
+     "ward": "08",
+     "referrals": 1,
+     "first_referred": "2026-09-17",
+     "last_referred": "2026-09-17",
+     "days_since_first": 26
+    },
+    {
+     "block": "1100 block of E John Av",
+     "ward": "14",
+     "referrals": 1,
+     "first_referred": "2026-09-18",
+     "last_referred": "2026-09-18",
+     "days_since_first": 25
+    },
+    {
+     "block": "5900 block of Era Av",
+     "ward": "13",
+     "referrals": 1,
+     "first_referred": "2026-09-23",
+     "last_referred": "2026-09-23",
+     "days_since_first": 20
+    },
+    {
+     "block": "4000 block of Russell Blvd",
+     "ward": "06",
+     "referrals": 1,
+     "first_referred": "2026-09-24",
+     "last_referred": "2026-09-24",
+     "days_since_first": 19
+    },
+    {
+     "block": "4900 block of Wabada Av",
+     "ward": "12",
+     "referrals": 1,
+     "first_referred": "2026-09-28",
+     "last_referred": "2026-09-28",
+     "days_since_first": 15
+    },
+    {
+     "block": "8300 block of S Broadway",
+     "ward": "01",
+     "referrals": 2,
+     "first_referred": "2026-09-29",
+     "last_referred": "2026-09-29",
+     "days_since_first": 14
+    },
+    {
+     "block": "2800 block of Dayton St",
+     "ward": "14",
+     "referrals": 1,
+     "first_referred": "2026-09-29",
+     "last_referred": "2026-09-29",
+     "days_since_first": 14
+    },
+    {
+     "block": "3800 block of Loughborough Av",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-09-29",
+     "last_referred": "2026-09-29",
+     "days_since_first": 14
+    },
+    {
+     "block": "2700 block of Meramec St",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-09-29",
+     "last_referred": "2026-09-29",
+     "days_since_first": 14
+    },
+    {
+     "block": "6900 block of Morgan Ford Rd",
+     "ward": "01",
+     "referrals": 1,
+     "first_referred": "2026-09-29",
+     "last_referred": "2026-09-29",
+     "days_since_first": 14
+    },
+    {
+     "block": "3200 block of Hawthorne Blvd",
+     "ward": "06",
+     "referrals": 1,
+     "first_referred": "2026-09-29",
+     "last_referred": "2026-09-29",
+     "days_since_first": 14
+    },
+    {
+     "block": "5200 block of Alabama Av",
+     "ward": "03",
+     "referrals": 3,
+     "first_referred": "2026-10-01",
+     "last_referred": "2026-10-07",
+     "days_since_first": 12
+    },
+    {
+     "block": "5200 block of Neosho St",
+     "ward": "05",
+     "referrals": 1,
+     "first_referred": "2026-10-01",
+     "last_referred": "2026-10-01",
+     "days_since_first": 12
+    },
+    {
+     "block": "5000 block of Alaska Av",
+     "ward": "03",
+     "referrals": 1,
+     "first_referred": "2026-10-01",
+     "last_referred": "2026-10-01",
+     "days_since_first": 12
+    },
+    {
+     "block": "4100 block of Alma Av",
+     "ward": "01",
+     "referrals": 2,
+     "first_referred": "2026-10-05",
+     "last_referred": "2026-10-05",
+     "days_since_first": 8
+    },
+    {
+     "block": "5300 block of Bancroft Av",
+     "ward": "05",
+     "referrals": 1,
+     "first_referred": "2026-10-12",
+     "last_referred": "2026-10-12",
+     "days_since_first": 1
+    }
+   ],
+   "columns": [
+    "block",
+    "ward",
+    "referrals",
+    "first_referred",
+    "days_since_first"
+   ],
+   "summary": "118 referrals on 103 blocks",
+   "figure_id": "n6_brief_cavein_referrals_90d",
+   "csv": "data/downloads/brief_cavein_referred.csv"
+  },
+  {
+   "key": "tree_cancelled",
+   "title": "Tree requests cancelled with no words at an address where a removal order was already open",
+   "scope": "'Inspect City Tree' requests filed since 1 January 2025, cancelled with no public words, at the same address as a Forestry tree-removal work order that had started more than a day before (the city's published Cityworks sample: 1,500 of 2,522 open removal orders, so this undercounts).",
+   "owner": "Forestry",
+   "rows": [
+    {
+     "block": "5000 block of Lansdowne Av",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 2519,
+     "last_filed": "2026-08-03"
+    },
+    {
+     "block": "1200 block of Mccausland Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 2479,
+     "last_filed": "2026-06-07"
+    },
+    {
+     "block": "5600 block of Bancroft Av",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 2412,
+     "last_filed": "2026-04-19"
+    },
+    {
+     "block": "4900 block of Lansdowne Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 2389,
+     "last_filed": "2026-09-23"
+    },
+    {
+     "block": "5600 block of W Florissant Av",
+     "ward": "13",
+     "cancelled_requests": 1,
+     "order_open_days": 2371,
+     "last_filed": "2026-03-23"
+    },
+    {
+     "block": "1000 block of Fairmount Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 2327,
+     "last_filed": "2026-09-21"
+    },
+    {
+     "block": "2900 block of Rutger St",
+     "ward": "07",
+     "cancelled_requests": 2,
+     "order_open_days": 2303,
+     "last_filed": "2026-08-27"
+    },
+    {
+     "block": "4100 block of W Pine Blvd",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 2254,
+     "last_filed": "2026-08-04"
+    },
+    {
+     "block": "1400 block of Gregg Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 2216,
+     "last_filed": "2026-07-06"
+    },
+    {
+     "block": "6400 block of Nashville Av",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 2191,
+     "last_filed": "2026-10-05"
+    },
+    {
+     "block": "4300 block of Laclede Av",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 2181,
+     "last_filed": "2026-07-17"
+    },
+    {
+     "block": "5500 block of Elizabeth Av",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 2160,
+     "last_filed": "2026-06-08"
+    },
+    {
+     "block": "6000 block of Louisiana Av",
+     "ward": "03",
+     "cancelled_requests": 1,
+     "order_open_days": 2151,
+     "last_filed": "2026-07-06"
+    },
+    {
+     "block": "4000 block of Magnolia Pl",
+     "ward": "06",
+     "cancelled_requests": 2,
+     "order_open_days": 2149,
+     "last_filed": "2026-07-20"
+    },
+    {
+     "block": "5200 block of Alaska Av",
+     "ward": "03",
+     "cancelled_requests": 2,
+     "order_open_days": 2066,
+     "last_filed": "2025-12-04"
+    },
+    {
+     "block": "4100 block of Chouteau Av",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 2058,
+     "last_filed": "2026-04-17"
+    },
+    {
+     "block": "5500 block of Wilson Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 2044,
+     "last_filed": "2026-05-06"
+    },
+    {
+     "block": "3600 block of Robert Av",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 2004,
+     "last_filed": "2025-03-05"
+    },
+    {
+     "block": "700 block of S Skinker Blvd",
+     "ward": "10",
+     "cancelled_requests": 3,
+     "order_open_days": 1968,
+     "last_filed": "2025-10-17"
+    },
+    {
+     "block": "5700 block of Marquette Av",
+     "ward": "05",
+     "cancelled_requests": 2,
+     "order_open_days": 1948,
+     "last_filed": "2026-09-05"
+    },
+    {
+     "block": "4400 block of Rosa Av",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 1936,
+     "last_filed": "2026-10-05"
+    },
+    {
+     "block": "6100 block of Lucille Av",
+     "ward": "13",
+     "cancelled_requests": 2,
+     "order_open_days": 1935,
+     "last_filed": "2026-07-30"
+    },
+    {
+     "block": "4300 block of Fyler Av",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 1924,
+     "last_filed": "2026-05-14"
+    },
+    {
+     "block": "800 block of Russell Blvd",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 1919,
+     "last_filed": "2026-09-22"
+    },
+    {
+     "block": "1900 block of Lynch St",
+     "ward": "08",
+     "cancelled_requests": 2,
+     "order_open_days": 1903,
+     "last_filed": "2026-09-14"
+    },
+    {
+     "block": "5600 block of Lansdowne Av",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 1891,
+     "last_filed": "2026-08-12"
+    },
+    {
+     "block": "6500 block of Nashville Av",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 1889,
+     "last_filed": "2026-06-14"
+    },
+    {
+     "block": "4400 block of Forest Park Av",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 1870,
+     "last_filed": "2025-11-05"
+    },
+    {
+     "block": "3600 block of Connecticut St",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 1850,
+     "last_filed": "2026-07-26"
+    },
+    {
+     "block": "2300 block of Edwards St",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 1816,
+     "last_filed": "2026-08-23"
+    },
+    {
+     "block": "4200 block of Hartford St",
+     "ward": "06",
+     "cancelled_requests": 2,
+     "order_open_days": 1799,
+     "last_filed": "2026-06-23"
+    },
+    {
+     "block": "5800 block of Victoria Av",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 1788,
+     "last_filed": "2026-06-22"
+    },
+    {
+     "block": "1300 block of Mccausland Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 1755,
+     "last_filed": "2025-06-02"
+    },
+    {
+     "block": "3700 block of Connecticut St",
+     "ward": "06",
+     "cancelled_requests": 2,
+     "order_open_days": 1683,
+     "last_filed": "2026-03-12"
+    },
+    {
+     "block": "6700 block of Nashville Av",
+     "ward": "04",
+     "cancelled_requests": 3,
+     "order_open_days": 1672,
+     "last_filed": "2026-09-27"
+    },
+    {
+     "block": "1000 block of Louisville Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 1671,
+     "last_filed": "2026-03-15"
+    },
+    {
+     "block": "5600 block of Louisiana Av",
+     "ward": "03",
+     "cancelled_requests": 4,
+     "order_open_days": 1621,
+     "last_filed": "2026-09-28"
+    },
+    {
+     "block": "3400 block of Longfellow Blvd",
+     "ward": "06",
+     "cancelled_requests": 4,
+     "order_open_days": 1560,
+     "last_filed": "2026-08-06"
+    },
+    {
+     "block": "6300 block of Vermont Av",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 1516,
+     "last_filed": "2025-05-13"
+    },
+    {
+     "block": "6200 block of Idaho Av",
+     "ward": "03",
+     "cancelled_requests": 1,
+     "order_open_days": 1472,
+     "last_filed": "2026-07-30"
+    },
+    {
+     "block": "6900 block of Sutherland Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 1449,
+     "last_filed": "2026-09-17"
+    },
+    {
+     "block": "5800 block of Minerva Av",
+     "ward": "13",
+     "cancelled_requests": 1,
+     "order_open_days": 1432,
+     "last_filed": "2026-07-12"
+    },
+    {
+     "block": "1000 block of Julia St",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 1431,
+     "last_filed": "2026-05-11"
+    },
+    {
+     "block": "1500 block of Farragut St",
+     "ward": "14",
+     "cancelled_requests": 1,
+     "order_open_days": 1423,
+     "last_filed": "2025-03-26"
+    },
+    {
+     "block": "6100 block of Colorado Av",
+     "ward": "03",
+     "cancelled_requests": 1,
+     "order_open_days": 1357,
+     "last_filed": "2026-01-07"
+    },
+    {
+     "block": "3200 block of Delmar Blvd",
+     "ward": "11",
+     "cancelled_requests": 1,
+     "order_open_days": 1341,
+     "last_filed": "2025-03-15"
+    },
+    {
+     "block": "3900 block of Utah St",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 1323,
+     "last_filed": "2026-07-14"
+    },
+    {
+     "block": "5200 block of Fairview Av",
+     "ward": "05",
+     "cancelled_requests": 2,
+     "order_open_days": 1281,
+     "last_filed": "2026-09-21"
+    },
+    {
+     "block": "3500 block of Arsenal St",
+     "ward": "07",
+     "cancelled_requests": 1,
+     "order_open_days": 1277,
+     "last_filed": "2025-05-18"
+    },
+    {
+     "block": "3900 block of Arsenal St",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 1273,
+     "last_filed": "2025-03-12"
+    },
+    {
+     "block": "4500 block of Arco Av",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 1260,
+     "last_filed": "2026-09-25"
+    },
+    {
+     "block": "2300 block of Albion Pl",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 1253,
+     "last_filed": "2025-07-29"
+    },
+    {
+     "block": "3100 block of Shenandoah Av",
+     "ward": "07",
+     "cancelled_requests": 1,
+     "order_open_days": 1248,
+     "last_filed": "2026-08-05"
+    },
+    {
+     "block": "3200 block of January Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 1234,
+     "last_filed": "2025-06-12"
+    },
+    {
+     "block": "1500 block of Graham St",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 1210,
+     "last_filed": "2026-10-07"
+    },
+    {
+     "block": "900 block of Dover Pl",
+     "ward": "03",
+     "cancelled_requests": 2,
+     "order_open_days": 1193,
+     "last_filed": "2025-06-30"
+    },
+    {
+     "block": "5100 block of Rosa Av",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 1166,
+     "last_filed": "2026-09-06"
+    },
+    {
+     "block": "0 block of N Euclid Av",
+     "ward": "09",
+     "cancelled_requests": 2,
+     "order_open_days": 1145,
+     "last_filed": "2026-08-15"
+    },
+    {
+     "block": "2300 block of Klemm St",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 1140,
+     "last_filed": "2026-07-08"
+    },
+    {
+     "block": "4200 block of Botanical Av",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 1122,
+     "last_filed": "2026-08-26"
+    },
+    {
+     "block": "5600 block of Eichelberger St",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 1097,
+     "last_filed": "2026-07-11"
+    },
+    {
+     "block": "4000 block of Hartford St",
+     "ward": "06",
+     "cancelled_requests": 2,
+     "order_open_days": 1084,
+     "last_filed": "2026-09-07"
+    },
+    {
+     "block": "1000 block of Mccausland Av",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 1054,
+     "last_filed": "2025-07-18"
+    },
+    {
+     "block": "3300 block of Illinois Av",
+     "ward": "08",
+     "cancelled_requests": 2,
+     "order_open_days": 1028,
+     "last_filed": "2026-09-14"
+    },
+    {
+     "block": "4100 block of Toenges Av",
+     "ward": "01",
+     "cancelled_requests": 2,
+     "order_open_days": 1028,
+     "last_filed": "2026-09-02"
+    },
+    {
+     "block": "7200 block of Eugene Av",
+     "ward": "01",
+     "cancelled_requests": 3,
+     "order_open_days": 1003,
+     "last_filed": "2026-08-14"
+    },
+    {
+     "block": "3800 block of Juniata St",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 999,
+     "last_filed": "2025-07-07"
+    },
+    {
+     "block": "2800 block of Salena St",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 962,
+     "last_filed": "2025-05-18"
+    },
+    {
+     "block": "1700 block of Market St",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 958,
+     "last_filed": "2026-06-03"
+    },
+    {
+     "block": "3400 block of Crittenden St",
+     "ward": "07",
+     "cancelled_requests": 1,
+     "order_open_days": 949,
+     "last_filed": "2025-10-07"
+    },
+    {
+     "block": "2600 block of S 12th St",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 940,
+     "last_filed": "2026-04-09"
+    },
+    {
+     "block": "6500 block of Wise Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 932,
+     "last_filed": "2025-04-01"
+    },
+    {
+     "block": "100 block of S 11th St",
+     "ward": "14",
+     "cancelled_requests": 2,
+     "order_open_days": 898,
+     "last_filed": "2026-04-30"
+    },
+    {
+     "block": "6600 block of Oakland Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 889,
+     "last_filed": "2026-02-12"
+    },
+    {
+     "block": "5600 block of Southwest Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 876,
+     "last_filed": "2026-07-08"
+    },
+    {
+     "block": "2000 block of Ann Av",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 849,
+     "last_filed": "2026-07-16"
+    },
+    {
+     "block": "6000 block of Hancock Av",
+     "ward": "04",
+     "cancelled_requests": 6,
+     "order_open_days": 836,
+     "last_filed": "2026-02-01"
+    },
+    {
+     "block": "6200 block of Pernod Av",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 826,
+     "last_filed": "2026-06-17"
+    },
+    {
+     "block": "400 block of S 18th St",
+     "ward": "08",
+     "cancelled_requests": 4,
+     "order_open_days": 783,
+     "last_filed": "2025-12-10"
+    },
+    {
+     "block": "3900 block of Cleveland Av",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 775,
+     "last_filed": "2026-08-09"
+    },
+    {
+     "block": "5600 block of Pernod Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 744,
+     "last_filed": "2026-03-27"
+    },
+    {
+     "block": "2100 block of Mccausland Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 741,
+     "last_filed": "2025-06-24"
+    },
+    {
+     "block": "0 block of Henrietta Pl",
+     "ward": "07",
+     "cancelled_requests": 5,
+     "order_open_days": 732,
+     "last_filed": "2026-05-10"
+    },
+    {
+     "block": "4300 block of Mcpherson Av",
+     "ward": "09",
+     "cancelled_requests": 2,
+     "order_open_days": 730,
+     "last_filed": "2026-08-27"
+    },
+    {
+     "block": "5000 block of Tholozan Av",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 723,
+     "last_filed": "2026-05-21"
+    },
+    {
+     "block": "1200 block of Childress Av",
+     "ward": "04",
+     "cancelled_requests": 3,
+     "order_open_days": 720,
+     "last_filed": "2026-07-14"
+    },
+    {
+     "block": "3900 block of Lafayette Av",
+     "ward": "07",
+     "cancelled_requests": 1,
+     "order_open_days": 699,
+     "last_filed": "2026-09-22"
+    },
+    {
+     "block": "5700 block of Winona Av",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 697,
+     "last_filed": "2026-08-09"
+    },
+    {
+     "block": "4000 block of Flad Av",
+     "ward": "06",
+     "cancelled_requests": 2,
+     "order_open_days": 671,
+     "last_filed": "2025-07-17"
+    },
+    {
+     "block": "3700 block of Robert Av",
+     "ward": "01",
+     "cancelled_requests": 2,
+     "order_open_days": 653,
+     "last_filed": "2025-07-05"
+    },
+    {
+     "block": "5500 block of Daggett Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 649,
+     "last_filed": "2026-05-31"
+    },
+    {
+     "block": "700 block of N Tucker Blvd",
+     "ward": "14",
+     "cancelled_requests": 1,
+     "order_open_days": 646,
+     "last_filed": "2026-08-28"
+    },
+    {
+     "block": "4900 block of Oleatha Av",
+     "ward": "05",
+     "cancelled_requests": 2,
+     "order_open_days": 631,
+     "last_filed": "2025-10-28"
+    },
+    {
+     "block": "5400 block of Nottingham Av",
+     "ward": "05",
+     "cancelled_requests": 2,
+     "order_open_days": 631,
+     "last_filed": "2026-09-04"
+    },
+    {
+     "block": "3400 block of Macklind Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 618,
+     "last_filed": "2025-03-07"
+    },
+    {
+     "block": "2500 block of Clifton Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 595,
+     "last_filed": "2026-07-28"
+    },
+    {
+     "block": "6700 block of Dale Av",
+     "ward": "04",
+     "cancelled_requests": 3,
+     "order_open_days": 592,
+     "last_filed": "2026-06-29"
+    },
+    {
+     "block": "3900 block of Castleman Av",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 586,
+     "last_filed": "2026-06-17"
+    },
+    {
+     "block": "7000 block of Winona Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 580,
+     "last_filed": "2025-04-13"
+    },
+    {
+     "block": "6200 block of Odell St",
+     "ward": "04",
+     "cancelled_requests": 3,
+     "order_open_days": 578,
+     "last_filed": "2026-10-03"
+    },
+    {
+     "block": "6600 block of Leona St",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 577,
+     "last_filed": "2025-12-22"
+    },
+    {
+     "block": "4200 block of Bates St",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 534,
+     "last_filed": "2026-07-09"
+    },
+    {
+     "block": "4200 block of Maryland Av",
+     "ward": "09",
+     "cancelled_requests": 5,
+     "order_open_days": 507,
+     "last_filed": "2026-08-15"
+    },
+    {
+     "block": "4200 block of Mcpherson Av",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 504,
+     "last_filed": "2026-09-22"
+    },
+    {
+     "block": "3800 block of Bowen St",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 497,
+     "last_filed": "2026-08-10"
+    },
+    {
+     "block": "6000 block of Leona St",
+     "ward": "01",
+     "cancelled_requests": 2,
+     "order_open_days": 483,
+     "last_filed": "2025-11-18"
+    },
+    {
+     "block": "6200 block of Northwood Av",
+     "ward": "10",
+     "cancelled_requests": 10,
+     "order_open_days": 463,
+     "last_filed": "2026-09-30"
+    },
+    {
+     "block": "3800 block of Jamieson Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 461,
+     "last_filed": "2025-08-13"
+    },
+    {
+     "block": "6200 block of Arsenal St",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 434,
+     "last_filed": "2026-09-14"
+    },
+    {
+     "block": "6500 block of Scanlan Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 434,
+     "last_filed": "2025-04-11"
+    },
+    {
+     "block": "4000 block of Lafayette Av",
+     "ward": "07",
+     "cancelled_requests": 1,
+     "order_open_days": 433,
+     "last_filed": "2026-09-22"
+    },
+    {
+     "block": "6500 block of Pernod Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 433,
+     "last_filed": "2026-05-21"
+    },
+    {
+     "block": "1100 block of Longridge Dr",
+     "ward": "13",
+     "cancelled_requests": 1,
+     "order_open_days": 411,
+     "last_filed": "2026-03-10"
+    },
+    {
+     "block": "4400 block of Randall Pl",
+     "ward": "14",
+     "cancelled_requests": 1,
+     "order_open_days": 403,
+     "last_filed": "2026-07-10"
+    },
+    {
+     "block": "4500 block of Bessie Av",
+     "ward": "11",
+     "cancelled_requests": 2,
+     "order_open_days": 403,
+     "last_filed": "2026-08-24"
+    },
+    {
+     "block": "5900 block of Columbia Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 398,
+     "last_filed": "2025-06-30"
+    },
+    {
+     "block": "4600 block of Alaska Av",
+     "ward": "03",
+     "cancelled_requests": 3,
+     "order_open_days": 389,
+     "last_filed": "2026-06-20"
+    },
+    {
+     "block": "5400 block of Dempsey Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 382,
+     "last_filed": "2026-09-20"
+    },
+    {
+     "block": "5500 block of Magnolia Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 381,
+     "last_filed": "2026-04-27"
+    },
+    {
+     "block": "800 block of Ann Av",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 378,
+     "last_filed": "2026-06-30"
+    },
+    {
+     "block": "7800 block of Wilmar Pl",
+     "ward": "01",
+     "cancelled_requests": 2,
+     "order_open_days": 370,
+     "last_filed": "2026-10-05"
+    },
+    {
+     "block": "5100 block of Lindell Blvd",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 364,
+     "last_filed": "2026-07-10"
+    },
+    {
+     "block": "5100 block of Eichelberger St",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 356,
+     "last_filed": "2026-04-07"
+    },
+    {
+     "block": "3300 block of S Grand Blvd",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 347,
+     "last_filed": "2026-04-03"
+    },
+    {
+     "block": "5100 block of Maple Av",
+     "ward": "10",
+     "cancelled_requests": 6,
+     "order_open_days": 341,
+     "last_filed": "2026-07-29"
+    },
+    {
+     "block": "3500 block of Longfellow Blvd",
+     "ward": "06",
+     "cancelled_requests": 3,
+     "order_open_days": 340,
+     "last_filed": "2026-05-11"
+    },
+    {
+     "block": "3800 block of Shenandoah Av",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 324,
+     "last_filed": "2026-08-07"
+    },
+    {
+     "block": "6000 block of Wanda Av",
+     "ward": "01",
+     "cancelled_requests": 4,
+     "order_open_days": 323,
+     "last_filed": "2026-01-09"
+    },
+    {
+     "block": "3900 block of Holly Hills Blvd",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 322,
+     "last_filed": "2025-09-11"
+    },
+    {
+     "block": "5800 block of Potomac St",
+     "ward": "05",
+     "cancelled_requests": 3,
+     "order_open_days": 319,
+     "last_filed": "2026-02-01"
+    },
+    {
+     "block": "1400 block of Sullivan Av",
+     "ward": "14",
+     "cancelled_requests": 1,
+     "order_open_days": 313,
+     "last_filed": "2026-03-10"
+    },
+    {
+     "block": "3200 block of Geyer Av",
+     "ward": "06",
+     "cancelled_requests": 3,
+     "order_open_days": 313,
+     "last_filed": "2025-07-07"
+    },
+    {
+     "block": "5100 block of Washington Pl",
+     "ward": "09",
+     "cancelled_requests": 2,
+     "order_open_days": 312,
+     "last_filed": "2026-05-22"
+    },
+    {
+     "block": "4100 block of Holly Hills Blvd",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 285,
+     "last_filed": "2026-05-18"
+    },
+    {
+     "block": "4000 block of Wyoming St",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 282,
+     "last_filed": "2025-05-15"
+    },
+    {
+     "block": "2700 block of Tamm Av",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 272,
+     "last_filed": "2025-03-20"
+    },
+    {
+     "block": "6500 block of Hoffman Av",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 271,
+     "last_filed": "2025-10-21"
+    },
+    {
+     "block": "4200 block of Russell Blvd",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 268,
+     "last_filed": "2026-07-22"
+    },
+    {
+     "block": "4200 block of Connecticut St",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 262,
+     "last_filed": "2026-04-24"
+    },
+    {
+     "block": "4700 block of Westminster Pl",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 260,
+     "last_filed": "2026-06-05"
+    },
+    {
+     "block": "2000 block of Lilly Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 254,
+     "last_filed": "2025-04-10"
+    },
+    {
+     "block": "5000 block of Washington Pl",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 249,
+     "last_filed": "2026-03-20"
+    },
+    {
+     "block": "3900 block of Palm St",
+     "ward": "12",
+     "cancelled_requests": 1,
+     "order_open_days": 236,
+     "last_filed": "2026-06-15"
+    },
+    {
+     "block": "1500 block of Lafayette Av",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 235,
+     "last_filed": "2025-07-25"
+    },
+    {
+     "block": "4000 block of Laclede Av",
+     "ward": "09",
+     "cancelled_requests": 2,
+     "order_open_days": 234,
+     "last_filed": "2026-02-22"
+    },
+    {
+     "block": "2600 block of Missouri Av",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 231,
+     "last_filed": "2026-08-06"
+    },
+    {
+     "block": "3900 block of Hartford St",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 220,
+     "last_filed": "2026-03-23"
+    },
+    {
+     "block": "5900 block of Waterman Blvd",
+     "ward": "10",
+     "cancelled_requests": 3,
+     "order_open_days": 218,
+     "last_filed": "2026-07-14"
+    },
+    {
+     "block": "2900 block of Victor St",
+     "ward": "07",
+     "cancelled_requests": 2,
+     "order_open_days": 214,
+     "last_filed": "2025-10-14"
+    },
+    {
+     "block": "5700 block of Vernon Av",
+     "ward": "10",
+     "cancelled_requests": 1,
+     "order_open_days": 208,
+     "last_filed": "2026-01-06"
+    },
+    {
+     "block": "1500 block of Market St",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 202,
+     "last_filed": "2026-05-20"
+    },
+    {
+     "block": "1500 block of Missouri Av",
+     "ward": "08",
+     "cancelled_requests": 1,
+     "order_open_days": 185,
+     "last_filed": "2026-06-11"
+    },
+    {
+     "block": "3900 block of Federer Pl",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 183,
+     "last_filed": "2025-06-10"
+    },
+    {
+     "block": "8100 block of Marla Ct",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 180,
+     "last_filed": "2026-04-26"
+    },
+    {
+     "block": "3000 block of Delmar Blvd",
+     "ward": "11",
+     "cancelled_requests": 1,
+     "order_open_days": 179,
+     "last_filed": "2026-03-08"
+    },
+    {
+     "block": "6100 block of Westminster Pl",
+     "ward": "10",
+     "cancelled_requests": 1,
+     "order_open_days": 177,
+     "last_filed": "2026-04-09"
+    },
+    {
+     "block": "2200 block of Blendon Pl",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 174,
+     "last_filed": "2026-04-16"
+    },
+    {
+     "block": "5200 block of Lindell Blvd",
+     "ward": "09",
+     "cancelled_requests": 1,
+     "order_open_days": 164,
+     "last_filed": "2025-12-22"
+    },
+    {
+     "block": "4900 block of Devonshire Av",
+     "ward": "05",
+     "cancelled_requests": 1,
+     "order_open_days": 163,
+     "last_filed": "2026-06-17"
+    },
+    {
+     "block": "2700 block of Queen St",
+     "ward": "04",
+     "cancelled_requests": 2,
+     "order_open_days": 150,
+     "last_filed": "2025-07-03"
+    },
+    {
+     "block": "3100 block of Portis Av",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 133,
+     "last_filed": "2025-09-22"
+    },
+    {
+     "block": "5700 block of Pershing Av",
+     "ward": "10",
+     "cancelled_requests": 1,
+     "order_open_days": 132,
+     "last_filed": "2026-03-11"
+    },
+    {
+     "block": "1400 block of John Av",
+     "ward": "14",
+     "cancelled_requests": 1,
+     "order_open_days": 90,
+     "last_filed": "2025-09-25"
+    },
+    {
+     "block": "1700 block of S Tucker Blvd",
+     "ward": "08",
+     "cancelled_requests": 2,
+     "order_open_days": 68,
+     "last_filed": "2026-02-24"
+    },
+    {
+     "block": "1100 block of Art Hill Pl",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 66,
+     "last_filed": "2025-07-13"
+    },
+    {
+     "block": "2400 block of Mcnair Av",
+     "ward": "08",
+     "cancelled_requests": 2,
+     "order_open_days": 61,
+     "last_filed": "2025-06-16"
+    },
+    {
+     "block": "1200 block of Kraft St",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 37,
+     "last_filed": "2025-12-28"
+    },
+    {
+     "block": "3800 block of Russell Blvd",
+     "ward": "06",
+     "cancelled_requests": 1,
+     "order_open_days": 37,
+     "last_filed": "2025-04-30"
+    },
+    {
+     "block": "6300 block of Juniata St",
+     "ward": "04",
+     "cancelled_requests": 1,
+     "order_open_days": 35,
+     "last_filed": "2025-08-22"
+    },
+    {
+     "block": "4600 block of Lee Av",
+     "ward": "11",
+     "cancelled_requests": 1,
+     "order_open_days": 22,
+     "last_filed": "2025-07-24"
+    },
+    {
+     "block": "7800 block of Decatur Dr",
+     "ward": "01",
+     "cancelled_requests": 1,
+     "order_open_days": 19,
+     "last_filed": "2025-10-07"
+    },
+    {
+     "block": "4900 block of Thekla Av",
+     "ward": "12",
+     "cancelled_requests": 1,
+     "order_open_days": 19,
+     "last_filed": "2025-12-08"
+    },
+    {
+     "block": "1400 block of Delmar Blvd",
+     "ward": "14",
+     "cancelled_requests": 1,
+     "order_open_days": 7,
+     "last_filed": "2025-06-16"
+    }
+   ],
+   "columns": [
+    "block",
+    "ward",
+    "cancelled_requests",
+    "order_open_days",
+    "last_filed"
+   ],
+   "summary": "288 cancelled requests; the removal order had been open a median 575 days",
+   "summary_note": "173 blocks in the list below (exact-address match; 289 requests)",
+   "figure_id": [
+    "n5_tree_cancel_blank_wo_predates",
+    "n5_tree_predating_wo_median_age_days"
+   ],
+   "csv": "data/downloads/brief_tree_cancelled.csv"
+  }
+ ],
+ "monday_total": 24869,
+ "monday_csv": "data/downloads/monday_list.csv"
+}

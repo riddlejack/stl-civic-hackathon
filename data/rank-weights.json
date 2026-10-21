@@ -1,0 +1,110 @@
+{
+ "_about": "Weights for the Ranked view of the queue. Edit and reload the page: the score is recomputed in the browser. score = tier points (by request type) + 1 point per days_per_point days past the city's promised date (up to cap) + points_per_extra_report for each extra open report of the same type at the same address (up to cap). Ties go to the request furthest past its date. Move a request type between tiers with tier_overrides, e.g. {\"Sirens Not Heard\": 1}. Design: research/prioritisation-option.md. No model, no text, no demographics.",
+ "tier_points": {
+  "1": 60,
+  "2": 30,
+  "3": 0
+ },
+ "lateness": {
+  "days_per_point": 12,
+  "cap": 30
+ },
+ "repeats": {
+  "points_per_extra_report": 5,
+  "cap": 10
+ },
+ "bulk_check_over": 10,
+ "tiers": {
+  "1": {
+   "label": "Life-safety, blocked right of way or loss of an essential service",
+   "short": "Life-safety",
+   "codes": [
+    "City Tree Down",
+    "City Tree Limb Down",
+    "Broken/Hanging Limb",
+    "Cave-Ins",
+    "NOWATER",
+    "WTR-COMING-UP",
+    "HYDRANT-HIT",
+    "MISSING-COVER",
+    "LOOSE-COVER",
+    "Building Collapse",
+    "Signal Dark",
+    "Signals Flashing",
+    "Signal Stuck",
+    "Signal Damaged",
+    "Other Signal Damaged",
+    "Other Signal Damage",
+    "Whole Blk Lights Out",
+    "Sprinkler Systems",
+    "No Smoke Detectors",
+    "Fire Exit Insp",
+    "Dangerous Animal",
+    "Hazrds Waste",
+    "Potholes - Major St",
+    "TDebris-alley/street"
+   ]
+  },
+  "2": {
+   "label": "A hazard or loss of function that is not immediate",
+   "short": "Hazard, not immediate",
+   "codes": [
+    "Inspect City Tree",
+    "LRA Tree",
+    "Inspect Private Tree",
+    "Sidewalk Repair",
+    "Bad Condition",
+    "Sewer Lateral Defect",
+    "Illegal Use",
+    "Ppty Maint Code-Ext",
+    "Ppty Maint Code-Int",
+    "Vacnt Bldg Unsecured",
+    "Single Light Out",
+    "Light Damaged",
+    "Sign needs attention",
+    "Potholes - Residnl",
+    "Potholes - Alley",
+    "PRESSURE",
+    "CHK-JOBSITE",
+    "FH-RUNNING",
+    "FH-MAINTENANCE",
+    "WTR-VACANT-BLDG",
+    "LEAKING-METER",
+    "TASTE/ODOR",
+    "APPEARANCE",
+    "Rats (Exterior)",
+    "Lead Insp",
+    "Mechanical Insp",
+    "Plumbing Insp",
+    "Electrical Insp",
+    "No Hot Water, Int",
+    "Stagnant Water",
+    "Sirens Not Heard",
+    "Injured/Sick Animal",
+    "Stray Dog At Large",
+    "Check Welfare",
+    "Signals out of sync",
+    "Demo Blowing Dust",
+    "Contract Street Work",
+    "Property Damage-LRA",
+    "Roach Infestn, Int",
+    "Raw Garbage, Ext",
+    "Comml Dumpster, Ext",
+    "Vehicle-Rt of Way",
+    "Mosquito Breeding"
+   ]
+  },
+  "3": {
+   "label": "Everything else: property maintenance, nuisance, amenity, administrative",
+   "short": "Maintenance",
+   "codes": []
+  }
+ },
+ "tier_overrides": {},
+ "review_first": [
+  "Sirens Not Heard (tier 2; arguably 1 as a warning-system fault)",
+  "Lead Insp (tier 2; arguably 1 where children are present, which the file does not show)",
+  "Sign needs attention (tier 2; a missing stop sign is tier 1, but the code does not say)",
+  "Illegal Use (tier 2; blocking and obstruction are not distinguished)"
+ ]
+}

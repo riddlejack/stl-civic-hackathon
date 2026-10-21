@@ -1,0 +1,79 @@
+{
+ "meta": {
+  "contract": "figures/1",
+  "mock": true,
+  "built_at": "mock",
+  "sources": [],
+  "notes": [
+   "Mock data: shaped like the contract, numbers are not real."
+  ]
+ },
+ "figures": {
+  "n2_share_closed_handoff": {
+   "id": "n2_share_closed_handoff",
+   "value": 0.3,
+   "unit": "share of closures",
+   "period": "mock period",
+   "definition": "Share of closures recording a hand-off.",
+   "label": "observed",
+   "source_sql_or_script": "mock",
+   "note": "Mock value.",
+   "derivation": "Mock derivation: replaced when the real figures file lands."
+  },
+  "n2_share_closed_done": {
+   "id": "n2_share_closed_done",
+   "value": 0.4,
+   "unit": "share of closures",
+   "period": "mock period",
+   "definition": "Share of closures recording finished work.",
+   "label": "observed",
+   "source_sql_or_script": "mock",
+   "note": "Mock value.",
+   "derivation": "Mock derivation: replaced when the real figures file lands."
+  },
+  "n2_share_closed_no_action": {
+   "id": "n2_share_closed_no_action",
+   "value": 0.2,
+   "unit": "share of closures",
+   "period": "mock period",
+   "definition": "Share of closures recording no action.",
+   "label": "observed",
+   "source_sql_or_script": "mock",
+   "note": "Mock value.",
+   "derivation": "Mock derivation: replaced when the real figures file lands."
+  },
+  "n2_share_closed_blank": {
+   "id": "n2_share_closed_blank",
+   "value": 0.05,
+   "unit": "share of closures",
+   "period": "mock period",
+   "definition": "Share of closures with no text.",
+   "label": "observed",
+   "source_sql_or_script": "mock",
+   "note": "Mock value.",
+   "derivation": "Mock derivation: replaced when the real figures file lands."
+  },
+  "n2_handoff_closed_before_promise": {
+   "id": "n2_handoff_closed_before_promise",
+   "value": 0.7,
+   "unit": "share of hand-off closures",
+   "period": "mock period",
+   "definition": "Hand-offs closed before the promise date.",
+   "label": "observed",
+   "source_sql_or_script": "mock",
+   "note": "Mock value.",
+   "derivation": "Mock derivation: replaced when the real figures file lands."
+  },
+  "n2_closed_requests": {
+   "id": "n2_closed_requests",
+   "value": 100000,
+   "unit": "requests",
+   "period": "mock period",
+   "definition": "Closed requests in scope.",
+   "label": "observed",
+   "source_sql_or_script": "mock",
+   "note": "Mock value.",
+   "derivation": "Mock derivation: replaced when the real figures file lands."
+  }
+ }
+}

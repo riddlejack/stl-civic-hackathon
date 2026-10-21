@@ -1,0 +1,155 @@
+{
+ "meta": {
+  "contract": "receipts/1",
+  "mock": true,
+  "built_at": "mock",
+  "sources": [],
+  "notes": [
+   "Mock data: shaped like the contract, numbers are not real."
+  ]
+ },
+ "lead_case": "mock-lot",
+ "cases": {
+  "mock-lot": {
+   "id": "mock-lot",
+   "role": "hero",
+   "type": "Weeds-Vacant Lot",
+   "ward": "01",
+   "neighborhood": "Example Neighborhood",
+   "block": "5100 block of Test Dr",
+   "what": "mock example",
+   "story": "Mock receipt for a Weeds-Vacant Lot request: replaced when build/N5/heroes.json lands.",
+   "facts": {},
+   "images": [],
+   "timeline": [
+    {
+     "date": "2026-07-02 10:17",
+     "kind": "filed",
+     "title": "Mock: request filed",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    },
+    {
+     "date": "2026-07-02 10:30",
+     "kind": "closed",
+     "title": "Mock: closed \"on schedule to be cut\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    },
+    {
+     "date": "2026-07-16",
+     "kind": "promised",
+     "title": "Mock: the city's promise date",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    }
+   ]
+  },
+  "mock-tree": {
+   "id": "mock-tree",
+   "role": "hero",
+   "type": "Inspect City Tree",
+   "ward": "04",
+   "neighborhood": "Example Neighborhood",
+   "block": "5300 block of Example St",
+   "what": "mock example",
+   "story": "Mock receipt for a Inspect City Tree request: replaced when build/N5/heroes.json lands.",
+   "facts": {},
+   "images": [],
+   "timeline": [
+    {
+     "date": "2026-07-02 10:17",
+     "kind": "filed",
+     "title": "Mock: request filed",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    },
+    {
+     "date": "2026-07-02 10:30",
+     "kind": "closed",
+     "title": "Mock: closed \"\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    },
+    {
+     "date": "2026-07-16",
+     "kind": "promised",
+     "title": "Mock: the city's promise date",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    }
+   ]
+  },
+  "mock-cave": {
+   "id": "mock-cave",
+   "role": "hero",
+   "type": "Cave-Ins",
+   "ward": "07",
+   "neighborhood": "Example Neighborhood",
+   "block": "3200 block of Placeholder Blvd",
+   "what": "mock example",
+   "story": "Mock receipt for a Cave-Ins request: replaced when build/N5/heroes.json lands.",
+   "facts": {},
+   "images": [],
+   "timeline": [
+    {
+     "date": "2026-07-02 10:17",
+     "kind": "filed",
+     "title": "Mock: request filed",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    },
+    {
+     "date": "2026-07-02 10:30",
+     "kind": "closed",
+     "title": "Mock: closed \"referred to street maintenance\"",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    },
+    {
+     "date": "2026-07-16",
+     "kind": "promised",
+     "title": "Mock: the city's promise date",
+     "source": "csb",
+     "label": "observed",
+     "derivation": "Mock event."
+    }
+   ]
+  }
+ },
+ "examples": [
+  {
+   "key": "lot",
+   "label": "Mock lot",
+   "cases": [
+    "mock-lot"
+   ]
+  },
+  {
+   "key": "tree",
+   "label": "Mock tree",
+   "cases": [
+    "mock-tree"
+   ]
+  },
+  {
+   "key": "cave",
+   "label": "Mock cave",
+   "cases": [
+    "mock-cave"
+   ]
+  }
+ ],
+ "lookup": {
+  "endpoint": "api/receipt/",
+  "note": "mock"
+ }
+}

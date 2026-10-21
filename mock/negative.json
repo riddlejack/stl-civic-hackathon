@@ -1,0 +1,33 @@
+{
+ "meta": {
+  "contract": "negative/1",
+  "mock": true,
+  "built_at": "mock",
+  "sources": [],
+  "notes": [
+   "Mock data: shaped like the contract, numbers are not real."
+  ]
+ },
+ "items": [
+  {
+   "title": "Mock negative result 1",
+   "text": "Replaced when deliverable/negative-results.md lands."
+  },
+  {
+   "title": "Mock negative result 2",
+   "text": "Replaced when deliverable/negative-results.md lands."
+  },
+  {
+   "title": "Mock negative result 3",
+   "text": "Replaced when deliverable/negative-results.md lands."
+  },
+  {
+   "title": "Mock negative result 4",
+   "text": "Replaced when deliverable/negative-results.md lands."
+  },
+  {
+   "title": "Mock negative result 5",
+   "text": "Replaced when deliverable/negative-results.md lands."
+  }
+ ]
+}

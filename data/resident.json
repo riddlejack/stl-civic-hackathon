@@ -1,0 +1,354 @@
+{
+  "meta": {
+    "contract": "resident/1",
+    "state": "real",
+    "built_at": "2026-10-15 15:40",
+    "about": "The resident's page: each example as the city's status page shows it today (replica, block level, request number withheld) and with the fix (illustration on the request's own dates). Written by hand from the sources listed per example; no request, work-order or parcel numbers.",
+    "sources": [
+      "site/data/receipts.json (N5 cases lot-1, tree-2)",
+      "site/data/statuspage.json (E3 saved status page, cave-in)",
+      "research/status-page-linkage.md (page fields and labels, the CSB line on 160 of 160 pages, the Closed tooltip on 1,150 pages)",
+      "research/north-taylor-mechanism.md (lot-1: last billed cut 24 Oct 2024, none in 2025-26)",
+      "311 file of 13 Oct 2026 via build/N5/private/n5.duckdb (dates only: investigation-completed dates, the 9 Sep call, the tree address's other two requests)"
+    ]
+  },
+  "page": {
+    "status_url": "https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/check-service-request.cfm",
+    "replica_label": "Replica of the city’s status page, as a resident sees it (fields as read 14 Oct 2026)",
+    "closed_tooltip": "Work has been finished by the department/Division.",
+    "closed_tooltip_note": "The page’s own explanation of “Closed”, shown when you hover the word (on all 1,150 closed pages read).",
+    "csb_line": "For detailed information, please contact the Citizens’ Service Bureau.",
+    "related_none_note": "The city’s page leaves this section out when nothing is attached."
+  },
+  "examples": [
+    {
+      "key": "lot",
+      "chip": "The North Taylor lot",
+      "what": "A city-owned vacant lot",
+      "block": "1700 block of N Taylor Av",
+      "ward": "12",
+      "today": {
+        "headline": "Closed 13 minutes after it was filed",
+        "problem_type": "High weeds/grass on vacant lot",
+        "submitted": "2026-07-02",
+        "status": "Closed",
+        "status_on": "2026-07-02",
+        "tooltip": true,
+        "invt_done": "2026-07-02",
+        "overview_resolution": null,
+        "actions": {
+          "csb_line": true
+        },
+        "division": "Forestry Division",
+        "due": "2026-09-30",
+        "source": "Fields from the 311 file in the page’s layout. The closing-words line is what all 160 sampled pages closed “on schedule to be cut” show in place of the words. This request’s own page was not read, so any crew comment on it is not shown.",
+        "missing": [
+          [
+            "2026-07-28",
+            "Reported again: a separate request, closed 7 minutes after filing, same words"
+          ],
+          [
+            "2026-09-09",
+            "A call that the lot’s cut was left incomplete: closed next day, “supervisor notified”"
+          ],
+          [
+            null,
+            "Any cut: none billed on this lot in 2026, nor in 2025 (Forestry’s ledger to 13 Oct 2026)"
+          ]
+        ]
+      },
+      "fix": {
+        "status": [
+          [
+            "promise",
+            "Open · linked to Forestry’s cut order"
+          ],
+          [
+            "late",
+            "Past its date · on Forestry’s weekly list"
+          ]
+        ],
+        "facts": [
+          [
+            "Crew’s work order",
+            "Grass cut · Forestry · due 30 Sep 2026",
+            "",
+            "illus"
+          ],
+          [
+            "Due",
+            "30 September 2026",
+            "",
+            ""
+          ],
+          [
+            "Past its date",
+            "13 days on 13 October · on Forestry’s weekly list",
+            "late",
+            ""
+          ],
+          [
+            "Reports on this request",
+            "3",
+            "",
+            ""
+          ]
+        ],
+        "reports": [
+          [
+            "2026-07-02",
+            "Filed on the web: high weeds on a vacant lot",
+            "first"
+          ],
+          [
+            "2026-07-28",
+            "Reported again: added to this open request",
+            "joined"
+          ],
+          [
+            "2026-09-09",
+            "“Cut left incomplete” call: added to this open request",
+            "joined"
+          ]
+        ],
+        "timeline": [
+          [
+            "Filed",
+            "2 Jul",
+            "done"
+          ],
+          [
+            "Handed to the crew",
+            "Cut order linked 2 Jul",
+            "done"
+          ],
+          [
+            "Due",
+            "30 Sep · passed",
+            "late"
+          ],
+          [
+            "Closes",
+            "When the cut is recorded · not yet",
+            "todo"
+          ]
+        ],
+        "next": "From 1 October the cut order is on Forestry’s weekly past-due list. When the crew records the cut, the request closes by itself and this page shows the date.",
+        "note": "Illustration on this request’s own dates. The dates, the three reports and “no cut billed in 2026” are the city’s own records (311 file and Forestry’s billing ledger, to 13 Oct 2026); the lot’s last billed cut was 24 Oct 2024. The cut order is the illustration: the city’s records hold none for this lot."
+      }
+    },
+    {
+      "key": "tree",
+      "chip": "The tree",
+      "what": "A city tree already marked for removal",
+      "block": "6700 block of Dale Ave",
+      "ward": "4",
+      "today": {
+        "headline": "Cancelled 2 hours after it was filed, with no public words",
+        "problem_type": "Inspect city tree",
+        "submitted": "2026-06-12",
+        "status": "Cancelled",
+        "status_on": "2026-06-12",
+        "tooltip": false,
+        "invt_done": "",
+        "overview_resolution": null,
+        "actions": null,
+        "division": "Forestry Division",
+        "due": "2026-06-26",
+        "source": "Fields from the 311 file in the page’s layout: cancelled, no closing words, no investigation date. None of the 1,440 sampled pages was a cancelled request, so the page’s exact wording for one is not observed.",
+        "missing": [
+          [
+            null,
+            "An open Forestry removal order at this address: projected start 14 Nov 2024, priority 1, due 20 Jun 2025, still “New” on 13 Oct 2026"
+          ],
+          [
+            null,
+            "Two more inspection requests at this address (6 Feb 2025 and 29 Jun 2026), both cancelled too"
+          ]
+        ]
+      },
+      "fix": {
+        "status": [
+          [
+            "promise",
+            "Open · linked to the crew’s job"
+          ],
+          [
+            "late",
+            "Past its date · on Forestry’s weekly list"
+          ]
+        ],
+        "facts": [
+          [
+            "Crew’s work order",
+            "Tree removal · Forestry · priority 1 · status New",
+            "",
+            ""
+          ],
+          [
+            "Due",
+            "20 June 2025 (the work order’s date)",
+            "",
+            ""
+          ],
+          [
+            "Past its date",
+            "480 days on 13 October · on Forestry’s weekly list",
+            "late",
+            ""
+          ],
+          [
+            "Reports on this request",
+            "3",
+            "",
+            ""
+          ]
+        ],
+        "reports": [
+          [
+            "2025-02-06",
+            "Inspection request: added to the open removal order",
+            "joined"
+          ],
+          [
+            "2026-06-12",
+            "This request: added to the order instead of cancelled",
+            "first"
+          ],
+          [
+            "2026-06-29",
+            "Reported again: added to the open removal order",
+            "joined"
+          ]
+        ],
+        "timeline": [
+          [
+            "Filed",
+            "12 Jun 2026",
+            "done"
+          ],
+          [
+            "Handed to the crew",
+            "Linked to the removal order (projected start 14 Nov 2024)",
+            "done"
+          ],
+          [
+            "Due",
+            "20 Jun 2025 · passed",
+            "late"
+          ],
+          [
+            "Closes",
+            "When the removal is recorded · not yet",
+            "todo"
+          ]
+        ],
+        "next": "The removal order is on Forestry’s weekly past-due list. When the crew records the removal, the request closes by itself, as tree removals already work today.",
+        "note": "The removal order is real: Forestry’s open-removal saved search in Cityworks, read 13 Oct 2026. Joining the three requests to it is the illustration."
+      }
+    },
+    {
+      "key": "cave",
+      "chip": "The cave-in",
+      "what": "A street cave-in",
+      "block": "5200 block of Robert Av",
+      "ward": "2",
+      "today": {
+        "headline": "Closed the day it was filed, at the referral",
+        "problem_type": "Street, alley or sidewalk cave-in or depression",
+        "submitted": "2026-07-27",
+        "status": "Closed",
+        "status_on": "2026-07-27",
+        "tooltip": true,
+        "invt_done": "2026-07-27",
+        "overview_resolution": "Referred to street maintenance for repair work to be scheduled",
+        "actions": {
+          "resolution": "Referred to street maintenance for repair work to be scheduled",
+          "details": "This request has been investigated and the problem has been identified by the inspectors. This request has been forwarded to Street Maintenance for repair work to be scheduled and completed as soon as possible."
+        },
+        "division": "Street Department",
+        "due": "2026-07-30",
+        "source": "From a saved copy of this request’s status page (14 Oct 2026), address cut to the block.",
+        "missing": [
+          [
+            null,
+            "Whether the repair was done: nothing is attached, and no public file we hold records it"
+          ],
+          [
+            null,
+            "Across the city, 16 of 40 sampled “referred” cave-ins list a repair work order; this one lists none"
+          ]
+        ]
+      },
+      "fix": {
+        "status": [
+          [
+            "promise",
+            "Open · linked to the crew’s job"
+          ],
+          [
+            "late",
+            "Past its date · on the Street Department’s weekly list"
+          ]
+        ],
+        "facts": [
+          [
+            "Crew’s work order",
+            "Right of Way Repair · Street Department · due 30 Jul 2026",
+            "",
+            "illus"
+          ],
+          [
+            "Due",
+            "30 July 2026 (the request’s date, carried to the job)",
+            "",
+            ""
+          ],
+          [
+            "Past its date",
+            "75 days on 13 October, if still not done · on the weekly list",
+            "late",
+            ""
+          ],
+          [
+            "Reports on this request",
+            "New reports here are added to it",
+            "",
+            ""
+          ]
+        ],
+        "reports": [
+          [
+            "2026-07-27",
+            "Filed: a cave-in in the street",
+            "first"
+          ]
+        ],
+        "timeline": [
+          [
+            "Filed",
+            "27 Jul",
+            "done"
+          ],
+          [
+            "Handed to the crew",
+            "Repair order linked 27 Jul",
+            "done"
+          ],
+          [
+            "Due",
+            "30 Jul · passed",
+            "late"
+          ],
+          [
+            "Closes",
+            "When the repair is recorded",
+            "todo"
+          ]
+        ],
+        "next": "When the crew records the repair, the request closes by itself, with the date. Until then the order sits on the Street Department’s weekly past-due list. Where cave-ins are linked today, the median repair was finished 5 days after filing.",
+        "note": "Illustration. The real request was closed at the referral with nothing attached, so no record says whether or when the repair was done; the attached order and the past-due count assume it still is not. “Right of Way Repair” is the order the city attaches to the 16 of 40 sampled cave-ins that are linked."
+      }
+    }
+  ]
+}
